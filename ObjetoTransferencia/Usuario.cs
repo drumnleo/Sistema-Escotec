@@ -10,11 +10,12 @@ namespace ObjetoTransferencia
     {
         public int Id_Usuario { get; set; }
         public GrupoTipo grupoTipo { get; set; }
-        public string Nome { get; set; }
-        public string Sobrenome { get; set; }
-        public DateTime Data_Admissao { get; set; }
+        public Pessoa Pessoa { get; set; }
+        public Funcionario funcionario { get; set; }
         public string Nome_Usuario { get; set; }
-        public string Senha { get; set; }
-        public string Email { get; set; }
+        public byte[] Senha_Hash { get; set; }
+        public Guid Salt { get; set; }
+        public DateTime Data_Cadastro { get; set; }
+        public DateTime Data_Ultima_Alteracao { get; set; }
     }
 }

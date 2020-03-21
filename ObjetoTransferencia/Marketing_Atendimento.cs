@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ObjetoTransferencia
 {
-    public class PerfilMenuColecao : List<PerfilMenu>
+    class Marketing_Atendimento
     {
-
     }
 }
