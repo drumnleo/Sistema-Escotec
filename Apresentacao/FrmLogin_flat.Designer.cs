@@ -36,12 +36,13 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtLogin = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtSenha = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnLogin = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnSair = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.txtSenha = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,30 +122,6 @@
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(149, 58);
             this.bunifuCustomLabel3.TabIndex = 2;
             this.bunifuCustomLabel3.Text = "Login";
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtSenha.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtSenha.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSenha.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSenha.HintForeColor = System.Drawing.Color.Empty;
-            this.txtSenha.HintText = "";
-            this.txtSenha.isPassword = true;
-            this.txtSenha.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(96)))), ((int)(((byte)(160)))));
-            this.txtSenha.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(105)))), ((int)(((byte)(165)))));
-            this.txtSenha.LineMouseHoverColor = System.Drawing.Color.Gray;
-            this.txtSenha.LineThickness = 2;
-            this.txtSenha.Location = new System.Drawing.Point(353, 264);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSenha.MaxLength = 32767;
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(324, 33);
-            this.txtSenha.TabIndex = 3;
-            this.txtSenha.Text = "Usuário";
-            this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel4
             // 
@@ -234,6 +211,35 @@
             this.btnSair.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
+            // txtSenha
+            // 
+            this.txtSenha.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtSenha.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtSenha.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSenha.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSenha.HintForeColor = System.Drawing.Color.Empty;
+            this.txtSenha.HintText = "";
+            this.txtSenha.isPassword = true;
+            this.txtSenha.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(96)))), ((int)(((byte)(160)))));
+            this.txtSenha.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(105)))), ((int)(((byte)(165)))));
+            this.txtSenha.LineMouseHoverColor = System.Drawing.Color.Gray;
+            this.txtSenha.LineThickness = 2;
+            this.txtSenha.Location = new System.Drawing.Point(353, 264);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSenha.MaxLength = 32767;
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(324, 33);
+            this.txtSenha.TabIndex = 3;
+            this.txtSenha.Text = "Usuário";
+            this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyUp);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FrmLogin_flat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,8 +259,6 @@
             this.Name = "FrmLogin_flat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin_flat";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLogin_flat_KeyDown);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmLogin_flat_KeyPress);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -271,10 +275,11 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtLogin;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtSenha;
         private Bunifu.Framework.UI.BunifuThinButton2 btnLogin;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSair;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtSenha;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -14,15 +14,14 @@ namespace Negocios
         AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
 
         //Inserir
-        public string Inserir(PerfilTipo perfilTipo)
+        public string Inserir(PerfilMenu perfilTipo)
         {
             try
             {
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@NOME", perfilTipo.Nome);
-                acessoDados.AdicionarParametros("@BTNCADASTRAR", perfilTipo.BtnCadastrar);
-                acessoDados.AdicionarParametros("@BTNCONSULTAR", perfilTipo.BtnConsultar);
-                acessoDados.AdicionarParametros("@BTNEXCLUIR", perfilTipo.BtnExcluir);
+                acessoDados.AdicionarParametros("@BTNCADASTRAR", perfilTipo.Btn_Cadastrar);
+                acessoDados.AdicionarParametros("@BTNEXCLUIR", perfilTipo.Btn_Excluir);
 
                 string idPerfil = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_PERFIL_INSERIR").ToString();
 
@@ -37,11 +36,11 @@ namespace Negocios
         }
 
 
-        public PerfilTipoColecao ConsultarPorNome(string nome)
+        public PerfilMenuColecao ConsultarPorNome(string nome)
         {
             try
             {
-                PerfilTipoColecao perfilColecao = new PerfilTipoColecao();
+                PerfilMenuColecao perfilColecao = new PerfilMenuColecao();
 
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@NOME", nome);
@@ -50,13 +49,12 @@ namespace Negocios
 
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    PerfilTipo perfilTipo = new PerfilTipo();
+                    PerfilMenu perfilTipo = new PerfilMenu();
 
-                    perfilTipo.Id_PerfilTipo = Convert.ToInt32(dataRow["ID"]);
+                    perfilTipo.Id_Perfil = Convert.ToInt32(dataRow["ID"]);
                     perfilTipo.Nome = Convert.ToString(dataRow["NOME"]);
-                    perfilTipo.BtnCadastrar = Convert.ToBoolean(dataRow["MENU_CADASTRAR"]);
-                    perfilTipo.BtnConsultar = Convert.ToBoolean(dataRow["MENU_CONSULTAR"]);
-                    perfilTipo.BtnExcluir = Convert.ToBoolean(dataRow["MENU_EXCLUIR"]);
+                    perfilTipo.Btn_Cadastrar = Convert.ToBoolean(dataRow["MENU_CADASTRAR"]);
+                    perfilTipo.Btn_Excluir = Convert.ToBoolean(dataRow["MENU_EXCLUIR"]);
 
                     perfilColecao.Add(perfilTipo);
                 }
@@ -69,12 +67,12 @@ namespace Negocios
             }
         }
 
-        public string Excluir(PerfilTipo perfil)
+        public string Excluir(PerfilMenu perfilMenu)
         {
             try
             {
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("ID_PERFIL", perfil.Id_PerfilTipo);
+                acessoDados.AdicionarParametros("ID_PERFIL", perfilMenu.Id_Perfil);
                 string idperfil = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_PERFIL_EXCLUIR").ToString();
                 return idperfil;
             }

@@ -49,16 +49,20 @@ namespace Apresentacao
             Application.Exit();
         }
 
-        private void FrmLogin_flat_KeyDown(object sender, KeyEventArgs e)
+        private void txtSenha_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
+            {
+                this.Cursor = Cursors.WaitCursor;
                 login();
+                
+            }
         }
 
-        private void FrmLogin_flat_KeyPress(object sender, KeyPressEventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            if (e.KeyChar == 13)
-                login();
+            timer1.Stop();
+            this.Close();
         }
     }
 }

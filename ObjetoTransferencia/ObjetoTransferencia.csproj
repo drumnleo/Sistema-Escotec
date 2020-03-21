@@ -73,8 +73,8 @@
     <Compile Include="MarketingColecao.cs" />
     <Compile Include="Marketing_Atendimento.cs" />
     <Compile Include="Orcamento.cs" />
-    <Compile Include="PerfilTipo.cs" />
-    <Compile Include="PerfilTipoColecao.cs" />
+    <Compile Include="PerfilMenu.cs" />
+    <Compile Include="PerfilMenuColecao.cs" />
     <Compile Include="Pessoa.cs" />
     <Compile Include="PessoaColecao.cs" />
     <Compile Include="Professor.cs" />

@@ -107,9 +107,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\drumn\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
-    <Reference Include="EasyHTMLReports">
-      <HintPath>C:\Users\drumn\Downloads\Compressed\BuniLib_Library_System_Visual_Studio_Source_Code_(c#)\BuniLib\packages\EasyHTMLReports.1.0.0\lib\EasyHTMLReports.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />

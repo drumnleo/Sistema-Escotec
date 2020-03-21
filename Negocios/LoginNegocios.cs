@@ -35,11 +35,11 @@ namespace Negocios
             
         }
 
-        public PerfilTipoColecao ConsultarPorNome(string nome)
+        public PerfilMenuColecao ConsultarPorNome(string nome)
         {
             try
             {
-                PerfilTipoColecao perfilColecao = new PerfilTipoColecao();
+                PerfilMenuColecao perfilColecao = new PerfilMenuColecao();
 
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@NOME", nome);
@@ -48,15 +48,14 @@ namespace Negocios
 
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    PerfilTipo perfilTipo = new PerfilTipo();
+                    PerfilMenu perfilMenu = new PerfilMenu();
 
-                    perfilTipo.Id_PerfilTipo = Convert.ToInt32(dataRow["ID"]);
-                    perfilTipo.Nome = Convert.ToString(dataRow["NOME"]);
-                    perfilTipo.BtnCadastrar = Convert.ToBoolean(dataRow["MENU_CADASTRAR"]);
-                    perfilTipo.BtnConsultar = Convert.ToBoolean(dataRow["MENU_CONSULTAR"]);
-                    perfilTipo.BtnExcluir = Convert.ToBoolean(dataRow["MENU_EXCLUIR"]);
+                    perfilMenu.Id_Perfil = Convert.ToInt32(dataRow["ID"]);
+                    perfilMenu.Nome = Convert.ToString(dataRow["NOME"]);
+                    perfilMenu.Btn_Cadastrar = Convert.ToBoolean(dataRow["MENU_CADASTRAR"]);
+                    perfilMenu.Btn_Excluir = Convert.ToBoolean(dataRow["MENU_EXCLUIR"]);
 
-                    perfilColecao.Add(perfilTipo);
+                    perfilColecao.Add(perfilMenu);
                 }
 
                 return perfilColecao;
@@ -67,12 +66,12 @@ namespace Negocios
             }
         }
 
-        public string Excluir(PerfilTipo perfil)
+        public string Excluir(PerfilMenu perfilmenu)
         {
             try
             {
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("ID_PERFIL", perfil.Id_PerfilTipo);
+                acessoDados.AdicionarParametros("ID_PERFIL", perfilmenu.Id_Perfil);
                 string idperfil = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_PERFIL_EXCLUIR").ToString();
                 return idperfil;
             }
