@@ -19,8 +19,8 @@ namespace Negocios
             try
             {
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("@NOME", grupoTipo.NOME);
-                acessoDados.AdicionarParametros("@ID_PERFIL", grupoTipo.ID_PERFIL);
+                acessoDados.AdicionarParametros("@NOME", grupoTipo.Nome);
+                acessoDados.AdicionarParametros("@ID_PERFIL", grupoTipo.perfilMenu.Id_Perfil);
 
 
                 string idGrupo = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_GRUPO_INSERIR").ToString();
@@ -50,9 +50,9 @@ namespace Negocios
                 {
                     GrupoTipo grupoTipo = new GrupoTipo();
 
-                    grupoTipo.ID_GRUPO = Convert.ToInt32(dataRow["ID_GRUPO"]);
-                    grupoTipo.ID_PERFIL = Convert.ToInt32(dataRow["ID_PERFIL"]);
-                    grupoTipo.NOME = Convert.ToString(dataRow["NOME"]);
+                    grupoTipo.Id_Grupo = Convert.ToInt32(dataRow["ID_GRUPO"]);
+                    grupoTipo.perfilMenu.Id_Perfil = Convert.ToInt32(dataRow["ID_PERFIL"]);
+                    grupoTipo.Nome = Convert.ToString(dataRow["NOME"]);
 
                     grupoColecao.Add(grupoTipo);
                 }
@@ -79,9 +79,9 @@ namespace Negocios
                 {
                     GrupoTipo grupoTipo = new GrupoTipo();
 
-                    grupoTipo.ID_GRUPO = Convert.ToInt32(dataRow["ID_GRUPO"]);
-                    grupoTipo.ID_PERFIL = Convert.ToInt32(dataRow["ID_PERFIL"]);
-                    grupoTipo.NOME = Convert.ToString(dataRow["NOME"]);
+                    grupoTipo.Id_Grupo = Convert.ToInt32(dataRow["ID_GRUPO"]);
+                    grupoTipo.perfilMenu.Id_Perfil = Convert.ToInt32(dataRow["ID_PERFIL"]);
+                    grupoTipo.Nome = Convert.ToString(dataRow["NOME"]);
 
                     grupoColecao.Add(grupoTipo);
                 }
@@ -98,7 +98,7 @@ namespace Negocios
             try
             {
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("ID_GRUPO", grupoTipo.ID_GRUPO);
+                acessoDados.AdicionarParametros("ID_GRUPO", grupoTipo.Id_Grupo);
                 string idperfil = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_GRUPO_EXCLUIR").ToString();
                 return idperfil;
             }
