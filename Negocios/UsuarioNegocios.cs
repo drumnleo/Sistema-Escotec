@@ -54,7 +54,7 @@ namespace Negocios
 
                     usuario.Id_Usuario = Convert.ToInt32(dataRow["ID_USUARIO"]);
                     usuario.Nome = Convert.ToString(dataRow["NOME"]);
-                    usuario.Sobrenome = Convert.ToString(dataRow["SBORENOME"]);
+                    usuario.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
                     usuario.Data_Admissao = Convert.ToDateTime(dataRow["DATA_ADMISSAO"]);
                     usuario.Nome_Usuario = Convert.ToString(dataRow["USUARIO"]);
                     usuario.Senha = Convert.ToString(dataRow["SENHA"]);

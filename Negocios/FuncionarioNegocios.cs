@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ObjetoTransferencia
+namespace Negocios
 {
-    public class CargoColecao : List<Cargo>
+    class FuncionarioNegocios
     {
     }
 }
