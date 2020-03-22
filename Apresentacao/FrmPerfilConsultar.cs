@@ -30,7 +30,7 @@ namespace Apresentacao
         {
             PerfilNegocios perfilNegocios = new PerfilNegocios();
 
-            PerfilTipoColecao perfilTipoColecao = new PerfilTipoColecao();
+            PerfilMenuColecao perfilTipoColecao = new PerfilMenuColecao();
 
             perfilTipoColecao = perfilNegocios.ConsultarPorNome(textBoxPesquisa.Text);
 
@@ -62,7 +62,7 @@ namespace Apresentacao
             }
 
 
-            PerfilTipo perfilSelecionado = dataGridViewPerfil.SelectedRows[0].DataBoundItem as PerfilTipo;
+            PerfilMenu perfilSelecionado = dataGridViewPerfil.SelectedRows[0].DataBoundItem as PerfilMenu;
 
             PerfilNegocios perfilNegocios = new PerfilNegocios();
 

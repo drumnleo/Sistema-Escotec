@@ -157,6 +157,12 @@
     <Compile Include="Apresentacao\Paginas\Usuario\AdicionarEditarUsuario.Designer.cs">
       <DependentUpon>AdicionarEditarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\SearchDialogs\SearchDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\SearchDialogs\SearchDialog.Designer.cs">
+      <DependentUpon>SearchDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\Paginas\Usuario\AdicionarEditarUsuario.resx">
       <DependentUpon>AdicionarEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\SearchDialogs\SearchDialog.resx">
+      <DependentUpon>SearchDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
