@@ -9,7 +9,7 @@ namespace ObjetoTransferencia
     public class GrupoTipo
     {
         public int Id_Grupo { get; set; }
-        public int Id_Pefil { get; set; }
+        public PerfilMenu perfilMenu { get; set; }
         public string Nome { get; set; }
         public DateTime Data_Cadastro { get; set; }
         public DateTime Data_Ultima_Alteracao { get; set; }

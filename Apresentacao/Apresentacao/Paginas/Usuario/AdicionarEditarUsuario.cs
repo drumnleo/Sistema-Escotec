@@ -25,19 +25,17 @@ namespace Apresentacao.Paginas.Usuarios
         {
 
             Usuario usuario = new Usuario();
+            Foto foto = new Foto();
             GrupoTipo grupoTipo = new GrupoTipo();
             UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
 
-            usuario.Nome = txtNome.Text;
-            usuario.Sobrenome = txtSobrenome.Text;
-            usuario.Email = txtEmail.Text;
+
+
             usuario.Nome_Usuario = txtUsuario.Text;
             usuario.Senha = txtSenha.Text;
-            grupoTipo.ID_GRUPO = Convert.ToInt32(cbxGrupo.SelectedValue);
             usuario.grupoTipo = grupoTipo;
-            usuario.Data_Admissao = dateAdmissao.Value;
 
-            string retorno = usuarioNegocios.Inserir(usuario);
+            string retorno = usuarioNegocios.Inserir(usuario, foto);
 
             try
             {

@@ -13,18 +13,18 @@ namespace Negocios
     {
         AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
 
-        public string Inserir(Usuario usuario)
+        public string Inserir(Usuario usuario, Foto foto)
         {
             try
             {
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("@NOME", usuario.Nome);
-                acessoDados.AdicionarParametros("@SOBRENOME", usuario.Sobrenome);
-                acessoDados.AdicionarParametros("@DATA_ADMISSAO", usuario.Data_Admissao);
+                acessoDados.AdicionarParametros("@ID_PESSOA", usuario.Pessoa.Id_Pessoa);
+                acessoDados.AdicionarParametros("@ID_FUNCIONARIO", usuario.funcionario.Id_Funcionario);
+                acessoDados.AdicionarParametros("@ID_GRUPO", usuario.grupoTipo.Id_Grupo);
                 acessoDados.AdicionarParametros("@USUARIO", usuario.Nome_Usuario);
                 acessoDados.AdicionarParametros("@SENHA", usuario.Senha);
-                acessoDados.AdicionarParametros("@EMAIL", usuario.Email);
-                acessoDados.AdicionarParametros("ID_GRUPO", usuario.grupoTipo.ID_GRUPO);
+                acessoDados.AdicionarParametros("@FOTO", foto.Arquivo_Foto);
+
 
                 string idusuario = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_USUARIO_INSERIR").ToString();
 
@@ -53,12 +53,8 @@ namespace Negocios
                     Usuario usuario = new Usuario();
 
                     usuario.Id_Usuario = Convert.ToInt32(dataRow["ID_USUARIO"]);
-                    usuario.Nome = Convert.ToString(dataRow["NOME"]);
-                    usuario.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
-                    usuario.Data_Admissao = Convert.ToDateTime(dataRow["DATA_ADMISSAO"]);
                     usuario.Nome_Usuario = Convert.ToString(dataRow["USUARIO"]);
                     usuario.Senha = Convert.ToString(dataRow["SENHA"]);
-                    usuario.Email = Convert.ToString(dataRow["EMAIL"]);
 
                     usuarioColecao.Add(usuario);
                 }

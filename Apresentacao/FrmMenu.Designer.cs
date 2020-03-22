@@ -37,6 +37,7 @@
             this.bunifuTransition1 = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.sidePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.subMenutab = new Apresentacao.SubMenu();
             this.pnlMenuHeader = new System.Windows.Forms.Panel();
             this.btnDrawerPin = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnlMainMenu = new System.Windows.Forms.Panel();
@@ -49,7 +50,6 @@
             this.tab1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.subMenutab = new Apresentacao.SubMenu();
             this.sidePanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlMenuHeader.SuspendLayout();
@@ -124,6 +124,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(202, 708);
             this.panel2.TabIndex = 3;
+            // 
+            // subMenutab
+            // 
+            this.bunifuTransition1.SetDecoration(this.subMenutab, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.subMenutab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.subMenutab.Location = new System.Drawing.Point(0, 83);
+            this.subMenutab.Name = "subMenutab";
+            this.subMenutab.Size = new System.Drawing.Size(202, 625);
+            this.subMenutab.TabIndex = 1;
             // 
             // pnlMenuHeader
             // 
@@ -458,15 +467,6 @@
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 1;
             this.logo.TabStop = false;
-            // 
-            // subMenutab
-            // 
-            this.bunifuTransition1.SetDecoration(this.subMenutab, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.subMenutab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.subMenutab.Location = new System.Drawing.Point(0, 83);
-            this.subMenutab.Name = "subMenutab";
-            this.subMenutab.Size = new System.Drawing.Size(202, 625);
-            this.subMenutab.TabIndex = 1;
             // 
             // FrmMenu
             // 
