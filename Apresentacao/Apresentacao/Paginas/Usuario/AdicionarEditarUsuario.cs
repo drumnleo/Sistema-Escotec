@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ObjetoTransferencia;
 using Negocios;
+using KimtToo.VisualReactive;
 
 namespace Apresentacao.Paginas.Usuarios
 {
@@ -52,22 +53,27 @@ namespace Apresentacao.Paginas.Usuarios
 
         private void AdicionarEditarUsuario_Load(object sender, EventArgs e)
         {
-            GrupoColecao grupoColecao = new GrupoColecao();
+            //GrupoColecao grupoColecao = new GrupoColecao();
 
-            GrupoUsuariosNegocios grupoUsuariosNegocios = new GrupoUsuariosNegocios();
-            string txt = "";
-            grupoColecao = grupoUsuariosNegocios.ConsultarPorNome(txt);
+            //GrupoUsuariosNegocios grupoUsuariosNegocios = new GrupoUsuariosNegocios();
+            //string txt = "";
+            //grupoColecao = grupoUsuariosNegocios.ConsultarPorNome(txt);
 
-            cbxGrupo.DataSource = null;
-            cbxGrupo.DataSource = grupoColecao;
-            cbxGrupo.ValueMember = "ID_GRUPO";
-            cbxGrupo.DisplayMember = "NOME";
+            //cbxGrupo.DataSource = null;
+            //cbxGrupo.DataSource = grupoColecao;
+            //cbxGrupo.ValueMember = "ID_GRUPO";
+            //cbxGrupo.DisplayMember = "NOME";
 
         }
 
         private void AddEditMember_Resize(object sender, EventArgs e)
         {
             container.Left = this.Width / 2 - container.Width / 2;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            new Apresentacao.PopUp.transparentBg(new Apresentacao.PopUp.SearchDialogs.SearchDialog());
         }
     }
 }

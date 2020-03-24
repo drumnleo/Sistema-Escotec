@@ -9,9 +9,9 @@ namespace ObjetoTransferencia
     public class Pessoa
     {
         public int Id_Pessoa { get; set; }
-        public Profissao Profissao { get; set; }
-        public TipoDoc TipoDoc { get; set; }
-        public EstadoCivil EstadoCivil { get; set; }
+        public int Id_Profissao { get; set; }
+        public int Id_TipoDoc { get; set; }
+        public int Id_EstadoCivil { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public string CPF { get; set; }
@@ -20,9 +20,9 @@ namespace ObjetoTransferencia
         public string Email { get; set; }
         public string Pai { get; set; }
         public string Mae { get; set; }
-        public bool Sexo { get; set; }
+        public Char Sexo { get; set; }
         public DateTime Data_Cadastro { get; set; }
-        public Usuario Usuario { get; set; }
+        public int Id_Usuario { get; set; }
         public DateTime Data_Ultima_Alteracao { get; set; }
 
 

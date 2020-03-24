@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="CargoNegocios.cs" />
     <Compile Include="CursoNegocios.cs" />
+    <Compile Include="EstadoCivilNegocios.cs" />
     <Compile Include="FeriadoNegocios.cs" />
     <Compile Include="FuncionarioNegocios.cs" />
     <Compile Include="GrupoUsuariosNegocios.cs" />
@@ -52,7 +53,10 @@
     <Compile Include="LoginNegocios.cs" />
     <Compile Include="MarketingNegocios.cs" />
     <Compile Include="PerfilNegocios.cs" />
+    <Compile Include="PessoaNegocios.cs" />
+    <Compile Include="ProfissaoNegocios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoDocNegocios.cs" />
     <Compile Include="TipoLaboratorioNegocios.cs" />
     <Compile Include="UsuarioNegocios.cs" />
   </ItemGroup>
