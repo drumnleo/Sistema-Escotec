@@ -37,7 +37,6 @@
             this.bunifuTransition1 = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.sidePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.subMenutab = new Apresentacao.SubMenu();
             this.pnlMenuHeader = new System.Windows.Forms.Panel();
             this.btnDrawerPin = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnlMainMenu = new System.Windows.Forms.Panel();
@@ -50,6 +49,8 @@
             this.tab1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.subMenutab = new Apresentacao.SubMenu();
+            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.sidePanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlMenuHeader.SuspendLayout();
@@ -125,15 +126,6 @@
             this.panel2.Size = new System.Drawing.Size(202, 708);
             this.panel2.TabIndex = 3;
             // 
-            // subMenutab
-            // 
-            this.bunifuTransition1.SetDecoration(this.subMenutab, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.subMenutab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.subMenutab.Location = new System.Drawing.Point(0, 83);
-            this.subMenutab.Name = "subMenutab";
-            this.subMenutab.Size = new System.Drawing.Size(202, 625);
-            this.subMenutab.TabIndex = 1;
-            // 
             // pnlMenuHeader
             // 
             this.pnlMenuHeader.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -165,6 +157,7 @@
             // pnlMainMenu
             // 
             this.pnlMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.pnlMainMenu.Controls.Add(this.bunifuFlatButton2);
             this.pnlMainMenu.Controls.Add(this.tab6);
             this.pnlMainMenu.Controls.Add(this.tab5);
             this.pnlMainMenu.Controls.Add(this.tab4);
@@ -468,6 +461,54 @@
             this.logo.TabIndex = 1;
             this.logo.TabStop = false;
             // 
+            // subMenutab
+            // 
+            this.bunifuTransition1.SetDecoration(this.subMenutab, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.subMenutab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.subMenutab.Location = new System.Drawing.Point(0, 83);
+            this.subMenutab.Name = "subMenutab";
+            this.subMenutab.Size = new System.Drawing.Size(202, 625);
+            this.subMenutab.TabIndex = 1;
+            // 
+            // bunifuFlatButton2
+            // 
+            this.bunifuFlatButton2.Active = false;
+            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(36)))), ((int)(((byte)(88)))));
+            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton2.BorderRadius = 0;
+            this.bunifuFlatButton2.ButtonText = "      LogOut";
+            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.bunifuFlatButton2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
+            this.bunifuFlatButton2.Iconimage_right = null;
+            this.bunifuFlatButton2.Iconimage_right_Selected = null;
+            this.bunifuFlatButton2.Iconimage_Selected = null;
+            this.bunifuFlatButton2.IconMarginLeft = 0;
+            this.bunifuFlatButton2.IconMarginRight = 0;
+            this.bunifuFlatButton2.IconRightVisible = true;
+            this.bunifuFlatButton2.IconRightZoom = 0D;
+            this.bunifuFlatButton2.IconVisible = true;
+            this.bunifuFlatButton2.IconZoom = 40D;
+            this.bunifuFlatButton2.IsTab = true;
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(0, 457);
+            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
+            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(75)))), ((int)(((byte)(152)))));
+            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton2.selected = false;
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(200, 51);
+            this.bunifuFlatButton2.TabIndex = 9;
+            this.bunifuFlatButton2.Tag = "5";
+            this.bunifuFlatButton2.Text = "      LogOut";
+            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -482,6 +523,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SisEscotec";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMenu_FormClosed);
             this.sidePanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.pnlMenuHeader.ResumeLayout(false);
@@ -513,5 +555,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton tab1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox logo;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
     }
 }

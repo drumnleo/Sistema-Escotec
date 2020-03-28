@@ -22,6 +22,14 @@ namespace Apresentacao.Paginas.Usuarios
 
         }
 
+        private static Pessoa pessoaGetSet ;
+
+        public static Pessoa PessoaGetSet
+        {
+            get { return pessoaGetSet; }
+            set { pessoaGetSet = value; }
+        }
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
 
@@ -74,6 +82,20 @@ namespace Apresentacao.Paginas.Usuarios
         private void btnSearch_Click(object sender, EventArgs e)
         {
             new Apresentacao.PopUp.transparentBg(new Apresentacao.PopUp.SearchDialogs.SearchDialog());
+        }
+
+        private void timerpreenche_Tick(object sender, EventArgs e)
+        {
+            if (pessoaGetSet != null)
+            {
+                tbxCPF.Text = pessoaGetSet.CPF;
+                tbxCPF.Enabled = false;
+                tbxNome.Text = pessoaGetSet.Nome;
+                tbxNome.Enabled = false;
+                tbxSobrenome.Text = pessoaGetSet.Sobrenome;
+                tbxSobrenome.Enabled = false;
+            }
+
         }
     }
 }

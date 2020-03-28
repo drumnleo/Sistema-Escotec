@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ObjetoTransferencia;
 using Negocios;
 using System.Reflection;
+using Apresentacao.Paginas.Usuarios;
 
 namespace Apresentacao.PopUp.SearchDialogs
 {
@@ -203,6 +204,8 @@ namespace Apresentacao.PopUp.SearchDialogs
 
             dtnascimento.Value = pessoa.Data_Nasc;
             dtnascimento.Enabled = false;
+
+            AdicionarEditarUsuario.PessoaGetSet = pessoa;
 
         }
 

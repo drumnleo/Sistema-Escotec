@@ -36,7 +36,8 @@ namespace Apresentacao
                 MessageBox.Show("Erro ao fazer login. Detalhes:" + login + ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            this.Hide();
+            this.WindowState = FormWindowState.Minimized;
+            this.ShowInTaskbar = false;
         }
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)

@@ -92,6 +92,16 @@ namespace Apresentacao
             btnDrawerPin.Image = MouseDetect.Enabled ? pinnerImages.Images[0] : pinnerImages.Images[1];
         }
 
-        
+        private void FrmMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+
+            FrmLogin_flat.ActiveForm.WindowState = FormWindowState.Maximized;
+            this.Close();
+        }
     }
 }
