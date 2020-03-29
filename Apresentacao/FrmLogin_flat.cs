@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocios;
+using ObjetoTransferencia;
 
 namespace Apresentacao
 {
@@ -27,6 +28,10 @@ namespace Apresentacao
             try
             {
                 int retorno = int.Parse(login);
+
+                Usuario usuario = new Usuario();
+                usuario.Id_Usuario = retorno;
+                LoginNegocios.UsuarioLogadoGetSet = usuario;
 
                 FrmMenu frmMenu = new FrmMenu();
                 frmMenu.Show();

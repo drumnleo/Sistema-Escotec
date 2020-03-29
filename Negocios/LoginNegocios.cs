@@ -81,5 +81,7 @@ namespace Negocios
             }
         }
 
+        public static Usuario UsuarioLogadoGetSet { get; set; }
+
     }
 }

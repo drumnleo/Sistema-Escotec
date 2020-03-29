@@ -12,6 +12,68 @@ namespace Negocios
     public class PessoaNegocios
     {
         private readonly AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
+
+        public string Inserir(Pessoa pessoa)
+        {
+            try
+            {
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_PROFISSAO", pessoa.Id_Profissao);
+                acessoDados.AdicionarParametros("@ID_TIPODOC", pessoa.Id_TipoDoc);
+                acessoDados.AdicionarParametros("@ID_ESTADO_CIVIL", pessoa.Id_EstadoCivil);
+                acessoDados.AdicionarParametros("@NOME", pessoa.Nome);
+                acessoDados.AdicionarParametros("@SOBRENOME", pessoa.Sobrenome);
+                acessoDados.AdicionarParametros("@CPF", pessoa.CPF);
+                acessoDados.AdicionarParametros("@DOC", pessoa.Doc);
+                acessoDados.AdicionarParametros("@DATA_NASC", pessoa.Data_Nasc);
+                acessoDados.AdicionarParametros("@EMAIL", pessoa.Email);
+                acessoDados.AdicionarParametros("@PAI", pessoa.Pai);
+                acessoDados.AdicionarParametros("@MAE", pessoa.Mae);
+                acessoDados.AdicionarParametros("@SEXO", pessoa.Sexo);
+                acessoDados.AdicionarParametros("@ID_USUARIO", pessoa.Id_Usuario);
+
+                string idPessoa = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_PESSOA_INSERIR").ToString();
+
+                return idPessoa;
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+
+        }
+
+        public string AtualizarporId(Pessoa pessoa)
+        {
+            try
+            {
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_PESSOA", pessoa.Id_Pessoa);
+                acessoDados.AdicionarParametros("@ID_PROFISSAO", pessoa.Id_Profissao);
+                acessoDados.AdicionarParametros("@ID_TIPODOC", pessoa.Id_TipoDoc);
+                acessoDados.AdicionarParametros("@ID_ESTADO_CIVIL", pessoa.Id_EstadoCivil);
+                acessoDados.AdicionarParametros("@NOME", pessoa.Nome);
+                acessoDados.AdicionarParametros("@SOBRENOME", pessoa.Sobrenome);
+                acessoDados.AdicionarParametros("@CPF", pessoa.CPF);
+                acessoDados.AdicionarParametros("@DOC", pessoa.Doc);
+                acessoDados.AdicionarParametros("@DATA_NASC", pessoa.Data_Nasc);
+                acessoDados.AdicionarParametros("@EMAIL", pessoa.Email);
+                acessoDados.AdicionarParametros("@PAI", pessoa.Pai);
+                acessoDados.AdicionarParametros("@MAE", pessoa.Mae);
+                acessoDados.AdicionarParametros("@SEXO", pessoa.Sexo);
+                acessoDados.AdicionarParametros("@ID_USUARIO", pessoa.Id_Usuario);
+
+                string idPessoa = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_PESSOA_ATUALIZARPORID").ToString();
+
+                return idPessoa;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
         public PessoaColecao ConsultarPorDescricao(string nome)
         {
             try
@@ -55,11 +117,11 @@ namespace Negocios
             }
         }
 
-        public PessoaColecao ConsultarPorId(int id)
+        public Pessoa ConsultarPorId(int id)
         {
             try
             {
-                PessoaColecao pessoaColecao = new PessoaColecao();
+                Pessoa pessoa = new Pessoa();
 
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@ID", id);
@@ -68,8 +130,6 @@ namespace Negocios
 
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    Pessoa pessoa = new Pessoa();
-
                     pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
                     pessoa.Id_Profissao = Convert.ToInt32(dataRow["ID_PROFISSAO"]);
                     pessoa.Id_TipoDoc = Convert.ToInt32(dataRow["ID_TIPODOC"]);
@@ -87,10 +147,9 @@ namespace Negocios
                     pessoa.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
                     pessoa.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
 
-                    pessoaColecao.Add(pessoa);
                 }
 
-                return pessoaColecao;
+                return pessoa;
             }
             catch (Exception ex)
             {
