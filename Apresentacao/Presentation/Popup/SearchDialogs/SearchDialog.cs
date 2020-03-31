@@ -10,15 +10,15 @@ using System.Windows.Forms;
 using ObjetoTransferencia;
 using Negocios;
 using System.Reflection;
-using Apresentacao.Paginas.Usuarios;
+using Apresentacao.Presentation.Pages;
 using Apresentacao.Validacao_cpf_e_afins;
 
-namespace Apresentacao.PopUp.SearchDialogs
+namespace Apresentacao.Presentation.Popup.SearchDialogs
 {
     
     public partial class SearchDialog : Form
     {
-        Pessoa pessoaselecionada = new Pessoa();
+        Pessoa pessoaescolhida = new Pessoa();
         public SearchDialog()
         {
             InitializeComponent();
@@ -146,7 +146,7 @@ namespace Apresentacao.PopUp.SearchDialogs
             dtnascimento.Value = pessoa.Data_Nasc;
             dtnascimento.Enabled = false;
 
-            AdicionarEditarUsuario.PessoaGetSet = pessoa;
+            AdicionarEditarFuncionario.PessoaGetSet = pessoa;
 
         }
 
@@ -167,6 +167,7 @@ namespace Apresentacao.PopUp.SearchDialogs
             btnAtualizar.Visible = true;
             btnSelecionar.Location = new Point(124, 291);
             btnSelecionar.Visible = true;
+            pessoaescolhida = pessoaSelecionada;
         }
 
         private void btnpesquisar_Click(object sender, EventArgs e)
@@ -241,7 +242,7 @@ namespace Apresentacao.PopUp.SearchDialogs
                     int idPessoa = Convert.ToInt32(retorno);
                     Pessoa pessoaCadastrada = pessoaNegocios.ConsultarPorId(idPessoa);
                     MessageBox.Show("Cadastro base inserido com sucesso!");
-                    AdicionarEditarUsuario.PessoaGetSet = pessoaCadastrada;
+                    AdicionarEditarFuncionario.PessoaGetSet = pessoaCadastrada;
                     this.Close();
                 }
                 catch (Exception)
@@ -292,7 +293,7 @@ namespace Apresentacao.PopUp.SearchDialogs
         private void btnSair_Click(object sender, EventArgs e)
         {
             Pessoa pessoa = new Pessoa();
-            AdicionarEditarUsuario.PessoaGetSet = pessoa;
+            AdicionarEditarFuncionario.PessoaGetSet = pessoa;
             this.Close();
         }
 
@@ -405,7 +406,7 @@ namespace Apresentacao.PopUp.SearchDialogs
                     int idPessoa = Convert.ToInt32(retorno);
                     Pessoa pessoaCadastrada = pessoaNegocios.ConsultarPorId(idPessoa);
                     MessageBox.Show("Cadastro base atualizado com sucesso!");
-                    AdicionarEditarUsuario.PessoaGetSet = pessoaCadastrada;
+                    AdicionarEditarFuncionario.PessoaGetSet = pessoaCadastrada;
                     this.Close();
                 }
                 catch (Exception)
@@ -418,7 +419,8 @@ namespace Apresentacao.PopUp.SearchDialogs
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
-
+            AdicionarEditarFuncionario.PessoaGetSet = pessoaescolhida;
+            this.Close();
         }
     }
 }

@@ -13,6 +13,23 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -23,6 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -125,48 +143,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcaoNaTela.cs" />
-    <Compile Include="Apresentacao\Rotas.cs" />
-    <Compile Include="FrmLogin_flat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmLogin_flat.Designer.cs">
-      <DependentUpon>FrmLogin_flat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMenu.Designer.cs">
-      <DependentUpon>FrmMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPerfilConsultar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPerfilConsultar.Designer.cs">
-      <DependentUpon>FrmPerfilConsultar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPerfilInserir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPerfilInserir.Designer.cs">
-      <DependentUpon>FrmPerfilInserir.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Apresentacao\Paginas\Usuario\AdicionarEditarUsuario.cs">
+    <Compile Include="Presentation\Pages\Funcionarios\AdicionarEditarFuncionario.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Apresentacao\Paginas\Usuario\AdicionarEditarUsuario.Designer.cs">
+    <Compile Include="Presentation\Pages\Funcionarios\AdicionarEditarFuncionario.Designer.cs">
+      <DependentUpon>AdicionarEditarFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Pages\Rotas.cs" />
+    <Compile Include="Presentation\FrmLogin_flat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FrmLogin_flat.Designer.cs">
+      <DependentUpon>FrmLogin_flat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Pages\Usuarios\AdicionarEditarUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Pages\Usuarios\AdicionarEditarUsuario.Designer.cs">
       <DependentUpon>AdicionarEditarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\SearchDialogs\SearchDialog.cs">
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\SearchDialogs\SearchDialog.Designer.cs">
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog.Designer.cs">
       <DependentUpon>SearchDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\transparentBg1.cs">
+    <Compile Include="Presentation\Popup\transparentBg1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\transparentBg1.Designer.cs">
+    <Compile Include="Presentation\Popup\transparentBg1.Designer.cs">
       <DependentUpon>transparentBg1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -176,32 +187,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Apresentacao\Drawer\SubMenu.cs">
+    <Compile Include="Presentation\Drawer\SubMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Apresentacao\Drawer\SubMenu.Designer.cs">
+    <Compile Include="Presentation\Drawer\SubMenu.Designer.cs">
       <DependentUpon>SubMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Validacao cpf e afins\Validadocs.cs" />
-    <EmbeddedResource Include="FrmLogin_flat.resx">
+    <Compile Include="Validadocs.cs" />
+    <EmbeddedResource Include="Presentation\Pages\Funcionarios\AdicionarEditarFuncionario.resx">
+      <DependentUpon>AdicionarEditarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FrmLogin_flat.resx">
       <DependentUpon>FrmLogin_flat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMenu.resx">
+    <EmbeddedResource Include="Presentation\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPerfilConsultar.resx">
-      <DependentUpon>FrmPerfilConsultar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPerfilInserir.resx">
-      <DependentUpon>FrmPerfilInserir.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Apresentacao\Paginas\Usuario\AdicionarEditarUsuario.resx">
+    <EmbeddedResource Include="Presentation\Pages\Usuarios\AdicionarEditarUsuario.resx">
       <DependentUpon>AdicionarEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\SearchDialogs\SearchDialog.resx">
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog.resx">
       <DependentUpon>SearchDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\transparentBg1.resx">
+    <EmbeddedResource Include="Presentation\Popup\transparentBg1.resx">
       <DependentUpon>transparentBg1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -209,7 +217,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Apresentacao\Drawer\SubMenu.resx">
+    <EmbeddedResource Include="Presentation\Drawer\SubMenu.resx">
       <DependentUpon>SubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -255,6 +263,20 @@
     <None Include="Resources\waiting_room_32px.png" />
     <None Include="Resources\waiting_room_64px.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentation\Shared\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

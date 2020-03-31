@@ -11,9 +11,9 @@ using KimtToo.VisualReactive;
 
 namespace Apresentacao
 {
-    public partial class SubMenu : UserControl
+    public partial class subMenu : UserControl
     {
-        public SubMenu()
+        public subMenu()
         {
             InitializeComponent();
 
@@ -21,7 +21,6 @@ namespace Apresentacao
             hidder.Height = 30;
 
             VSReactive<int>.Subscribe(VSroute.menu, e => tabControl1.SelectedIndex = e);
-
 
         }
 

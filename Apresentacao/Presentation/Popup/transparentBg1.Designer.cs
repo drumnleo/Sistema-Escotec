@@ -1,4 +1,4 @@
-﻿namespace Apresentacao.PopUp
+﻿namespace Apresentacao.Presentation.Popup
 {
     partial class transparentBg
     {

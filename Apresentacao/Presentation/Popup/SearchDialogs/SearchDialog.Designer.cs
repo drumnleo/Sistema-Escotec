@@ -1,4 +1,4 @@
-﻿namespace Apresentacao.PopUp.SearchDialogs
+﻿namespace Apresentacao.Presentation.Popup.SearchDialogs
 {
     partial class SearchDialog
     {

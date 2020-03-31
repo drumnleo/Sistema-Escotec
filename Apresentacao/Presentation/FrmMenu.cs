@@ -10,12 +10,13 @@ namespace Apresentacao
         {
             InitializeComponent();
 
-            addPageType(new Paginas.Usuarios.AdicionarEditarUsuario());
+            addPageType(new Presentation.Pages.AdicionarEditarUsuario());
+            addPageType(new Presentation.Pages.AdicionarEditarFuncionario());
 
-            VSReactive<string>.Subscribe(VSroute.page, (e) => setPage(e));
+            VSReactive<string>.Subscribe(VSroute.page, (e) => SetPage(e));
         }
 
-        void setPage(string typeName)
+        void SetPage(string typeName)
         {
             foreach (Control page in parentContainer.Controls)
                 if (page.GetType().Name == typeName)

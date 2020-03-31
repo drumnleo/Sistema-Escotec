@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Apresentacao.PopUp
+namespace Apresentacao.Presentation.Popup
 {
     /// <summary>
     /// Class transparentBg1.

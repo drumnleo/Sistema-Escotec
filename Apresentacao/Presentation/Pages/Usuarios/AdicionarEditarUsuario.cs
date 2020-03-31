@@ -11,7 +11,7 @@ using ObjetoTransferencia;
 using Negocios;
 using KimtToo.VisualReactive;
 
-namespace Apresentacao.Paginas.Usuarios
+namespace Apresentacao.Presentation.Pages
 {
     public partial class AdicionarEditarUsuario : UserControl
     {
@@ -81,7 +81,7 @@ namespace Apresentacao.Paginas.Usuarios
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            new Apresentacao.PopUp.transparentBg(new Apresentacao.PopUp.SearchDialogs.SearchDialog());
+            new Apresentacao.Presentation.Popup.transparentBg(new Apresentacao.Presentation.Popup.SearchDialogs.SearchDialog());
         }
 
         private void timerpreenche_Tick(object sender, EventArgs e)
