@@ -53,80 +53,80 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Core">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.Core.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPages">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuToolTip">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.ToggleSwitch">
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.ToggleSwitch.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.ToggleSwitch.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\bunifu\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -171,6 +171,12 @@
     <Compile Include="Presentation\Pages\Usuarios\AdicionarEditarUsuario.Designer.cs">
       <DependentUpon>AdicionarEditarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Funcionario .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Funcionario .Designer.cs">
+      <DependentUpon>SearchDialog_Funcionario .cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Pages\Usuarios\AdicionarEditarUsuario.resx">
       <DependentUpon>AdicionarEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Funcionario .resx">
+      <DependentUpon>SearchDialog_Funcionario .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog.resx">
       <DependentUpon>SearchDialog.cs</DependentUpon>

@@ -28,6 +28,14 @@ namespace Apresentacao.Presentation.Pages
             set { pessoaGetSet = value; }
         }
 
+        private static Funcionario funcionarioGetSet;
+        
+        public static Funcionario FuncionarioGetSet
+        {
+            get { return funcionarioGetSet; }
+            set { funcionarioGetSet = value; }
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             new Apresentacao.Presentation.Popup.transparentBg(new Apresentacao.Presentation.Popup.SearchDialogs.SearchDialog());
@@ -44,6 +52,11 @@ namespace Apresentacao.Presentation.Pages
                 tbxSobrenome.Text = pessoaGetSet.Sobrenome;
                 tbxSobrenome.Enabled = false;
             }
+
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
 
         }
     }
