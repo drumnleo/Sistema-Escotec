@@ -56,6 +56,7 @@ namespace Negocios
                 {
                     TipoDoc tipoDoc = new TipoDoc();
 
+                    tipoDoc.Id_TipoDoc = Convert.ToInt32(dataRow["ID_TIPODOC"]);
                     tipoDoc.Descricao = Convert.ToString(dataRow["DESCRICAO"]);
 
                     tipoDocColecao.Add(tipoDoc);

@@ -12,7 +12,7 @@ namespace AcessoBandoDados.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.5.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -37,8 +37,8 @@ namespace AcessoBandoDados.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WSERVER2016;Initial Catalog=ESCOTECDB;Persist Security Info=True;User" +
-            " ID=leonardo;Password=leo144112")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=187.2.79.249;Initial Catalog=ESCOTECDB;Persist Security Info=True;Use" +
+            "r ID=leonardo;Password=leo144112")]
         public string stringConexao {
             get {
                 return ((string)(this["stringConexao"]));

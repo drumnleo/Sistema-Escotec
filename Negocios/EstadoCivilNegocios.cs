@@ -56,6 +56,7 @@ namespace Negocios
                 {
                     EstadoCivil estadoCivil = new EstadoCivil();
 
+                    estadoCivil.Id_EstadoCivil = Convert.ToInt32(dataRow["ID_ESTADOCIVIL"]);
                     estadoCivil.Descricao = Convert.ToString(dataRow["DESCRICAO"]);
 
                     estadoCivilColecao.Add(estadoCivil);

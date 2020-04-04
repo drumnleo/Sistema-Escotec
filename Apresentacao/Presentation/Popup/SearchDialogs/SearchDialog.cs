@@ -19,6 +19,10 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
     public partial class SearchDialog : Form
     {
         Pessoa pessoaescolhida = new Pessoa();
+
+        Pessoa pessoaSelecionada = new Pessoa();
+
+        int id_Pessoa;
         public SearchDialog()
         {
             InitializeComponent();
@@ -62,13 +66,70 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             cbxTipoDoc.DisplayMember = "DESCRICAO";
         }
 
+        private void CarregaComboBox_cbxEstadoCivil()
+        {
+            EstadoCivilNegocios estadoCivilNegocios = new EstadoCivilNegocios();
+            string txt = "";
+            EstadoCivilColecao estadoCivilColecao = estadoCivilNegocios.ConsultarPorDescricao(txt);
+
+            cbxEstadoCivil.DataSource = null;
+            cbxEstadoCivil.DataSource = estadoCivilColecao;
+            cbxEstadoCivil.ValueMember = "ID_ESTADOCIVIL";
+            cbxEstadoCivil.DisplayMember = "DESCRICAO";
+        }
+
+        private void CarregaComboBox_cbxProfissao()
+        {
+            ProfissaoNegocios profissaoNegocios = new ProfissaoNegocios();
+            string txt = "";
+            ProfissaoColecao profissaoColecao = profissaoNegocios.ConsultarPorDescricao(txt);
+
+            cbxProfissao.DataSource = null;
+            cbxProfissao.DataSource = profissaoColecao;
+            cbxProfissao.ValueMember = "ID_PROFISSAO";
+            cbxProfissao.DisplayMember = "Nome_Profissao";
+        }
+
+        private void CarregaComboBox_cbxTipoDoc()
+        {
+            TipoDocNegocios tipoDocNegocios = new TipoDocNegocios();
+            string txt = "";
+            TipoDocColecao tipoDocColecao = tipoDocNegocios.ConsultarPorDescricao(txt);
+
+            cbxTipoDoc.DataSource = null;
+            cbxTipoDoc.DataSource = tipoDocColecao;
+            cbxTipoDoc.ValueMember = "ID_TIPODOC";
+            cbxTipoDoc.DisplayMember = "DESCRICAO";
+        }
+
         private void SearchDialog_Shown(object sender, EventArgs e)
         {
             tbxSearch.Focus();
         }
 
+        private void dataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            atualizarcampos();
+        }
+
+        private void atualizarcampos()
+        {
+            PessoaNegocios pessoaNegocios = new PessoaNegocios();
+            pessoaSelecionada = pessoaNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value));
+
+            CarregarPessoaSelecionada(pessoaSelecionada);
+            btnAtualizar.Visible = true;
+            btnNovo.Text = "Novo";
+            btnAtualizar.Location = new Point(267, 291);
+            btnAtualizar.Visible = true;
+            btnSelecionar.Location = new Point(124, 291);
+            btnSelecionar.Visible = true;
+            pessoaescolhida = pessoaSelecionada;
+        }
+
         private void CarregarPessoaSelecionada(Pessoa pessoa)
         {
+
             tbxNome.Text = pessoa.Nome;
             tbxNome.Enabled = false;
             tbxNome.Refresh();
@@ -126,7 +187,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             tbxEmail.Enabled = false;
             tbxEmail.Refresh();
 
-            if(pessoa.Sexo == 'M' || pessoa.Sexo == 'm')
+            if (pessoa.Sexo == 'M' || pessoa.Sexo == 'm')
             {
                 ckboxmasc.Checked = true;
                 ckboxmasc.Enabled = false;
@@ -145,38 +206,16 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
             dtnascimento.Value = pessoa.Data_Nasc;
             dtnascimento.Enabled = false;
-
-            AdicionarEditarFuncionario.PessoaGetSet = pessoa;
-
-        }
-
-        private void dataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            atualizarcampos();
-        }
-
-        private void atualizarcampos()
-        {
-            PessoaNegocios pessoaNegocios = new PessoaNegocios();
-            Pessoa pessoaSelecionada = pessoaNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value));
-
-            CarregarPessoaSelecionada(pessoaSelecionada);
-            btnAtualizar.Visible = true;
-            btnNovo.Text = "Novo";
-            btnAtualizar.Location = new Point(267, 291);
-            btnAtualizar.Visible = true;
-            btnSelecionar.Location = new Point(124, 291);
-            btnSelecionar.Visible = true;
-            pessoaescolhida = pessoaSelecionada;
         }
 
         private void btnpesquisar_Click(object sender, EventArgs e)
         {
-            ClearTextBoxes(this.Controls);
+
             Enableallcontrols();
             CarregaComboBox();
             PessoaNegocios pessoaNegocios = new PessoaNegocios();
             PessoaColecao pessoaColecao = pessoaNegocios.ConsultarPorDescricao(tbxSearch.Text);
+            ClearTextBoxes(this.Controls);
 
             dataGrid.DataSource = null;
             dataGrid.DataSource = pessoaColecao;
@@ -374,6 +413,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 PessoaNegocios pessoaNegocios = new PessoaNegocios();
                 Validadocs validadocs = new Validadocs();
 
+                pessoa.Id_Pessoa = pessoaSelecionada.Id_Pessoa;
                 pessoa.Id_Profissao = Convert.ToInt32(cbxProfissao.SelectedValue);
                 pessoa.Id_TipoDoc = Convert.ToInt32(cbxTipoDoc.SelectedValue);
                 pessoa.Id_EstadoCivil = Convert.ToInt32(cbxEstadoCivil.SelectedValue);
@@ -421,6 +461,21 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         {
             AdicionarEditarFuncionario.PessoaGetSet = pessoaescolhida;
             this.Close();
+        }
+
+        private void cbxEstadoCivil_Click(object sender, EventArgs e)
+        {
+            CarregaComboBox_cbxEstadoCivil();
+        }
+
+        private void cbxTipoDoc_Click(object sender, EventArgs e)
+        {
+            CarregaComboBox_cbxTipoDoc();
+        }
+
+        private void cbxProfissao_Click(object sender, EventArgs e)
+        {
+            CarregaComboBox_cbxProfissao();
         }
     }
 }

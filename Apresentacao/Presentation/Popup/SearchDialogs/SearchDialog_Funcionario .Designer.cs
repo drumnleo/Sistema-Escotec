@@ -35,26 +35,31 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btnpesquisar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.tbxSearch = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.PanelDown = new System.Windows.Forms.Panel();
-            this.btnSelecionar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSair = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnSelecionar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.PanelTop = new System.Windows.Forms.Panel();
             this.lblpesquisa = new System.Windows.Forms.Label();
             this.PanelCenter = new System.Windows.Forms.Panel();
             this.dataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.verifica = new System.Windows.Forms.Timer(this.components);
+            this.ID_FUNCIONARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.verifica = new System.Windows.Forms.Timer(this.components);
+            this.DATA_ADMISSAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HORA_ENTRADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HORA_SAIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelDown.SuspendLayout();
             this.PanelTop.SuspendLayout();
             this.PanelCenter.SuspendLayout();
@@ -219,77 +224,6 @@
             this.PanelDown.Size = new System.Drawing.Size(847, 67);
             this.PanelDown.TabIndex = 2;
             // 
-            // btnSelecionar
-            // 
-            this.btnSelecionar.AllowToggling = false;
-            this.btnSelecionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSelecionar.AnimationSpeed = 220;
-            this.btnSelecionar.AutoGenerateColors = false;
-            this.btnSelecionar.BackColor = System.Drawing.Color.Transparent;
-            this.btnSelecionar.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnSelecionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSelecionar.BackgroundImage")));
-            this.btnSelecionar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSelecionar.ButtonText = "Selecionar";
-            this.btnSelecionar.ButtonTextMarginLeft = 0;
-            this.btnSelecionar.ColorContrastOnClick = 45;
-            this.btnSelecionar.ColorContrastOnHover = 45;
-            this.btnSelecionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnSelecionar.CustomizableEdges = borderEdges3;
-            this.btnSelecionar.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSelecionar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.btnSelecionar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSelecionar.DisabledForecolor = System.Drawing.Color.White;
-            this.btnSelecionar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnSelecionar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnSelecionar.ForeColor = System.Drawing.Color.White;
-            this.btnSelecionar.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelecionar.IconMarginLeft = 11;
-            this.btnSelecionar.IconPadding = 10;
-            this.btnSelecionar.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelecionar.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnSelecionar.IdleBorderRadius = 30;
-            this.btnSelecionar.IdleBorderThickness = 1;
-            this.btnSelecionar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnSelecionar.IdleIconLeftImage = null;
-            this.btnSelecionar.IdleIconRightImage = null;
-            this.btnSelecionar.IndicateFocus = true;
-            this.btnSelecionar.Location = new System.Drawing.Point(541, 15);
-            this.btnSelecionar.Name = "btnSelecionar";
-            this.btnSelecionar.onHoverState.BorderColor = System.Drawing.Color.Blue;
-            this.btnSelecionar.onHoverState.BorderRadius = 30;
-            this.btnSelecionar.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSelecionar.onHoverState.BorderThickness = 1;
-            this.btnSelecionar.onHoverState.FillColor = System.Drawing.Color.Blue;
-            this.btnSelecionar.onHoverState.ForeColor = System.Drawing.Color.Empty;
-            this.btnSelecionar.onHoverState.IconLeftImage = null;
-            this.btnSelecionar.onHoverState.IconRightImage = null;
-            this.btnSelecionar.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnSelecionar.OnIdleState.BorderRadius = 30;
-            this.btnSelecionar.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSelecionar.OnIdleState.BorderThickness = 1;
-            this.btnSelecionar.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnSelecionar.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnSelecionar.OnIdleState.IconLeftImage = null;
-            this.btnSelecionar.OnIdleState.IconRightImage = null;
-            this.btnSelecionar.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnSelecionar.OnPressedState.BorderRadius = 30;
-            this.btnSelecionar.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSelecionar.OnPressedState.BorderThickness = 1;
-            this.btnSelecionar.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnSelecionar.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnSelecionar.OnPressedState.IconLeftImage = null;
-            this.btnSelecionar.OnPressedState.IconRightImage = null;
-            this.btnSelecionar.Size = new System.Drawing.Size(132, 35);
-            this.btnSelecionar.TabIndex = 12;
-            this.btnSelecionar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSelecionar.TextMarginLeft = 0;
-            this.btnSelecionar.UseDefaultRadiusAndThickness = true;
-            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
-            // 
             // btnSair
             // 
             this.btnSair.AllowToggling = false;
@@ -361,6 +295,77 @@
             this.btnSair.UseDefaultRadiusAndThickness = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
+            // btnSelecionar
+            // 
+            this.btnSelecionar.AllowToggling = false;
+            this.btnSelecionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelecionar.AnimationSpeed = 220;
+            this.btnSelecionar.AutoGenerateColors = false;
+            this.btnSelecionar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSelecionar.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.btnSelecionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSelecionar.BackgroundImage")));
+            this.btnSelecionar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSelecionar.ButtonText = "Selecionar";
+            this.btnSelecionar.ButtonTextMarginLeft = 0;
+            this.btnSelecionar.ColorContrastOnClick = 45;
+            this.btnSelecionar.ColorContrastOnHover = 45;
+            this.btnSelecionar.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnSelecionar.CustomizableEdges = borderEdges3;
+            this.btnSelecionar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSelecionar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.btnSelecionar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSelecionar.DisabledForecolor = System.Drawing.Color.White;
+            this.btnSelecionar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnSelecionar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnSelecionar.ForeColor = System.Drawing.Color.White;
+            this.btnSelecionar.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelecionar.IconMarginLeft = 11;
+            this.btnSelecionar.IconPadding = 10;
+            this.btnSelecionar.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelecionar.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.btnSelecionar.IdleBorderRadius = 30;
+            this.btnSelecionar.IdleBorderThickness = 1;
+            this.btnSelecionar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.btnSelecionar.IdleIconLeftImage = null;
+            this.btnSelecionar.IdleIconRightImage = null;
+            this.btnSelecionar.IndicateFocus = true;
+            this.btnSelecionar.Location = new System.Drawing.Point(541, 15);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.onHoverState.BorderColor = System.Drawing.Color.Blue;
+            this.btnSelecionar.onHoverState.BorderRadius = 30;
+            this.btnSelecionar.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSelecionar.onHoverState.BorderThickness = 1;
+            this.btnSelecionar.onHoverState.FillColor = System.Drawing.Color.Blue;
+            this.btnSelecionar.onHoverState.ForeColor = System.Drawing.Color.Empty;
+            this.btnSelecionar.onHoverState.IconLeftImage = null;
+            this.btnSelecionar.onHoverState.IconRightImage = null;
+            this.btnSelecionar.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.btnSelecionar.OnIdleState.BorderRadius = 30;
+            this.btnSelecionar.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSelecionar.OnIdleState.BorderThickness = 1;
+            this.btnSelecionar.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.btnSelecionar.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnSelecionar.OnIdleState.IconLeftImage = null;
+            this.btnSelecionar.OnIdleState.IconRightImage = null;
+            this.btnSelecionar.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnSelecionar.OnPressedState.BorderRadius = 30;
+            this.btnSelecionar.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSelecionar.OnPressedState.BorderThickness = 1;
+            this.btnSelecionar.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnSelecionar.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnSelecionar.OnPressedState.IconLeftImage = null;
+            this.btnSelecionar.OnPressedState.IconRightImage = null;
+            this.btnSelecionar.Size = new System.Drawing.Size(132, 35);
+            this.btnSelecionar.TabIndex = 12;
+            this.btnSelecionar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSelecionar.TextMarginLeft = 0;
+            this.btnSelecionar.UseDefaultRadiusAndThickness = true;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            // 
             // PanelTop
             // 
             this.PanelTop.Controls.Add(this.lblpesquisa);
@@ -400,7 +405,6 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -415,10 +419,13 @@
             this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid.ColumnHeadersHeight = 40;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
+            this.ID_FUNCIONARIO,
             this.Nome,
             this.Sobrenome,
-            this.CPF});
+            this.CPF,
+            this.DATA_ADMISSAO,
+            this.HORA_ENTRADA,
+            this.HORA_SAIDA});
             this.dataGrid.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.dataGrid.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.dataGrid.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -437,14 +444,14 @@
             this.dataGrid.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGrid.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.dataGrid.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGrid.EnableHeadersVisualStyles = false;
             this.dataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
@@ -462,43 +469,80 @@
             this.dataGrid.TabIndex = 0;
             this.dataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellClick);
+            this.dataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGrid_CellFormatting);
             // 
-            // ID
+            // ID_FUNCIONARIO
             // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID.DataPropertyName = "Id_Pessoa";
-            this.ID.FillWeight = 50.76142F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ID_FUNCIONARIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ID_FUNCIONARIO.DataPropertyName = "ID_FUNCIONARIO";
+            this.ID_FUNCIONARIO.FillWeight = 114.0973F;
+            this.ID_FUNCIONARIO.HeaderText = "ID";
+            this.ID_FUNCIONARIO.Name = "ID_FUNCIONARIO";
+            this.ID_FUNCIONARIO.ReadOnly = true;
+            this.ID_FUNCIONARIO.Width = 50;
             // 
             // Nome
             // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.FillWeight = 128.6512F;
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Nome.DataPropertyName = "Pessoa.Nome";
+            this.Nome.FillWeight = 125.8577F;
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
+            this.Nome.Width = 150;
             // 
             // Sobrenome
             // 
-            this.Sobrenome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Sobrenome.DataPropertyName = "Sobrenome";
-            this.Sobrenome.FillWeight = 145.8665F;
+            this.Sobrenome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Sobrenome.DataPropertyName = "Pessoa.Sobrenome";
+            this.Sobrenome.FillWeight = 142.6992F;
             this.Sobrenome.HeaderText = "Sobrenome";
             this.Sobrenome.Name = "Sobrenome";
             this.Sobrenome.ReadOnly = true;
+            this.Sobrenome.Width = 200;
             // 
             // CPF
             // 
-            this.CPF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CPF.DataPropertyName = "CPF";
-            this.CPF.FillWeight = 74.72088F;
+            this.CPF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CPF.DataPropertyName = "Pessoa.CPF";
+            this.CPF.FillWeight = 97.82865F;
             this.CPF.HeaderText = "CPF";
             this.CPF.Name = "CPF";
             this.CPF.ReadOnly = true;
+            // 
+            // DATA_ADMISSAO
+            // 
+            this.DATA_ADMISSAO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.DATA_ADMISSAO.DataPropertyName = "DATA_ADMISSAO";
+            this.DATA_ADMISSAO.FillWeight = 73.09843F;
+            this.DATA_ADMISSAO.HeaderText = "Data Admissão";
+            this.DATA_ADMISSAO.Name = "DATA_ADMISSAO";
+            this.DATA_ADMISSAO.ReadOnly = true;
+            this.DATA_ADMISSAO.Width = 160;
+            // 
+            // HORA_ENTRADA
+            // 
+            this.HORA_ENTRADA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.HORA_ENTRADA.DataPropertyName = "HORA_ENTRADA";
+            dataGridViewCellStyle3.Format = "HH:mm";
+            this.HORA_ENTRADA.DefaultCellStyle = dataGridViewCellStyle3;
+            this.HORA_ENTRADA.FillWeight = 97.82865F;
+            this.HORA_ENTRADA.HeaderText = "Entrada";
+            this.HORA_ENTRADA.Name = "HORA_ENTRADA";
+            this.HORA_ENTRADA.ReadOnly = true;
+            this.HORA_ENTRADA.Width = 90;
+            // 
+            // HORA_SAIDA
+            // 
+            this.HORA_SAIDA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.HORA_SAIDA.DataPropertyName = "HORA_SAIDA";
+            dataGridViewCellStyle4.Format = "HH:mm";
+            this.HORA_SAIDA.DefaultCellStyle = dataGridViewCellStyle4;
+            this.HORA_SAIDA.FillWeight = 97.82865F;
+            this.HORA_SAIDA.HeaderText = "Saida";
+            this.HORA_SAIDA.Name = "HORA_SAIDA";
+            this.HORA_SAIDA.ReadOnly = true;
+            this.HORA_SAIDA.Width = 90;
             // 
             // SearchDialog_Funcionario
             // 
@@ -515,7 +559,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SearchDialog";
-            this.Load += new System.EventHandler(this.SearchDialog_Load);
             this.Shown += new System.EventHandler(this.SearchDialog_Shown);
             this.PanelDown.ResumeLayout(false);
             this.PanelTop.ResumeLayout(false);
@@ -538,10 +581,13 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSelecionar;
         private System.Windows.Forms.Timer verifica;
         private System.Windows.Forms.Label lblpesquisa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private Bunifu.UI.WinForms.BunifuDataGridView dataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_FUNCIONARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sobrenome;
         private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
-        private Bunifu.UI.WinForms.BunifuDataGridView dataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATA_ADMISSAO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HORA_ENTRADA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HORA_SAIDA;
     }
 }
