@@ -171,6 +171,12 @@
     <Compile Include="Presentation\Pages\Usuarios\AdicionarEditarUsuario.Designer.cs">
       <DependentUpon>AdicionarEditarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_FuncionarioUsuario .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_FuncionarioUsuario .Designer.cs">
+      <DependentUpon>SearchDialog_FuncionarioUsuario .cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Funcionario .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Pages\Usuarios\AdicionarEditarUsuario.resx">
       <DependentUpon>AdicionarEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_FuncionarioUsuario .resx">
+      <DependentUpon>SearchDialog_FuncionarioUsuario .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Funcionario .resx">
       <DependentUpon>SearchDialog_Funcionario .cs</DependentUpon>

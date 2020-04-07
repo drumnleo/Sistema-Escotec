@@ -44,6 +44,22 @@ namespace Negocios
 
         }
 
+        public string Excluir(Pessoa pessoa)
+        {
+            try
+            {
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("ID_PESSOA", pessoa.Id_Pessoa);
+                acessoDados.AdicionarParametros("ID_USUARIO", pessoa.Id_Usuario);
+                string IdPessoa = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_PESSOA_EXCLUIR").ToString();
+                return IdPessoa;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
         public string AtualizarporId(Pessoa pessoa)
         {
             try

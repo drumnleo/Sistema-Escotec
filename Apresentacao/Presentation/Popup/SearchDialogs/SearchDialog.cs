@@ -22,7 +22,6 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         Pessoa pessoaSelecionada = new Pessoa();
 
-        int id_Pessoa;
         public SearchDialog()
         {
             InitializeComponent();
@@ -30,8 +29,10 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             dataGrid.AutoGenerateColumns = false;
             ckboxfem.Checked = false;
             ckboxmasc.Checked = false;
-            btnAtualizar.Visible = false;
-            btnSelecionar.Visible = false;
+            btnAtualizar.Enabled = false;
+            btnSelecionar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnSair.Text = "Novo";
         }
 
         private void SearchDialog_Load(object sender, EventArgs e)
@@ -118,12 +119,9 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             pessoaSelecionada = pessoaNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value));
 
             CarregarPessoaSelecionada(pessoaSelecionada);
-            btnAtualizar.Visible = true;
+            btnAtualizar.Enabled = true;
             btnNovo.Text = "Novo";
-            btnAtualizar.Location = new Point(267, 291);
-            btnAtualizar.Visible = true;
-            btnSelecionar.Location = new Point(124, 291);
-            btnSelecionar.Visible = true;
+            btnSelecionar.Enabled = true;
             pessoaescolhida = pessoaSelecionada;
         }
 
@@ -210,11 +208,15 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void btnpesquisar_Click(object sender, EventArgs e)
         {
+            carregaDatagrid(tbxSearch.Text);
+        }
 
+        private void carregaDatagrid(string txt)
+        {
             Enableallcontrols();
             CarregaComboBox();
             PessoaNegocios pessoaNegocios = new PessoaNegocios();
-            PessoaColecao pessoaColecao = pessoaNegocios.ConsultarPorDescricao(tbxSearch.Text);
+            PessoaColecao pessoaColecao = pessoaNegocios.ConsultarPorDescricao(txt);
             ClearTextBoxes(this.Controls);
 
             dataGrid.DataSource = null;
@@ -227,6 +229,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             btnAtualizar.Visible = false;
             btnAtualizar.Text = "Atualizar";
             btnSelecionar.Visible = false;
+            btnExcluir.Visible = false;
             btnAtualizar.Location = new Point(267, 291);
         }
 
@@ -240,8 +243,9 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 ClearTextBoxes(this.Controls);
                 Enableallcontrols();
                 btnNovo.Text = "Salvar";
-                btnAtualizar.Visible = false;
-                btnSelecionar.Visible = false;
+                btnAtualizar.Enabled = false;
+                btnSelecionar.Enabled = false;
+                btnExcluir.Enabled = false;
             }
             else if (btnNovo.Text == "Salvar")
             {
@@ -402,9 +406,8 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             {
                 Enableallcontrols();
                 btnAtualizar.Text = "Gravar";
-                btnNovo.Visible = false;
-                btnSelecionar.Visible = false;
-                btnAtualizar.Location = new Point(410, 291);
+                btnNovo.Enabled = false;
+                btnSelecionar.Enabled = false;
             }
             else if (btnAtualizar.Text == "Gravar")
             {
@@ -476,6 +479,37 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         private void cbxProfissao_Click(object sender, EventArgs e)
         {
             CarregaComboBox_cbxProfissao();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            PessoaNegocios pessoaNegocios = new PessoaNegocios();
+            if (dataGrid.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhum cadastro selecionado.");
+                return;
+            }
+            DialogResult resultado = MessageBox.Show("Tem certeza?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.No)
+            {
+                return;
+            }
+
+            pessoaSelecionada = (dataGrid.SelectedRows[0].DataBoundItem as Pessoa);
+            string retorno = pessoaNegocios.Excluir(pessoaSelecionada);
+
+            try
+            {
+                int idPessoa = Convert.ToInt32(retorno);
+                MessageBox.Show("Cadastro excluído com sucesso!");
+                carregaDatagrid("");
+                pessoaSelecionada = new Pessoa();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao excluir. Detalhes: " + retorno);
+            }
         }
     }
 }
