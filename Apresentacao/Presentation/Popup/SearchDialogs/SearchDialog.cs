@@ -32,7 +32,6 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             btnAtualizar.Enabled = false;
             btnSelecionar.Enabled = false;
             btnExcluir.Enabled = false;
-            btnSair.Text = "Novo";
         }
 
         private void SearchDialog_Load(object sender, EventArgs e)
@@ -225,12 +224,11 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             dataGrid.Refresh();
 
             btnNovo.Text = "Novo";
-            btnNovo.Visible = true;
-            btnAtualizar.Visible = false;
+            btnNovo.Enabled = true;
+            btnAtualizar.Enabled = false;
             btnAtualizar.Text = "Atualizar";
-            btnSelecionar.Visible = false;
-            btnExcluir.Visible = false;
-            btnAtualizar.Location = new Point(267, 291);
+            btnSelecionar.Enabled = false;
+            btnExcluir.Enabled = false;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)

@@ -52,7 +52,7 @@ namespace Apresentacao.Presentation.Pages
             usuario.Senha = txtSenha.Text;
             usuario.grupoTipo = grupoTipo;
 
-            string retorno = usuarioNegocios.Inserir(usuario, foto);
+            string retorno = usuarioNegocios.Inserir(usuario);
 
             try
             {
