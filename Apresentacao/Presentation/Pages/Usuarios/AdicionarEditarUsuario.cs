@@ -22,12 +22,20 @@ namespace Apresentacao.Presentation.Pages
 
         }
 
-        private static Pessoa pessoaGetSet ;
+        private static Pessoa pessoaGetSet;
 
         public static Pessoa PessoaGetSet
         {
             get { return pessoaGetSet; }
             set { pessoaGetSet = value; }
+        }
+
+        private static Funcionario funcionarioGetSet;
+
+        public static Funcionario FuncionarioGetSet
+        {
+            get { return funcionarioGetSet; }
+            set { funcionarioGetSet = value; }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -81,7 +89,7 @@ namespace Apresentacao.Presentation.Pages
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            new Apresentacao.Presentation.Popup.transparentBg(new Apresentacao.Presentation.Popup.SearchDialogs.SearchDialog());
+            new Apresentacao.Presentation.Popup.transparentBg(new Apresentacao.Presentation.Popup.SearchDialogs.SearchDialog_FuncionarioUsuario());
         }
 
         private void timerpreenche_Tick(object sender, EventArgs e)

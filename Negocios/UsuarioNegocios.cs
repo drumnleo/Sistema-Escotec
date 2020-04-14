@@ -11,19 +11,32 @@ namespace Negocios
 {
     public class UsuarioNegocios
     {
-        AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
+        readonly AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
 
-        public string Inserir(Usuario usuario, Foto foto)
+        public string Inserir(Usuario usuario)
         {
             try
             {
+
+                Pessoa pessoa = new Pessoa();
+                acessoDados.AdicionarParametros("@ID_PESSOA", pessoa.Id_Pessoa);
+
+                Funcionario funcionario = new Funcionario();
+                acessoDados.AdicionarParametros("@ID_FUNCIONARIO", funcionario.Id_Funcionario);
+
+
+                GrupoTipo grupoTipo = new GrupoTipo();
+                acessoDados.AdicionarParametros("@ID_GRUPO", grupoTipo.Id_Grupo);
+
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("@ID_PESSOA", usuario.Pessoa.Id_Pessoa);
-                acessoDados.AdicionarParametros("@ID_FUNCIONARIO", usuario.funcionario.Id_Funcionario);
-                acessoDados.AdicionarParametros("@ID_GRUPO", usuario.grupoTipo.Id_Grupo);
+                acessoDados.AdicionarParametros("@ID_PESSOA", pessoa);
+                acessoDados.AdicionarParametros("@ID_FUNCIONARIO", funcionario);
+                acessoDados.AdicionarParametros("@ID_GRUPO", grupoTipo);
                 acessoDados.AdicionarParametros("@USUARIO", usuario.Nome_Usuario);
                 acessoDados.AdicionarParametros("@SENHA", usuario.Senha);
-                acessoDados.AdicionarParametros("@FOTO", foto.Arquivo_Foto);
+                acessoDados.AdicionarParametros("@EMAIL_PROFISSIONAL", usuario.Email_Profissional);
+
+
 
 
                 string idusuario = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_USUARIO_INSERIR").ToString();
