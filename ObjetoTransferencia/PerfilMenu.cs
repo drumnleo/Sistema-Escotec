@@ -9,7 +9,7 @@ namespace ObjetoTransferencia
     public class PerfilMenu
     {
         public int Id_Perfil { get; set; }
-        public  string Nome  { get; set; }
+        public string Nome  { get; set; }
         public bool Btn_Teste { get; set; }
         public bool Btn_Cadastrar { get; set; }
         public bool Btn_Excluir { get; set; }

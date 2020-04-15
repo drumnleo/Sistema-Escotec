@@ -12,9 +12,9 @@ namespace ObjetoTransferencia
         public string Nome_Promocao { get; set; }
         public DateTime dateTime { get; set; }
         public bool Entrada { get; set; }
-        public byte Desconto_Entrada { get; set; }
+        public Int16 Desconto_Entrada { get; set; }
         public decimal Valor_Entrada { get; set; }
-        public byte Desconto_Demais { get; set; }
+        public Int16 Desconto_Demais { get; set; }
         public DateTime Data_Cadastro { get; set; }
         public DateTime Data_Ultima_Alteracao { get; set; }
         public Usuario Usuario { get; set; }

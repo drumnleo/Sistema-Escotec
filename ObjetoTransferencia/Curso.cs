@@ -13,12 +13,12 @@ namespace ObjetoTransferencia
         public string Nome { get; set; }
         public short Qtde_Aulas { get; set; }
         public short Qtde_Aulas_Semana { get; set; }
-        public byte Duracao_Meses { get; set; }
+        public Int16 Duracao_Meses { get; set; }
         public short Carga_Horaria { get; set; }
-        public byte Horas_Por_Aula { get; set; }
+        public Int16 Horas_Por_Aula { get; set; }
         public bool Apostila { get; set; }
         public decimal Valor_Total { get; set; }
-        public byte Qtde_Parcelas { get; set; }
+        public Int16 Qtde_Parcelas { get; set; }
         public DateTime Data_Cadastro { get; set; }
         public DateTime Data_Ultima_Alteracao { get; set; }
         public Usuario Usuario { get; set; }
