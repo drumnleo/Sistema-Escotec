@@ -48,7 +48,7 @@ namespace Negocios
                 acessoDados.AdicionarParametros("@CAPACIDADE", laboratorio.Capacidade);
                 acessoDados.AdicionarParametros("@ID_USUARIO", laboratorio.Usuario.Id_Usuario);
 
-                string id_Laboratorio = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_LABORATORIO_INSERIR").ToString();
+                string id_Laboratorio = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_LABORTORIO_ATUALIZAR_PORID").ToString();
 
                 return id_Laboratorio;
             }
