@@ -70,15 +70,15 @@ namespace Negocios
             }
         }
 
-        public string Excluir(TipoApostila tipoApostila)
+        public string Excluir(Curso curso)
         {
             try
             {
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("@ID_TIPO_APOSTILA", tipoApostila.Id_Tipo_Apostila);
-                acessoDados.AdicionarParametros("@ID_USUARIO", tipoApostila.Usuario.Id_Usuario);
+                acessoDados.AdicionarParametros("@ID_CURSO", curso.Id_Curso);
+                acessoDados.AdicionarParametros("@ID_USUARIO", curso.Usuario.Id_Usuario);
 
-                string idTipoApostila = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_TIPO_APOSTILA_EXCLUIR").ToString();
+                string idTipoApostila = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_CURSO_EXCLUIR").ToString();
 
                 return idTipoApostila;
             }

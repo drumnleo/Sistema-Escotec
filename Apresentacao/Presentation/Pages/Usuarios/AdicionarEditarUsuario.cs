@@ -100,7 +100,7 @@ namespace Apresentacao.Presentation.Pages
 
         private void AdicionarEditarUsuario_Load(object sender, EventArgs e)
         {
-            CarregaComboBox();
+            
 
         }
 
