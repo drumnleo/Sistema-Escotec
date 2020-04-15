@@ -38,17 +38,48 @@ namespace Apresentacao.Presentation.Pages
             set { funcionarioGetSet = value; }
         }
 
+        private static Usuario usuarioGetSet;
+        public static Usuario UsuarioGetSet
+        {
+            get { return usuarioGetSet; }
+            set { usuarioGetSet = value; }
+        }
+        private void CamposPessoa()
+        {
+            tbxCPF.Text = PessoaGetSet.CPF;
+            tbxCPF.Enabled = false;
+            tbxNome.Text = PessoaGetSet.Nome;
+            tbxNome.Enabled = false;
+            tbxSobrenome.Text = PessoaGetSet.Sobrenome;
+            tbxSobrenome.Enabled = false;
+            lblIdFuncionário.Text = FuncionarioGetSet.Id_Funcionario.ToString();
+        }
+
+        private void CamposUsuario()
+        {
+            dtAdmissao.Value = FuncionarioGetSet.Data_Admissao;
+            tbxUsuario.Text = usuarioGetSet.Nome_Usuario;
+            tbxEmail.Text = usuarioGetSet.Email_Profissional;
+            lblIdUsuario.Text = FuncionarioGetSet.Id_Funcionario.ToString();
+            GrupoUsuariosNegocios grupoUsuariosNegocios = new GrupoUsuariosNegocios();
+            GrupoColecao grupoColecao = new GrupoColecao();
+            cbxGrupo.DataSource = null;
+            cbxGrupo.DataSource = grupoColecao;
+            cbxGrupo.ValueMember = "ID";
+            cbxGrupo.DisplayMember = "NOME";
+            cbxGrupo.SelectedIndex = 0;
+            cbxGrupo.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
 
             Usuario usuario = new Usuario();
-            Foto foto = new Foto();
             GrupoTipo grupoTipo = new GrupoTipo();
             UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
 
 
 
-            usuario.Nome_Usuario = txtUsuario.Text;
+            usuario.Nome_Usuario = tbxUsuario.Text;
             usuario.Senha = txtSenha.Text;
             usuario.grupoTipo = grupoTipo;
 
@@ -69,16 +100,7 @@ namespace Apresentacao.Presentation.Pages
 
         private void AdicionarEditarUsuario_Load(object sender, EventArgs e)
         {
-            //GrupoColecao grupoColecao = new GrupoColecao();
-
-            //GrupoUsuariosNegocios grupoUsuariosNegocios = new GrupoUsuariosNegocios();
-            //string txt = "";
-            //grupoColecao = grupoUsuariosNegocios.ConsultarPorNome(txt);
-
-            //cbxGrupo.DataSource = null;
-            //cbxGrupo.DataSource = grupoColecao;
-            //cbxGrupo.ValueMember = "ID_GRUPO";
-            //cbxGrupo.DisplayMember = "NOME";
+            CarregaComboBox();
 
         }
 
@@ -94,16 +116,63 @@ namespace Apresentacao.Presentation.Pages
 
         private void timerpreenche_Tick(object sender, EventArgs e)
         {
-            if (pessoaGetSet != null)
+            if (FuncionarioGetSet != null)
             {
-                tbxCPF.Text = pessoaGetSet.CPF;
-                tbxCPF.Enabled = false;
-                tbxNome.Text = pessoaGetSet.Nome;
-                tbxNome.Enabled = false;
-                tbxSobrenome.Text = pessoaGetSet.Sobrenome;
-                tbxSobrenome.Enabled = false;
+                if (lblIdFuncionário.Text == "None")
+                {
+                    CamposPessoa();
+                    btnAtualizar.Enabled = true;
+                    btnSalvar.Enabled = false;
+                    btnAtualizar.Enabled = true;
+                }
+                else if (FuncionarioGetSet.Id_Funcionario != Convert.ToInt32(lblIdFuncionário.Text))
+                {
+                    CamposPessoa();
+                    btnAtualizar.Enabled = true;
+                    btnSalvar.Enabled = false;
+                    btnAtualizar.Enabled = true;
+                }
+            }
+            if (usuarioGetSet != null)
+            {
+                if (lblIdUsuario.Text == "None")
+                {
+                    CamposPessoa();
+                    CamposUsuario();
+                    btnAtualizar.Enabled = true;
+                    btnSalvar.Enabled = false;
+                    btnAtualizar.Enabled = true;
+                }
+                else if (usuarioGetSet.Id_Usuario != Convert.ToInt32(lblIdUsuario.Text))
+                {
+                    CamposUsuario();
+                    CamposPessoa();
+                    btnAtualizar.Enabled = true;
+                    btnSalvar.Enabled = false;
+                    btnAtualizar.Enabled = true;
+                }
             }
 
+        }
+
+        private void CarregaComboBox()
+        {
+            GrupoUsuariosNegocios grupoUsuariosNegocios = new GrupoUsuariosNegocios();
+
+
+            string txt = "";
+            GrupoColecao grupoColecao = grupoUsuariosNegocios.ConsultarPorNome(txt);
+
+
+            cbxGrupo.DataSource = null;
+            cbxGrupo.DataSource = grupoColecao;
+            cbxGrupo.ValueMember = "ID";
+            cbxGrupo.DisplayMember = "NOME";
+        }
+
+        private void btnSearchUsuario_Click(object sender, EventArgs e)
+        {
+            new Popup.transparentBg(new Popup.SearchDialogs.SearchDialog());
         }
     }
 }

@@ -53,6 +53,7 @@
     <Compile Include="LaboratorioNegocios.cs" />
     <Compile Include="LoginNegocios.cs" />
     <Compile Include="MarketingNegocios.cs" />
+    <Compile Include="OrcamentoNegocios.cs" />
     <Compile Include="PerfilNegocios.cs" />
     <Compile Include="PessoaNegocios.cs" />
     <Compile Include="ProfissaoNegocios.cs" />

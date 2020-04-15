@@ -74,6 +74,7 @@
     <Compile Include="MarketingColecao.cs" />
     <Compile Include="Marketing_Atendimento.cs" />
     <Compile Include="Orcamento.cs" />
+    <Compile Include="OrcamentoColecao.cs" />
     <Compile Include="PerfilMenu.cs" />
     <Compile Include="PerfilMenuColecao.cs" />
     <Compile Include="Pessoa.cs" />

@@ -58,6 +58,8 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.container = new System.Windows.Forms.Panel();
+            this.lblIdPessoa = new System.Windows.Forms.Label();
+            this.lblIdFuncionario = new System.Windows.Forms.Label();
             this.tbxIdFuncionarioTexto = new System.Windows.Forms.Label();
             this.btnAtualizar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.dtUltimaAtualizacao = new Bunifu.UI.WinForms.BunifuDatePicker();
@@ -104,8 +106,6 @@
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator5 = new Bunifu.Framework.UI.BunifuSeparator();
             this.timerpreenche = new System.Windows.Forms.Timer(this.components);
-            this.lblIdFuncionario = new System.Windows.Forms.Label();
-            this.lblIdPessoa = new System.Windows.Forms.Label();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchPessoa)).BeginInit();
@@ -167,6 +167,28 @@
             this.container.Name = "container";
             this.container.Size = new System.Drawing.Size(754, 892);
             this.container.TabIndex = 0;
+            // 
+            // lblIdPessoa
+            // 
+            this.lblIdPessoa.AutoSize = true;
+            this.lblIdPessoa.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lblIdPessoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblIdPessoa.Location = new System.Drawing.Point(329, 203);
+            this.lblIdPessoa.Name = "lblIdPessoa";
+            this.lblIdPessoa.Size = new System.Drawing.Size(47, 20);
+            this.lblIdPessoa.TabIndex = 167;
+            this.lblIdPessoa.Text = "None";
+            // 
+            // lblIdFuncionario
+            // 
+            this.lblIdFuncionario.AutoSize = true;
+            this.lblIdFuncionario.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lblIdFuncionario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblIdFuncionario.Location = new System.Drawing.Point(128, 437);
+            this.lblIdFuncionario.Name = "lblIdFuncionario";
+            this.lblIdFuncionario.Size = new System.Drawing.Size(47, 20);
+            this.lblIdFuncionario.TabIndex = 166;
+            this.lblIdFuncionario.Text = "None";
             // 
             // tbxIdFuncionarioTexto
             // 
@@ -322,7 +344,7 @@
             this.btnSearchFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchFuncionario.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchFuncionario.Image")));
             this.btnSearchFuncionario.ImageActive = null;
-            this.btnSearchFuncionario.Location = new System.Drawing.Point(481, 432);
+            this.btnSearchFuncionario.Location = new System.Drawing.Point(487, 432);
             this.btnSearchFuncionario.Name = "btnSearchFuncionario";
             this.btnSearchFuncionario.Size = new System.Drawing.Size(30, 30);
             this.btnSearchFuncionario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -336,11 +358,11 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(308, 437);
+            this.label10.Location = new System.Drawing.Point(281, 437);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(171, 20);
+            this.label10.Size = new System.Drawing.Size(204, 20);
             this.label10.TabIndex = 158;
-            this.label10.Text = "Buscar Cadastro Pessoal";
+            this.label10.Text = "Buscar Cadastro Funcionário";
             // 
             // label9
             // 
@@ -1294,28 +1316,6 @@
             this.timerpreenche.Enabled = true;
             this.timerpreenche.Interval = 500;
             this.timerpreenche.Tick += new System.EventHandler(this.timerpreenche_Tick);
-            // 
-            // lblIdFuncionario
-            // 
-            this.lblIdFuncionario.AutoSize = true;
-            this.lblIdFuncionario.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.lblIdFuncionario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblIdFuncionario.Location = new System.Drawing.Point(128, 437);
-            this.lblIdFuncionario.Name = "lblIdFuncionario";
-            this.lblIdFuncionario.Size = new System.Drawing.Size(47, 20);
-            this.lblIdFuncionario.TabIndex = 166;
-            this.lblIdFuncionario.Text = "None";
-            // 
-            // lblIdPessoa
-            // 
-            this.lblIdPessoa.AutoSize = true;
-            this.lblIdPessoa.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.lblIdPessoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblIdPessoa.Location = new System.Drawing.Point(329, 203);
-            this.lblIdPessoa.Name = "lblIdPessoa";
-            this.lblIdPessoa.Size = new System.Drawing.Size(47, 20);
-            this.lblIdPessoa.TabIndex = 167;
-            this.lblIdPessoa.Text = "None";
             // 
             // AdicionarEditarFuncionario
             // 
