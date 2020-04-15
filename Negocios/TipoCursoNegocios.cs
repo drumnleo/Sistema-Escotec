@@ -84,7 +84,7 @@ namespace Negocios
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@NOME", nome);
 
-                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_LABORATORIO_CONSULTAR_PORNOME");
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_TIPO_CURSO_CONSULTARPORNOME");
 
                 foreach (DataRow dataRow in dataTable.Rows)
                 {

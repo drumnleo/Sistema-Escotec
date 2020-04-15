@@ -57,6 +57,7 @@
     <Compile Include="PessoaNegocios.cs" />
     <Compile Include="ProfissaoNegocios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoApostilaNegocios.cs" />
     <Compile Include="TipoCursoNegocios.cs" />
     <Compile Include="TipoDocNegocios.cs" />
     <Compile Include="TipoLaboratorioNegocios.cs" />
