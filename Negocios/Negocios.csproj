@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="CargoNegocios.cs" />
     <Compile Include="CursoNegocios.cs" />
+    <Compile Include="EnderecoNegocios.cs" />
     <Compile Include="EstadoCivilNegocios.cs" />
     <Compile Include="FeriadoNegocios.cs" />
     <Compile Include="FuncionarioNegocios.cs" />
