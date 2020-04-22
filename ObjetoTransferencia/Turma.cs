@@ -17,8 +17,8 @@ namespace ObjetoTransferencia
         public DateTime Data_Fim { get; set; }
         public DateTime Hora_Inicio { get; set; }
         public DateTime Hora_Fim { get; set; }
-        public INT16 Qtde_Feriado { get; set; }
-        public INT16 Vagas_Disponiveis { get; set; }
+        public Int16 Qtde_Feriado { get; set; }
+        public Int16 Vagas_Disponiveis { get; set; }
         public bool Segunda_Aula { get; set; }
         public bool Terca_Aula { get; set; }
         public bool Quarta_Aula { get; set; }

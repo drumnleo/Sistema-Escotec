@@ -35,11 +35,11 @@ namespace Negocios
             
         }
 
-        public PerfilMenuColecao ConsultarPorNome(string nome)
+        public PerfilAcessoColecao ConsultarPorNome(string nome)
         {
             try
             {
-                PerfilMenuColecao perfilColecao = new PerfilMenuColecao();
+                PerfilAcessoColecao perfilColecao = new PerfilAcessoColecao();
 
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@NOME", nome);

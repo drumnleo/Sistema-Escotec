@@ -74,7 +74,7 @@ namespace Apresentacao.Presentation.Pages
         {
 
             Usuario usuario = new Usuario();
-            GrupoTipo grupoTipo = new GrupoTipo();
+            GrupoUsuario grupoTipo = new GrupoUsuario();
             UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
 
 

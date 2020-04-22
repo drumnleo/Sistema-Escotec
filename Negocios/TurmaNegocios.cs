@@ -145,7 +145,7 @@ namespace Negocios
                     laboratorio.Id_Laboratorio = Convert.ToInt32(dataRow["ID_LABORATORIO"]);
                     laboratorio.Nome = Convert.ToString(dataRow["NOME_LABORATORIO"]);
 
-                    Pessoa pessoa = new Pessoa;
+                    Pessoa pessoa = new Pessoa();
                     pessoa.Nome = Convert.ToString(dataRow["NOME_PROFESSOR"]);
                     pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME_PROFESSOR"]);
 

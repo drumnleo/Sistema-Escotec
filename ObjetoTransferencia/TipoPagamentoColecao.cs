@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ObjetoTransferencia
 {
-    public class FeriadoColecao : List<Feriado>
+    public class TipoPagamentoColecao : List<TipoPagamento>
     {
     }
 }

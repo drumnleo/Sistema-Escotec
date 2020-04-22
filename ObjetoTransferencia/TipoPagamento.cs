@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace ObjetoTransferencia
 {
-    public class GrupoTipo
+    public class TipoPagamento
     {
-        public int Id_Grupo { get; set; }
-        public PerfilMenu perfilMenu { get; set; }
-        public string Nome { get; set; }
+        public int Id_Tipo_Pagamento { get; set; }
+        public string Descricao { get; set; }
         public DateTime Data_Cadastro { get; set; }
-        public DateTime Data_Ultima_Alteracao { get; set; }
+        public DateTime Data_Ultimo_Cadastro { get; set; }
         public Usuario Usuario { get; set; }
-        public bool Ativo { get; set; }
-
     }
 }

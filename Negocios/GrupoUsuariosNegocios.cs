@@ -14,7 +14,7 @@ namespace Negocios
 
         AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
 
-        public string Inserir(GrupoTipo grupoTipo)
+        public string Inserir(GrupoUsuario grupoTipo)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace Negocios
 
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    GrupoTipo grupoTipo = new GrupoTipo();
+                    GrupoUsuario grupoTipo = new GrupoUsuario();
 
                     grupoTipo.Id_Grupo = Convert.ToInt32(dataRow["ID_GRUPO"]);
                     grupoTipo.perfilMenu.Id_Perfil = Convert.ToInt32(dataRow["ID_PERFIL"]);
@@ -77,7 +77,7 @@ namespace Negocios
 
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    GrupoTipo grupoTipo = new GrupoTipo();
+                    GrupoUsuario grupoTipo = new GrupoUsuario();
 
                     grupoTipo.Id_Grupo = Convert.ToInt32(dataRow["ID_GRUPO"]);
                     grupoTipo.perfilMenu.Id_Perfil = Convert.ToInt32(dataRow["ID_PERFIL"]);
@@ -93,7 +93,7 @@ namespace Negocios
                 throw new Exception("Erro ao consultar grupo. Detalhes" + ex.Message);
             }
         }
-        public string Excluir(GrupoTipo grupoTipo)
+        public string Excluir(GrupoUsuario grupoTipo)
         {
             try
             {

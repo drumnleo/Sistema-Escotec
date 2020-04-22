@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace ObjetoTransferencia
 {
-   public class TipoCurso
+    public class TipoConta
     {
-        public int Id_Tipo_Curso { get; set; }
-        public Laboratorio Laboratorio { get; set; }
-        public string Nome { get; set; }
+        public int Id_Tipo_Conta { get; set; }
         public string Descricao { get; set; }
-        public Int16 Vagas { get; set; }
         public DateTime Data_Cadastro { get; set; }
-        public DateTime Data_Ultima_Alteracao { get; set; }
+        public DateTime Data_Ultimo_Cadastro { get; set; }
         public Usuario Usuario { get; set; }
-        public bool Ativo { get; set; }
     }
 }

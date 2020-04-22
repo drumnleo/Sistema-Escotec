@@ -11,8 +11,8 @@ namespace ObjetoTransferencia
         public int Id_Curso { get; set; }
         public TipoCurso TipoCurso { get; set; }
         public string Nome { get; set; }
-        public short Qtde_Aulas { get; set; }
-        public short Qtde_Aulas_Semana { get; set; }
+        public Int16 Qtde_Aulas { get; set; }
+        public Int16 Qtde_Aulas_Semana { get; set; }
         public Int16 Duracao_Meses { get; set; }
         public short Carga_Horaria { get; set; }
         public Int16 Horas_Por_Aula { get; set; }

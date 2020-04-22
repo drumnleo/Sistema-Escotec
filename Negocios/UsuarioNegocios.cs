@@ -25,7 +25,7 @@ namespace Negocios
                 acessoDados.AdicionarParametros("@ID_FUNCIONARIO", funcionario.Id_Funcionario);
 
 
-                GrupoTipo grupoTipo = new GrupoTipo();
+                GrupoUsuario grupoTipo = new GrupoUsuario();
                 acessoDados.AdicionarParametros("@ID_GRUPO", grupoTipo.Id_Grupo);
 
                 acessoDados.LimparParametros();

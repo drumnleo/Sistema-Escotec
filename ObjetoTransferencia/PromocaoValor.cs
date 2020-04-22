@@ -10,7 +10,7 @@ namespace ObjetoTransferencia
     {
         public int Id_Promocao_Valor { get; set; }
         public string Nome_Promocao { get; set; }
-        public DateTime dateTime { get; set; }
+        public DateTime Validade { get; set; }
         public bool Entrada { get; set; }
         public Int16 Desconto_Entrada { get; set; }
         public decimal Valor_Entrada { get; set; }

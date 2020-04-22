@@ -24,7 +24,7 @@ namespace Negocios
                 acessoDados.AdicionarParametros("@NUM_CTPS", funcionario.Num_CTPS);
                 acessoDados.AdicionarParametros("@SERIE_CTPS", funcionario.Serie_CTPS);
                 acessoDados.AdicionarParametros("@NUMERO_NIS", funcionario.Num_NIS);
-                acessoDados.AdicionarParametros("@ID_USUARIO", funcionario.Usuario_Cad_Alt);
+                acessoDados.AdicionarParametros("@ID_USUARIO", funcionario.Usuario_Cad_Alt.Id_Usuario);
 
                 string idFuncionario = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_FUNCIONARIO_INSERIR").ToString();
 
@@ -51,7 +51,7 @@ namespace Negocios
                 acessoDados.AdicionarParametros("@NUM_CTPS", funcionario.Num_CTPS);
                 acessoDados.AdicionarParametros("@SERIE_CTPS", funcionario.Serie_CTPS);
                 acessoDados.AdicionarParametros("@NUMERO_NIS", funcionario.Num_NIS);
-                acessoDados.AdicionarParametros("@ID_USUARIO", funcionario.Usuario_Cad_Alt);
+                acessoDados.AdicionarParametros("@ID_USUARIO", funcionario.Usuario_Cad_Alt.Id_Usuario);
 
                 string idFuncionario = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_FUNCIONARIO_ATUALIZARPORID").ToString();
 
@@ -69,7 +69,7 @@ namespace Negocios
             {
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("ID_FUNCIONARIO", funcionario.Id_Funcionario);
-                acessoDados.AdicionarParametros("ID_USUARIO", funcionario.Usuario_Cad_Alt);
+                acessoDados.AdicionarParametros("ID_USUARIO", funcionario.Usuario_Cad_Alt.Id_Usuario);
                 string idFuncionario = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_FUNCIONARIO_EXCLUIR").ToString();
                 return idFuncionario;
             }
@@ -107,7 +107,6 @@ namespace Negocios
                     funcionario.Num_NIS = Convert.ToInt32(dataRow["NUM_NIS"]);
                     funcionario.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
                     funcionario.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
-                    funcionario.Usuario_Cad_Alt = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
                     Pessoa pessoa = new Pessoa();
 
@@ -116,7 +115,10 @@ namespace Negocios
                     pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
                     pessoa.CPF = Convert.ToString(dataRow["CPF"]);
 
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
+                    funcionario.Usuario_Cad_Alt = usuario;
                     funcionario.Pessoa = pessoa;
                     funcionarioColecao.Add(funcionario);
                 }
