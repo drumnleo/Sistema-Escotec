@@ -62,9 +62,9 @@ namespace Apresentacao.Presentation.Pages
             tbxEmail.Text = usuarioGetSet.Email_Profissional;
             lblIdUsuario.Text = FuncionarioGetSet.Id_Funcionario.ToString();
             GrupoUsuariosNegocios grupoUsuariosNegocios = new GrupoUsuariosNegocios();
-            GrupoColecao grupoColecao = new GrupoColecao();
+            GrupoUsuario grupoUsuario = new GrupoUsuario();
             cbxGrupo.DataSource = null;
-            cbxGrupo.DataSource = grupoColecao;
+            cbxGrupo.DataSource = grupoUsuario;
             cbxGrupo.ValueMember = "ID";
             cbxGrupo.DisplayMember = "NOME";
             cbxGrupo.SelectedIndex = 0;
@@ -74,14 +74,14 @@ namespace Apresentacao.Presentation.Pages
         {
 
             Usuario usuario = new Usuario();
-            GrupoUsuario grupoTipo = new GrupoUsuario();
+            GrupoUsuario grupoUsuario = new GrupoUsuario();
             UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
 
 
 
             usuario.Nome_Usuario = tbxUsuario.Text;
             usuario.Senha = txtSenha.Text;
-            usuario.grupoTipo = grupoTipo;
+            usuario.GrupoUsuario = grupoUsuario;
 
             string retorno = usuarioNegocios.Inserir(usuario);
 
@@ -161,7 +161,7 @@ namespace Apresentacao.Presentation.Pages
 
 
             string txt = "";
-            GrupoColecao grupoColecao = grupoUsuariosNegocios.ConsultarPorNome(txt);
+            GrupoUsuarioColecao grupoColecao = grupoUsuariosNegocios.ConsultarPorNome(txt);
 
 
             cbxGrupo.DataSource = null;

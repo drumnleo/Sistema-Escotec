@@ -13,6 +13,7 @@ namespace ObjetoTransferencia
         public TipoDoc TipoDoc { get; set; }
         public EstadoCivil EstadoCivil { get; set; }
         public Telefone Telefone { get; set; }
+        public Endereco Endereco { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public string CPF { get; set; }
@@ -21,7 +22,7 @@ namespace ObjetoTransferencia
         public string Email { get; set; }
         public string Pai { get; set; }
         public string Mae { get; set; }
-        public string Sexo { get; set; }
+        public char Sexo { get; set; }
         public DateTime Data_Cadastro { get; set; }
         public Usuario Usuario { get; set; }
         public DateTime Data_Ultima_Alteracao { get; set; }

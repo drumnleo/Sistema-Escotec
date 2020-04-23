@@ -154,7 +154,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             pessoacolecaocbx.Insert(0, pessoa);
 
             TipoDocNegocios tipoDocNegocios = new TipoDocNegocios();
-            TipoDocColecao tipoDocColecao = tipoDocNegocios.ConsultarPorId(pessoa.Id_TipoDoc);
+            TipoDocColecao tipoDocColecao = tipoDocNegocios.ConsultarPorId(pessoa.TipoDoc.Id_TipoDoc);
             cbxTipoDoc.DataSource = null;
             cbxTipoDoc.DataSource = tipoDocColecao;
             cbxTipoDoc.ValueMember = "ID_TIPODOC";
@@ -163,7 +163,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             cbxTipoDoc.DropDownStyle = ComboBoxStyle.DropDownList;
 
             EstadoCivilNegocios estadoCivilNegocios = new EstadoCivilNegocios();
-            EstadoCivilColecao estadoCivilcolecao = estadoCivilNegocios.ConsultarPorId(pessoa.Id_EstadoCivil);
+            EstadoCivilColecao estadoCivilcolecao = estadoCivilNegocios.ConsultarPorId(pessoa.EstadoCivil.Id_EstadoCivil);
             cbxEstadoCivil.DataSource = null;
             cbxEstadoCivil.DataSource = estadoCivilcolecao;
             cbxEstadoCivil.ValueMember = "ID_ESTADOCIVIL";
@@ -172,7 +172,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             cbxEstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;
 
             ProfissaoNegocios profissaoNegocios = new ProfissaoNegocios();
-            ProfissaoColecao profissaoColecao = profissaoNegocios.ConsultarPorId(pessoa.Id_Profissao);
+            ProfissaoColecao profissaoColecao = profissaoNegocios.ConsultarPorId(pessoa.Profissao.Id_Profissao);
             cbxProfissao.DataSource = null;
             cbxProfissao.DataSource = profissaoColecao;
             cbxProfissao.ValueMember = "ID_PROFISSAO";
@@ -251,9 +251,9 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 PessoaNegocios pessoaNegocios = new PessoaNegocios();
                 Validadocs validadocs = new Validadocs();
 
-                pessoa.Id_Profissao = Convert.ToInt32(cbxProfissao.SelectedValue);
-                pessoa.Id_TipoDoc = Convert.ToInt32(cbxTipoDoc.SelectedValue);
-                pessoa.Id_EstadoCivil = Convert.ToInt32(cbxEstadoCivil.SelectedValue);
+                pessoa.Profissao.Id_Profissao = Convert.ToInt32(cbxProfissao.SelectedValue);
+                pessoa.TipoDoc.Id_TipoDoc = Convert.ToInt32(cbxTipoDoc.SelectedValue);
+                pessoa.EstadoCivil.Id_EstadoCivil = Convert.ToInt32(cbxEstadoCivil.SelectedValue);
                 pessoa.Nome = tbxNome.Text;
                 pessoa.Sobrenome = tbxSobrenome.Text;
                 pessoa.CPF = validadocs.SemFormatacao(tbxCPF.Text);
@@ -274,7 +274,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 {
                     MessageBox.Show("Há um erro na seleção do sexo, verifique!");
                 }
-                pessoa.Id_Usuario = LoginNegocios.UsuarioLogadoGetSet.Id_Usuario;
+                pessoa.Usuario.Id_Usuario = LoginNegocios.UsuarioLogadoGetSet.Id_Usuario;
 
                 string retorno = pessoaNegocios.Inserir(pessoa);
 
@@ -415,9 +415,9 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 Validadocs validadocs = new Validadocs();
 
                 pessoa.Id_Pessoa = pessoaSelecionada.Id_Pessoa;
-                pessoa.Id_Profissao = Convert.ToInt32(cbxProfissao.SelectedValue);
-                pessoa.Id_TipoDoc = Convert.ToInt32(cbxTipoDoc.SelectedValue);
-                pessoa.Id_EstadoCivil = Convert.ToInt32(cbxEstadoCivil.SelectedValue);
+                pessoa.Profissao.Id_Profissao = Convert.ToInt32(cbxProfissao.SelectedValue);
+                pessoa.TipoDoc.Id_TipoDoc = Convert.ToInt32(cbxTipoDoc.SelectedValue);
+                pessoa.EstadoCivil.Id_EstadoCivil = Convert.ToInt32(cbxEstadoCivil.SelectedValue);
                 pessoa.Nome = tbxNome.Text;
                 pessoa.Sobrenome = tbxSobrenome.Text;
                 pessoa.CPF = validadocs.SemFormatacao(tbxCPF.Text);
@@ -438,7 +438,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 {
                     MessageBox.Show("Há um erro na seleção do sexo, verifique!");
                 }
-                pessoa.Id_Usuario = LoginNegocios.UsuarioLogadoGetSet.Id_Usuario;
+                pessoa.Usuario = LoginNegocios.UsuarioLogadoGetSet;
 
                 string retorno = pessoaNegocios.AtualizarporId(pessoa);
 

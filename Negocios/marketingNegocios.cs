@@ -28,18 +28,34 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-
                 return ex.Message;
-
             }
         }
 
-        public CargoColecao ConsultarPorNome(string nome)
+        public string AtualizarporId(Marketing marketing)
         {
             try
             {
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("ID_MKT", marketing.Id_Mkt);
+                acessoDados.AdicionarParametros("@DESCRICAO", marketing.Descricao);
+                acessoDados.AdicionarParametros("@ID_USUARIO", marketing.Usuario.Id_Usuario);
 
-                CargoColecao cargoColecao = new CargoColecao();
+                string IdMarketing = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_MARKETING_ATUALIZARPORID").ToString();
+
+                return IdMarketing;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        public MarketingColecao ConsultarPorNome(string nome)
+        {
+            try
+            {
+                MarketingColecao marketingColecao = new MarketingColecao();
 
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@DESCRICAO", nome);
@@ -48,25 +64,24 @@ namespace Negocios
 
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    Cargo cargo = new Cargo();
+                    Marketing marketing = new Marketing();
 
-                    cargo.Id_Cargo = Convert.ToInt32(dataRow["ID_CARGO"]);
-                    cargo.Descricao = Convert.ToString(dataRow["DESCRICAO"]);
-                    cargo.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
-                    cargo.Data_Ultima_Altercao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
-                    cargo.Usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO"]);
+                    marketing.Id_Mkt = Convert.ToInt32(dataRow["ID_CARGO"]);
+                    marketing.Descricao = Convert.ToString(dataRow["DESCRICAO"]);
+                    marketing.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    marketing.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
 
-                    cargoColecao.Add(cargo);
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
+                    marketing.Usuario = usuario;
+
+                    marketingColecao.Add(marketing);
                 }
-
-                return cargoColecao;
-
-
+                return marketingColecao;
             }
             catch (Exception ex)
             {
-
                 throw new Exception("Erro ao consultar Cargo. Detalhes" + ex.Message);
             }
         }
@@ -75,14 +90,13 @@ namespace Negocios
             try
             {
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("@ID_MKT", marketing.Id_Marketing);
+                acessoDados.AdicionarParametros("@ID_MKT", marketing.Id_Mkt);
                 acessoDados.AdicionarParametros("@ID_USUARIO", marketing.Usuario.Id_Usuario);
                 string id_cargo = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_MARKETING_EXCLUIR").ToString();
                 return id_cargo;
             }
             catch (Exception ex)
             {
-
                 return ex.Message;
             }
         }

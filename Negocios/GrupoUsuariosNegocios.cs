@@ -20,7 +20,7 @@ namespace Negocios
             {
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@NOME", grupoTipo.Nome);
-                acessoDados.AdicionarParametros("@ID_PERFIL", grupoTipo.perfilMenu.Id_Perfil);
+                acessoDados.AdicionarParametros("@ID_PERFIL", grupoTipo.PerfilAcesso.Id_Perfil);
 
 
                 string idGrupo = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_GRUPO_INSERIR").ToString();
@@ -35,11 +35,11 @@ namespace Negocios
 
         }
 
-        public GrupoColecao ConsultarPorNome(string nome)
+        public GrupoUsuarioColecao ConsultarPorNome(string nome)
         {
             try
             {
-                GrupoColecao grupoColecao = new GrupoColecao();
+                GrupoUsuarioColecao grupoUsuarioColecao = new GrupoUsuarioColecao();
 
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@NOME", nome);
@@ -48,16 +48,19 @@ namespace Negocios
 
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    GrupoUsuario grupoTipo = new GrupoUsuario();
+                    GrupoUsuario grupoUsuario = new GrupoUsuario();
 
-                    grupoTipo.Id_Grupo = Convert.ToInt32(dataRow["ID_GRUPO"]);
-                    grupoTipo.perfilMenu.Id_Perfil = Convert.ToInt32(dataRow["ID_PERFIL"]);
-                    grupoTipo.Nome = Convert.ToString(dataRow["NOME"]);
+                    grupoUsuario.Id_Grupo = Convert.ToInt32(dataRow["ID_GRUPO"]);
+                    grupoUsuario.Nome = Convert.ToString(dataRow["NOME"]);
 
-                    grupoColecao.Add(grupoTipo);
+                    PerfilAcesso perfilAcesso = new PerfilAcesso();
+                    perfilAcesso.Id_Perfil = Convert.ToInt32(dataRow["ID_PERFIL"]);
+
+                    grupoUsuario.PerfilAcesso = perfilAcesso;
+                    grupoUsuarioColecao.Add(grupoUsuario);
                 }
 
-                return grupoColecao;
+                return grupoUsuarioColecao;
             }
             catch (Exception ex)
             {
@@ -65,40 +68,12 @@ namespace Negocios
             }
         }
 
-        public GrupoColecao ConsultarTodos()
-        {
-            try
-            {
-                GrupoColecao grupoColecao = new GrupoColecao();
-
-                acessoDados.LimparParametros();
-
-                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_GRUPO_CONSULTARTODOS");
-
-                foreach (DataRow dataRow in dataTable.Rows)
-                {
-                    GrupoUsuario grupoTipo = new GrupoUsuario();
-
-                    grupoTipo.Id_Grupo = Convert.ToInt32(dataRow["ID_GRUPO"]);
-                    grupoTipo.perfilMenu.Id_Perfil = Convert.ToInt32(dataRow["ID_PERFIL"]);
-                    grupoTipo.Nome = Convert.ToString(dataRow["NOME"]);
-
-                    grupoColecao.Add(grupoTipo);
-                }
-
-                return grupoColecao;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro ao consultar grupo. Detalhes" + ex.Message);
-            }
-        }
-        public string Excluir(GrupoUsuario grupoTipo)
+        public string Excluir(GrupoUsuario grupoUsuario)
         {
             try
             {
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("ID_GRUPO", grupoTipo.Id_Grupo);
+                acessoDados.AdicionarParametros("ID_GRUPO", grupoUsuario.Id_Grupo);
                 string idperfil = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_GRUPO_EXCLUIR").ToString();
                 return idperfil;
             }

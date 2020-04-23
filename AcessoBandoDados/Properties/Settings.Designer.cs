@@ -26,19 +26,8 @@ namespace AcessoBandoDados.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WSERVER2016;Initial Catalog=ESCOTECDB;Persist Security Info=True;User" +
-            " ID=leonardo;Password=leo144112")]
-        public string ESCOTECDBConnectionString {
-            get {
-                return ((string)(this["ESCOTECDBConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=187.2.79.249;Initial Catalog=ESCOTECDB;Persist Security Info=True;Use" +
-            "r ID=leonardo;Password=leo144112")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=187.2.79.249,30033;Initial Catalog=ESCOTECDB;Persist Security Info=Tr" +
+            "ue;User ID=leonardo;Password=leo144112")]
         public string stringConexao {
             get {
                 return ((string)(this["stringConexao"]));
