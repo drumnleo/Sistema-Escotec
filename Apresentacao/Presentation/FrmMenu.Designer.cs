@@ -37,7 +37,6 @@
             this.bunifuTransition1 = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.sidePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.subMenutab = new Apresentacao.subMenu();
             this.pnlMenuHeader = new System.Windows.Forms.Panel();
             this.btnDrawerPin = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnlMainMenu = new System.Windows.Forms.Panel();
@@ -51,6 +50,8 @@
             this.tab1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.subMenutab = new Apresentacao.subMenu();
             this.sidePanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlMenuHeader.SuspendLayout();
@@ -126,15 +127,6 @@
             this.panel2.Size = new System.Drawing.Size(202, 708);
             this.panel2.TabIndex = 3;
             // 
-            // subMenutab
-            // 
-            this.bunifuTransition1.SetDecoration(this.subMenutab, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.subMenutab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.subMenutab.Location = new System.Drawing.Point(0, 83);
-            this.subMenutab.Name = "subMenutab";
-            this.subMenutab.Size = new System.Drawing.Size(202, 625);
-            this.subMenutab.TabIndex = 1;
-            // 
             // pnlMenuHeader
             // 
             this.pnlMenuHeader.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -166,6 +158,7 @@
             // pnlMainMenu
             // 
             this.pnlMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.pnlMainMenu.Controls.Add(this.bunifuFlatButton3);
             this.pnlMainMenu.Controls.Add(this.bunifuFlatButton2);
             this.pnlMainMenu.Controls.Add(this.tab6);
             this.pnlMainMenu.Controls.Add(this.tab5);
@@ -512,6 +505,54 @@
             this.logo.TabIndex = 1;
             this.logo.TabStop = false;
             // 
+            // bunifuFlatButton3
+            // 
+            this.bunifuFlatButton3.Active = false;
+            this.bunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(36)))), ((int)(((byte)(88)))));
+            this.bunifuFlatButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton3.BorderRadius = 0;
+            this.bunifuFlatButton3.ButtonText = "      Sair";
+            this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.bunifuFlatButton3, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton3.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton3.Iconimage")));
+            this.bunifuFlatButton3.Iconimage_right = null;
+            this.bunifuFlatButton3.Iconimage_right_Selected = null;
+            this.bunifuFlatButton3.Iconimage_Selected = null;
+            this.bunifuFlatButton3.IconMarginLeft = 0;
+            this.bunifuFlatButton3.IconMarginRight = 0;
+            this.bunifuFlatButton3.IconRightVisible = true;
+            this.bunifuFlatButton3.IconRightZoom = 0D;
+            this.bunifuFlatButton3.IconVisible = true;
+            this.bunifuFlatButton3.IconZoom = 40D;
+            this.bunifuFlatButton3.IsTab = true;
+            this.bunifuFlatButton3.Location = new System.Drawing.Point(0, 508);
+            this.bunifuFlatButton3.Name = "bunifuFlatButton3";
+            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(75)))), ((int)(((byte)(152)))));
+            this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton3.selected = false;
+            this.bunifuFlatButton3.Size = new System.Drawing.Size(200, 51);
+            this.bunifuFlatButton3.TabIndex = 10;
+            this.bunifuFlatButton3.Tag = "5";
+            this.bunifuFlatButton3.Text = "      Sair";
+            this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton3.Click += new System.EventHandler(this.bunifuFlatButton3_Click);
+            // 
+            // subMenutab
+            // 
+            this.bunifuTransition1.SetDecoration(this.subMenutab, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.subMenutab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.subMenutab.Location = new System.Drawing.Point(0, 83);
+            this.subMenutab.Name = "subMenutab";
+            this.subMenutab.Size = new System.Drawing.Size(202, 625);
+            this.subMenutab.TabIndex = 1;
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -522,6 +563,7 @@
             this.Controls.Add(this.sidePanel);
             this.bunifuTransition1.SetDecoration(this, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SisEscotec";
@@ -559,5 +601,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox logo;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
     }
 }

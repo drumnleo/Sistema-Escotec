@@ -188,5 +188,10 @@ namespace Apresentacao.Presentation.Pages
         {
             dtUltimaAtualizacao.CustomFormat = "dd-MM-yyyy";
         }
+
+        private void btnSelecionarFoto_Click(object sender, EventArgs e)
+        {
+            new Popup.transparentBg(new Popup.SearchDialogs.SearchDialog_WebCam_Foto());
+        }
     }
 }

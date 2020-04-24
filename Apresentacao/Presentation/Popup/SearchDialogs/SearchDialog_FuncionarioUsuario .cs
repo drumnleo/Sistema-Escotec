@@ -11,6 +11,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
     public partial class SearchDialog_FuncionarioUsuario : Form
     {
         Funcionario funcionarioEscolhido = new Funcionario();
+        Usuario usuarioEscolhido = new Usuario();
 
 
         public SearchDialog_FuncionarioUsuario()
@@ -28,13 +29,15 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void dataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            atualizarcampos();
+            Atualizarcampos();
         }
 
-        private void atualizarcampos()
+        private void Atualizarcampos()
         {
             FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
             funcionarioEscolhido = funcionarioNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value));
+            UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
+            usuarioEscolhido = usuarioNegocios.ConsultarPorIdFuncionario(funcionarioEscolhido.Id_Funcionario);
 
             btnSelecionar.Visible = true;
         }
@@ -60,6 +63,10 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         {
             AdicionarEditarUsuario.FuncionarioGetSet = funcionarioEscolhido;
             AdicionarEditarUsuario.PessoaGetSet = funcionarioEscolhido.Pessoa;
+            if (usuarioEscolhido.Id_Usuario.ToString() != "")
+            {
+                AdicionarEditarUsuario.UsuarioGetSet = usuarioEscolhido;
+            }
             this.Close();
         }
 

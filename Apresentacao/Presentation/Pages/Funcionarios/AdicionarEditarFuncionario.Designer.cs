@@ -58,6 +58,7 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.container = new System.Windows.Forms.Panel();
+            this.bunifuCustomTextbox1 = new Bunifu.Framework.BunifuCustomTextbox();
             this.lblIdPessoa = new System.Windows.Forms.Label();
             this.lblIdFuncionario = new System.Windows.Forms.Label();
             this.tbxIdFuncionarioTexto = new System.Windows.Forms.Label();
@@ -97,8 +98,6 @@
             this.picPhoto = new System.Windows.Forms.Panel();
             this.photoCanvas = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.initPhoto = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label1 = new System.Windows.Forms.Label();
@@ -112,13 +111,13 @@
             this.picPhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photoCanvas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.initPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // container
             // 
             this.container.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.container.Controls.Add(this.bunifuCustomTextbox1);
             this.container.Controls.Add(this.lblIdPessoa);
             this.container.Controls.Add(this.lblIdFuncionario);
             this.container.Controls.Add(this.tbxIdFuncionarioTexto);
@@ -156,7 +155,6 @@
             this.container.Controls.Add(this.label2);
             this.container.Controls.Add(this.btnSelecionarFoto);
             this.container.Controls.Add(this.picPhoto);
-            this.container.Controls.Add(this.panel2);
             this.container.Controls.Add(this.initPhoto);
             this.container.Controls.Add(this.bunifuSeparator3);
             this.container.Controls.Add(this.label1);
@@ -167,6 +165,20 @@
             this.container.Name = "container";
             this.container.Size = new System.Drawing.Size(754, 892);
             this.container.TabIndex = 0;
+            // 
+            // bunifuCustomTextbox1
+            // 
+            this.bunifuCustomTextbox1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.bunifuCustomTextbox1.BorderColor = System.Drawing.Color.White;
+            this.bunifuCustomTextbox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bunifuCustomTextbox1.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomTextbox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.bunifuCustomTextbox1.Location = new System.Drawing.Point(0, 58);
+            this.bunifuCustomTextbox1.Name = "bunifuCustomTextbox1";
+            this.bunifuCustomTextbox1.Size = new System.Drawing.Size(754, 43);
+            this.bunifuCustomTextbox1.TabIndex = 168;
+            this.bunifuCustomTextbox1.Text = "CADASTRO FUNCIONÁRIO";
+            this.bunifuCustomTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblIdPessoa
             // 
@@ -1176,6 +1188,7 @@
             this.btnSelecionarFoto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSelecionarFoto.TextMarginLeft = 0;
             this.btnSelecionarFoto.UseDefaultRadiusAndThickness = true;
+            this.btnSelecionarFoto.Click += new System.EventHandler(this.btnSelecionarFoto_Click);
             // 
             // picPhoto
             // 
@@ -1211,27 +1224,6 @@
             this.pictureBox2.TabIndex = 108;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Visible = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lblTitle);
-            this.panel2.Location = new System.Drawing.Point(-1, 60);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(743, 34);
-            this.panel2.TabIndex = 85;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoEllipsis = true;
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(743, 34);
-            this.lblTitle.TabIndex = 28;
-            this.lblTitle.Text = "Cadastro Funcionário";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // initPhoto
             // 
@@ -1332,7 +1324,6 @@
             this.picPhoto.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.photoCanvas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.initPhoto)).EndInit();
             this.ResumeLayout(false);
 
@@ -1341,8 +1332,6 @@
         #endregion
 
         private System.Windows.Forms.Panel container;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel picPhoto;
         private System.Windows.Forms.PictureBox photoCanvas;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -1389,5 +1378,6 @@
         private System.Windows.Forms.Label tbxIdFuncionarioTexto;
         private System.Windows.Forms.Label lblIdFuncionario;
         private System.Windows.Forms.Label lblIdPessoa;
+        private Bunifu.Framework.BunifuCustomTextbox bunifuCustomTextbox1;
     }
 }

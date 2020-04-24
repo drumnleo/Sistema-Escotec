@@ -52,19 +52,68 @@ namespace Negocios
 
                     grupoUsuario.Id_Grupo = Convert.ToInt32(dataRow["ID_GRUPO"]);
                     grupoUsuario.Nome = Convert.ToString(dataRow["NOME"]);
+                    grupoUsuario.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    grupoUsuario.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
 
                     PerfilAcesso perfilAcesso = new PerfilAcesso();
                     perfilAcesso.Id_Perfil = Convert.ToInt32(dataRow["ID_PERFIL"]);
 
+                    Usuario usuarioCadAlt = new Usuario();
+                    if (dataRow["USUARIO_CAD_ALT"].ToString() != "")
+                    {
+                        usuarioCadAlt.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+                    }
+                    
                     grupoUsuario.PerfilAcesso = perfilAcesso;
+                    grupoUsuario.Usuario = usuarioCadAlt;
                     grupoUsuarioColecao.Add(grupoUsuario);
                 }
-
                 return grupoUsuarioColecao;
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao consultar Perfil. Detalhes" + ex.Message);
+                throw new Exception("Erro ao consultar Grupo. Detalhes" + ex.Message);
+            }
+        }
+
+        public GrupoUsuarioColecao ConsultarPorId(int id)
+        {
+            try
+            {
+                GrupoUsuarioColecao grupoUsuarioColecao = new GrupoUsuarioColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_GRUPO", id);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_GRUPO_CONSULTARPORID");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    GrupoUsuario grupoUsuario = new GrupoUsuario();
+
+                    grupoUsuario.Id_Grupo = Convert.ToInt32(dataRow["ID_GRUPO"]);
+                    grupoUsuario.Nome = Convert.ToString(dataRow["NOME"]);
+                    grupoUsuario.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    grupoUsuario.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    PerfilAcesso perfilAcesso = new PerfilAcesso();
+                    perfilAcesso.Id_Perfil = Convert.ToInt32(dataRow["ID_PERFIL"]);
+
+                    Usuario usuarioCadAlt = new Usuario();
+                    if (dataRow["USUARIO_CAD_ALT"].ToString() != "")
+                    {
+                        usuarioCadAlt.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+                    }
+
+                    grupoUsuario.PerfilAcesso = perfilAcesso;
+                    grupoUsuario.Usuario = usuarioCadAlt;
+                    grupoUsuarioColecao.Add(grupoUsuario);
+                }
+                return grupoUsuarioColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar Grupo. Detalhes" + ex.Message);
             }
         }
 
