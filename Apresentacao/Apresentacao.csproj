@@ -242,7 +242,7 @@
     <EmbeddedResource Include="Presentation\Popup\transparentBg1.resx">
       <DependentUpon>transparentBg1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\ReportCollection\Report_Matricula\ReportMatricula.rdlc" />
+    <EmbeddedResource Include="Presentation\ReportCollection\Report_Matricula\RlMatriculaListaDiaria.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
