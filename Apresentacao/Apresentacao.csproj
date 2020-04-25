@@ -176,6 +176,12 @@
     <Compile Include="Presentation\Pages\Funcionarios\AdicionarEditarFuncionario.Designer.cs">
       <DependentUpon>AdicionarEditarFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Pages\Matriculas\AdicionarEditarMatricula.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Pages\Matriculas\AdicionarEditarMatricula.Designer.cs">
+      <DependentUpon>AdicionarEditarMatricula.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Pages\Rotas.cs" />
     <Compile Include="Presentation\FrmLogin_flat.cs">
       <SubType>Form</SubType>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Pages\Matriculas\AdicionarEditarMatricula.resx">
+      <DependentUpon>AdicionarEditarMatricula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Pages\Usuarios\AdicionarEditarUsuario.resx">
       <DependentUpon>AdicionarEditarUsuario.cs</DependentUpon>
