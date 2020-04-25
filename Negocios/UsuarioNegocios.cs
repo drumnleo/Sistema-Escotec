@@ -18,23 +18,13 @@ namespace Negocios
             try
             {
 
-                Pessoa pessoa = new Pessoa();
-                acessoDados.AdicionarParametros("@ID_PESSOA", pessoa.Id_Pessoa);
-
-                Funcionario funcionario = new Funcionario();
-                acessoDados.AdicionarParametros("@ID_FUNCIONARIO", funcionario.Id_Funcionario);
-
-
-                GrupoUsuario grupoTipo = new GrupoUsuario();
-                acessoDados.AdicionarParametros("@ID_GRUPO", grupoTipo.Id_Grupo);
-
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("@ID_PESSOA", pessoa);
-                acessoDados.AdicionarParametros("@ID_FUNCIONARIO", funcionario);
-                acessoDados.AdicionarParametros("@ID_GRUPO", grupoTipo);
-                acessoDados.AdicionarParametros("@USUARIO", usuario.Nome_Usuario);
+                acessoDados.AdicionarParametros("@ID_FUNCIONARIO", usuario.Funcionario.Id_Funcionario);
+                acessoDados.AdicionarParametros("@ID_GRUPO", usuario.GrupoUsuario.Id_Grupo);
+                acessoDados.AdicionarParametros("@NOME_USUARIO", usuario.Nome_Usuario);
                 acessoDados.AdicionarParametros("@SENHA", usuario.Senha);
                 acessoDados.AdicionarParametros("@EMAIL_PROFISSIONAL", usuario.Email_Profissional);
+                acessoDados.AdicionarParametros("USUARIO_CAD_ALT", usuario.Usuario_cad_alt);
 
 
 
@@ -64,11 +54,22 @@ namespace Negocios
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
                     Usuario usuario = new Usuario();
-
                     usuario.Id_Usuario = Convert.ToInt32(dataRow["ID_USUARIO"]);
                     usuario.Nome_Usuario = Convert.ToString(dataRow["USUARIO"]);
-                    usuario.Senha = Convert.ToString(dataRow["SENHA"]);
+                    usuario.Email_Profissional = Convert.ToString(dataRow["EMAIL_PROFISSIONAL"]);
+                    usuario.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    usuario.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
 
+                    Funcionario funcionario = new Funcionario();
+                    funcionario.Id_Funcionario = Convert.ToInt32(dataRow["ID_FUNCIONARIO"]);
+
+                    Pessoa pessoa = new Pessoa();
+                    pessoa.Nome = Convert.ToString(dataRow["NOME"]);
+                    pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
+
+                    GrupoUsuario grupoUsuario = new GrupoUsuario();
+                    grupoUsuario.Id_Grupo = Convert.ToInt32(dataRow["ID_GRUPO_USUARIO"]);
+                    grupoUsuario.Nome = Convert.ToString(dataRow["GRUPO_NOME"]);
                     usuarioColecao.Add(usuario);
                 }
 
@@ -80,13 +81,125 @@ namespace Negocios
             }
         }
 
+        public Usuario ConsultarPorId(int id)
+        {
+            try
+            {
+                Usuario usuario = new Usuario();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@id", id);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_USUARIO_CONSULTARPORID");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["ID_USUARIO"]);
+                    usuario.Nome_Usuario = Convert.ToString(dataRow["USUARIO"]);
+                    usuario.Email_Profissional = Convert.ToString(dataRow["EMAIL_PROFISSIONAL"]);
+                    usuario.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    usuario.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    Funcionario funcionario = new Funcionario();
+                    funcionario.Id_Funcionario = Convert.ToInt32(dataRow["ID_FUNCIONARIO"]);
+
+                    Pessoa pessoa = new Pessoa();
+                    pessoa.Nome = Convert.ToString(dataRow["NOME"]);
+                    pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
+
+                    GrupoUsuario grupoUsuario = new GrupoUsuario();
+                    grupoUsuario.Id_Grupo = Convert.ToInt32(dataRow["ID_GRUPO_USUARIO"]);
+                    grupoUsuario.Nome = Convert.ToString(dataRow["GRUPO_NOME"]);
+
+                    usuario.Funcionario = funcionario;
+                    usuario.Funcionario.Pessoa = pessoa;
+                    usuario.GrupoUsuario = grupoUsuario;
+                }
+
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar Usuário. Detalhes" + ex.Message);
+            }
+        }
+
+        public Usuario ConsultarPorIdFuncionario(int id)
+        {
+            try
+            {
+                Usuario usuario = new Usuario();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_FUNCIONARIO", id);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_USUARIO_CONSULTARPORIDFUNCIONARIO");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["ID_USUARIO"]);
+                    usuario.Nome_Usuario = Convert.ToString(dataRow["USUARIO"]);
+                    usuario.Email_Profissional = Convert.ToString(dataRow["EMAIL_PROFISSIONAL"]);
+                    usuario.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    usuario.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    Funcionario funcionario = new Funcionario();
+                    funcionario.Id_Funcionario = Convert.ToInt32(dataRow["ID_FUNCIONARIO"]);
+
+                    Pessoa pessoa = new Pessoa();
+                    pessoa.Nome = Convert.ToString(dataRow["NOME"]);
+                    pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
+
+                    GrupoUsuario grupoUsuario = new GrupoUsuario();
+                    grupoUsuario.Id_Grupo = Convert.ToInt32(dataRow["ID_GRUPO_USUARIO"]);
+                    grupoUsuario.Nome = Convert.ToString(dataRow["GRUPO_NOME"]);
+
+                    usuario.Funcionario = funcionario;
+                    usuario.Funcionario.Pessoa = pessoa;
+                    usuario.GrupoUsuario = grupoUsuario;
+                }
+
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar Usuário. Detalhes" + ex.Message);
+            }
+        }
+
+        public string AtualizarporId(Usuario usuario)
+        {
+            try
+            {
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("ID_USUARIO", usuario.Id_Usuario);
+                acessoDados.AdicionarParametros("@ID_FUNCIONARIO", usuario.Funcionario.Id_Funcionario);
+                acessoDados.AdicionarParametros("@ID_GRUPO", usuario.GrupoUsuario.Id_Grupo);
+                acessoDados.AdicionarParametros("@NOME_USUARIO", usuario.Nome_Usuario);
+                acessoDados.AdicionarParametros("@SENHA", usuario.Senha);
+                acessoDados.AdicionarParametros("@EMAIL_PROFISSIONAL", usuario.Email_Profissional);
+                acessoDados.AdicionarParametros("USUARIO_CAD_ALT", usuario.Usuario_cad_alt);
+
+                string idUsuario = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_USUARIO_ATUALIZARPORID").ToString();
+
+                return idUsuario;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
         public string Excluir(Usuario usuario)
         {
             try
             {
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("ID_USUARIO", usuario.Id_Usuario);
+                acessoDados.AdicionarParametros("ID_USUARIO_LOGADO", usuario.Id_Usuario);
+
                 string id_usuario = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_USUARIO_EXCLUIR").ToString();
+
                 return id_usuario;
             }
             catch (Exception ex)

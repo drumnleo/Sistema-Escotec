@@ -48,21 +48,17 @@ namespace Negocios
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
                     Aluno aluno = new Aluno();
-
                     aluno.Id_Aluno = Convert.ToInt32(dataRow["ID_ALUNO"]);
                     aluno.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
                     aluno.Data_Ultimo_Cadastro = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
-                    aluno.Usuario_Cad_Alt = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
                     Pessoa pessoa = new Pessoa();
-
                     pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
                     pessoa.Nome = Convert.ToString(dataRow["NOME"]);
                     pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
                     pessoa.CPF = Convert.ToString(dataRow["CPF"]);
 
                     Endereco endereco = new Endereco();
-
                     endereco.Id_Endereco = Convert.ToInt32(dataRow["ID_ENDERECO"]);
                     endereco.CEP = Convert.ToString(dataRow["CEP"]);
                     endereco.Lograduro = Convert.ToString(dataRow["LOGRADURO"]);
@@ -70,19 +66,17 @@ namespace Negocios
                     endereco.Cidade = Convert.ToString(dataRow["CIDADE"]);
                     endereco.Estado = Convert.ToString(dataRow["ESTADO"]);
 
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
                     aluno.Pessoa = pessoa;
-                    aluno.Endereco = endereco;
+                    aluno.Pessoa.Endereco = endereco;
                     alunoColecao.Add(aluno);
-
                 }
-
-                return alunoColecao;
-                                        
-               
+                return alunoColecao;                                         
             }
             catch (Exception ex)
             {
-
                 throw new Exception("Erro ao consultar aluno. Detalhes: "+ ex.Message);
             }
 
@@ -101,23 +95,17 @@ namespace Negocios
 
                 foreach(DataRow dataRow in dataTable.Rows)
                 {
-
-                    aluno = new Aluno();
-
                     aluno.Id_Aluno = Convert.ToInt32(dataRow["ID_ALUNO"]);
                     aluno.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
                     aluno.Data_Ultimo_Cadastro = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
-                    aluno.Usuario_Cad_Alt = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
                     Pessoa pessoa = new Pessoa();
-
                     pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
                     pessoa.Nome = Convert.ToString(dataRow["NOME"]);
                     pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
                     pessoa.CPF = Convert.ToString(dataRow["CPF"]);
 
                     Endereco endereco = new Endereco();
-
                     endereco.Id_Endereco = Convert.ToInt32(dataRow["ID_ENDERECO"]);
                     endereco.CEP = Convert.ToString(dataRow["CEP"]);
                     endereco.Lograduro = Convert.ToString(dataRow["LOGRADURO"]);
@@ -125,29 +113,29 @@ namespace Negocios
                     endereco.Cidade = Convert.ToString(dataRow["CIDADE"]);
                     endereco.Estado = Convert.ToString(dataRow["ESTADO"]);
 
-                    aluno.Pessoa = pessoa;
-                    aluno.Endereco = endereco;
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
+                    aluno.Pessoa = pessoa;
+                    aluno.Pessoa.Endereco = endereco;
                 }
 
                 return aluno;
             }
             catch (Exception ex)
             {
-
                 throw new Exception("Erro ao consultar Funcionário. Detalhes: " + ex.Message);
             }
 
         }
         public string AtualizarPorId(Aluno aluno)
         {
-
             try
             {
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@ID_ALUNO", aluno.Id_Aluno);
                 acessoDados.AdicionarParametros("@ID_PESSOA", aluno.Pessoa.Id_Pessoa);
-                acessoDados.AdicionarParametros("@ID_USUARIO", aluno.Usuario_Cad_Alt);
+                acessoDados.AdicionarParametros("@ID_USUARIO", aluno.Usuario.Id_Usuario);
 
                 string idAluno = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_ALUNO_ATUALIZARPORID").ToString();
 
@@ -155,32 +143,26 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-
                 return ex.Message;
             }
 
         }
 
         public string Excluir(Aluno aluno)
-
         {
             try
             {
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@ID_ALUNO", aluno.Id_Aluno);
-                acessoDados.AdicionarParametros("@ID_USUARIO", aluno.Usuario_Cad_Alt);
+                acessoDados.AdicionarParametros("@ID_USUARIO", aluno.Usuario.Id_Usuario);
 
                 string idAluno = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_ALUNO_EXCLUIR").ToString();
                 return idAluno;
             }
             catch (Exception ex )
             {
-
                 return ex.Message;
             }
-
         }
-
-
     }
 }

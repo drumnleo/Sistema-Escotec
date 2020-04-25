@@ -29,15 +29,12 @@ namespace Apresentacao.Presentation.Pages
             get { return pessoaGetSet; }
             set { pessoaGetSet = value; }
         }
-
         private static Funcionario funcionarioGetSet;
-
         public static Funcionario FuncionarioGetSet
         {
             get { return funcionarioGetSet; }
             set { funcionarioGetSet = value; }
         }
-
         private static Usuario usuarioGetSet;
         public static Usuario UsuarioGetSet
         {
@@ -62,46 +59,32 @@ namespace Apresentacao.Presentation.Pages
             tbxEmail.Text = usuarioGetSet.Email_Profissional;
             lblIdUsuario.Text = FuncionarioGetSet.Id_Funcionario.ToString();
             GrupoUsuariosNegocios grupoUsuariosNegocios = new GrupoUsuariosNegocios();
-            GrupoColecao grupoColecao = new GrupoColecao();
-            cbxGrupo.DataSource = null;
-            cbxGrupo.DataSource = grupoColecao;
-            cbxGrupo.ValueMember = "ID";
-            cbxGrupo.DisplayMember = "NOME";
-            cbxGrupo.SelectedIndex = 0;
-            cbxGrupo.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-
-            Usuario usuario = new Usuario();
-            GrupoUsuario grupoTipo = new GrupoUsuario();
-            UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
-
-
-
-            usuario.Nome_Usuario = tbxUsuario.Text;
-            usuario.Senha = txtSenha.Text;
-            usuario.grupoTipo = grupoTipo;
-
-            string retorno = usuarioNegocios.Inserir(usuario);
-
+            GrupoUsuarioColecao grupoUsuarioColecao = grupoUsuariosNegocios.ConsultarPorId(usuarioGetSet.GrupoUsuario.Id_Grupo);
             try
             {
-                int msgretorno = Convert.ToInt32(retorno);
-                MessageBox.Show("Usuário inserido com sucesso. Código: " + msgretorno.ToString());
+                cbxGrupo.DataSource = null;
+                cbxGrupo.DataSource = grupoUsuarioColecao;
+                cbxGrupo.ValueMember = "ID_GRUPO";
+                cbxGrupo.DisplayMember = "NOME";
+                cbxGrupo.SelectedIndex = 0;
+                cbxGrupo.DropDownStyle = ComboBoxStyle.DropDownList;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao inserir usuário. Mensagem: " + retorno);
+                MessageBox.Show(ex.Message);
             }
-
-
+            
         }
 
         private void AdicionarEditarUsuario_Load(object sender, EventArgs e)
         {
             
+        }
 
+        private void LimparCamposTela()
+        {
+            funcionarioGetSet = new Funcionario();
+            UsuarioGetSet = new Usuario();
         }
 
         private void AddEditMember_Resize(object sender, EventArgs e)
@@ -161,18 +144,49 @@ namespace Apresentacao.Presentation.Pages
 
 
             string txt = "";
-            GrupoColecao grupoColecao = grupoUsuariosNegocios.ConsultarPorNome(txt);
+            GrupoUsuarioColecao grupoColecao = grupoUsuariosNegocios.ConsultarPorNome(txt);
 
 
             cbxGrupo.DataSource = null;
             cbxGrupo.DataSource = grupoColecao;
-            cbxGrupo.ValueMember = "ID";
+            cbxGrupo.ValueMember = "ID_GRUPO";
             cbxGrupo.DisplayMember = "NOME";
         }
 
         private void btnSearchUsuario_Click(object sender, EventArgs e)
         {
             new Popup.transparentBg(new Popup.SearchDialogs.SearchDialog());
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+                LimparCamposTela();
+                CarregaComboBox();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            Usuario usuario = new Usuario();
+            GrupoUsuario grupoUsuario = new GrupoUsuario();
+            UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
+
+
+
+            usuario.Nome_Usuario = tbxUsuario.Text;
+            usuario.Senha = txtSenha.Text;
+            usuario.GrupoUsuario = grupoUsuario;
+
+            string retorno = usuarioNegocios.Inserir(usuario);
+
+            try
+            {
+                int msgretorno = Convert.ToInt32(retorno);
+                MessageBox.Show("Usuário inserido com sucesso. Código: " + msgretorno.ToString());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao inserir usuário. Mensagem: " + retorno);
+            }
         }
     }
 }

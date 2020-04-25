@@ -35,52 +35,6 @@ namespace Negocios
             
         }
 
-        public PerfilAcessoColecao ConsultarPorNome(string nome)
-        {
-            try
-            {
-                PerfilAcessoColecao perfilColecao = new PerfilAcessoColecao();
-
-                acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("@NOME", nome);
-
-                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_PERFIL_CONSULTARPORNOME");
-
-                foreach (DataRow dataRow in dataTable.Rows)
-                {
-                    PerfilMenu perfilMenu = new PerfilMenu();
-
-                    perfilMenu.Id_Perfil = Convert.ToInt32(dataRow["ID"]);
-                    perfilMenu.Nome = Convert.ToString(dataRow["NOME"]);
-                    perfilMenu.Btn_Cadastrar = Convert.ToBoolean(dataRow["MENU_CADASTRAR"]);
-                    perfilMenu.Btn_Excluir = Convert.ToBoolean(dataRow["MENU_EXCLUIR"]);
-
-                    perfilColecao.Add(perfilMenu);
-                }
-
-                return perfilColecao;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro ao consultar Perfil. Detalhes" + ex.Message);
-            }
-        }
-
-        public string Excluir(PerfilMenu perfilmenu)
-        {
-            try
-            {
-                acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("ID_PERFIL", perfilmenu.Id_Perfil);
-                string idperfil = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_PERFIL_EXCLUIR").ToString();
-                return idperfil;
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-        }
-
         public static Usuario UsuarioLogadoGetSet { get; set; }
 
     }

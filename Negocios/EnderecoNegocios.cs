@@ -14,7 +14,6 @@ namespace Negocios
             try
             {
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("@ID_PESSOA", endereco.Pessoa.Id_Pessoa);
                 acessoDados.AdicionarParametros("@LOGRADOURO", endereco.Lograduro);
                 acessoDados.AdicionarParametros("@NUMERO", endereco.Numero);
                 acessoDados.AdicionarParametros("@COMPLEMENTO", endereco.Complemento);
@@ -42,7 +41,6 @@ namespace Negocios
             {
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@ID_ENDERECO", endereco.Id_Endereco);
-                acessoDados.AdicionarParametros("@ID_PESSOA", endereco.Pessoa.Id_Pessoa);
                 acessoDados.AdicionarParametros("@LOGRADOURO", endereco.Lograduro);
                 acessoDados.AdicionarParametros("@NUMERO", endereco.Numero);
                 acessoDados.AdicionarParametros("@COMPLEMENTO", endereco.Complemento);
@@ -104,15 +102,10 @@ namespace Negocios
                     endereco.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
                     endereco.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
 
-                    Pessoa pessoa = new Pessoa();
-
-                    pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
-
                     Usuario usuario = new Usuario();
 
                     usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
-                    endereco.Pessoa = pessoa;
                     endereco.Usuario = usuario;
                     enderecoColecao.Add(endereco);
                 }

@@ -126,7 +126,7 @@ namespace Apresentacao.Presentation.Pages
             funcionario.Num_CTPS = Convert.ToInt32(tbxCTPS.Text);
             funcionario.Serie_CTPS = Convert.ToInt32(tbxSerieCTPS.Text);
             funcionario.Num_NIS = Convert.ToInt32(tbxNIS.Text);
-            funcionario.Usuario_Cad_Alt = LoginNegocios.UsuarioLogadoGetSet.Id_Usuario;
+            funcionario.Usuario_Cad_Alt = LoginNegocios.UsuarioLogadoGetSet;
 
             string retorno = funcionarioNegocios.AtualizarporId(funcionario);
             try
@@ -151,7 +151,7 @@ namespace Apresentacao.Presentation.Pages
             funcionario.Num_CTPS = Convert.ToInt32(tbxCTPS.Text);
             funcionario.Serie_CTPS = Convert.ToInt32(tbxSerieCTPS.Text);
             funcionario.Num_NIS = Convert.ToInt32(tbxNIS.Text);
-            funcionario.Usuario_Cad_Alt = LoginNegocios.UsuarioLogadoGetSet.Id_Usuario;
+            funcionario.Usuario_Cad_Alt = LoginNegocios.UsuarioLogadoGetSet;
 
             FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
             string retorno = funcionarioNegocios.Inserir(funcionario);
@@ -187,6 +187,11 @@ namespace Apresentacao.Presentation.Pages
         private void dtUltimaAtualizacao_ValueChanged(object sender, EventArgs e)
         {
             dtUltimaAtualizacao.CustomFormat = "dd-MM-yyyy";
+        }
+
+        private void btnSelecionarFoto_Click(object sender, EventArgs e)
+        {
+            new Popup.transparentBg(new Popup.SearchDialogs.SearchDialog_WebCam_Foto());
         }
     }
 }

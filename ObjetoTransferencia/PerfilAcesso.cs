@@ -10,23 +10,24 @@ namespace ObjetoTransferencia
     {
         public int Id_Perfil { get; set; }
         public string Descricao { get; set; }
-        public Pessoa  Pessoa { get; set; }
-        public Usuario Usuario { get; set; }
-        public Funcionario Funcionario { get; set; }
-        public GrupoUsuario GrupoUsuario { get; set; }
-        public Curso Curso { get; set; }
-        public Endereco Endereco { get; set; }
-        public Laboratorio Laboratorio { get; set; }
-        public Marketing Marketing { get; set; }
-        public Orcamento Orcamento { get; set; }
-        public Professor Professor { get; set; }
-        public ProfessorMinistra ProfessorMinistra { get; set; }
-        public PromocaoValor PromocaoValor { get; set; }
-        public TipoApostila TipoApostila { get; set; }
-        public TipoAtendimento TipoAtendimento { get; set; }
-        public TipoCurso TipoCurso { get; set; }
-        public TipoLaboratorio  TipoLaboratorio { get; set; }
-        public Turma Turma { get; set; }
+        public char  Pessoa { get; set; }
+        public char Usuario { get; set; }
+        public char Funcionario { get; set; }
+        public char GrupoUsuario { get; set; }
+        public char Curso { get; set; }
+        public char Endereco { get; set; }
+        public char Laboratorio { get; set; }
+        public char Marketing { get; set; }
+        public char Orcamento { get; set; }
+        public char Professor { get; set; }
+        public char ProfessorMinistra { get; set; }
+        public char PromocaoValor { get; set; }
+        public char TipoApostila { get; set; }
+        public char TipoAtendimento { get; set; }
+        public char TipoCurso { get; set; }
+        public char TipoLaboratorio { get; set; }
+        public char Turma { get; set; }
+        public char Caixa { get; set; }
         public DateTime  Data_Cadastro { get; set; }
         public DateTime Data_Ultima_Alteracao { get; set; }
         public int Usuario_Cad_Alt { get; set; }

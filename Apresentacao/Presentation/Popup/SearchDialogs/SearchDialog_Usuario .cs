@@ -1,24 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ObjetoTransferencia;
 using Negocios;
 using System.Reflection;
 using Apresentacao.Presentation.Pages;
-using Apresentacao.Validacao_cpf_e_afins;
 
 namespace Apresentacao.Presentation.Popup.SearchDialogs
 {
     
     public partial class SearchDialog_Usuario : Form
     {
-        Funcionario funcionarioEscolhido = new Funcionario();
+        Usuario UsuarioEscolhido = new Usuario();
 
         public SearchDialog_Usuario()
         {
@@ -40,21 +32,20 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void atualizarcampos()
         {
-            FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
-            funcionarioEscolhido = funcionarioNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value));
+            UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
+            UsuarioEscolhido = usuarioNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value));
 
-            btnSelecionar.Location = new Point(541, 15);
             btnSelecionar.Visible = true;
         }
 
         private void btnpesquisar_Click(object sender, EventArgs e)
         {
-            FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
-            FuncionarioColecao funcionarioColecao = funcionarioNegocios.ConsultarPorDescricao(tbxSearch.Text);
+            UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
+            UsuarioColecao usuarioColecao = usuarioNegocios.ConsultarPorNome(tbxSearch.Text);
             
 
             dataGrid.DataSource = null;
-            dataGrid.DataSource = funcionarioColecao;
+            dataGrid.DataSource = usuarioColecao;
             dataGrid.Update();
             dataGrid.Refresh();
         }
@@ -66,8 +57,8 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
-            AdicionarEditarFuncionario.FuncionarioGetSet = funcionarioEscolhido;
-            AdicionarEditarFuncionario.PessoaGetSet = funcionarioEscolhido.Pessoa;
+            AdicionarEditarUsuario.UsuarioGetSet = UsuarioEscolhido;
+            //AdicionarEditarFuncionario.PessoaGetSet = funcionarioEscolhido.Pessoa;
             this.Close();
         }
 

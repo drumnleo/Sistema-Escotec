@@ -18,9 +18,9 @@ namespace Negocios
             try
             {
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("@ID_PROFISSAO", pessoa.Id_Profissao);
-                acessoDados.AdicionarParametros("@ID_TIPODOC", pessoa.Id_TipoDoc);
-                acessoDados.AdicionarParametros("@ID_ESTADO_CIVIL", pessoa.Id_EstadoCivil);
+                acessoDados.AdicionarParametros("@ID_PROFISSAO", pessoa.Profissao.Id_Profissao);
+                acessoDados.AdicionarParametros("@ID_TIPODOC", pessoa.TipoDoc.Id_TipoDoc);
+                acessoDados.AdicionarParametros("@ID_ESTADO_CIVIL", pessoa.EstadoCivil.Id_EstadoCivil);
                 acessoDados.AdicionarParametros("@NOME", pessoa.Nome);
                 acessoDados.AdicionarParametros("@SOBRENOME", pessoa.Sobrenome);
                 acessoDados.AdicionarParametros("@CPF", pessoa.CPF);
@@ -30,7 +30,7 @@ namespace Negocios
                 acessoDados.AdicionarParametros("@PAI", pessoa.Pai);
                 acessoDados.AdicionarParametros("@MAE", pessoa.Mae);
                 acessoDados.AdicionarParametros("@SEXO", pessoa.Sexo);
-                acessoDados.AdicionarParametros("@ID_USUARIO", pessoa.Id_Usuario);
+                acessoDados.AdicionarParametros("@ID_USUARIO", pessoa.Usuario.Id_Usuario);
 
                 string idPessoa = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_PESSOA_INSERIR").ToString();
 
@@ -50,7 +50,7 @@ namespace Negocios
             {
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("ID_PESSOA", pessoa.Id_Pessoa);
-                acessoDados.AdicionarParametros("ID_USUARIO", pessoa.Id_Usuario);
+                acessoDados.AdicionarParametros("ID_USUARIO", pessoa.Usuario.Id_Usuario);
                 string IdPessoa = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_PESSOA_EXCLUIR").ToString();
                 return IdPessoa;
             }
@@ -66,9 +66,9 @@ namespace Negocios
             {
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@ID_PESSOA", pessoa.Id_Pessoa);
-                acessoDados.AdicionarParametros("@ID_PROFISSAO", pessoa.Id_Profissao);
-                acessoDados.AdicionarParametros("@ID_TIPODOC", pessoa.Id_TipoDoc);
-                acessoDados.AdicionarParametros("@ID_ESTADO_CIVIL", pessoa.Id_EstadoCivil);
+                acessoDados.AdicionarParametros("@ID_PROFISSAO", pessoa.Profissao.Id_Profissao);
+                acessoDados.AdicionarParametros("@ID_TIPODOC", pessoa.TipoDoc.Id_TipoDoc);
+                acessoDados.AdicionarParametros("@ID_ESTADO_CIVIL", pessoa.EstadoCivil.Id_EstadoCivil);
                 acessoDados.AdicionarParametros("@NOME", pessoa.Nome);
                 acessoDados.AdicionarParametros("@SOBRENOME", pessoa.Sobrenome);
                 acessoDados.AdicionarParametros("@CPF", pessoa.CPF);
@@ -78,7 +78,7 @@ namespace Negocios
                 acessoDados.AdicionarParametros("@PAI", pessoa.Pai);
                 acessoDados.AdicionarParametros("@MAE", pessoa.Mae);
                 acessoDados.AdicionarParametros("@SEXO", pessoa.Sexo);
-                acessoDados.AdicionarParametros("@ID_USUARIO", pessoa.Id_Usuario);
+                acessoDados.AdicionarParametros("@ID_USUARIO", pessoa.Usuario.Id_Usuario);
 
                 string idPessoa = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_PESSOA_ATUALIZARPORID").ToString();
 
@@ -106,9 +106,6 @@ namespace Negocios
                     Pessoa pessoa = new Pessoa();
 
                     pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
-                    pessoa.Id_Profissao = Convert.ToInt32(dataRow["ID_PROFISSAO"]);
-                    pessoa.Id_TipoDoc = Convert.ToInt32(dataRow["ID_TIPODOC"]);
-                    pessoa.Id_EstadoCivil = Convert.ToInt32(dataRow["ID_ESTADO_CIVIL"]);
                     pessoa.Nome = Convert.ToString(dataRow["NOME"]);
                     pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
                     pessoa.CPF = Convert.ToString(dataRow["CPF"]);
@@ -119,8 +116,42 @@ namespace Negocios
                     pessoa.Mae = Convert.ToString(dataRow["MAE"]);
                     pessoa.Sexo = Convert.ToChar(dataRow["SEXO"]);
                     pessoa.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
-                    pessoa.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
                     pessoa.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    Profissao profissao = new Profissao();
+                    profissao.Id_Profissao = Convert.ToInt32(dataRow["ID_PROFISSAO"]);
+
+                    TipoDoc tipoDoc = new TipoDoc();
+                    tipoDoc.Id_TipoDoc = Convert.ToInt32(dataRow["ID_TIPO_DOC"]);
+
+                    Telefone telefone = new Telefone();
+                    if (dataRow["ID_TELEFONE"].ToString() != "" )
+                    {
+                        telefone.Id_Telefone = Convert.ToInt32(dataRow["ID_TELEFONE"]);
+                        telefone.DDD = Convert.ToInt16(dataRow["DDD"]);
+                        telefone.Num_Telefone = Convert.ToString(dataRow["TELEFONE"]);
+                    }
+
+
+                    EstadoCivil estadoCivil = new EstadoCivil();
+                    estadoCivil.Id_EstadoCivil = Convert.ToInt32(dataRow["ID_ESTADO_CIVIL"]);
+
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    Endereco endereco = new Endereco();
+                    if (dataRow["ID_ENDERECO"].ToString() != "")
+                    {
+                        endereco.Id_Endereco = Convert.ToInt32(dataRow["ID_ENDERECO"]);
+                        endereco.CEP = Convert.ToString(dataRow["CEP"]);
+                    }
+
+                    pessoa.Profissao = profissao;
+                    pessoa.TipoDoc = tipoDoc;
+                    pessoa.EstadoCivil = estadoCivil;
+                    pessoa.Usuario = usuario;
+                    pessoa.Endereco = endereco;
+                    pessoa.Telefone = telefone;
 
                     pessoaColecao.Add(pessoa);
                 }
@@ -147,9 +178,6 @@ namespace Negocios
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
                     pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
-                    pessoa.Id_Profissao = Convert.ToInt32(dataRow["ID_PROFISSAO"]);
-                    pessoa.Id_TipoDoc = Convert.ToInt32(dataRow["ID_TIPODOC"]);
-                    pessoa.Id_EstadoCivil = Convert.ToInt32(dataRow["ID_ESTADO_CIVIL"]);
                     pessoa.Nome = Convert.ToString(dataRow["NOME"]);
                     pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
                     pessoa.CPF = Convert.ToString(dataRow["CPF"]);
@@ -160,9 +188,42 @@ namespace Negocios
                     pessoa.Mae = Convert.ToString(dataRow["MAE"]);
                     pessoa.Sexo = Convert.ToChar(dataRow["SEXO"]);
                     pessoa.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
-                    pessoa.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
                     pessoa.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
 
+                    Profissao profissao = new Profissao();
+                    profissao.Id_Profissao = Convert.ToInt32(dataRow["ID_PROFISSAO"]);
+
+                    TipoDoc tipoDoc = new TipoDoc();
+                    tipoDoc.Id_TipoDoc = Convert.ToInt32(dataRow["ID_TIPO_DOC"]);
+
+                    Telefone telefone = new Telefone();
+                    if (dataRow["ID_TELEFONE"].ToString() != "")
+                    {
+                        telefone.Id_Telefone = Convert.ToInt32(dataRow["ID_TELEFONE"]);
+                        telefone.DDD = Convert.ToInt16(dataRow["DDD"]);
+                        telefone.Num_Telefone = Convert.ToString(dataRow["TELEFONE"]);
+                    }
+
+
+                    EstadoCivil estadoCivil = new EstadoCivil();
+                    estadoCivil.Id_EstadoCivil = Convert.ToInt32(dataRow["ID_ESTADO_CIVIL"]);
+
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    Endereco endereco = new Endereco();
+                    if (dataRow["ID_ENDERECO"].ToString() != "")
+                    {
+                        endereco.Id_Endereco = Convert.ToInt32(dataRow["ID_ENDERECO"]);
+                        endereco.CEP = Convert.ToString(dataRow["CEP"]);
+                    }
+
+                    pessoa.Profissao = profissao;
+                    pessoa.TipoDoc = tipoDoc;
+                    pessoa.EstadoCivil = estadoCivil;
+                    pessoa.Usuario = usuario;
+                    pessoa.Endereco = endereco;
+                    pessoa.Telefone = telefone;
                 }
 
                 return pessoa;

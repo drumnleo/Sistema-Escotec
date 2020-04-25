@@ -104,5 +104,10 @@ namespace Apresentacao
             FrmLogin_flat.ActiveForm.WindowState = FormWindowState.Maximized;
             this.Close();
         }
+
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

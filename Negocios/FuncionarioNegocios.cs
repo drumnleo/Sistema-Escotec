@@ -159,7 +159,9 @@ namespace Negocios
                     funcionario.Num_NIS = Convert.ToInt32(dataRow["NUM_NIS"]);
                     funcionario.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
                     funcionario.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
-                    funcionario.Usuario_Cad_Alt = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
                     Pessoa pessoa = new Pessoa();
                     pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
@@ -167,6 +169,7 @@ namespace Negocios
                     pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
                     pessoa.CPF = Convert.ToString(dataRow["CPF"]);
 
+                    funcionario.Usuario_Cad_Alt = usuario;
                     funcionario.Pessoa = pessoa;
                 }
 
