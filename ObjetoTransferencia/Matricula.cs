@@ -13,9 +13,9 @@ namespace ObjetoTransferencia
         public Turma Turma { get; set; }
         public PromocaoValor PromocaoValor { get; set; }
         public DateTime Data_Cadastro { get; set; }
-        public DateTime Data_Ultimo_Cadastro { get; set; }
+        public DateTime Data_Ultima_Alteracao { get; set; }
         public Usuario Usuario { get; set; }
         public bool Ativo { get; set; }
-        public string Situacao { get; set; }
+        public Char Situacao { get; set; }
     }
 }

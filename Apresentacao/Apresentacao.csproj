@@ -170,17 +170,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presentation\Pages\Modelo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Pages\Modelo.Designer.cs">
+      <DependentUpon>Modelo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Pages\Funcionarios\AdicionarEditarFuncionario.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Presentation\Pages\Funcionarios\AdicionarEditarFuncionario.Designer.cs">
       <DependentUpon>AdicionarEditarFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Pages\Matriculas\AdicionarEditarMatricula.cs">
+    <Compile Include="Presentation\Pages\Matriculas\ConsultaMatricula.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Presentation\Pages\Matriculas\AdicionarEditarMatricula.Designer.cs">
-      <DependentUpon>AdicionarEditarMatricula.cs</DependentUpon>
+    <Compile Include="Presentation\Pages\Matriculas\ConsultaMatricula.Designer.cs">
+      <DependentUpon>ConsultaMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Pages\Matriculas\ConsultaMatricula_old.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Pages\Matriculas\ConsultaMatricula_old.Designer.cs">
+      <DependentUpon>ConsultaMatricula_old.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Pages\Rotas.cs" />
     <Compile Include="Presentation\FrmLogin_flat.cs">
@@ -200,6 +212,12 @@
     </Compile>
     <Compile Include="Presentation\Pages\Usuarios\AdicionarEditarUsuario.Designer.cs">
       <DependentUpon>AdicionarEditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\ReportMatriculaColecao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\ReportMatriculaColecao.Designer.cs">
+      <DependentUpon>ReportMatriculaColecao.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_WebCam_Foto.cs">
       <SubType>Form</SubType>
@@ -252,6 +270,9 @@
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Validadocs.cs" />
+    <EmbeddedResource Include="Presentation\Pages\Modelo.resx">
+      <DependentUpon>Modelo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Pages\Funcionarios\AdicionarEditarFuncionario.resx">
       <DependentUpon>AdicionarEditarFuncionario.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,11 +282,17 @@
     <EmbeddedResource Include="Presentation\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Pages\Matriculas\AdicionarEditarMatricula.resx">
-      <DependentUpon>AdicionarEditarMatricula.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Pages\Matriculas\ConsultaMatricula.resx">
+      <DependentUpon>ConsultaMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Pages\Matriculas\ConsultaMatricula_old.resx">
+      <DependentUpon>ConsultaMatricula_old.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Pages\Usuarios\AdicionarEditarUsuario.resx">
       <DependentUpon>AdicionarEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\ReportMatriculaColecao.resx">
+      <DependentUpon>ReportMatriculaColecao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_WebCam_Foto.resx">
       <DependentUpon>SearchDialog_WebCam_Foto.cs</DependentUpon>
@@ -303,6 +330,8 @@
     <None Include="Properties\DataSources\ObjetoTransferencia.MatriculaColecao.datasource" />
     <None Include="Properties\DataSources\ObjetoTransferencia.Pessoa.datasource" />
     <None Include="Properties\DataSources\ObjetoTransferencia.PessoaColecao.datasource" />
+    <None Include="Properties\DataSources\ObjetoTransferencia.PromocaoValor.datasource" />
+    <None Include="Properties\DataSources\ObjetoTransferencia.PromocaoValorColecao.datasource" />
     <None Include="Properties\DataSources\ObjetoTransferencia.Turma.datasource" />
     <None Include="Properties\DataSources\ObjetoTransferencia.TurmaColecao.datasource" />
     <None Include="Properties\DataSources\ObjetoTransferencia.Usuario.datasource" />

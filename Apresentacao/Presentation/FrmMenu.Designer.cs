@@ -37,21 +37,20 @@
             this.bunifuTransition1 = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.sidePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.subMenutab = new Apresentacao.subMenu();
             this.pnlMenuHeader = new System.Windows.Forms.Panel();
             this.btnDrawerPin = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnlMainMenu = new System.Windows.Forms.Panel();
+            this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tab6 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tab5 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tab4 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tab3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tab2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tab1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.subMenutab = new Apresentacao.subMenu();
             this.sidePanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlMenuHeader.SuspendLayout();
@@ -127,6 +126,15 @@
             this.panel2.Size = new System.Drawing.Size(202, 708);
             this.panel2.TabIndex = 3;
             // 
+            // subMenutab
+            // 
+            this.bunifuTransition1.SetDecoration(this.subMenutab, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.subMenutab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.subMenutab.Location = new System.Drawing.Point(0, 83);
+            this.subMenutab.Name = "subMenutab";
+            this.subMenutab.Size = new System.Drawing.Size(202, 625);
+            this.subMenutab.TabIndex = 1;
+            // 
             // pnlMenuHeader
             // 
             this.pnlMenuHeader.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -163,7 +171,6 @@
             this.pnlMainMenu.Controls.Add(this.tab6);
             this.pnlMainMenu.Controls.Add(this.tab5);
             this.pnlMainMenu.Controls.Add(this.tab4);
-            this.pnlMainMenu.Controls.Add(this.bunifuFlatButton1);
             this.pnlMainMenu.Controls.Add(this.tab3);
             this.pnlMainMenu.Controls.Add(this.tab2);
             this.pnlMainMenu.Controls.Add(this.tab1);
@@ -174,6 +181,45 @@
             this.pnlMainMenu.Name = "pnlMainMenu";
             this.pnlMainMenu.Size = new System.Drawing.Size(200, 708);
             this.pnlMainMenu.TabIndex = 3;
+            // 
+            // bunifuFlatButton3
+            // 
+            this.bunifuFlatButton3.Active = false;
+            this.bunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(36)))), ((int)(((byte)(88)))));
+            this.bunifuFlatButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton3.BorderRadius = 0;
+            this.bunifuFlatButton3.ButtonText = "      Sair";
+            this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.bunifuFlatButton3, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton3.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton3.Iconimage")));
+            this.bunifuFlatButton3.Iconimage_right = null;
+            this.bunifuFlatButton3.Iconimage_right_Selected = null;
+            this.bunifuFlatButton3.Iconimage_Selected = null;
+            this.bunifuFlatButton3.IconMarginLeft = 0;
+            this.bunifuFlatButton3.IconMarginRight = 0;
+            this.bunifuFlatButton3.IconRightVisible = true;
+            this.bunifuFlatButton3.IconRightZoom = 0D;
+            this.bunifuFlatButton3.IconVisible = true;
+            this.bunifuFlatButton3.IconZoom = 40D;
+            this.bunifuFlatButton3.IsTab = true;
+            this.bunifuFlatButton3.Location = new System.Drawing.Point(0, 457);
+            this.bunifuFlatButton3.Name = "bunifuFlatButton3";
+            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(75)))), ((int)(((byte)(152)))));
+            this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton3.selected = false;
+            this.bunifuFlatButton3.Size = new System.Drawing.Size(200, 51);
+            this.bunifuFlatButton3.TabIndex = 10;
+            this.bunifuFlatButton3.Tag = "";
+            this.bunifuFlatButton3.Text = "      Sair";
+            this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton3.Click += new System.EventHandler(this.bunifuFlatButton3_Click);
             // 
             // bunifuFlatButton2
             // 
@@ -199,7 +245,7 @@
             this.bunifuFlatButton2.IconVisible = true;
             this.bunifuFlatButton2.IconZoom = 40D;
             this.bunifuFlatButton2.IsTab = true;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(0, 457);
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(0, 406);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(75)))), ((int)(((byte)(152)))));
@@ -207,7 +253,7 @@
             this.bunifuFlatButton2.selected = false;
             this.bunifuFlatButton2.Size = new System.Drawing.Size(200, 51);
             this.bunifuFlatButton2.TabIndex = 9;
-            this.bunifuFlatButton2.Tag = "5";
+            this.bunifuFlatButton2.Tag = "";
             this.bunifuFlatButton2.Text = "      LogOut";
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
@@ -238,7 +284,7 @@
             this.tab6.IconVisible = true;
             this.tab6.IconZoom = 40D;
             this.tab6.IsTab = true;
-            this.tab6.Location = new System.Drawing.Point(0, 406);
+            this.tab6.Location = new System.Drawing.Point(0, 355);
             this.tab6.Name = "tab6";
             this.tab6.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
             this.tab6.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(75)))), ((int)(((byte)(152)))));
@@ -246,7 +292,7 @@
             this.tab6.selected = false;
             this.tab6.Size = new System.Drawing.Size(200, 51);
             this.tab6.TabIndex = 7;
-            this.tab6.Tag = "5";
+            this.tab6.Tag = "6";
             this.tab6.Text = "      Ajuda";
             this.tab6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tab6.Textcolor = System.Drawing.Color.White;
@@ -276,7 +322,7 @@
             this.tab5.IconVisible = true;
             this.tab5.IconZoom = 45D;
             this.tab5.IsTab = true;
-            this.tab5.Location = new System.Drawing.Point(0, 355);
+            this.tab5.Location = new System.Drawing.Point(0, 304);
             this.tab5.Name = "tab5";
             this.tab5.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
             this.tab5.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(75)))), ((int)(((byte)(152)))));
@@ -284,7 +330,7 @@
             this.tab5.selected = false;
             this.tab5.Size = new System.Drawing.Size(200, 51);
             this.tab5.TabIndex = 6;
-            this.tab5.Tag = "4";
+            this.tab5.Tag = "5";
             this.tab5.Text = "      Turmas";
             this.tab5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tab5.Textcolor = System.Drawing.Color.White;
@@ -297,7 +343,7 @@
             this.tab4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
             this.tab4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tab4.BorderRadius = 0;
-            this.tab4.ButtonText = "      Cursos";
+            this.tab4.ButtonText = "      Matricula";
             this.tab4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTransition1.SetDecoration(this.tab4, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.tab4.DisabledColor = System.Drawing.Color.Gray;
@@ -314,7 +360,7 @@
             this.tab4.IconVisible = true;
             this.tab4.IconZoom = 40D;
             this.tab4.IsTab = true;
-            this.tab4.Location = new System.Drawing.Point(0, 304);
+            this.tab4.Location = new System.Drawing.Point(0, 253);
             this.tab4.Name = "tab4";
             this.tab4.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
             this.tab4.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(75)))), ((int)(((byte)(152)))));
@@ -323,48 +369,11 @@
             this.tab4.Size = new System.Drawing.Size(200, 51);
             this.tab4.TabIndex = 5;
             this.tab4.Tag = "3";
-            this.tab4.Text = "      Cursos";
+            this.tab4.Text = "      Matricula";
             this.tab4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tab4.Textcolor = System.Drawing.Color.White;
             this.tab4.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bunifuFlatButton1
-            // 
-            this.bunifuFlatButton1.Active = false;
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(36)))), ((int)(((byte)(88)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "      Atendimento";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition1.SetDecoration(this.bunifuFlatButton1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 40D;
-            this.bunifuFlatButton1.IsTab = true;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 253);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(75)))), ((int)(((byte)(152)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(200, 51);
-            this.bunifuFlatButton1.TabIndex = 8;
-            this.bunifuFlatButton1.Tag = "6";
-            this.bunifuFlatButton1.Text = "      Atendimento";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tab4.Click += new System.EventHandler(this.sideMenu_Click);
             // 
             // tab3
             // 
@@ -505,54 +514,6 @@
             this.logo.TabIndex = 1;
             this.logo.TabStop = false;
             // 
-            // bunifuFlatButton3
-            // 
-            this.bunifuFlatButton3.Active = false;
-            this.bunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(36)))), ((int)(((byte)(88)))));
-            this.bunifuFlatButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton3.BorderRadius = 0;
-            this.bunifuFlatButton3.ButtonText = "      Sair";
-            this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition1.SetDecoration(this.bunifuFlatButton3, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton3.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton3.Iconimage")));
-            this.bunifuFlatButton3.Iconimage_right = null;
-            this.bunifuFlatButton3.Iconimage_right_Selected = null;
-            this.bunifuFlatButton3.Iconimage_Selected = null;
-            this.bunifuFlatButton3.IconMarginLeft = 0;
-            this.bunifuFlatButton3.IconMarginRight = 0;
-            this.bunifuFlatButton3.IconRightVisible = true;
-            this.bunifuFlatButton3.IconRightZoom = 0D;
-            this.bunifuFlatButton3.IconVisible = true;
-            this.bunifuFlatButton3.IconZoom = 40D;
-            this.bunifuFlatButton3.IsTab = true;
-            this.bunifuFlatButton3.Location = new System.Drawing.Point(0, 508);
-            this.bunifuFlatButton3.Name = "bunifuFlatButton3";
-            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(75)))), ((int)(((byte)(152)))));
-            this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton3.selected = false;
-            this.bunifuFlatButton3.Size = new System.Drawing.Size(200, 51);
-            this.bunifuFlatButton3.TabIndex = 10;
-            this.bunifuFlatButton3.Tag = "5";
-            this.bunifuFlatButton3.Text = "      Sair";
-            this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton3.Click += new System.EventHandler(this.bunifuFlatButton3_Click);
-            // 
-            // subMenutab
-            // 
-            this.bunifuTransition1.SetDecoration(this.subMenutab, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.subMenutab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.subMenutab.Location = new System.Drawing.Point(0, 83);
-            this.subMenutab.Name = "subMenutab";
-            this.subMenutab.Size = new System.Drawing.Size(202, 625);
-            this.subMenutab.TabIndex = 1;
-            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -594,7 +555,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton tab6;
         private Bunifu.Framework.UI.BunifuFlatButton tab5;
         private Bunifu.Framework.UI.BunifuFlatButton tab4;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuFlatButton tab3;
         private Bunifu.Framework.UI.BunifuFlatButton tab2;
         private Bunifu.Framework.UI.BunifuFlatButton tab1;
