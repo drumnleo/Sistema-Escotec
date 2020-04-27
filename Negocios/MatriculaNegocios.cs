@@ -111,6 +111,8 @@ namespace Negocios
                     pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
                     turma.Id_Turma = Convert.ToInt32(dataRow["ID_TURMA"]);
                     curso.Nome = Convert.ToString(dataRow["CURSO_NOME"]);
+                    curso.Qtde_Parcelas = Convert.ToInt16(dataRow["QTDE_PARCELAS"]);
+                    curso.Valor_Total = Convert.ToDecimal(dataRow["VALOR_TOTAL"]);
                     promocaoValor.Id_Promocao_Valor = Convert.ToInt32(dataRow["ID_PROMOCAO_VALOR"]);
                     promocaoValor.Nome_Promocao = Convert.ToString(dataRow["NOME_PROMOCAO"]);
                     matricula.Situacao = Convert.ToChar(dataRow["SITUACAO"]);

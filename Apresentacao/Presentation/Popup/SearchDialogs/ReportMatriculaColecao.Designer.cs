@@ -36,12 +36,14 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.verifica = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnSair = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.MatriculaRelatorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MatriculaBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MatriculaRelatorioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // MatriculaBindingSource
@@ -61,15 +63,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1011, 50);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.reportViewer1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1011, 563);
-            this.panel2.TabIndex = 1;
             // 
             // btnSair
             // 
@@ -141,19 +134,31 @@
             this.btnSair.UseDefaultRadiusAndThickness = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.reportViewer1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1011, 563);
+            this.panel2.TabIndex = 1;
+            // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.MatriculaBindingSource;
+            reportDataSource1.Value = this.MatriculaRelatorioBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Apresentacao.Presentation.ReportCollection.Report_Matricula.RlMatriculaListaDiari" +
-    "a.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Apresentacao.RpMatCol.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1011, 563);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // MatriculaRelatorioBindingSource
+            // 
+            this.MatriculaRelatorioBindingSource.DataSource = typeof(ObjetoTransferencia.MatriculaRelatorio);
             // 
             // ReportMatriculacolecao
             // 
@@ -173,6 +178,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.MatriculaBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MatriculaRelatorioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,5 +192,6 @@
         private System.Windows.Forms.Panel panel1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSair;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource MatriculaRelatorioBindingSource;
     }
 }

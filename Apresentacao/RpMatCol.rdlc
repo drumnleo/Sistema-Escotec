@@ -33,7 +33,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Id_Matricula1">
+                    <Textbox Name="Id_Matricula">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -47,7 +47,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Id_Matricula1</rd:DefaultName>
+                      <rd:DefaultName>Id_Matricula</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -62,21 +62,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Aluno">
+                    <Textbox Name="Nome">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Aluno.Value</Value>
+                              <Value>=Fields!Nome.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Aluno</rd:DefaultName>
+                      <rd:DefaultName>Nome</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -91,21 +91,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Aluno1">
+                    <Textbox Name="Sobrenome">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Aluno.Value</Value>
+                              <Value>=Fields!Sobrenome.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Aluno1</rd:DefaultName>
+                      <rd:DefaultName>Sobrenome</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -120,21 +120,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Turma">
+                    <Textbox Name="Curso">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Turma.Value</Value>
+                              <Value>=Fields!Curso.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Turma</rd:DefaultName>
+                      <rd:DefaultName>Curso</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -149,21 +149,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Turma1">
+                    <Textbox Name="Qtde_Parcela">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Turma.Value</Value>
+                              <Value>=Fields!Qtde_Parcela.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Turma1</rd:DefaultName>
+                      <rd:DefaultName>Qtde_Parcela</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -203,26 +203,25 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox11">
+                    <Textbox Name="Total">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Total.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <rd:DefaultName>Total</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -233,6 +232,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -1705,7 +1705,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Sum(Fields!Id_Matricula.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1821,7 +1821,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Sum(Fields!Qtde_Parcela.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1850,7 +1850,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Sum(Fields!Usuario.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1879,7 +1879,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Sum(Fields!Total.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -4466,7 +4466,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>Matricula</DataSetName>
+        <DataSetName>DataSet1</DataSetName>
         <Top>1.48568cm</Top>
         <Left>0.27374cm</Left>
         <Height>12.6cm</Height>
@@ -5106,53 +5106,49 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Matricula">
+    <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>ObjetoTransferencia</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Aluno">
-          <DataField>Aluno</DataField>
-          <rd:TypeName>ObjetoTransferencia.Aluno</rd:TypeName>
+        <Field Name="Curso">
+          <DataField>Curso</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Ativo">
-          <DataField>Ativo</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="Data_Cadastro">
-          <DataField>Data_Cadastro</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="Data_Ultima_Alteracao">
-          <DataField>Data_Ultima_Alteracao</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+        <Field Name="Id_Aluno">
+          <DataField>Id_Aluno</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Id_Matricula">
           <DataField>Id_Matricula</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="PromocaoValor">
-          <DataField>PromocaoValor</DataField>
-          <rd:TypeName>ObjetoTransferencia.PromocaoValor</rd:TypeName>
+        <Field Name="Nome">
+          <DataField>Nome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Situacao">
-          <DataField>Situacao</DataField>
-          <rd:TypeName>System.Char</rd:TypeName>
+        <Field Name="Qtde_Parcela">
+          <DataField>Qtde_Parcela</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
-        <Field Name="Turma">
-          <DataField>Turma</DataField>
-          <rd:TypeName>ObjetoTransferencia.Turma</rd:TypeName>
+        <Field Name="Sobrenome">
+          <DataField>Sobrenome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Usuario">
           <DataField>Usuario</DataField>
-          <rd:TypeName>ObjetoTransferencia.Usuario</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>ObjetoTransferencia</rd:DataSetName>
-        <rd:TableName>Matricula</rd:TableName>
-        <rd:ObjectDataSourceType>ObjetoTransferencia.Matricula, ObjetoTransferencia, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>MatriculaRelatorio</rd:TableName>
+        <rd:ObjectDataSourceType>ObjetoTransferencia.MatriculaRelatorio, ObjetoTransferencia, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

@@ -312,7 +312,7 @@
     <EmbeddedResource Include="Presentation\Popup\transparentBg1.resx">
       <DependentUpon>transparentBg1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\ReportCollection\Report_Matricula\RlMatriculaListaDiaria.rdlc" />
+    <EmbeddedResource Include="Presentation\ReportCollection\Report_Matricula\RpMatCol.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -321,21 +321,10 @@
     <EmbeddedResource Include="Presentation\Drawer\SubMenu.resx">
       <DependentUpon>SubMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RpMatCol.rdlc" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.Aluno.datasource" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.AlunoColecao.datasource" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.Curso.datasource" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.CursoColecao.datasource" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.Matricula.datasource" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.MatriculaColecao.datasource" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.Pessoa.datasource" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.PessoaColecao.datasource" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.PromocaoValor.datasource" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.PromocaoValorColecao.datasource" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.Turma.datasource" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.TurmaColecao.datasource" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.Usuario.datasource" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.UsuarioColecao.datasource" />
+    <None Include="Properties\DataSources\ObjetoTransferencia.MatriculaRelatorio.datasource" />
+    <None Include="Properties\DataSources\ObjetoTransferencia.MatriculaRelatorioColecao.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

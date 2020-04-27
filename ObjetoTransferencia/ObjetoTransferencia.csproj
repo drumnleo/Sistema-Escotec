@@ -88,6 +88,8 @@
     <Compile Include="MarketingColecao.cs" />
     <Compile Include="Matricula.cs" />
     <Compile Include="MatriculaColecao.cs" />
+    <Compile Include="MatriculaRelatorio.cs" />
+    <Compile Include="MatriculaRelatorioColecao.cs" />
     <Compile Include="MovimentoCaixa.cs" />
     <Compile Include="MovimentoCaixaColecao.cs" />
     <Compile Include="Orcamento.cs" />
