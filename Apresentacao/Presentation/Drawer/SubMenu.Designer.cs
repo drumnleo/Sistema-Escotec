@@ -37,6 +37,7 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.bunifuFlatButton23 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -44,6 +45,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage6.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -69,7 +71,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(229, 602);
+            this.tabPage8.Size = new System.Drawing.Size(255, 602);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "7";
             // 
@@ -79,7 +81,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(229, 602);
+            this.tabPage7.Size = new System.Drawing.Size(255, 602);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "6";
             // 
@@ -90,7 +92,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(229, 602);
+            this.tabPage6.Size = new System.Drawing.Size(255, 602);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "5";
             // 
@@ -125,7 +127,7 @@
             this.bunifuFlatButton23.OnHovercolor = System.Drawing.Color.Gainsboro;
             this.bunifuFlatButton23.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton23.selected = false;
-            this.bunifuFlatButton23.Size = new System.Drawing.Size(223, 45);
+            this.bunifuFlatButton23.Size = new System.Drawing.Size(249, 45);
             this.bunifuFlatButton23.TabIndex = 26;
             this.bunifuFlatButton23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton23.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -134,12 +136,51 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage4.Controls.Add(this.bunifuFlatButton3);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(229, 602);
+            this.tabPage4.Size = new System.Drawing.Size(255, 602);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "3";
+            // 
+            // bunifuFlatButton3
+            // 
+            this.bunifuFlatButton3.Active = true;
+            this.bunifuFlatButton3.Activecolor = System.Drawing.Color.Gainsboro;
+            this.bunifuFlatButton3.BackColor = System.Drawing.Color.Gainsboro;
+            this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton3.BorderRadius = 0;
+            this.bunifuFlatButton3.ButtonText = "Consulta Matricula";
+            this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuFlatButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton3.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton3.Iconimage")));
+            this.bunifuFlatButton3.Iconimage_right = null;
+            this.bunifuFlatButton3.Iconimage_right_Selected = null;
+            this.bunifuFlatButton3.Iconimage_Selected = null;
+            this.bunifuFlatButton3.IconMarginLeft = 0;
+            this.bunifuFlatButton3.IconMarginRight = 0;
+            this.bunifuFlatButton3.IconRightVisible = false;
+            this.bunifuFlatButton3.IconRightZoom = 0D;
+            this.bunifuFlatButton3.IconVisible = false;
+            this.bunifuFlatButton3.IconZoom = 40D;
+            this.bunifuFlatButton3.IsTab = true;
+            this.bunifuFlatButton3.Location = new System.Drawing.Point(3, 3);
+            this.bunifuFlatButton3.Name = "bunifuFlatButton3";
+            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.Blue;
+            this.bunifuFlatButton3.selected = true;
+            this.bunifuFlatButton3.Size = new System.Drawing.Size(249, 42);
+            this.bunifuFlatButton3.TabIndex = 6;
+            this.bunifuFlatButton3.Tag = "ConsultaMatricula";
+            this.bunifuFlatButton3.Text = "Consulta Matricula";
+            this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton3.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Segoe UI", 12F);
             // 
             // tabPage3
             // 
@@ -148,7 +189,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(229, 602);
+            this.tabPage3.Size = new System.Drawing.Size(255, 602);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "2";
             // 
@@ -182,7 +223,7 @@
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.WhiteSmoke;
             this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.Blue;
             this.bunifuFlatButton2.selected = true;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(223, 42);
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(249, 42);
             this.bunifuFlatButton2.TabIndex = 5;
             this.bunifuFlatButton2.Tag = "AdicionarEditarFuncionario";
             this.bunifuFlatButton2.Text = "Funcionário";
@@ -245,7 +286,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(234, 602);
+            this.tabPage1.Size = new System.Drawing.Size(255, 602);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "0";
             // 
@@ -277,6 +318,7 @@
             this.Name = "subMenu";
             this.Size = new System.Drawing.Size(242, 618);
             this.tabPage6.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -298,5 +340,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl tabControl1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
     }
 }

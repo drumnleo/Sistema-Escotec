@@ -12,6 +12,7 @@ namespace Apresentacao
 
             addPageType(new Presentation.Pages.AdicionarEditarUsuario());
             addPageType(new Presentation.Pages.AdicionarEditarFuncionario());
+            addPageType(new Presentation.Pages.ConsultaMatricula());
 
             VSReactive<string>.Subscribe(VSroute.page, (e) => SetPage(e));
         }

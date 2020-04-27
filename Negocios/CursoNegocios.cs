@@ -135,5 +135,53 @@ namespace Negocios
                 throw new Exception("Erro ao consultar curso. Detalhes: " + ex.Message);
             }
         }
+
+        public CursoColecao ConsultarPorId(int id)
+        {
+            try
+            {
+                CursoColecao cursoColecao = new CursoColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID", id);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_CURSO_CONSULTARPORID");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    Curso curso = new Curso();
+
+                    curso.Nome = Convert.ToString(dataRow["NOME"]);
+                    curso.Qtde_Aulas = Convert.ToInt16(dataRow["QTDE_AULAS"]);
+                    curso.Qtde_Aulas_Semana = Convert.ToInt16(dataRow["QTDE_AULAS_SEMANA"]);
+                    curso.Duracao_Meses = Convert.ToInt16(dataRow["DURACAO_MESES"]);
+                    curso.Carga_Horaria = Convert.ToInt16(dataRow["CARGA_HORARIA"]);
+                    curso.Horas_Por_Aula = Convert.ToInt16(dataRow["HORAS_POR_AULA"]);
+                    curso.Apostila = Convert.ToBoolean(dataRow["APOSTILA"]);
+                    curso.Valor_Total = Convert.ToDecimal(dataRow["VALOR_TOTAL"]);
+                    curso.Qtde_Parcelas = Convert.ToInt16(dataRow["QTDE_PARCELAS"]);
+                    curso.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    curso.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    Usuario usuario = new Usuario();
+
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    TipoCurso tipoCurso = new TipoCurso();
+
+                    tipoCurso.Id_Tipo_Curso = Convert.ToInt32(dataRow["ID_TIPO_CURSO"]);
+
+                    curso.Usuario = usuario;
+                    curso.TipoCurso = tipoCurso;
+                    cursoColecao.Add(curso);
+                }
+
+                return cursoColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar curso. Detalhes: " + ex.Message);
+            }
+        }
     }
 }

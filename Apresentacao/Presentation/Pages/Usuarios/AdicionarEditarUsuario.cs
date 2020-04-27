@@ -160,7 +160,7 @@ namespace Apresentacao.Presentation.Pages
 
         private void btnSearchUsuario_Click(object sender, EventArgs e)
         {
-            new Popup.transparentBg(new Popup.SearchDialogs.SearchDialog());
+            new Popup.transparentBg(new Popup.SearchDialogs.SearchDialog_Usuario());
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
