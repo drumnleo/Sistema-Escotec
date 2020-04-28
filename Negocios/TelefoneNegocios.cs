@@ -70,7 +70,6 @@ namespace Negocios
                     }
 
                     telefone.TipoTelefone = tipoTelefone;
-                    telefone.Pessoa = pessoa;
                     telefoneColecao.Add(telefone);
 
                 }
@@ -93,7 +92,8 @@ namespace Negocios
                 acessoDados.AdicionarParametros("@ID_USUARIO", telefone.Usuario.Id_Usuario);
 
                 string IdTelefone = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_TELEFONE_EXCLUIR").ToString();
-                return IdTelefone
+
+                return IdTelefone;
             }
             catch (Exception ex )
             {

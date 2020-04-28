@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportMatriculacolecao));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.MatriculaRelatorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MatriculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.verifica = new System.Windows.Forms.Timer(this.components);
@@ -39,12 +40,15 @@
             this.btnSair = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.MatriculaRelatorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.MatriculaRelatorioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MatriculaBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MatriculaRelatorioBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // MatriculaRelatorioBindingSource
+            // 
+            this.MatriculaRelatorioBindingSource.DataSource = typeof(ObjetoTransferencia.MatriculaRelatorio);
             // 
             // MatriculaBindingSource
             // 
@@ -59,9 +63,9 @@
             // 
             this.panel1.Controls.Add(this.btnSair);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 563);
+            this.panel1.Location = new System.Drawing.Point(0, 600);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1011, 50);
+            this.panel1.Size = new System.Drawing.Size(1046, 50);
             this.panel1.TabIndex = 0;
             // 
             // btnSair
@@ -140,7 +144,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1011, 563);
+            this.panel2.Size = new System.Drawing.Size(1046, 600);
             this.panel2.TabIndex = 1;
             // 
             // reportViewer1
@@ -153,19 +157,16 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1011, 563);
+            this.reportViewer1.Size = new System.Drawing.Size(1046, 600);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // MatriculaRelatorioBindingSource
-            // 
-            this.MatriculaRelatorioBindingSource.DataSource = typeof(ObjetoTransferencia.MatriculaRelatorio);
+            this.reportViewer1.ZoomPercent = 75;
             // 
             // ReportMatriculacolecao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1011, 613);
+            this.ClientSize = new System.Drawing.Size(1046, 650);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
@@ -175,10 +176,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SearchDialog";
             this.Load += new System.EventHandler(this.ReportMatriculacolecao_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.MatriculaRelatorioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MatriculaBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MatriculaRelatorioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

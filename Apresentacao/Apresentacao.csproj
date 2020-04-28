@@ -170,6 +170,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presentation\Pages\Atendimento\AdicionarEditarAtendimento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Pages\Atendimento\AdicionarEditarAtendimento.Designer.cs">
+      <DependentUpon>AdicionarEditarAtendimento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Pages\Modelo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -270,6 +276,9 @@
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Validadocs.cs" />
+    <EmbeddedResource Include="Presentation\Pages\Atendimento\AdicionarEditarAtendimento.resx">
+      <DependentUpon>AdicionarEditarAtendimento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Pages\Modelo.resx">
       <DependentUpon>Modelo.cs</DependentUpon>
     </EmbeddedResource>
