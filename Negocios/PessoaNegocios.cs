@@ -124,14 +124,6 @@ namespace Negocios
                     TipoDoc tipoDoc = new TipoDoc();
                     tipoDoc.Id_TipoDoc = Convert.ToInt32(dataRow["ID_TIPO_DOC"]);
 
-                    Telefone telefone = new Telefone();
-                    if (dataRow["ID_TELEFONE"].ToString() != "" )
-                    {
-                        telefone.Id_Telefone = Convert.ToInt32(dataRow["ID_TELEFONE"]);
-                        telefone.DDD = Convert.ToInt16(dataRow["DDD"]);
-                        telefone.Num_Telefone = Convert.ToString(dataRow["TELEFONE"]);
-                    }
-
 
                     EstadoCivil estadoCivil = new EstadoCivil();
                     estadoCivil.Id_EstadoCivil = Convert.ToInt32(dataRow["ID_ESTADO_CIVIL"]);
@@ -139,19 +131,10 @@ namespace Negocios
                     Usuario usuario = new Usuario();
                     usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
-                    Endereco endereco = new Endereco();
-                    if (dataRow["ID_ENDERECO"].ToString() != "")
-                    {
-                        endereco.Id_Endereco = Convert.ToInt32(dataRow["ID_ENDERECO"]);
-                        endereco.CEP = Convert.ToString(dataRow["CEP"]);
-                    }
-
                     pessoa.Profissao = profissao;
                     pessoa.TipoDoc = tipoDoc;
                     pessoa.EstadoCivil = estadoCivil;
                     pessoa.Usuario = usuario;
-                    pessoa.Endereco = endereco;
-                    pessoa.Telefone = telefone;
 
                     pessoaColecao.Add(pessoa);
                 }
@@ -196,34 +179,16 @@ namespace Negocios
                     TipoDoc tipoDoc = new TipoDoc();
                     tipoDoc.Id_TipoDoc = Convert.ToInt32(dataRow["ID_TIPO_DOC"]);
 
-                    Telefone telefone = new Telefone();
-                    if (dataRow["ID_TELEFONE"].ToString() != "")
-                    {
-                        telefone.Id_Telefone = Convert.ToInt32(dataRow["ID_TELEFONE"]);
-                        telefone.DDD = Convert.ToInt16(dataRow["DDD"]);
-                        telefone.Num_Telefone = Convert.ToString(dataRow["TELEFONE"]);
-                    }
-
-
                     EstadoCivil estadoCivil = new EstadoCivil();
                     estadoCivil.Id_EstadoCivil = Convert.ToInt32(dataRow["ID_ESTADO_CIVIL"]);
 
                     Usuario usuario = new Usuario();
                     usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
-                    Endereco endereco = new Endereco();
-                    if (dataRow["ID_ENDERECO"].ToString() != "")
-                    {
-                        endereco.Id_Endereco = Convert.ToInt32(dataRow["ID_ENDERECO"]);
-                        endereco.CEP = Convert.ToString(dataRow["CEP"]);
-                    }
-
                     pessoa.Profissao = profissao;
                     pessoa.TipoDoc = tipoDoc;
                     pessoa.EstadoCivil = estadoCivil;
                     pessoa.Usuario = usuario;
-                    pessoa.Endereco = endereco;
-                    pessoa.Telefone = telefone;
                 }
 
                 return pessoa;

@@ -51,7 +51,7 @@ namespace Negocios
             }
         }
 
-        public MarketingColecao ConsultarPorNome(string nome)
+        public MarketingColecao ConsultarPorDescricao(string nome)
         {
             try
             {
@@ -60,13 +60,13 @@ namespace Negocios
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@DESCRICAO", nome);
 
-                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_CARGO_CONSULTAR_PORDESCRICAO");
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_TIPO_MARKETING_CONSULTAPORDESCRICAO");
 
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
                     Marketing marketing = new Marketing();
 
-                    marketing.Id_Mkt = Convert.ToInt32(dataRow["ID_CARGO"]);
+                    marketing.Id_Mkt = Convert.ToInt32(dataRow["ID_MKT"]);
                     marketing.Descricao = Convert.ToString(dataRow["DESCRICAO"]);
                     marketing.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
                     marketing.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
@@ -82,7 +82,7 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao consultar Cargo. Detalhes" + ex.Message);
+                throw new Exception("Erro ao consultar marketing. Detalhes" + ex.Message);
             }
         }
         public string Excluir(Marketing marketing)
@@ -92,8 +92,8 @@ namespace Negocios
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@ID_MKT", marketing.Id_Mkt);
                 acessoDados.AdicionarParametros("@ID_USUARIO", marketing.Usuario.Id_Usuario);
-                string id_cargo = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_MARKETING_EXCLUIR").ToString();
-                return id_cargo;
+                string idMarketing = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_MARKETING_EXCLUIR").ToString();
+                return idMarketing;
             }
             catch (Exception ex)
             {

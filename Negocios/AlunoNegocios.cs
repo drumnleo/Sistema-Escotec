@@ -61,7 +61,7 @@ namespace Negocios
                     Endereco endereco = new Endereco();
                     endereco.Id_Endereco = Convert.ToInt32(dataRow["ID_ENDERECO"]);
                     endereco.CEP = Convert.ToString(dataRow["CEP"]);
-                    endereco.Lograduro = Convert.ToString(dataRow["LOGRADURO"]);
+                    endereco.Logradouro = Convert.ToString(dataRow["LOGRADURO"]);
                     endereco.Bairro = Convert.ToString(dataRow["BAIRRO"]);
                     endereco.Cidade = Convert.ToString(dataRow["CIDADE"]);
                     endereco.Estado = Convert.ToString(dataRow["ESTADO"]);
@@ -70,7 +70,6 @@ namespace Negocios
                     usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
                     aluno.Pessoa = pessoa;
-                    aluno.Pessoa.Endereco = endereco;
                     alunoColecao.Add(aluno);
                 }
                 return alunoColecao;                                         
@@ -108,7 +107,7 @@ namespace Negocios
                     Endereco endereco = new Endereco();
                     endereco.Id_Endereco = Convert.ToInt32(dataRow["ID_ENDERECO"]);
                     endereco.CEP = Convert.ToString(dataRow["CEP"]);
-                    endereco.Lograduro = Convert.ToString(dataRow["LOGRADURO"]);
+                    endereco.Logradouro = Convert.ToString(dataRow["LOGRADURO"]);
                     endereco.Bairro = Convert.ToString(dataRow["BAIRRO"]);
                     endereco.Cidade = Convert.ToString(dataRow["CIDADE"]);
                     endereco.Estado = Convert.ToString(dataRow["ESTADO"]);
@@ -117,7 +116,6 @@ namespace Negocios
                     usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
                     aluno.Pessoa = pessoa;
-                    aluno.Pessoa.Endereco = endereco;
                 }
 
                 return aluno;

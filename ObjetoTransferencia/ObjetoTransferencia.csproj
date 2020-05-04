@@ -67,9 +67,12 @@
     <Compile Include="CursoColecao.cs" />
     <Compile Include="Endereco.cs" />
     <Compile Include="EnderecoColecao.cs" />
+    <Compile Include="EnderecoGeral.cs" />
+    <Compile Include="EnderecoGeralColecao.cs" />
     <Compile Include="Estado.cs" />
     <Compile Include="EstadoCivil.cs" />
     <Compile Include="EstadoCivilColecao.cs" />
+    <Compile Include="EstadoColecao.cs" />
     <Compile Include="Feriado.cs" />
     <Compile Include="FeriadoColecao.cs" />
     <Compile Include="FluxoDiario.cs" />

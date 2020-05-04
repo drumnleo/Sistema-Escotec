@@ -18,6 +18,7 @@ namespace Negocios
             try
             {
                 acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_PESSOA", telefone.Pessoa.Id_Pessoa);
                 acessoDados.AdicionarParametros("@ID_TIPO_TELEFONE", telefone.TipoTelefone.Id_Tipo_Telefone);
                 acessoDados.AdicionarParametros("@TELEFONE", telefone.Num_Telefone);
                 acessoDados.AdicionarParametros("@DDD", telefone.DDD);
@@ -34,16 +35,16 @@ namespace Negocios
                 return ex.Message;
             }
         }
-        public TelefoneColecao ConsultarPorNome(string nome)
+        public TelefoneColecao ConsultarPorPessoa(int id)
         {
             try
             {
                 TelefoneColecao telefoneColecao = new TelefoneColecao();
 
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("@NOME", nome);
+                acessoDados.AdicionarParametros("@ID_PESSOA", id);
 
-                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_TELEFONE_CONSULTARPORNOMEPESSOA");
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_TELEFONE_CONSULTARPORIDPESSOA");
 
                 foreach(DataRow dataRow in dataTable.Rows)
                 {
@@ -70,6 +71,8 @@ namespace Negocios
                     }
 
                     telefone.TipoTelefone = tipoTelefone;
+                    telefone.Pessoa = pessoa;
+                    telefone.Usuario = usuarioCadAlt;
                     telefoneColecao.Add(telefone);
 
                 }
@@ -97,13 +100,39 @@ namespace Negocios
             }
             catch (Exception ex )
             {
-
                 return ex.Message;
             }
 
         }
 
+        public TipoTelefoneColecao ConsultartipoPorDescricao(string desc)
+        {
+            try
+            {
+                TipoTelefoneColecao tipoTelefones = new TipoTelefoneColecao();
 
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@DESCRICAO", desc);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_TIPO_TELEFONE_CONSULTARPORDESCRICAO");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    TipoTelefone tipoTelefone = new TipoTelefone();
+
+                    tipoTelefone.Id_Tipo_Telefone = Convert.ToInt32(dataRow["ID_TIPO_TELEFONE"]);
+                    tipoTelefone.Descricao = Convert.ToString(dataRow["DESCRICAO"]);
+
+                    tipoTelefones.Add(tipoTelefone);
+                }
+
+                return tipoTelefones;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar Tipo de Telefone. Detalhes: " + ex.Message);
+            }
+        }
     }
 
 }

@@ -35,7 +35,6 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.bunifuFlatButton23 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -44,6 +43,7 @@
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tabPage6.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -73,7 +73,7 @@
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage8.Size = new System.Drawing.Size(255, 602);
             this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "7";
+            this.tabPage8.Text = "6";
             // 
             // tabPage7
             // 
@@ -83,55 +83,18 @@
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage7.Size = new System.Drawing.Size(255, 602);
             this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "6";
+            this.tabPage7.Text = "5";
             // 
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage6.Controls.Add(this.bunifuFlatButton23);
+            this.tabPage6.Controls.Add(this.bunifuFlatButton4);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(255, 602);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "5";
-            // 
-            // bunifuFlatButton23
-            // 
-            this.bunifuFlatButton23.Active = false;
-            this.bunifuFlatButton23.Activecolor = System.Drawing.Color.Gainsboro;
-            this.bunifuFlatButton23.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuFlatButton23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bunifuFlatButton23.BorderRadius = 0;
-            this.bunifuFlatButton23.ButtonText = "";
-            this.bunifuFlatButton23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton23.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton23.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuFlatButton23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton23.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton23.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton23.Iconimage")));
-            this.bunifuFlatButton23.Iconimage_right = null;
-            this.bunifuFlatButton23.Iconimage_right_Selected = null;
-            this.bunifuFlatButton23.Iconimage_Selected = null;
-            this.bunifuFlatButton23.IconMarginLeft = 0;
-            this.bunifuFlatButton23.IconMarginRight = 0;
-            this.bunifuFlatButton23.IconRightVisible = false;
-            this.bunifuFlatButton23.IconRightZoom = 0D;
-            this.bunifuFlatButton23.IconVisible = false;
-            this.bunifuFlatButton23.IconZoom = 90D;
-            this.bunifuFlatButton23.IsTab = true;
-            this.bunifuFlatButton23.Location = new System.Drawing.Point(3, 3);
-            this.bunifuFlatButton23.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuFlatButton23.Name = "bunifuFlatButton23";
-            this.bunifuFlatButton23.Normalcolor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuFlatButton23.OnHovercolor = System.Drawing.Color.Gainsboro;
-            this.bunifuFlatButton23.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton23.selected = false;
-            this.bunifuFlatButton23.Size = new System.Drawing.Size(249, 45);
-            this.bunifuFlatButton23.TabIndex = 26;
-            this.bunifuFlatButton23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton23.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuFlatButton23.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage6.Text = "4";
             // 
             // tabPage4
             // 
@@ -309,6 +272,44 @@
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
+            // bunifuFlatButton4
+            // 
+            this.bunifuFlatButton4.Active = true;
+            this.bunifuFlatButton4.Activecolor = System.Drawing.Color.Gainsboro;
+            this.bunifuFlatButton4.BackColor = System.Drawing.Color.Gainsboro;
+            this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton4.BorderRadius = 0;
+            this.bunifuFlatButton4.ButtonText = "Atendimento";
+            this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuFlatButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton4.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton4.Iconimage")));
+            this.bunifuFlatButton4.Iconimage_right = null;
+            this.bunifuFlatButton4.Iconimage_right_Selected = null;
+            this.bunifuFlatButton4.Iconimage_Selected = null;
+            this.bunifuFlatButton4.IconMarginLeft = 0;
+            this.bunifuFlatButton4.IconMarginRight = 0;
+            this.bunifuFlatButton4.IconRightVisible = false;
+            this.bunifuFlatButton4.IconRightZoom = 0D;
+            this.bunifuFlatButton4.IconVisible = false;
+            this.bunifuFlatButton4.IconZoom = 40D;
+            this.bunifuFlatButton4.IsTab = true;
+            this.bunifuFlatButton4.Location = new System.Drawing.Point(3, 3);
+            this.bunifuFlatButton4.Name = "bunifuFlatButton4";
+            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.Blue;
+            this.bunifuFlatButton4.selected = true;
+            this.bunifuFlatButton4.Size = new System.Drawing.Size(249, 42);
+            this.bunifuFlatButton4.TabIndex = 7;
+            this.bunifuFlatButton4.Tag = "AdicionarEditarAtendimento";
+            this.bunifuFlatButton4.Text = "Atendimento";
+            this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton4.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Segoe UI", 12F);
+            // 
             // subMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,7 +333,6 @@
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage6;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton23;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage2;
@@ -341,5 +341,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
     }
 }

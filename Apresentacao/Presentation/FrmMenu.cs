@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using KimtToo.VisualReactive;
 
@@ -13,6 +15,7 @@ namespace Apresentacao
             addPageType(new Presentation.Pages.AdicionarEditarUsuario());
             addPageType(new Presentation.Pages.AdicionarEditarFuncionario());
             addPageType(new Presentation.Pages.ConsultaMatricula());
+            addPageType(new Presentation.Pages.AdicionarEditarAtendimento());
 
             VSReactive<string>.Subscribe(VSroute.page, (e) => SetPage(e));
         }

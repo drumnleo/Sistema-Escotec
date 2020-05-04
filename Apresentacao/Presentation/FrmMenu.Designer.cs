@@ -72,7 +72,7 @@
             this.parentContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.parentContainer.Location = new System.Drawing.Point(402, 0);
             this.parentContainer.Name = "parentContainer";
-            this.parentContainer.Size = new System.Drawing.Size(775, 708);
+            this.parentContainer.Size = new System.Drawing.Size(823, 749);
             this.parentContainer.TabIndex = 3;
             // 
             // pinnerImages
@@ -112,7 +112,7 @@
             this.sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
             this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(402, 708);
+            this.sidePanel.Size = new System.Drawing.Size(402, 749);
             this.sidePanel.TabIndex = 4;
             // 
             // panel2
@@ -123,7 +123,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(202, 708);
+            this.panel2.Size = new System.Drawing.Size(202, 749);
             this.panel2.TabIndex = 3;
             // 
             // subMenutab
@@ -132,7 +132,7 @@
             this.subMenutab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.subMenutab.Location = new System.Drawing.Point(0, 83);
             this.subMenutab.Name = "subMenutab";
-            this.subMenutab.Size = new System.Drawing.Size(202, 625);
+            this.subMenutab.Size = new System.Drawing.Size(202, 666);
             this.subMenutab.TabIndex = 1;
             // 
             // pnlMenuHeader
@@ -179,7 +179,7 @@
             this.pnlMainMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMainMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMainMenu.Name = "pnlMainMenu";
-            this.pnlMainMenu.Size = new System.Drawing.Size(200, 708);
+            this.pnlMainMenu.Size = new System.Drawing.Size(200, 749);
             this.pnlMainMenu.TabIndex = 3;
             // 
             // bunifuFlatButton3
@@ -305,7 +305,7 @@
             this.tab5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
             this.tab5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tab5.BorderRadius = 0;
-            this.tab5.ButtonText = "      Turmas";
+            this.tab5.ButtonText = "      Atendimento";
             this.tab5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTransition1.SetDecoration(this.tab5, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.tab5.DisabledColor = System.Drawing.Color.Gray;
@@ -330,11 +330,12 @@
             this.tab5.selected = false;
             this.tab5.Size = new System.Drawing.Size(200, 51);
             this.tab5.TabIndex = 6;
-            this.tab5.Tag = "5";
-            this.tab5.Text = "      Turmas";
+            this.tab5.Tag = "4";
+            this.tab5.Text = "      Atendimento";
             this.tab5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tab5.Textcolor = System.Drawing.Color.White;
             this.tab5.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tab5.Click += new System.EventHandler(this.sideMenu_Click);
             // 
             // tab4
             // 
@@ -519,7 +520,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1177, 708);
+            this.ClientSize = new System.Drawing.Size(1225, 749);
             this.Controls.Add(this.parentContainer);
             this.Controls.Add(this.sidePanel);
             this.bunifuTransition1.SetDecoration(this, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
@@ -528,7 +529,6 @@
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SisEscotec";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMenu_FormClosed);
             this.sidePanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

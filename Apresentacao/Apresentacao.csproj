@@ -225,6 +225,18 @@
     <Compile Include="Presentation\Popup\SearchDialogs\ReportMatriculaColecao.Designer.cs">
       <DependentUpon>ReportMatriculaColecao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Pessoa_Atendimento .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Pessoa_Atendimento .Designer.cs">
+      <DependentUpon>SearchDialog_Pessoa_Atendimento .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Endereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Endereco.Designer.cs">
+      <DependentUpon>SearchDialog_Endereco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_WebCam_Foto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +314,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\ReportMatriculaColecao.resx">
       <DependentUpon>ReportMatriculaColecao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Pessoa_Atendimento .resx">
+      <DependentUpon>SearchDialog_Pessoa_Atendimento .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Endereco.resx">
+      <DependentUpon>SearchDialog_Endereco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_WebCam_Foto.resx">
       <DependentUpon>SearchDialog_WebCam_Foto.cs</DependentUpon>

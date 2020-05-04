@@ -19,7 +19,7 @@ namespace Apresentacao
             InitializeComponent();
         }
 
-        private void login()
+        private void Login()
         {
             LoginNegocios loginNegocios = new LoginNegocios();
 
@@ -35,19 +35,19 @@ namespace Apresentacao
 
                 FrmMenu frmMenu = new FrmMenu();
                 frmMenu.Show();
+
+                this.WindowState = FormWindowState.Minimized;
+                this.ShowInTaskbar = false;
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Erro ao fazer login. Detalhes:" + login + ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao fazer login. Detalhes: " + login, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            this.WindowState = FormWindowState.Minimized;
-            this.ShowInTaskbar = false;
         }
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
-            login();
+            Login();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -60,8 +60,7 @@ namespace Apresentacao
             if (e.KeyCode == Keys.Enter)
             {
                 this.Cursor = Cursors.WaitCursor;
-                login();
-                
+                Login();    
             }
         }
 

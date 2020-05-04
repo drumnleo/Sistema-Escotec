@@ -1,6 +1,6 @@
 ﻿namespace Apresentacao.Presentation.Popup.SearchDialogs
 {
-    partial class SearchDialog
+    partial class SearchDialog_Pessoa_Atendimento
     {
         /// <summary>
         /// Required designer variable.

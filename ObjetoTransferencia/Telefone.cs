@@ -9,6 +9,7 @@ namespace ObjetoTransferencia
     public class Telefone
     {
         public int Id_Telefone { get; set; }
+        public Pessoa Pessoa { get; set; }
         public TipoTelefone TipoTelefone { get; set; }
         public Int16 DDD { get; set; }
         public string Num_Telefone { get; set; }

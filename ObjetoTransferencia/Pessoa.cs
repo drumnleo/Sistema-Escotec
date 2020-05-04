@@ -12,8 +12,6 @@ namespace ObjetoTransferencia
         public Profissao Profissao { get; set; }
         public TipoDoc TipoDoc { get; set; }
         public EstadoCivil EstadoCivil { get; set; }
-        public Telefone Telefone { get; set; }
-        public Endereco Endereco { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public string CPF { get; set; }
