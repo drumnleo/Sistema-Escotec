@@ -19,9 +19,11 @@ namespace Apresentacao.Presentation.Pages
             CarregarComboBoxTipoAtendimento();
             CarregarComboBoxMarketing();
             CarregarComboBoxTipoTelefone();
-            BtnTelSalvar.ButtonText = "Salvar";
+            BtnTel1Salvar.ButtonText = "Salvar";
             
         }
+
+
 
         //Propriedades publicas
         public static Pessoa PessoaGetSet;
@@ -60,6 +62,122 @@ namespace Apresentacao.Presentation.Pages
         {
 
         }
+        private void BtnTel1Salvar_Click(object sender, EventArgs e)
+        {
+            if (BtnTel1Salvar.ButtonText == "Salvar")
+            {
+                CarregaTels();
+                if (TelefoneGetSet.Count > 0)
+                {
+                    TelefoneNegocios telefoneNegocios = new TelefoneNegocios();
+                    string retorno = telefoneNegocios.Inserir(TelefoneGetSet[0]);
+
+                    try
+                    {
+                        int idTelefone = Convert.ToInt32(retorno);
+                        TelefoneGetSet = null;
+                        TelefoneGetSet = telefoneNegocios.ConsultarPorPessoa(PessoaGetSet.Id_Pessoa);
+                        MessageBox.Show("Cadastro de telefone 1 inserido com sucesso!");
+                        AtualizaTel = true;
+                        BtnTel1Salvar.Name = "Atualizar";
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Erro ao cadastrar. Detalhes: " + retorno);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Verifique os valores digitados em Telefone 1 e Ramal.");
+                }
+                
+            }
+            else if (BtnTel1Salvar.ButtonText == "Atualizar")
+            {
+                CarregaTels();
+                if (TelefoneGetSet.Count > 0)
+                {
+                    TelefoneNegocios telefoneNegocios = new TelefoneNegocios();
+                    TelefoneGetSet[0].Id_Telefone = Convert.ToInt32(TbxIdTel1.Text);
+                    string retorno = telefoneNegocios.Atualizar(TelefoneGetSet[0]);
+
+                    try
+                    {
+                        int idTelefone = Convert.ToInt32(retorno);
+                        TelefoneGetSet = null;
+                        TelefoneGetSet = telefoneNegocios.ConsultarPorPessoa(PessoaGetSet.Id_Pessoa);
+                        MessageBox.Show("Cadastro de telefone 1 atualizado com sucesso!");
+                        AtualizaTel = true;
+                        BtnTel1Salvar.Name = "Atualizar";
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Erro ao cadastrar. Detalhes: " + retorno);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Verifique os valores digitados em Telefone 1 e Ramal.");
+                }
+            }
+            CamposTelefone1();
+        }
+        private void BtnTel2Salvar_Click(object sender, EventArgs e)
+        {
+            CarregaTels();
+            if (BtnTel2Salvar.ButtonText == "Salvar")
+            {
+                if (TelefoneGetSet.Count == 2)
+                {
+                    TelefoneNegocios telefoneNegocios = new TelefoneNegocios();
+                    string retorno2 = telefoneNegocios.Inserir(TelefoneGetSet[1]);
+
+                    try
+                    {
+                        int idTelefone2 = Convert.ToInt32(retorno2);
+                        TelefoneGetSet = null;
+                        TelefoneGetSet = telefoneNegocios.ConsultarPorPessoa(PessoaGetSet.Id_Pessoa);
+                        MessageBox.Show("Cadastro de telefone 2 inserido com sucesso!");
+                        AtualizaTel = true;
+                        BtnTel2Salvar.Name = "Atualizar";
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Erro ao cadastrar. Detalhes: " + retorno2);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Verifique os valores digitados em Telefone 2 e Ramal.");
+                }
+            }
+            else if (BtnTel2Salvar.ButtonText == "Atualizar")
+            {
+                CarregaTels();
+                if (TelefoneGetSet.Count == 2)
+                {
+                    TelefoneNegocios telefoneNegocios = new TelefoneNegocios();
+                    TelefoneGetSet[1].Id_Telefone = Convert.ToInt32(TbxIdTel2.Text);
+                    string retorno = telefoneNegocios.Atualizar(TelefoneGetSet[1]);
+
+                    try
+                    {
+                        int idTelefone = Convert.ToInt32(retorno);
+                        TelefoneGetSet = null;
+                        TelefoneGetSet = telefoneNegocios.ConsultarPorPessoa(PessoaGetSet.Id_Pessoa);
+                        MessageBox.Show("Cadastro de telefone 2 atualizado com sucesso!");
+                        AtualizaTel = true;
+                        BtnTel1Salvar.Name = "Atualizar";
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Erro ao cadastrar. Detalhes: " + retorno);
+                    }
+                }
+            }
+            CamposTelefone2();
+        }
 
 
 
@@ -93,13 +211,14 @@ namespace Apresentacao.Presentation.Pages
         }
         private void CamposTelefone1()
         {
-            if (TelefoneGetSet.Count == 1)
+            if (TelefoneGetSet.Count > 0)
             {
                 TbxIdTel1.Text = TelefoneGetSet[0].Id_Telefone.ToString();
-                TbxTel1.Text = TelefoneGetSet[0].Num_Telefone;
+                TbxTel1.Text = TelefoneGetSet[0].DDD.ToString() + TelefoneGetSet[0].Num_Telefone;
                 TbxRamal1.Text = TelefoneGetSet[0].Ramal.ToString();
-                int index = CbxTipoTel1.Items.IndexOf(TelefoneGetSet[0].Id_Telefone);
-                CbxTipoTel1.SelectedIndex = index;
+                CbxTipoTel1.SelectedIndex = 0;
+                CbxTipoTel1.Refresh();
+                BtnTel1Salvar.ButtonText = "Atualizar";
             }
             else
             {
@@ -107,6 +226,7 @@ namespace Apresentacao.Presentation.Pages
                 TbxTel1.Text = "";
                 TbxRamal1.Text = "";
                 CarregarComboBoxTipoTelefone();
+                BtnTel1Salvar.ButtonText = "Salvar";
             }
             
         }
@@ -114,11 +234,12 @@ namespace Apresentacao.Presentation.Pages
         {
             if (TelefoneGetSet.Count == 2)
             {
-                TbxTel2.Text = TelefoneGetSet[1].Id_Telefone.ToString();
-                TbxTel2.Text = TelefoneGetSet[1].Num_Telefone;
+                TbxIdTel2.Text = TelefoneGetSet[1].Id_Telefone.ToString();
+                TbxTel2.Text = TelefoneGetSet[1].DDD.ToString() + TelefoneGetSet[1].Num_Telefone;
                 TbxRamal2.Text = TelefoneGetSet[1].Ramal.ToString();
-                int index = CbxTipoTel1.Items.IndexOf(TelefoneGetSet[1].Id_Telefone);
-                CbxTipoTel2.SelectedIndex = index;
+                CbxTipoTel2.SelectedIndex = 1;
+                CbxTipoTel2.Refresh();
+                BtnTel2Salvar.ButtonText = "Atualizar";
             }
             else
             {
@@ -126,6 +247,7 @@ namespace Apresentacao.Presentation.Pages
                 TbxTel2.Text = "";
                 TbxRamal2.Text = "";
                 CarregarComboBoxTipoTelefone();
+                BtnTel2Salvar.ButtonText = "Salvar";
             }
         }
         private void CarregarTel1()
@@ -137,7 +259,8 @@ namespace Apresentacao.Presentation.Pages
                     TelefoneGetSet = new TelefoneColecao();
                     Telefone telefone0 = new Telefone();
                     telefone0.Pessoa = PessoaGetSet;
-                    telefone0.Num_Telefone = TbxTel1.Text;
+                    telefone0.DDD = Convert.ToInt16(TbxTel1.Text.Substring(0,2));
+                    telefone0.Num_Telefone = TbxTel1.Text.Substring(2);
                     telefone0.Ramal = Convert.ToInt16(TbxRamal1.Text);
                     telefone0.TipoTelefone = TipoTelefoneGetSet1[TipotelSel1];
                     telefone0.Usuario = LoginNegocios.UsuarioLogadoGetSet;
@@ -148,7 +271,8 @@ namespace Apresentacao.Presentation.Pages
                     TelefoneGetSet = new TelefoneColecao();
                     Telefone telefone1 = new Telefone();
                     telefone1.Pessoa = PessoaGetSet;
-                    telefone1.Num_Telefone = TbxTel1.Text;
+                    telefone1.DDD = Convert.ToInt16(TbxTel1.Text.Substring(0, 2));
+                    telefone1.Num_Telefone = TbxTel1.Text.Substring(2);
                     telefone1.Ramal = Convert.ToInt16(0);
                     telefone1.TipoTelefone = TipoTelefoneGetSet1[TipotelSel1];
                     telefone1.Usuario = LoginNegocios.UsuarioLogadoGetSet;
@@ -164,7 +288,8 @@ namespace Apresentacao.Presentation.Pages
                 {
                     Telefone telefone = new Telefone();
                     telefone.Pessoa = PessoaGetSet;
-                    telefone.Num_Telefone = TbxTel2.Text;
+                    telefone.DDD = Convert.ToInt16(TbxTel2.Text.Substring(0, 2));
+                    telefone.Num_Telefone = TbxTel2.Text.Substring(2);
                     telefone.Ramal = Convert.ToInt16(TbxRamal2.Text);
                     telefone.TipoTelefone = TipoTelefoneGetSet2[TipotelSel2];
                     telefone.Usuario = LoginNegocios.UsuarioLogadoGetSet;
@@ -174,7 +299,8 @@ namespace Apresentacao.Presentation.Pages
                 {
                     Telefone telefone = new Telefone();
                     telefone.Pessoa = PessoaGetSet;
-                    telefone.Num_Telefone = TbxTel2.Text;
+                    telefone.DDD = Convert.ToInt16(TbxTel2.Text.Substring(0, 2));
+                    telefone.Num_Telefone = TbxTel2.Text.Substring(2);
                     telefone.Ramal = Convert.ToInt16(0);
                     telefone.TipoTelefone = TipoTelefoneGetSet2[TipotelSel2];
                     telefone.Usuario = LoginNegocios.UsuarioLogadoGetSet;
@@ -187,8 +313,6 @@ namespace Apresentacao.Presentation.Pages
             CarregarTel1();
             CarregarTel2();
         }
-
-
 
 
 
@@ -235,6 +359,31 @@ namespace Apresentacao.Presentation.Pages
             CbxTipoTel2.ValueMember = "ID_TIPO_TELEFONE";
             CbxTipoTel2.SelectedIndex = 0;
         }
+        private void TbxRamal1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                MessageBox.Show("este campo aceita somente numero");
+            }
+        }
+        private void TbxRamal2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                MessageBox.Show("este campo aceita somente numero");
+            }
+        }
+        private void CbxTipoTel1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TipotelSel1 = CbxTipoTel1.SelectedIndex;
+        }
+        private void CbxTipoTel2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TipotelSel2 = CbxTipoTel1.SelectedIndex;
+        }
+
 
 
         //Métodos Timers
@@ -282,92 +431,11 @@ namespace Apresentacao.Presentation.Pages
                 }
                 if (TelefoneGetSet.Count == 2)
                 {
+                    CamposTelefone1();
                     CamposTelefone2();
                 }
                 AtualizaTel = false;
             }          
-        }
-
-        private void BtnTelSalvar_Click(object sender, EventArgs e)
-        {
-            if (BtnTelSalvar.ButtonText == "Salvar")
-            {
-                CarregaTels();
-                if (TelefoneGetSet.Count == 1)
-                {
-                    TelefoneNegocios telefoneNegocios = new TelefoneNegocios();
-                    string retorno = telefoneNegocios.Inserir(TelefoneGetSet[0]);
-
-                    try
-                    {
-                        int idTelefone = Convert.ToInt32(retorno);
-                        TelefoneGetSet = null;
-                        TelefoneGetSet = telefoneNegocios.ConsultarPorPessoa(PessoaGetSet.Id_Pessoa);
-                        MessageBox.Show("Cadastro de telefone inserido com sucesso!");
-                        AtualizaTel = true;
-                        BtnTelSalvar.Name = "Atualizar";
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Erro ao cadastrar. Detalhes: " + retorno);
-                    }
-                    
-                }
-                if (TelefoneGetSet.Count == 2)
-                {
-                    TelefoneNegocios telefoneNegocios = new TelefoneNegocios();
-                    string retorno1 = telefoneNegocios.Inserir(TelefoneGetSet[0]);
-                    string retorno2 = telefoneNegocios.Inserir(TelefoneGetSet[1]);
-
-                    try
-                    {
-                        int idTelefone1 = Convert.ToInt32(retorno1);
-                        int idTelefone2 = Convert.ToInt32(retorno2);
-                        TelefoneGetSet = null;
-                        TelefoneGetSet = telefoneNegocios.ConsultarPorPessoa(PessoaGetSet.Id_Pessoa);
-                        MessageBox.Show("Cadastro de telefone inserido com sucesso!");
-                        AtualizaTel = true;
-                        BtnTelSalvar.Name = "Atualizar";
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Erro ao cadastrar. Detalhes: Ret1: " + retorno1 + ". Ret2: " + retorno2);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Verifique os valores digitados em Telefone e Ramal.");
-                }
-
-            }
-        }
-
-        private void TbxRamal1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((!char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                e.Handled = true;
-                MessageBox.Show("este campo aceita somente numero");
-            }
-        }
-
-        private void TbxRamal2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((!char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                e.Handled = true;
-                MessageBox.Show("este campo aceita somente numero");
-            }
-        }
-
-        private void CbxTipoTel1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TipotelSel1 = CbxTipoTel1.SelectedIndex;
-        }
-
-        private void CbxTipoTel2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TipotelSel2 = CbxTipoTel1.SelectedIndex;
-        }
+        }    
     }
 }

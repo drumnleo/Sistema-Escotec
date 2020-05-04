@@ -149,14 +149,16 @@
             this.lblIdEndereco = new System.Windows.Forms.Label();
             this.lblCep = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
-            this.BtnTelSalvar = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.BtnTel1Salvar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.lblIdTel1 = new System.Windows.Forms.Label();
             this.TbxIdTel1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.LblIdTel2 = new System.Windows.Forms.Label();
             this.TbxIdTel2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.container = new System.Windows.Forms.Panel();
+            this.BtnTel2Salvar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.TbxTel2 = new System.Windows.Forms.MaskedTextBox();
             this.TbxTel1 = new System.Windows.Forms.MaskedTextBox();
+            this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchPessoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchOrc)).BeginInit();
@@ -253,7 +255,7 @@
             this.tbxNome.OnIdleState = stateProperties52;
             this.tbxNome.PasswordChar = '\0';
             this.tbxNome.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.tbxNome.PlaceholderText = "Teste";
+            this.tbxNome.PlaceholderText = "";
             this.tbxNome.ReadOnly = false;
             this.tbxNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbxNome.SelectedText = "";
@@ -267,7 +269,7 @@
             this.tbxNome.TextMarginBottom = 0;
             this.tbxNome.TextMarginLeft = 0;
             this.tbxNome.TextMarginTop = 0;
-            this.tbxNome.TextPlaceholder = "Teste";
+            this.tbxNome.TextPlaceholder = "";
             this.tbxNome.UseSystemPasswordChar = false;
             this.tbxNome.WordWrap = true;
             // 
@@ -327,7 +329,7 @@
             this.tbxEmail.OnIdleState = stateProperties56;
             this.tbxEmail.PasswordChar = '\0';
             this.tbxEmail.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.tbxEmail.PlaceholderText = "Teste";
+            this.tbxEmail.PlaceholderText = "";
             this.tbxEmail.ReadOnly = false;
             this.tbxEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbxEmail.SelectedText = "";
@@ -341,7 +343,7 @@
             this.tbxEmail.TextMarginBottom = 0;
             this.tbxEmail.TextMarginLeft = 0;
             this.tbxEmail.TextMarginTop = 0;
-            this.tbxEmail.TextPlaceholder = "Teste";
+            this.tbxEmail.TextPlaceholder = "";
             this.tbxEmail.UseSystemPasswordChar = false;
             this.tbxEmail.WordWrap = true;
             // 
@@ -401,7 +403,7 @@
             this.tbxCpf.OnIdleState = stateProperties60;
             this.tbxCpf.PasswordChar = '\0';
             this.tbxCpf.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.tbxCpf.PlaceholderText = "Teste";
+            this.tbxCpf.PlaceholderText = "";
             this.tbxCpf.ReadOnly = false;
             this.tbxCpf.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbxCpf.SelectedText = "";
@@ -415,7 +417,7 @@
             this.tbxCpf.TextMarginBottom = 0;
             this.tbxCpf.TextMarginLeft = 0;
             this.tbxCpf.TextMarginTop = 0;
-            this.tbxCpf.TextPlaceholder = "Teste";
+            this.tbxCpf.TextPlaceholder = "";
             this.tbxCpf.UseSystemPasswordChar = false;
             this.tbxCpf.WordWrap = true;
             // 
@@ -475,7 +477,7 @@
             this.tbxIdPessoa.OnIdleState = stateProperties64;
             this.tbxIdPessoa.PasswordChar = '\0';
             this.tbxIdPessoa.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.tbxIdPessoa.PlaceholderText = "teste";
+            this.tbxIdPessoa.PlaceholderText = "";
             this.tbxIdPessoa.ReadOnly = false;
             this.tbxIdPessoa.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbxIdPessoa.SelectedText = "";
@@ -489,7 +491,7 @@
             this.tbxIdPessoa.TextMarginBottom = 0;
             this.tbxIdPessoa.TextMarginLeft = 0;
             this.tbxIdPessoa.TextMarginTop = 0;
-            this.tbxIdPessoa.TextPlaceholder = "teste";
+            this.tbxIdPessoa.TextPlaceholder = "";
             this.tbxIdPessoa.UseSystemPasswordChar = false;
             this.tbxIdPessoa.WordWrap = true;
             // 
@@ -500,7 +502,7 @@
             this.bunifuSeparator6.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator6.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bunifuSeparator6.LineThickness = 1;
-            this.bunifuSeparator6.Location = new System.Drawing.Point(-19, 350);
+            this.bunifuSeparator6.Location = new System.Drawing.Point(-19, 354);
             this.bunifuSeparator6.Name = "bunifuSeparator6";
             this.bunifuSeparator6.Size = new System.Drawing.Size(809, 35);
             this.bunifuSeparator6.TabIndex = 211;
@@ -787,7 +789,7 @@
             this.tbxIdEndereco.OnIdleState = stateProperties68;
             this.tbxIdEndereco.PasswordChar = '\0';
             this.tbxIdEndereco.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.tbxIdEndereco.PlaceholderText = "Teste";
+            this.tbxIdEndereco.PlaceholderText = "";
             this.tbxIdEndereco.ReadOnly = false;
             this.tbxIdEndereco.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbxIdEndereco.SelectedText = "";
@@ -801,7 +803,7 @@
             this.tbxIdEndereco.TextMarginBottom = 0;
             this.tbxIdEndereco.TextMarginLeft = 0;
             this.tbxIdEndereco.TextMarginTop = 0;
-            this.tbxIdEndereco.TextPlaceholder = "Teste";
+            this.tbxIdEndereco.TextPlaceholder = "";
             this.tbxIdEndereco.UseSystemPasswordChar = false;
             this.tbxIdEndereco.WordWrap = true;
             // 
@@ -861,7 +863,7 @@
             this.tbxCep.OnIdleState = stateProperties72;
             this.tbxCep.PasswordChar = '\0';
             this.tbxCep.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.tbxCep.PlaceholderText = "Teste";
+            this.tbxCep.PlaceholderText = "";
             this.tbxCep.ReadOnly = false;
             this.tbxCep.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbxCep.SelectedText = "";
@@ -875,7 +877,7 @@
             this.tbxCep.TextMarginBottom = 0;
             this.tbxCep.TextMarginLeft = 0;
             this.tbxCep.TextMarginTop = 0;
-            this.tbxCep.TextPlaceholder = "Teste";
+            this.tbxCep.TextPlaceholder = "";
             this.tbxCep.UseSystemPasswordChar = false;
             this.tbxCep.WordWrap = true;
             // 
@@ -984,7 +986,7 @@
             this.TbxRamal1.OnIdleState = stateProperties76;
             this.TbxRamal1.PasswordChar = '\0';
             this.TbxRamal1.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.TbxRamal1.PlaceholderText = "Enter text";
+            this.TbxRamal1.PlaceholderText = "";
             this.TbxRamal1.ReadOnly = false;
             this.TbxRamal1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TbxRamal1.SelectedText = "";
@@ -998,7 +1000,7 @@
             this.TbxRamal1.TextMarginBottom = 0;
             this.TbxRamal1.TextMarginLeft = 0;
             this.TbxRamal1.TextMarginTop = 0;
-            this.TbxRamal1.TextPlaceholder = "Enter text";
+            this.TbxRamal1.TextPlaceholder = "";
             this.TbxRamal1.UseSystemPasswordChar = false;
             this.TbxRamal1.WordWrap = true;
             this.TbxRamal1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxRamal1_KeyPress);
@@ -1028,7 +1030,7 @@
             this.lblTel2.AutoSize = true;
             this.lblTel2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.lblTel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblTel2.Location = new System.Drawing.Point(116, 340);
+            this.lblTel2.Location = new System.Drawing.Point(116, 342);
             this.lblTel2.Name = "lblTel2";
             this.lblTel2.Size = new System.Drawing.Size(71, 20);
             this.lblTel2.TabIndex = 205;
@@ -1039,7 +1041,7 @@
             this.lblRamal2.AutoSize = true;
             this.lblRamal2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.lblRamal2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblRamal2.Location = new System.Drawing.Point(303, 340);
+            this.lblRamal2.Location = new System.Drawing.Point(303, 342);
             this.lblRamal2.Name = "lblRamal2";
             this.lblRamal2.Size = new System.Drawing.Size(55, 20);
             this.lblRamal2.TabIndex = 207;
@@ -1072,7 +1074,7 @@
             this.TbxRamal2.IconRight = null;
             this.TbxRamal2.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TbxRamal2.Lines = new string[0];
-            this.TbxRamal2.Location = new System.Drawing.Point(357, 333);
+            this.TbxRamal2.Location = new System.Drawing.Point(357, 335);
             this.TbxRamal2.MaxLength = 32767;
             this.TbxRamal2.MinimumSize = new System.Drawing.Size(1, 1);
             this.TbxRamal2.Modified = false;
@@ -1100,7 +1102,7 @@
             this.TbxRamal2.OnIdleState = stateProperties80;
             this.TbxRamal2.PasswordChar = '\0';
             this.TbxRamal2.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.TbxRamal2.PlaceholderText = "Enter text";
+            this.TbxRamal2.PlaceholderText = "";
             this.TbxRamal2.ReadOnly = false;
             this.TbxRamal2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TbxRamal2.SelectedText = "";
@@ -1114,7 +1116,7 @@
             this.TbxRamal2.TextMarginBottom = 0;
             this.TbxRamal2.TextMarginLeft = 0;
             this.TbxRamal2.TextMarginTop = 0;
-            this.TbxRamal2.TextPlaceholder = "Enter text";
+            this.TbxRamal2.TextPlaceholder = "";
             this.TbxRamal2.UseSystemPasswordChar = false;
             this.TbxRamal2.WordWrap = true;
             this.TbxRamal2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxRamal2_KeyPress);
@@ -1124,7 +1126,7 @@
             this.lblTipoTelefone2.AutoSize = true;
             this.lblTipoTelefone2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.lblTipoTelefone2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblTipoTelefone2.Location = new System.Drawing.Point(415, 341);
+            this.lblTipoTelefone2.Location = new System.Drawing.Point(415, 343);
             this.lblTipoTelefone2.Name = "lblTipoTelefone2";
             this.lblTipoTelefone2.Size = new System.Drawing.Size(43, 20);
             this.lblTipoTelefone2.TabIndex = 209;
@@ -1133,7 +1135,7 @@
             // CbxTipoTel2
             // 
             this.CbxTipoTel2.FormattingEnabled = true;
-            this.CbxTipoTel2.Location = new System.Drawing.Point(456, 340);
+            this.CbxTipoTel2.Location = new System.Drawing.Point(456, 342);
             this.CbxTipoTel2.Name = "CbxTipoTel2";
             this.CbxTipoTel2.Size = new System.Drawing.Size(163, 21);
             this.CbxTipoTel2.TabIndex = 210;
@@ -1172,7 +1174,7 @@
             // 
             // rtbxObsOrc
             // 
-            this.rtbxObsOrc.Location = new System.Drawing.Point(116, 373);
+            this.rtbxObsOrc.Location = new System.Drawing.Point(116, 378);
             this.rtbxObsOrc.Name = "rtbxObsOrc";
             this.rtbxObsOrc.Size = new System.Drawing.Size(620, 55);
             this.rtbxObsOrc.TabIndex = 215;
@@ -1183,7 +1185,7 @@
             this.lblObsAtendimento.AutoSize = true;
             this.lblObsAtendimento.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.lblObsAtendimento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblObsAtendimento.Location = new System.Drawing.Point(12, 408);
+            this.lblObsAtendimento.Location = new System.Drawing.Point(12, 413);
             this.lblObsAtendimento.Name = "lblObsAtendimento";
             this.lblObsAtendimento.Size = new System.Drawing.Size(94, 20);
             this.lblObsAtendimento.TabIndex = 216;
@@ -1702,31 +1704,31 @@
             this.lblNome.TabIndex = 240;
             this.lblNome.Text = "Nome:";
             // 
-            // BtnTelSalvar
+            // BtnTel1Salvar
             // 
-            this.BtnTelSalvar.ActiveBorderThickness = 1;
-            this.BtnTelSalvar.ActiveCornerRadius = 20;
-            this.BtnTelSalvar.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.BtnTelSalvar.ActiveForecolor = System.Drawing.Color.White;
-            this.BtnTelSalvar.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.BtnTelSalvar.BackColor = System.Drawing.Color.White;
-            this.BtnTelSalvar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnTelSalvar.BackgroundImage")));
-            this.BtnTelSalvar.ButtonText = "  Atualizar";
-            this.BtnTelSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnTelSalvar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnTelSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.BtnTelSalvar.IdleBorderThickness = 1;
-            this.BtnTelSalvar.IdleCornerRadius = 20;
-            this.BtnTelSalvar.IdleFillColor = System.Drawing.Color.White;
-            this.BtnTelSalvar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.BtnTelSalvar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.BtnTelSalvar.Location = new System.Drawing.Point(643, 312);
-            this.BtnTelSalvar.Margin = new System.Windows.Forms.Padding(5);
-            this.BtnTelSalvar.Name = "BtnTelSalvar";
-            this.BtnTelSalvar.Size = new System.Drawing.Size(91, 41);
-            this.BtnTelSalvar.TabIndex = 241;
-            this.BtnTelSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnTelSalvar.Click += new System.EventHandler(this.BtnTelSalvar_Click);
+            this.BtnTel1Salvar.ActiveBorderThickness = 1;
+            this.BtnTel1Salvar.ActiveCornerRadius = 20;
+            this.BtnTel1Salvar.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnTel1Salvar.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnTel1Salvar.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnTel1Salvar.BackColor = System.Drawing.Color.White;
+            this.BtnTel1Salvar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnTel1Salvar.BackgroundImage")));
+            this.BtnTel1Salvar.ButtonText = "  Atualizar";
+            this.BtnTel1Salvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnTel1Salvar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTel1Salvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnTel1Salvar.IdleBorderThickness = 1;
+            this.BtnTel1Salvar.IdleCornerRadius = 20;
+            this.BtnTel1Salvar.IdleFillColor = System.Drawing.Color.White;
+            this.BtnTel1Salvar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnTel1Salvar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnTel1Salvar.Location = new System.Drawing.Point(649, 296);
+            this.BtnTel1Salvar.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnTel1Salvar.Name = "BtnTel1Salvar";
+            this.BtnTel1Salvar.Size = new System.Drawing.Size(78, 31);
+            this.BtnTel1Salvar.TabIndex = 241;
+            this.BtnTel1Salvar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnTel1Salvar.Click += new System.EventHandler(this.BtnTel1Salvar_Click);
             // 
             // lblIdTel1
             // 
@@ -1758,6 +1760,7 @@
             this.TbxIdTel1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TbxIdTel1.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.TbxIdTel1.DefaultText = "";
+            this.TbxIdTel1.Enabled = false;
             this.TbxIdTel1.FillColor = System.Drawing.Color.White;
             this.TbxIdTel1.HideSelection = true;
             this.TbxIdTel1.IconLeft = null;
@@ -1794,7 +1797,7 @@
             this.TbxIdTel1.OnIdleState = stateProperties92;
             this.TbxIdTel1.PasswordChar = '\0';
             this.TbxIdTel1.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.TbxIdTel1.PlaceholderText = "Enter text";
+            this.TbxIdTel1.PlaceholderText = "";
             this.TbxIdTel1.ReadOnly = false;
             this.TbxIdTel1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TbxIdTel1.SelectedText = "";
@@ -1808,7 +1811,7 @@
             this.TbxIdTel1.TextMarginBottom = 0;
             this.TbxIdTel1.TextMarginLeft = 0;
             this.TbxIdTel1.TextMarginTop = 0;
-            this.TbxIdTel1.TextPlaceholder = "Enter text";
+            this.TbxIdTel1.TextPlaceholder = "";
             this.TbxIdTel1.UseSystemPasswordChar = false;
             this.TbxIdTel1.WordWrap = true;
             // 
@@ -1817,7 +1820,7 @@
             this.LblIdTel2.AutoSize = true;
             this.LblIdTel2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.LblIdTel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.LblIdTel2.Location = new System.Drawing.Point(12, 341);
+            this.LblIdTel2.Location = new System.Drawing.Point(12, 343);
             this.LblIdTel2.Name = "LblIdTel2";
             this.LblIdTel2.Size = new System.Drawing.Size(40, 20);
             this.LblIdTel2.TabIndex = 244;
@@ -1842,6 +1845,7 @@
             this.TbxIdTel2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TbxIdTel2.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.TbxIdTel2.DefaultText = "";
+            this.TbxIdTel2.Enabled = false;
             this.TbxIdTel2.FillColor = System.Drawing.Color.White;
             this.TbxIdTel2.HideSelection = true;
             this.TbxIdTel2.IconLeft = null;
@@ -1850,7 +1854,7 @@
             this.TbxIdTel2.IconRight = null;
             this.TbxIdTel2.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TbxIdTel2.Lines = new string[0];
-            this.TbxIdTel2.Location = new System.Drawing.Point(50, 333);
+            this.TbxIdTel2.Location = new System.Drawing.Point(50, 335);
             this.TbxIdTel2.MaxLength = 32767;
             this.TbxIdTel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.TbxIdTel2.Modified = false;
@@ -1878,7 +1882,7 @@
             this.TbxIdTel2.OnIdleState = stateProperties96;
             this.TbxIdTel2.PasswordChar = '\0';
             this.TbxIdTel2.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.TbxIdTel2.PlaceholderText = "Enter text";
+            this.TbxIdTel2.PlaceholderText = "";
             this.TbxIdTel2.ReadOnly = false;
             this.TbxIdTel2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TbxIdTel2.SelectedText = "";
@@ -1892,20 +1896,21 @@
             this.TbxIdTel2.TextMarginBottom = 0;
             this.TbxIdTel2.TextMarginLeft = 0;
             this.TbxIdTel2.TextMarginTop = 0;
-            this.TbxIdTel2.TextPlaceholder = "Enter text";
+            this.TbxIdTel2.TextPlaceholder = "";
             this.TbxIdTel2.UseSystemPasswordChar = false;
             this.TbxIdTel2.WordWrap = true;
             // 
             // container
             // 
             this.container.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.container.Controls.Add(this.BtnTel2Salvar);
             this.container.Controls.Add(this.TbxTel2);
             this.container.Controls.Add(this.TbxTel1);
             this.container.Controls.Add(this.TbxIdTel2);
             this.container.Controls.Add(this.LblIdTel2);
             this.container.Controls.Add(this.TbxIdTel1);
             this.container.Controls.Add(this.lblIdTel1);
-            this.container.Controls.Add(this.BtnTelSalvar);
+            this.container.Controls.Add(this.BtnTel1Salvar);
             this.container.Controls.Add(this.lblNome);
             this.container.Controls.Add(this.lblCep);
             this.container.Controls.Add(this.lblIdEndereco);
@@ -1962,16 +1967,43 @@
             this.container.Controls.Add(this.tbxEmail);
             this.container.Controls.Add(this.tbxNome);
             this.container.Controls.Add(this.bunifuSeparator5);
+            this.container.Controls.Add(this.bunifuSeparator3);
             this.container.Location = new System.Drawing.Point(90, -16);
             this.container.Name = "container";
             this.container.Size = new System.Drawing.Size(754, 892);
             this.container.TabIndex = 0;
             // 
+            // BtnTel2Salvar
+            // 
+            this.BtnTel2Salvar.ActiveBorderThickness = 1;
+            this.BtnTel2Salvar.ActiveCornerRadius = 20;
+            this.BtnTel2Salvar.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnTel2Salvar.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnTel2Salvar.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnTel2Salvar.BackColor = System.Drawing.Color.White;
+            this.BtnTel2Salvar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnTel2Salvar.BackgroundImage")));
+            this.BtnTel2Salvar.ButtonText = "  Atualizar";
+            this.BtnTel2Salvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnTel2Salvar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTel2Salvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnTel2Salvar.IdleBorderThickness = 1;
+            this.BtnTel2Salvar.IdleCornerRadius = 20;
+            this.BtnTel2Salvar.IdleFillColor = System.Drawing.Color.White;
+            this.BtnTel2Salvar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnTel2Salvar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnTel2Salvar.Location = new System.Drawing.Point(649, 336);
+            this.BtnTel2Salvar.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnTel2Salvar.Name = "BtnTel2Salvar";
+            this.BtnTel2Salvar.Size = new System.Drawing.Size(78, 31);
+            this.BtnTel2Salvar.TabIndex = 248;
+            this.BtnTel2Salvar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnTel2Salvar.Click += new System.EventHandler(this.BtnTel2Salvar_Click);
+            // 
             // TbxTel2
             // 
             this.TbxTel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TbxTel2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.TbxTel2.Location = new System.Drawing.Point(193, 338);
+            this.TbxTel2.Location = new System.Drawing.Point(193, 340);
             this.TbxTel2.Mask = "(99) 000000000";
             this.TbxTel2.Name = "TbxTel2";
             this.TbxTel2.Size = new System.Drawing.Size(100, 25);
@@ -1988,6 +2020,20 @@
             this.TbxTel1.Size = new System.Drawing.Size(100, 25);
             this.TbxTel1.TabIndex = 246;
             this.TbxTel1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // bunifuSeparator3
+            // 
+            this.bunifuSeparator3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuSeparator3.LineThickness = 1;
+            this.bunifuSeparator3.Location = new System.Drawing.Point(-19, 313);
+            this.bunifuSeparator3.Name = "bunifuSeparator3";
+            this.bunifuSeparator3.Size = new System.Drawing.Size(809, 35);
+            this.bunifuSeparator3.TabIndex = 249;
+            this.bunifuSeparator3.Transparency = 255;
+            this.bunifuSeparator3.Vertical = false;
             // 
             // AdicionarEditarAtendimento
             // 
@@ -2075,7 +2121,7 @@
         private System.Windows.Forms.Label lblIdEndereco;
         private System.Windows.Forms.Label lblCep;
         private System.Windows.Forms.Label lblNome;
-        private Bunifu.Framework.UI.BunifuThinButton2 BtnTelSalvar;
+        private Bunifu.Framework.UI.BunifuThinButton2 BtnTel1Salvar;
         private System.Windows.Forms.Label lblIdTel1;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox TbxIdTel1;
         private System.Windows.Forms.Label LblIdTel2;
@@ -2083,5 +2129,7 @@
         private System.Windows.Forms.Panel container;
         private System.Windows.Forms.MaskedTextBox TbxTel2;
         private System.Windows.Forms.MaskedTextBox TbxTel1;
+        private Bunifu.Framework.UI.BunifuThinButton2 BtnTel2Salvar;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator3;
     }
 }

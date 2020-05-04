@@ -35,6 +35,29 @@ namespace Negocios
                 return ex.Message;
             }
         }
+
+        public string Atualizar(Telefone telefone)
+        {
+            try
+            {
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_TELEFONE", telefone.Id_Telefone);
+                acessoDados.AdicionarParametros("@ID_PESSOA", telefone.Pessoa.Id_Pessoa);
+                acessoDados.AdicionarParametros("@ID_TIPO_TELEFONE", telefone.TipoTelefone.Id_Tipo_Telefone);
+                acessoDados.AdicionarParametros("@TELEFONE", telefone.Num_Telefone);
+                acessoDados.AdicionarParametros("@DDD", telefone.DDD);
+                acessoDados.AdicionarParametros("@RAMAL", telefone.Ramal);
+                acessoDados.AdicionarParametros("@ID_USUARIO ", telefone.Usuario.Id_Usuario);
+
+                string IdTelefone = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_TELEFONE_ATUALIZARPORID").ToString();
+
+                return IdTelefone;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
         public TelefoneColecao ConsultarPorPessoa(int id)
         {
             try
@@ -54,7 +77,7 @@ namespace Negocios
                     telefone.DDD = Convert.ToInt16(dataRow["DDD"]);
                     telefone.Num_Telefone = Convert.ToString(dataRow["TELEFONE"]);
                     telefone.Ramal = Convert.ToInt16(dataRow["RAMAL"]);
-                    telefone.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO "]);
+                    telefone.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
                     telefone.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
 
                     TipoTelefone tipoTelefone = new TipoTelefone();
@@ -85,7 +108,6 @@ namespace Negocios
                 throw new Exception("Erro ao consultar telefone. Detalhes" + ex.Message);
             }
         }
-
         public string Excluir(Telefone telefone)
         {
             try
@@ -104,7 +126,6 @@ namespace Negocios
             }
 
         }
-
         public TipoTelefoneColecao ConsultartipoPorDescricao(string desc)
         {
             try
