@@ -146,15 +146,23 @@ namespace Negocios
                     laboratorio.Nome = Convert.ToString(dataRow["NOME_LABORATORIO"]);
 
                     Pessoa pessoa = new Pessoa();
+                    pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
                     pessoa.Nome = Convert.ToString(dataRow["NOME_PROFESSOR"]);
                     pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME_PROFESSOR"]);
 
                     ProfessorMinistra professorMinistra = new ProfessorMinistra();
                     professorMinistra.Id_Professor_Ministra = Convert.ToInt32(dataRow["ID_PROFESSOR_MINISTRA"]);
-                    professorMinistra.Professor.Funcionario.Pessoa = pessoa;
 
+                    Professor professor = new Professor();
+                    professor.Id_Professor = Convert.ToInt32(dataRow["ID_PROFESSOR"]);
 
+                    Funcionario funcionario = new Funcionario();
+                    funcionario.Id_Funcionario = Convert.ToInt32(dataRow["ID_FUNCIONARIO"]);
 
+                    turma.ProfessorMinistra = professorMinistra;
+                    turma.ProfessorMinistra.Professor = professor;
+                    turma.ProfessorMinistra.Professor.Funcionario = funcionario;
+                    turma.ProfessorMinistra.Professor.Funcionario.Pessoa = pessoa;
                     turma.Usuario = usuario;
                     turma.Curso = curso;
                     turma.Laboratorio = laboratorio;

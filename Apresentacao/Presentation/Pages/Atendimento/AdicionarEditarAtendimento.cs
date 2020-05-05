@@ -19,8 +19,11 @@ namespace Apresentacao.Presentation.Pages
             CarregarComboBoxTipoAtendimento();
             CarregarComboBoxMarketing();
             CarregarComboBoxTipoTelefone();
+            CarregarComboBoxPromocao();
+            CarregarComboBoxTurma();
             BtnTel1Salvar.ButtonText = "Salvar";
-            
+            dtpValidade.Value = DateTime.Now;
+            tbxUsuarioGera.Text = LoginNegocios.UsuarioLogadoGetSet.Nome_Usuario;         
         }
 
 
@@ -38,6 +41,17 @@ namespace Apresentacao.Presentation.Pages
         private static int TipotelSel1 = 0;
         private static TipoTelefoneColecao TipoTelefoneGetSet2;
         private static int TipotelSel2 = 0;
+        private static TipoAtendimentoColecao TipoAtendimentoGetSet;
+        private static int TipoAtendimentoSel = 0;
+        private static MarketingColecao MarketingGetSet;
+        private static int MarketingSel = 0;
+        private static PromocaoValorColecao PromocaoGetSet;
+        private static int PromoSel = 0;
+        private static TurmaColecao TurmaGetSet;
+        private static int turmaSel = 0;
+        public static AtendimentoColecao AtendimentoGetset;
+        public static int AtendimentoSelecionado = 0;
+        public static Boolean AtualizaAtendimento = false;
 
 
 
@@ -178,7 +192,31 @@ namespace Apresentacao.Presentation.Pages
             }
             CamposTelefone2();
         }
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            AtendimentoNegocios atendimentoNegocios = new AtendimentoNegocios();
 
+            Atendimento atendimento = new Atendimento();
+            atendimento.TipoAtendimento = TipoAtendimentoGetSet[TipoAtendimentoSel];
+            atendimento.Pessoa = PessoaGetSet;
+            atendimento.Marketing = MarketingGetSet[MarketingSel];
+            atendimento.Receptivo = cboxReceptivo.Checked ? 'R' : 'E';
+            atendimento.Observacao = rtbxObsOrc.Text;
+
+            string retorno = atendimentoNegocios.Inserir(atendimento);
+
+            try
+            {
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
 
         //Métodos Personalizados
@@ -321,10 +359,10 @@ namespace Apresentacao.Presentation.Pages
         {
             TipoAtendimentoNegocios tipoAtendimentoNegocios = new TipoAtendimentoNegocios();
 
-            TipoAtendimentoColecao tipoAtendimentos = tipoAtendimentoNegocios.ConsultarPorDescricao("");
+            TipoAtendimentoGetSet = tipoAtendimentoNegocios.ConsultarPorDescricao("");
 
             cbxTipoAtendimento.DataSource = null;
-            cbxTipoAtendimento.DataSource = tipoAtendimentos;
+            cbxTipoAtendimento.DataSource = TipoAtendimentoGetSet;
             cbxTipoAtendimento.DisplayMember = "DESCRICAO";
             cbxTipoAtendimento.ValueMember = "ID_TIPO_ATENDIMENTO";
         }
@@ -332,13 +370,37 @@ namespace Apresentacao.Presentation.Pages
         {
             MarketingNegocios marketingNegocios = new MarketingNegocios();
 
-            MarketingColecao marketingColecao = marketingNegocios.ConsultarPorDescricao("");
+            MarketingGetSet = marketingNegocios.ConsultarPorDescricao("");
 
             cbxMarketing.DataSource = null;
-            cbxMarketing.DataSource = marketingColecao;
+            cbxMarketing.DataSource = MarketingGetSet;
             cbxMarketing.DisplayMember = "DESCRICAO";
             cbxMarketing.ValueMember = "ID_MKT";
             cbxMarketing.SelectedIndex = 0;
+        }
+        private void CarregarComboBoxPromocao()
+        {
+            PromocaoNegocios promocaoNegocios = new PromocaoNegocios();
+
+            PromocaoValorColecao promocaoValorColecao = promocaoNegocios.ConsultarPorNome("");
+
+            cbxPromocao.DataSource = null;
+            cbxPromocao.DataSource = promocaoValorColecao;
+            cbxPromocao.DisplayMember = "NOME_PROMOCAO";
+            cbxPromocao.ValueMember = "ID_PROMOCAO_VALOR";
+            cbxPromocao.SelectedIndex = 0;
+        }
+        private void CarregarComboBoxTurma()
+        {
+            TurmaNegocios turmaNegocios = new TurmaNegocios();
+
+            TurmaColecao turmaColecao = turmaNegocios.ConsultarPorNome("");
+
+            cbxTurma.DataSource = null;
+            cbxTurma.DataSource = turmaColecao;
+            cbxTurma.DisplayMember = "NOME_TURMA";
+            cbxTurma.ValueMember = "ID_TURMA";
+            cbxTurma.SelectedIndex = 0;
         }
         private void CarregarComboBoxTipoTelefone()
         {
@@ -383,7 +445,22 @@ namespace Apresentacao.Presentation.Pages
         {
             TipotelSel2 = CbxTipoTel1.SelectedIndex;
         }
-
+        private void cbxPromocao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PromoSel = cbxPromocao.SelectedIndex;
+        }
+        private void cbxTurma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            turmaSel = cbxTurma.SelectedIndex;
+        }
+        private void cbxTipoAtendimento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TipoAtendimentoSel = cbxTipoAtendimento.SelectedIndex;
+        }
+        private void cbxMarketing_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MarketingSel = cbxMarketing.SelectedIndex;
+        }
 
 
         //Métodos Timers
@@ -422,9 +499,8 @@ namespace Apresentacao.Presentation.Pages
             if (AtualizaTel == true)
             {
                 TelefoneNegocios telefoneNegocios = new TelefoneNegocios();
-                TelefoneColecao telefones = telefoneNegocios.ConsultarPorPessoa(PessoaGetSet.Id_Pessoa);
                 TelefoneGetSet = null;
-                TelefoneGetSet = telefones;
+                TelefoneGetSet = telefoneNegocios.ConsultarPorPessoa(PessoaGetSet.Id_Pessoa);
                 if ((TelefoneGetSet.Count == 1))
                 {
                     CamposTelefone1();
@@ -434,8 +510,13 @@ namespace Apresentacao.Presentation.Pages
                     CamposTelefone1();
                     CamposTelefone2();
                 }
+                if(TelefoneGetSet.Count == 0)
+                {
+                    CamposTelefone1();
+                    CamposTelefone2();
+                }
                 AtualizaTel = false;
             }          
-        }    
+        }     
     }
 }

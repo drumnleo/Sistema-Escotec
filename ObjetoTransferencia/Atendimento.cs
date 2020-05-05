@@ -12,7 +12,7 @@ namespace ObjetoTransferencia
         public TipoAtendimento TipoAtendimento { get; set; }
         public Pessoa Pessoa { get; set; }
         public Marketing Marketing { get; set; }
-        public string Receptivo { get; set; }
+        public char Receptivo { get; set; }
         public string Observacao { get; set; }
         public DateTime Data_Cadastro { get; set; }
         public DateTime Data_Ultima_Alteracao { get; set; }

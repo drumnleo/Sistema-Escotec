@@ -137,18 +137,19 @@
   </data>
   <data name="tbxEmail.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAOgAAAAcCAYAAABrqvN3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACDSURBVHhe7dy7CcAwEAVBlabS1Ln8QWDcwQYz8JLLN70B
-        xO29571lZpnNk+cb6HMAOtbJU6AQJFAIEyiECRTCBAphAoUwgUKYQCFMoBAmUAgTKIQJFMIECmEChTCB
-        QphAIUygECZQCBMohAkUwgQKYQKFMIFC2C9Qj6vNWvseVwNFY1y+iBrx60fNBAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAATwAAAAcCAYAAAD83gOEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACSSURBVHhe7d3BDcMwDARBlebS3LmSGAKMtMCdAe7DAvbL
+        BZCy976+u83Mhu46uXuC9zsATHWf3AkeMJ7gARmCB2QIHpAheECG4AEZggdkCB6QIXhAhuABGYIHZAge
+        kCF4QIbgARmCB2QIHpAheECG4AEZggdkCB6QIXhAhuABGYIHZPwFzyNuM5u89xE3wHxrfQBDAMdocxul
+        +AAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="tbxCpf.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHUAAAAcCAYAAABf//AuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABySURBVGhD7dq7CcAwEAVBlebS1Ln8wWBcgpYZeMmlm94g
-        aq11XJu2/Y436RP1PrC/+SYVNUTUIFGDRA0SNUjUIFGDRA0SNUjUIFGDRA0SNUjUIFGDRA0SNUjUIFGD
-        RA0SNUjUIFGDflE9czf2PXNTMsYJRa8BEXwvZvUAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAMkAAAAcCAYAAADLNZuZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB+SURBVHhe7dzBCcMwEEVBlebS3LkSG0EQwTwXMAP/svd3
+        3QG8MOc8vjvNbNuxErkjuQ7A7lyJiAQeiASCSCCIBIJIIIgEgkggiASCSCCIBIJIIIgEgkggiASCSCCI
+        BIJIIIgEgkggiASCSCCIBIJIIGyReE5n9r/fczrgyRgfql+tiJb/BJcAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="tbxIdPessoa.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -569,6 +570,14 @@
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB5SURBVFhH7dBBDcBADANB80eVU2AURgH0FGkf5ZC15I9/
         nphfuvupqm9j5zsMyQxbM99hEAIGIWAQAgYhYBACBiFgEAIGIWAQAgYhYBACBiFgEAIGIWAQAgYhYBAC
         BiFgEAIGIWAQAgYhYBAChuSc886wsfMdBpMkF6enZUBzc2S+AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="TbxIdAtend.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADQAAAAcCAYAAAAuh5ywAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABOSURBVFhH7di7DQAwCMRQRmM0NicfZQgH2dI1dK8lRtbd
+        uVefLx/ngs7h9+pxBFETRE8QPUH0BNETRE8QPUH0BNETRE8QvdmgWY/GOUUseYnyYr+WHfoAAAAASUVO
+        RK5CYII=
 </value>
   </data>
   <data name="BtnTel2Salvar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

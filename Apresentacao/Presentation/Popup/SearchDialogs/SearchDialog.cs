@@ -22,6 +22,15 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         Pessoa pessoaSelecionada = new Pessoa();
 
+        private TipoDocColecao TipoDocGetSet;
+        private int TipoDocSel = 0;
+
+        private ProfissaoColecao ProfissaoGetSet;
+        private int ProfissaoSel = 0;
+
+        private EstadoCivilColecao EstadoCivilGetSet;
+        private int EstadoCivilSel = 0;
+
         public SearchDialog()
         {
             InitializeComponent();
@@ -46,22 +55,22 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             TipoDocNegocios tipoDocNegocios = new TipoDocNegocios();
 
             string txt = "";
-            EstadoCivilColecao estadoCivilColecao = estadoCivilNegocios.ConsultarPorDescricao(txt);
-            ProfissaoColecao profissaoColecao = profissaoNegocios.ConsultarPorDescricao(txt);
-            TipoDocColecao tipoDocColecao = tipoDocNegocios.ConsultarPorDescricao(txt);
+            EstadoCivilGetSet = estadoCivilNegocios.ConsultarPorDescricao(txt);
+            ProfissaoGetSet = profissaoNegocios.ConsultarPorDescricao(txt);
+            TipoDocGetSet = tipoDocNegocios.ConsultarPorDescricao(txt);
 
             cbxEstadoCivil.DataSource = null;
-            cbxEstadoCivil.DataSource = estadoCivilColecao;
+            cbxEstadoCivil.DataSource = EstadoCivilGetSet;
             cbxEstadoCivil.ValueMember = "ID_ESTADOCIVIL";
             cbxEstadoCivil.DisplayMember = "DESCRICAO";
 
             cbxProfissao.DataSource = null;
-            cbxProfissao.DataSource = profissaoColecao;
+            cbxProfissao.DataSource = ProfissaoGetSet;
             cbxProfissao.ValueMember = "ID_PROFISSAO";
             cbxProfissao.DisplayMember = "Nome_Profissao";
 
             cbxTipoDoc.DataSource = null;
-            cbxTipoDoc.DataSource = tipoDocColecao;
+            cbxTipoDoc.DataSource = TipoDocGetSet;
             cbxTipoDoc.ValueMember = "ID_TIPODOC";
             cbxTipoDoc.DisplayMember = "DESCRICAO";
         }
@@ -70,10 +79,10 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         {
             EstadoCivilNegocios estadoCivilNegocios = new EstadoCivilNegocios();
             string txt = "";
-            EstadoCivilColecao estadoCivilColecao = estadoCivilNegocios.ConsultarPorDescricao(txt);
+            EstadoCivilGetSet = estadoCivilNegocios.ConsultarPorDescricao(txt);
 
             cbxEstadoCivil.DataSource = null;
-            cbxEstadoCivil.DataSource = estadoCivilColecao;
+            cbxEstadoCivil.DataSource = EstadoCivilGetSet;
             cbxEstadoCivil.ValueMember = "ID_ESTADOCIVIL";
             cbxEstadoCivil.DisplayMember = "DESCRICAO";
         }
@@ -82,10 +91,10 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         {
             ProfissaoNegocios profissaoNegocios = new ProfissaoNegocios();
             string txt = "";
-            ProfissaoColecao profissaoColecao = profissaoNegocios.ConsultarPorDescricao(txt);
+            ProfissaoGetSet = profissaoNegocios.ConsultarPorDescricao(txt);
 
             cbxProfissao.DataSource = null;
-            cbxProfissao.DataSource = profissaoColecao;
+            cbxProfissao.DataSource = ProfissaoGetSet;
             cbxProfissao.ValueMember = "ID_PROFISSAO";
             cbxProfissao.DisplayMember = "Nome_Profissao";
         }
@@ -94,10 +103,10 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         {
             TipoDocNegocios tipoDocNegocios = new TipoDocNegocios();
             string txt = "";
-            TipoDocColecao tipoDocColecao = tipoDocNegocios.ConsultarPorDescricao(txt);
+            TipoDocGetSet = tipoDocNegocios.ConsultarPorDescricao(txt);
 
             cbxTipoDoc.DataSource = null;
-            cbxTipoDoc.DataSource = tipoDocColecao;
+            cbxTipoDoc.DataSource = TipoDocGetSet;
             cbxTipoDoc.ValueMember = "ID_TIPODOC";
             cbxTipoDoc.DisplayMember = "DESCRICAO";
         }
@@ -154,27 +163,30 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             pessoacolecaocbx.Insert(0, pessoa);
 
             TipoDocNegocios tipoDocNegocios = new TipoDocNegocios();
-            TipoDocColecao tipoDocColecao = tipoDocNegocios.ConsultarPorId(pessoa.TipoDoc.Id_TipoDoc);
+            TipoDocGetSet = new TipoDocColecao();
+            TipoDocGetSet = tipoDocNegocios.ConsultarPorId(pessoa.TipoDoc.Id_TipoDoc);
             cbxTipoDoc.DataSource = null;
-            cbxTipoDoc.DataSource = tipoDocColecao;
+            cbxTipoDoc.DataSource = TipoDocGetSet;
             cbxTipoDoc.ValueMember = "ID_TIPODOC";
             cbxTipoDoc.DisplayMember = "DESCRICAO";
             cbxTipoDoc.SelectedIndex = 0;
             cbxTipoDoc.DropDownStyle = ComboBoxStyle.DropDownList;
 
             EstadoCivilNegocios estadoCivilNegocios = new EstadoCivilNegocios();
-            EstadoCivilColecao estadoCivilcolecao = estadoCivilNegocios.ConsultarPorId(pessoa.EstadoCivil.Id_EstadoCivil);
+            EstadoCivilGetSet = new EstadoCivilColecao();
+            EstadoCivilGetSet = estadoCivilNegocios.ConsultarPorId(pessoa.EstadoCivil.Id_EstadoCivil);
             cbxEstadoCivil.DataSource = null;
-            cbxEstadoCivil.DataSource = estadoCivilcolecao;
+            cbxEstadoCivil.DataSource = EstadoCivilGetSet;
             cbxEstadoCivil.ValueMember = "ID_ESTADOCIVIL";
             cbxEstadoCivil.DisplayMember = "DESCRICAO";
             cbxEstadoCivil.SelectedIndex = 0;
             cbxEstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;
 
             ProfissaoNegocios profissaoNegocios = new ProfissaoNegocios();
-            ProfissaoColecao profissaoColecao = profissaoNegocios.ConsultarPorId(pessoa.Profissao.Id_Profissao);
+            ProfissaoGetSet = new ProfissaoColecao();
+            ProfissaoGetSet = profissaoNegocios.ConsultarPorId(pessoa.Profissao.Id_Profissao);
             cbxProfissao.DataSource = null;
-            cbxProfissao.DataSource = profissaoColecao;
+            cbxProfissao.DataSource = ProfissaoGetSet;
             cbxProfissao.ValueMember = "ID_PROFISSAO";
             cbxProfissao.DisplayMember = "NOME_PROFISSAO";
             cbxProfissao.SelectedIndex = 0;
@@ -251,9 +263,9 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 PessoaNegocios pessoaNegocios = new PessoaNegocios();
                 Validadocs validadocs = new Validadocs();
 
-                pessoa.Profissao.Id_Profissao = Convert.ToInt32(cbxProfissao.SelectedValue);
-                pessoa.TipoDoc.Id_TipoDoc = Convert.ToInt32(cbxTipoDoc.SelectedValue);
-                pessoa.EstadoCivil.Id_EstadoCivil = Convert.ToInt32(cbxEstadoCivil.SelectedValue);
+                pessoa.Profissao = ProfissaoGetSet[ProfissaoSel];
+                pessoa.TipoDoc = TipoDocGetSet[TipoDocSel];
+                pessoa.EstadoCivil = EstadoCivilGetSet[EstadoCivilSel];
                 pessoa.Nome = tbxNome.Text;
                 pessoa.Sobrenome = tbxSobrenome.Text;
                 pessoa.CPF = validadocs.SemFormatacao(tbxCPF.Text);
@@ -415,9 +427,9 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 Validadocs validadocs = new Validadocs();
 
                 pessoa.Id_Pessoa = pessoaSelecionada.Id_Pessoa;
-                pessoa.Profissao.Id_Profissao = Convert.ToInt32(cbxProfissao.SelectedValue);
-                pessoa.TipoDoc.Id_TipoDoc = Convert.ToInt32(cbxTipoDoc.SelectedValue);
-                pessoa.EstadoCivil.Id_EstadoCivil = Convert.ToInt32(cbxEstadoCivil.SelectedValue);
+                pessoa.Profissao = ProfissaoGetSet[ProfissaoSel];
+                pessoa.TipoDoc = TipoDocGetSet[TipoDocSel];
+                pessoa.EstadoCivil = EstadoCivilGetSet[EstadoCivilSel];
                 pessoa.Nome = tbxNome.Text;
                 pessoa.Sobrenome = tbxSobrenome.Text;
                 pessoa.CPF = validadocs.SemFormatacao(tbxCPF.Text);
