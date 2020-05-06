@@ -85,11 +85,123 @@ namespace Negocios
 
                     Pessoa pessoa = new Pessoa();
                     pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
+                    pessoa.Nome = Convert.ToString(dataRow["NOME"]);
+                    pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
 
                     Marketing marketing = new Marketing();
                     marketing.Id_Mkt = Convert.ToInt32(dataRow["ID_MKT"]);
                     marketing.Descricao = Convert.ToString(dataRow["MARKETING_DESCRICAO"]);
 
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    atendimento.Usuario = usuario;
+                    atendimento.TipoAtendimento = tipoAtendimento;
+                    atendimento.Pessoa = pessoa;
+                    atendimento.Marketing = marketing;
+
+                    atendimentoColecao.Add(atendimento);
+                }
+
+                return atendimentoColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar Atendimento. Detalhes: " + ex.Message);
+            }
+        }
+
+        public AtendimentoColecao ConsultarPorNomePessoa(string nome, string sobrenome)
+        {
+            try
+            {
+                AtendimentoColecao atendimentoColecao = new AtendimentoColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@NOME", nome);
+                acessoDados.AdicionarParametros("@SOBRENOME", sobrenome);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_ATENDIMENTO_CUNSULTAPORNOMEPESSOA");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    Atendimento atendimento = new Atendimento();
+
+                    atendimento.Id_Atendimento = Convert.ToInt32(dataRow["ID_ATENDIMENTO"]);
+                    atendimento.Receptivo = Convert.ToChar(dataRow["RECEPTIVO"]);
+                    atendimento.Observacao = Convert.ToString(dataRow["OBSERVACAO"]);
+                    atendimento.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    atendimento.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    TipoAtendimento tipoAtendimento = new TipoAtendimento();
+                    tipoAtendimento.Id_Tipo_Atendimento = Convert.ToInt32(dataRow["ID_TIPO_ATENDIMENTO"]);
+                    tipoAtendimento.Descricao = Convert.ToString(dataRow["TIPO_ATENDIMENTO_DESCRICAO"]);
+
+                    Pessoa pessoa = new Pessoa();
+                    pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
+                    pessoa.Nome = Convert.ToString(dataRow["NOME"]);
+                    pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
+
+                    Marketing marketing = new Marketing();
+                    marketing.Id_Mkt = Convert.ToInt32(dataRow["ID_MKT"]);
+                    marketing.Descricao = Convert.ToString(dataRow["MARKETING_DESCRICAO"]);
+
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    atendimento.Usuario = usuario;
+                    atendimento.TipoAtendimento = tipoAtendimento;
+                    atendimento.Pessoa = pessoa;
+                    atendimento.Marketing = marketing;
+
+                    atendimentoColecao.Add(atendimento);
+                }
+
+                return atendimentoColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar Atendimento. Detalhes: " + ex.Message);
+            }
+        }
+        public AtendimentoColecao ConsultarPorId(int id)
+        {
+            try
+            {
+                AtendimentoColecao atendimentoColecao = new AtendimentoColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_ATENDIMENTO", id);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_ATENDIMENTO_CONSULTARPORID");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    Atendimento atendimento = new Atendimento();
+
+                    atendimento.Id_Atendimento = Convert.ToInt32(dataRow["ID_ATENDIMENTO"]);
+                    atendimento.Receptivo = Convert.ToChar(dataRow["RECEPTIVO"]);
+                    atendimento.Observacao = Convert.ToString(dataRow["OBSERVACAO"]);
+                    atendimento.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    atendimento.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    TipoAtendimento tipoAtendimento = new TipoAtendimento();
+                    tipoAtendimento.Id_Tipo_Atendimento = Convert.ToInt32(dataRow["ID_TIPO_ATENDIMENTO"]);
+                    tipoAtendimento.Descricao = Convert.ToString(dataRow["TIPO_ATENDIMENTO_DESCRICAO"]);
+
+                    Pessoa pessoa = new Pessoa();
+                    pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
+                    pessoa.Nome = Convert.ToString(dataRow["NOME"]);
+                    pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
+
+                    Marketing marketing = new Marketing();
+                    marketing.Id_Mkt = Convert.ToInt32(dataRow["ID_MKT"]);
+                    marketing.Descricao = Convert.ToString(dataRow["MARKETING_DESCRICAO"]);
+
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    atendimento.Usuario = usuario;
                     atendimento.TipoAtendimento = tipoAtendimento;
                     atendimento.Pessoa = pessoa;
                     atendimento.Marketing = marketing;

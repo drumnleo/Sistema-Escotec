@@ -85,6 +85,40 @@ namespace Negocios
                 throw new Exception("Erro ao consultar marketing. Detalhes" + ex.Message);
             }
         }
+        public MarketingColecao ConsultarPorId(int id)
+        {
+            try
+            {
+                MarketingColecao marketingColecao = new MarketingColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_MKT", id);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_TIPO_MARKETING_CONSULTAPORID");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    Marketing marketing = new Marketing();
+
+                    marketing.Id_Mkt = Convert.ToInt32(dataRow["ID_MKT"]);
+                    marketing.Descricao = Convert.ToString(dataRow["DESCRICAO"]);
+                    marketing.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    marketing.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    marketing.Usuario = usuario;
+
+                    marketingColecao.Add(marketing);
+                }
+                return marketingColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar marketing. Detalhes" + ex.Message);
+            }
+        }
         public string Excluir(Marketing marketing)
         {
             try

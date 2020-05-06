@@ -2,6 +2,9 @@
 using System.Windows.Forms;
 using ObjetoTransferencia;
 using Negocios;
+using System.Data;
+using System.Reflection;
+using Utilities.BunifuButton.Transitions;
 
 namespace Apresentacao.Presentation.Pages
 {
@@ -20,10 +23,11 @@ namespace Apresentacao.Presentation.Pages
             CarregarComboBoxMarketing();
             CarregarComboBoxTipoTelefone();
             CarregarComboBoxPromocao();
-            CarregarComboBoxTurma();
+            CarregarComboBoxCurso();
             BtnTel1Salvar.ButtonText = "Salvar";
             dtpValidade.Value = DateTime.Now;
-            tbxUsuarioGera.Text = LoginNegocios.UsuarioLogadoGetSet.Nome_Usuario;         
+            tbxUsuarioGera.Text = LoginNegocios.UsuarioLogadoGetSet.Id_Usuario.ToString(); ;
+            dataGrid.AutoGenerateColumns = false;
         }
 
 
@@ -49,9 +53,14 @@ namespace Apresentacao.Presentation.Pages
         private static int PromoSel = 0;
         private static TurmaColecao TurmaGetSet;
         private static int turmaSel = 0;
-        public static AtendimentoColecao AtendimentoGetset;
-        public static int AtendimentoSelecionado = 0;
+        public static Atendimento AtendimentoGetset;
         public static Boolean AtualizaAtendimento = false;
+        public static Orcamento OrcamentoGetSet;
+        public static Boolean AtualizaOrcamento = false;
+        public static Curso CursoSelecionado;
+        private static TurmaOrcamentoColecao TurmaOrcamentoGetSet;
+        private static int TurmaOrcSel = 0;
+        private static Boolean AtualizaGridOrcamento = false;
 
 
 
@@ -194,28 +203,113 @@ namespace Apresentacao.Presentation.Pages
         }
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            AtendimentoNegocios atendimentoNegocios = new AtendimentoNegocios();
+            if (TbxIdAtend.Text == "")
+            {
+                AtendimentoNegocios atendimentoNegocios = new AtendimentoNegocios();
 
-            Atendimento atendimento = new Atendimento();
-            atendimento.TipoAtendimento = TipoAtendimentoGetSet[TipoAtendimentoSel];
-            atendimento.Pessoa = PessoaGetSet;
-            atendimento.Marketing = MarketingGetSet[MarketingSel];
-            atendimento.Receptivo = cboxReceptivo.Checked ? 'R' : 'E';
-            atendimento.Observacao = rtbxObsOrc.Text;
+                Atendimento atendimento = GeraAtetndimento();
 
-            string retorno = atendimentoNegocios.Inserir(atendimento);
+                string retorno = atendimentoNegocios.Inserir(atendimento);
+
+                try
+                {
+                    int idAtendimento = Convert.ToInt32(retorno);
+                    AtendimentoGetset = atendimentoNegocios.ConsultarPorId(idAtendimento)[0];
+                    TbxIdAtend.Text = AtendimentoGetset.Id_Atendimento.ToString();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro: Detalhes: " + retorno);
+                }
+            }
+
+            if (tbxIdOrc.Text == "")
+            {
+                OrcamentoNegocios orcamentoNegocios = new OrcamentoNegocios();
+
+                Orcamento orcamento = GeraOrcamento();
+
+                string retornoOrc = orcamentoNegocios.Inserir(orcamento);
+
+                try
+                {
+                    int idOrcamento = Convert.ToInt32(retornoOrc);
+                    OrcamentoGetSet = orcamentoNegocios.ConsultarPorIdOrcamento(idOrcamento)[0];
+                    tbxIdOrc.Text = OrcamentoGetSet.Id_Orcamento.ToString();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro: Detalhes: " + retornoOrc);
+                }
+            }
+
+            TurmaOrcamentoNegocios turmaOrcamentoNegocios = new TurmaOrcamentoNegocios();
+
+            TurmaOrcamento turmaOrcamento = GeraTOrcamento();
+
+            string retornotOrcamento = turmaOrcamentoNegocios.Inserir(turmaOrcamento);
 
             try
             {
-
-
-
+                int idTOrcamento = Convert.ToInt32(retornotOrcamento);
+                TurmaOrcamentoGetSet = turmaOrcamentoNegocios.ConsultarPorOrcamento(Convert.ToInt32(tbxIdOrc.Text));
+                dataGrid.DataSource = null;
+                dataGrid.DataSource = TurmaOrcamentoGetSet;
+                dataGrid.Update();
+                dataGrid.Refresh();
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Erro: Detalhes: " + retornotOrcamento);
             }
+        }
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            PessoaGetSet = null;
+            AtendimentoGetset = null;
+            OrcamentoGetSet = null;
+            EnderecoGetSet = null;
+            TelefoneGetSet = null;
+            TipoAtendimentoGetSet = null;
+            MarketingGetSet = null;
+            TurmaGetSet = null;
+            PromocaoGetSet = null;
+            TurmaOrcamentoGetSet = null;
+
+
+            ClearTextBoxes(this.Controls);
+
+            CarregarComboBoxTipoAtendimento();
+            CarregarComboBoxMarketing();
+            CarregarComboBoxTipoTelefone();
+            CarregarComboBoxPromocao();
+            BtnTel1Salvar.ButtonText = "Salvar";
+            dtpValidade.Value = DateTime.Now;
+            tbxUsuarioGera.Text = LoginNegocios.UsuarioLogadoGetSet.Id_Usuario.ToString(); ;
+            dataGrid.AutoGenerateColumns = false;
+            dataGrid.DataSource = null;
+            dataGrid.Update();
+            dataGrid.Refresh();
+        }
+
+        private void ClearTextBoxes(Control.ControlCollection ctrlCollection)
+        {
+            foreach (Control ctrl in ctrlCollection)
+            {
+                if (ctrl is TextBoxBase)
+                {
+                    ctrl.Text = String.Empty;
+                    ctrl.Enabled = true;
+                }
+                else
+                {
+                    ClearTextBoxes(ctrl.Controls);
+                }
+            }
+        }
+        private void BtnSearchAtendimento_Click(object sender, EventArgs e)
+        {
+            new Popup.transparentBg(new Popup.SearchDialogs.SearchDialog_Atendimento());
         }
 
 
@@ -288,6 +382,40 @@ namespace Apresentacao.Presentation.Pages
                 BtnTel2Salvar.ButtonText = "Salvar";
             }
         }
+        private void CamposAtendimento()
+        {
+            TbxIdAtend.Text = AtendimentoGetset.Id_Atendimento.ToString();
+            TipoAtendimentoNegocios tipoAtendimentoNegocios = new TipoAtendimentoNegocios();
+            TipoAtendimentoGetSet = new TipoAtendimentoColecao();
+            TipoAtendimentoGetSet = tipoAtendimentoNegocios.ConsultarPorId(AtendimentoGetset.TipoAtendimento.Id_Tipo_Atendimento);
+            cbxTipoAtendimento.DataSource = null;
+            cbxTipoAtendimento.DataSource = TipoAtendimentoGetSet;
+            cbxTipoAtendimento.DisplayMember = "DESCRICAO";
+            cbxTipoAtendimento.ValueMember = "ID_TIPO_ATENDIMENTO";
+            cbxTipoAtendimento.SelectedIndex = 0;
+
+            MarketingNegocios marketingNegocios = new MarketingNegocios();
+            MarketingGetSet = new MarketingColecao();
+            MarketingGetSet = marketingNegocios.ConsultarPorId(AtendimentoGetset.Marketing.Id_Mkt);
+            cbxMarketing.DataSource = null;
+            cbxMarketing.DataSource = MarketingGetSet;
+            cbxMarketing.DisplayMember = "DESCRICAO";
+            cbxMarketing.ValueMember = "ID_MKT";
+            cbxMarketing.SelectedIndex = 0;
+        }
+        private void CamposOrcamento()
+        {
+            if (OrcamentoGetSet != null)
+            {
+                tbxIdOrc.Text = OrcamentoGetSet.Id_Orcamento.ToString();
+                if (OrcamentoGetSet.Validade_Orcamento.ToString() != "01 / 01 / 0001 00:00:00")
+                {
+                    dtpValidade.Value = OrcamentoGetSet.Validade_Orcamento;
+                }            
+                tbxUsuarioGera.Text = OrcamentoGetSet.UsuarioGeraOrcamento.Id_Usuario.ToString();
+                cboxAprovado.Checked = OrcamentoGetSet.Aprovado;
+            }
+        }
         private void CarregarTel1()
         {
             if (TbxTel1.Text.Length > 9 && TbxTel1.Text.Length < 12)
@@ -351,6 +479,37 @@ namespace Apresentacao.Presentation.Pages
             CarregarTel1();
             CarregarTel2();
         }
+        private Atendimento GeraAtetndimento()
+        {
+            Atendimento atendimento = new Atendimento();
+            atendimento.TipoAtendimento = TipoAtendimentoGetSet[TipoAtendimentoSel];
+            atendimento.Pessoa = PessoaGetSet;
+            atendimento.Marketing = MarketingGetSet[MarketingSel];
+            atendimento.Receptivo = cboxReceptivo.Checked ? 'S' : 'N';
+            atendimento.Observacao = rtbxObsOrc.Text;
+            atendimento.Usuario = LoginNegocios.UsuarioLogadoGetSet;
+
+            return atendimento;
+        }
+        private Orcamento GeraOrcamento()
+        {
+            Orcamento orcamento = new Orcamento();
+            orcamento.Atendimento = AtendimentoGetset;
+            orcamento.Validade_Orcamento = dtpValidade.Value;
+            orcamento.Usuario_Cad_Alt = LoginNegocios.UsuarioLogadoGetSet;
+
+            return orcamento;
+        }
+        private TurmaOrcamento GeraTOrcamento()
+        {
+            TurmaOrcamento tOrcamento = new TurmaOrcamento();
+            tOrcamento.Orcamento = OrcamentoGetSet;
+            tOrcamento.Turma = TurmaGetSet[turmaSel];
+            tOrcamento.PromocaoValor = PromocaoGetSet[PromoSel];
+            tOrcamento.Usuario = LoginNegocios.UsuarioLogadoGetSet;
+
+            return tOrcamento;
+        }
 
 
 
@@ -382,25 +541,40 @@ namespace Apresentacao.Presentation.Pages
         {
             PromocaoNegocios promocaoNegocios = new PromocaoNegocios();
 
-            PromocaoValorColecao promocaoValorColecao = promocaoNegocios.ConsultarPorNome("");
+            PromocaoGetSet = promocaoNegocios.ConsultarPorNome("");
 
             cbxPromocao.DataSource = null;
-            cbxPromocao.DataSource = promocaoValorColecao;
+            cbxPromocao.DataSource = PromocaoGetSet;
             cbxPromocao.DisplayMember = "NOME_PROMOCAO";
             cbxPromocao.ValueMember = "ID_PROMOCAO_VALOR";
             cbxPromocao.SelectedIndex = 0;
         }
-        private void CarregarComboBoxTurma()
+        private void CarregarComboBoxCurso()
         {
-            TurmaNegocios turmaNegocios = new TurmaNegocios();
+            CursoNegocios cursoNegocios = new CursoNegocios();
 
-            TurmaColecao turmaColecao = turmaNegocios.ConsultarPorNome("");
+            CursoColecao cursoColecao = cursoNegocios.ConsultarPorNome("");
 
-            cbxTurma.DataSource = null;
-            cbxTurma.DataSource = turmaColecao;
-            cbxTurma.DisplayMember = "NOME_TURMA";
-            cbxTurma.ValueMember = "ID_TURMA";
-            cbxTurma.SelectedIndex = 0;
+            CbxCurso.DataSource = null;
+            CbxCurso.DataSource = cursoColecao;
+            CbxCurso.DisplayMember = "NOME";
+            CbxCurso.ValueMember = "ID_CURSO";
+            CbxCurso.SelectedIndex = 0;
+        }
+        private void CarregarComboBoxTurma(int idCurso)
+        {
+            if (idCurso > 0)
+            {
+                TurmaNegocios turmaNegocios = new TurmaNegocios();
+
+                TurmaGetSet = turmaNegocios.ConsultarPorCurso(idCurso);
+
+                cbxTurma.DataSource = null;
+                cbxTurma.DataSource = TurmaGetSet;
+                cbxTurma.DisplayMember = "NOME_TURMA";
+                cbxTurma.ValueMember = "ID_TURMA";
+                cbxTurma.SelectedIndex = 0;
+            }
         }
         private void CarregarComboBoxTipoTelefone()
         {
@@ -420,6 +594,16 @@ namespace Apresentacao.Presentation.Pages
             CbxTipoTel2.DisplayMember = "DESCRICAO";
             CbxTipoTel2.ValueMember = "ID_TIPO_TELEFONE";
             CbxTipoTel2.SelectedIndex = 0;
+        }
+        private void CbxCurso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedValue;
+            bool parseOK = Int32.TryParse(CbxCurso.SelectedValue.ToString(), out selectedValue);
+
+            if (selectedValue > 0)
+            {
+                CarregarComboBoxTurma(selectedValue);
+            }
         }
         private void TbxRamal1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -486,6 +670,14 @@ namespace Apresentacao.Presentation.Pages
                     EnderecoGetSet = enderecoColecao;
                     CamposEndereco();
                     AtualizaEndereco = false;
+                    if (enderecoColecao.Count > 1)
+                    {
+                        lblAvisoEndereco.Visible = true;
+                    }
+                    else
+                    {
+                        lblAvisoEndereco.Visible = false;
+                    }
                 }
                 else
                 {
@@ -517,6 +709,85 @@ namespace Apresentacao.Presentation.Pages
                 }
                 AtualizaTel = false;
             }          
-        }     
+        }
+        private void TimerAtend_Tick(object sender, EventArgs e)
+        {
+            if (AtualizaAtendimento == true)
+            {
+                PessoaNegocios pessoaNegocios = new PessoaNegocios();
+                PessoaGetSet = pessoaNegocios.ConsultarPorId(AtendimentoGetset.Pessoa.Id_Pessoa);
+                AtualizaPessoa = true;
+
+                EnderecoNegocios enderecoNegocios = new EnderecoNegocios();
+                EnderecoGetSet = enderecoNegocios.ConsultarPorIdPessoa(PessoaGetSet.Id_Pessoa);
+                AtualizaEndereco = true;
+
+                TelefoneNegocios telefoneNegocios = new TelefoneNegocios();
+                TelefoneGetSet = telefoneNegocios.ConsultarPorPessoa(PessoaGetSet.Id_Pessoa);
+                AtualizaTel = true;
+
+                OrcamentoNegocios orcamentoNegocios = new OrcamentoNegocios();
+                OrcamentoGetSet = orcamentoNegocios.ConsultarPorIdAtendimento(AtendimentoGetset.Id_Atendimento)[0];
+                AtualizaOrcamento = true;
+
+                TurmaOrcamentoNegocios turmaOrcamentoNegocios = new TurmaOrcamentoNegocios();
+                TurmaOrcamentoGetSet = turmaOrcamentoNegocios.ConsultarPorOrcamento(OrcamentoGetSet.Id_Orcamento);
+                AtualizaGridOrcamento = true;
+                dataGrid.DataSource = null;
+                dataGrid.DataSource = TurmaOrcamentoGetSet;
+                dataGrid.Update();
+                dataGrid.Refresh();
+                
+                CamposAtendimento();
+
+                AtualizaAtendimento = false;
+            }
+        }
+
+        
+
+        //DataGrid
+        private void dataGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if ((dataGrid.Rows[e.RowIndex].DataBoundItem != null) && (dataGrid.Columns[e.ColumnIndex].DataPropertyName.Contains(".")))
+            {
+                e.Value = BindProperty(dataGrid.Rows[e.RowIndex].DataBoundItem, dataGrid.Columns[e.ColumnIndex].DataPropertyName);
+            }
+        }
+        private string BindProperty(object property, string propertyName)
+        {
+            string retValue = "";
+            if (propertyName.Contains("."))
+            {
+                PropertyInfo[] arrayProperties;
+                string leftPropertyName;
+                leftPropertyName = propertyName.Substring(0, propertyName.IndexOf("."));
+                arrayProperties = property.GetType().GetProperties();
+                foreach (PropertyInfo propertyInfo in arrayProperties)
+                {
+                    if (propertyInfo.Name == leftPropertyName)
+                    {
+                        retValue = BindProperty(
+                          propertyInfo.GetValue(property, null),
+                          propertyName.Substring(propertyName.IndexOf(".") + 1));
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Type propertyType;
+                PropertyInfo propertyInfo;
+                propertyType = property.GetType();
+                propertyInfo = propertyType.GetProperty(propertyName);
+                retValue = propertyInfo.GetValue(property, null).ToString();
+            }
+            return retValue;
+        }
+
+        private void TimerOrc_Tick(object sender, EventArgs e)
+        {
+            CamposOrcamento();
+        }
     }
 }

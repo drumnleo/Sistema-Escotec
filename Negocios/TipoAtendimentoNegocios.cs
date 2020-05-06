@@ -48,5 +48,41 @@ namespace Negocios
                 throw new Exception("Erro ao consultar aluno. Detalhes: " + ex.Message);
             }
         }
+
+        public TipoAtendimentoColecao ConsultarPorId(int id)
+        {
+            try
+            {
+                TipoAtendimentoColecao tipoAtendimentoColecao = new TipoAtendimentoColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_TIPO_ATENDIMENTO", id);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_TIPO_ATENDIMENTO_CONSULTAPORID");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    TipoAtendimento tipoAtendimento = new TipoAtendimento();
+
+                    tipoAtendimento.Id_Tipo_Atendimento = Convert.ToInt32(dataRow["ID_TIPO_ATENDIMENTO"]);
+                    tipoAtendimento.Descricao = Convert.ToString(dataRow["DESCRICAO"]);
+                    tipoAtendimento.Data_cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    tipoAtendimento.Data_Ultima_Alt = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    tipoAtendimento.Usuario = usuario;
+                    tipoAtendimentoColecao.Add(tipoAtendimento);
+                }
+
+                return tipoAtendimentoColecao;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao consultar aluno. Detalhes: " + ex.Message);
+            }
+        }
     }
 }

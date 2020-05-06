@@ -69,6 +69,7 @@
     <Compile Include="TipoDocNegocios.cs" />
     <Compile Include="TipoLaboratorioNegocios.cs" />
     <Compile Include="TurmaNegocios.cs" />
+    <Compile Include="TurmaOrcamentoNegocios.cs" />
     <Compile Include="UsuarioNegocios.cs" />
   </ItemGroup>
   <ItemGroup>

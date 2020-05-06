@@ -103,6 +103,7 @@ namespace Negocios
                 {
                     Curso curso = new Curso();
 
+                    curso.Id_Curso = Convert.ToInt32(dataRow["ID_CURSO"]);
                     curso.Nome = Convert.ToString(dataRow["NOME"]);
                     curso.Qtde_Aulas = Convert.ToInt16(dataRow["QTDE_AULAS"]);
                     curso.Qtde_Aulas_Semana = Convert.ToInt16(dataRow["QTDE_AULAS_SEMANA"]);
@@ -151,6 +152,7 @@ namespace Negocios
                 {
                     Curso curso = new Curso();
 
+                    curso.Id_Curso = Convert.ToInt32(dataRow["ID_CURSO"]);
                     curso.Nome = Convert.ToString(dataRow["NOME"]);
                     curso.Qtde_Aulas = Convert.ToInt16(dataRow["QTDE_AULAS"]);
                     curso.Qtde_Aulas_Semana = Convert.ToInt16(dataRow["QTDE_AULAS_SEMANA"]);

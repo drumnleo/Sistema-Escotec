@@ -138,6 +138,8 @@
     <Compile Include="TipoTelefoneColecao.cs" />
     <Compile Include="Turma.cs" />
     <Compile Include="TurmaColecao.cs" />
+    <Compile Include="TurmaOrcamento.cs" />
+    <Compile Include="TurmaOrcamentoColecao.cs" />
     <Compile Include="UsuarioColecao.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>

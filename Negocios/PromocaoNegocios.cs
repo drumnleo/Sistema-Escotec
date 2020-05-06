@@ -99,5 +99,45 @@ namespace Negocios
                 throw new Exception("Erro ao consultar Promoção. Detalhes: " + ex.Message);
             }
         }
+
+        public PromocaoValorColecao ConsultarPorId(int id)
+        {
+            try
+            {
+                PromocaoValorColecao promocaoValorColecao = new PromocaoValorColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_PROMOCAO_VALOR", id);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_PROMOCAO_VALOR_CONSULTARPORID");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    PromocaoValor promocaoValor = new PromocaoValor();
+
+                    promocaoValor.Id_Promocao_Valor = Convert.ToInt32(dataRow["ID_PROMOCAO_VALOR"]);
+                    promocaoValor.Nome_Promocao = Convert.ToString(dataRow["NOME_PROMOCAO"]);
+                    promocaoValor.Validade = Convert.ToDateTime(dataRow["VALIDADE"]);
+                    promocaoValor.Entrada = Convert.ToBoolean(dataRow["ENTRADA"]);
+                    promocaoValor.Desconto_Entrada = Convert.ToInt16(dataRow["DESCONTO_ENTRADA"]);
+                    promocaoValor.Valor_Entrada = Convert.ToDecimal(dataRow["VALOR_ENTRADA"]);
+                    promocaoValor.Desconto_Demais = Convert.ToInt16(dataRow["DESCONTO_DEMAIS"]);
+                    promocaoValor.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    promocaoValor.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    promocaoValor.Usuario = usuario;
+                    promocaoValorColecao.Add(promocaoValor);
+                }
+
+                return promocaoValorColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar Promoção. Detalhes: " + ex.Message);
+            }
+        }
     }
 }

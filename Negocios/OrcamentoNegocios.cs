@@ -18,10 +18,7 @@ namespace Negocios
             try
             {
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("@ID_PESSOA", orcamento.Pessoa.Id_Pessoa);
-                acessoDados.AdicionarParametros("@ID_PROMOCAO_VALOR", orcamento.PromocaoValor.Id_Promocao_Valor);
-                acessoDados.AdicionarParametros("@ID_TURMA_1", orcamento.Turma1.Id_Turma);
-                acessoDados.AdicionarParametros("@ID_TURMA_2", orcamento.Turma2.Id_Turma);
+                acessoDados.AdicionarParametros("@ID_ATENDIMENTO", orcamento.Atendimento.Id_Atendimento);
                 acessoDados.AdicionarParametros("@VALIDADE_ORCAMENTO", orcamento.Validade_Orcamento);
                 acessoDados.AdicionarParametros("@ID_USUARIO", orcamento.Usuario_Cad_Alt.Id_Usuario);
 
@@ -33,7 +30,6 @@ namespace Negocios
             {
                 return ex.Message;
             }
-
         }
 
         public string AtualizarporId(Orcamento orcamento)
@@ -42,9 +38,7 @@ namespace Negocios
             {
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@ID_ORCAMENTO", orcamento.Id_Orcamento);
-                acessoDados.AdicionarParametros("@ID_PROMOCAO_VALOR", orcamento.PromocaoValor.Id_Promocao_Valor);
-                acessoDados.AdicionarParametros("@ID_TURMA_1", orcamento.Turma1.Id_Turma);
-                acessoDados.AdicionarParametros("@ID_TURMA_2", orcamento.Turma2.Id_Turma);
+                acessoDados.AdicionarParametros("@ID_PESSOA", orcamento.Atendimento.Id_Atendimento);
                 acessoDados.AdicionarParametros("@VALIDADE_ORCAMENTO", orcamento.Validade_Orcamento);
                 acessoDados.AdicionarParametros("@ID_USUARIO", orcamento.Usuario_Cad_Alt.Id_Usuario);
 
@@ -76,56 +70,52 @@ namespace Negocios
             }
         }
 
-        public OrcamentoColecao ConsultarPorPessoa(int idPessoa)
+        public OrcamentoColecao ConsultarPorIdAtendimento(int idAtendimento)
         {
             try
             {
                 OrcamentoColecao orcamentoColecao = new OrcamentoColecao();
 
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("@ID_PESSOA", idPessoa);
+                acessoDados.AdicionarParametros("@ID_ATENDIMENTO", idAtendimento);
 
-                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_ORCAMENTO_CONSULTARPORPESSOA");
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_ORCAMENTO_CONSULTARPORATENDIMENTO");
 
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
                     Orcamento orcamento = new Orcamento();
 
                     orcamento.Id_Orcamento = Convert.ToInt32(dataRow["ID_ORCAMENTO"]);
-                    orcamento.Valor_Entrada_Turma_1 = Convert.ToDecimal(dataRow["VALOR_ENTRADA_TURMA_1"]);
-                    orcamento.Valor_DemaisParcelas_Turma_1 = Convert.ToDecimal(dataRow["VALOR_DEMAISPARCELAS_TURMA_1"]);
-                    orcamento.Valor_Entrada_Turma_2 = Convert.ToDecimal(dataRow["VALOR_ENTRADA_TURMA_2"]);
-                    orcamento.valor_DemaisParcelas_Turma_2 = Convert.ToDecimal(dataRow["VALOR_DEMAISPARCELAS_TURMA_2"]);
                     orcamento.Validade_Orcamento = Convert.ToDateTime(dataRow["VALIDADE_ORCAMENTO"]);
                     orcamento.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
                     orcamento.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
                     orcamento.Aprovado = Convert.ToBoolean(dataRow["APROVADO"]);
                     orcamento.Comentario_Aprovacao = Convert.ToString(dataRow["COMENTARIO_APROVACAO"]);
 
-                    Usuario usuario = new Usuario();
-                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+                    Usuario usuarioAprova = new Usuario();
+                    if (int.TryParse(dataRow["APROVADO_USUARIO"].ToString(), out int v))
+                    {
+                        usuarioAprova.Id_Usuario = v;
+                    }
 
-                    Usuario usuario_2 = new Usuario();
-                    usuario_2.Id_Usuario = Convert.ToInt32(dataRow["APROVADO_USUARIO"]);
+                    Usuario usuarioGera = new Usuario();
+                    usuarioGera.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_GERA_ORCAMENTO"]);
 
-                    Turma turma_1 = new Turma();
-                    turma_1.Id_Turma = Convert.ToInt32(dataRow["ID_TURMA_1"]);
+                    Usuario usuarioCadAlt = new Usuario();
+                    usuarioCadAlt.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
-                    Turma turma_2 = new Turma();
-                    turma_2.Id_Turma = Convert.ToInt32(dataRow["ID_TURMA_2"]);
+                    Atendimento atendimento = new Atendimento();
+                    atendimento.Id_Atendimento = Convert.ToInt32(dataRow["ID_ATENDIMENTO"]);
 
                     Pessoa pessoa = new Pessoa();
                     pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
 
-                    PromocaoValor promocaoValor = new PromocaoValor();
-                    promocaoValor.Id_Promocao_Valor = Convert.ToInt32(dataRow["ID_PROMOCAO_VALOR"]);
-
-                    orcamento.Usuario_Cad_Alt = usuario;
-                    orcamento.Aprovado_Usuario = usuario_2;
-                    orcamento.Turma1 = turma_1;
-                    orcamento.Turma2 = turma_2;
-                    orcamento.Pessoa = pessoa;
-                    orcamento.PromocaoValor = promocaoValor;
+                    orcamento.Usuario_Cad_Alt = usuarioCadAlt;
+                    orcamento.Aprovado_Usuario = usuarioAprova;
+                    orcamento.UsuarioGeraOrcamento = usuarioGera;
+                    orcamento.Atendimento = atendimento;
+                    orcamento.Atendimento.Pessoa = pessoa;
+                    
                     orcamentoColecao.Add(orcamento);
                 }
 
@@ -133,7 +123,64 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao consultar tipo de apostila. Detalhes: " + ex.Message);
+                throw new Exception("Erro ao consultar Orçamento. Detalhes: " + ex.Message);
+            }
+        }
+
+        public OrcamentoColecao ConsultarPorIdOrcamento(int idOrcamento)
+        {
+            try
+            {
+                OrcamentoColecao orcamentoColecao = new OrcamentoColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_ORCAMENTO", idOrcamento);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_ORCAMENTO_CONSULTARPORID");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    Orcamento orcamento = new Orcamento();
+
+                    orcamento.Id_Orcamento = Convert.ToInt32(dataRow["ID_ORCAMENTO"]);
+                    orcamento.Validade_Orcamento = Convert.ToDateTime(dataRow["VALIDADE_ORCAMENTO"]);
+                    orcamento.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    orcamento.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+                    orcamento.Aprovado = Convert.ToBoolean(dataRow["APROVADO"]);
+                    orcamento.Comentario_Aprovacao = Convert.ToString(dataRow["COMENTARIO_APROVACAO"]);
+
+                    Usuario usuarioAprova = new Usuario();
+                    if (int.TryParse(dataRow["APROVADO_USUARIO"].ToString(), out int v))
+                    {
+                        usuarioAprova.Id_Usuario = v;
+                    }
+
+                    Usuario usuarioGera = new Usuario();
+                    usuarioGera.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_GERA_ORCAMENTO"]);
+
+                    Usuario usuarioCadAlt = new Usuario();
+                    usuarioCadAlt.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    Atendimento atendimento = new Atendimento();
+                    atendimento.Id_Atendimento = Convert.ToInt32(dataRow["ID_ATENDIMENTO"]);
+
+                    Pessoa pessoa = new Pessoa();
+                    pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
+
+                    orcamento.Usuario_Cad_Alt = usuarioCadAlt;
+                    orcamento.Aprovado_Usuario = usuarioAprova;
+                    orcamento.UsuarioGeraOrcamento = usuarioGera;
+                    orcamento.Atendimento = atendimento;
+                    orcamento.Atendimento.Pessoa = pessoa;
+
+                    orcamentoColecao.Add(orcamento);
+                }
+
+                return orcamentoColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar Orçamento. Detalhes: " + ex.Message);
             }
         }
     }

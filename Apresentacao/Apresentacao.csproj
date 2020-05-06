@@ -153,6 +153,7 @@
       <HintPath>..\Escotec\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -224,6 +225,12 @@
     </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\ReportMatriculaColecao.Designer.cs">
       <DependentUpon>ReportMatriculaColecao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Atendimento .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Atendimento .Designer.cs">
+      <DependentUpon>SearchDialog_Atendimento .cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Pessoa_Atendimento .cs">
       <SubType>Form</SubType>
@@ -314,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\ReportMatriculaColecao.resx">
       <DependentUpon>ReportMatriculaColecao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Atendimento .resx">
+      <DependentUpon>SearchDialog_Atendimento .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Pessoa_Atendimento .resx">
       <DependentUpon>SearchDialog_Pessoa_Atendimento .cs</DependentUpon>
