@@ -60,9 +60,11 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             AdicionarEditarUsuario.UsuarioGetSet = new Usuario();
             AdicionarEditarUsuario.UsuarioGetSet = UsuarioEscolhido;
             FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
-            AdicionarEditarUsuario.FuncionarioGetSet = funcionarioNegocios.ConsultarPorIdUsuario(UsuarioEscolhido.Id_Usuario);
-            AdicionarEditarUsuario.FuncionarioGetSet = new Funcionario();
-            AdicionarEditarUsuario.AtualizarFuncionario = true;
+            if (funcionarioNegocios.ConsultarPorIdUsuario(UsuarioEscolhido.Id_Usuario).Count > 0)
+            {
+                AdicionarEditarUsuario.FuncionarioGetSet = funcionarioNegocios.ConsultarPorIdUsuario(UsuarioEscolhido.Id_Usuario)[0];
+                AdicionarEditarUsuario.AtualizarFuncionario = true;
+            }        
             AdicionarEditarUsuario.AtualizarUsuario = true;
             //AdicionarEditarFuncionario.PessoaGetSet = funcionarioEscolhido.Pessoa;
             this.Close();

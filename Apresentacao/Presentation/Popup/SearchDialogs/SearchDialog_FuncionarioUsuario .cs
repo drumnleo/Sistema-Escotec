@@ -35,7 +35,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         private void Atualizarcampos()
         {
             FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
-            funcionarioEscolhido = funcionarioNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value));
+            funcionarioEscolhido = funcionarioNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value))[0];
             UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
             usuarioEscolhido = usuarioNegocios.ConsultarPorIdFuncionario(funcionarioEscolhido.Id_Funcionario);
 

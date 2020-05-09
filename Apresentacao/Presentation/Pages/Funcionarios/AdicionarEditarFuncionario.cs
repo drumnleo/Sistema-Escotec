@@ -150,7 +150,7 @@ namespace Apresentacao.Presentation.Pages
             try
             {
                 int idFuncionario = Convert.ToInt32(retorno);
-                Funcionario funcionarioCadastrado = funcionarioNegocios.ConsultarPorId(idFuncionario);
+                Funcionario funcionarioCadastrado = funcionarioNegocios.ConsultarPorId(idFuncionario)[0];
                 MessageBox.Show("Funcionario inserido com sucesso!");
                 lblIdFuncionario.Text = funcionarioCadastrado.Id_Funcionario.ToString();
             }

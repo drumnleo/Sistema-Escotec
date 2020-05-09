@@ -41,7 +41,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         private void atualizarcampos()
         {
             FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
-            funcionarioEscolhido = funcionarioNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value));
+            funcionarioEscolhido = funcionarioNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value))[0];
 
             btnSelecionar.Location = new Point(541, 15);
             btnSelecionar.Visible = true;
