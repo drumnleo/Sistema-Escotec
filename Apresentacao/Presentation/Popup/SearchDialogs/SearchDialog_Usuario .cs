@@ -57,7 +57,13 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
+            AdicionarEditarUsuario.UsuarioGetSet = new Usuario();
             AdicionarEditarUsuario.UsuarioGetSet = UsuarioEscolhido;
+            FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
+            AdicionarEditarUsuario.FuncionarioGetSet = funcionarioNegocios.ConsultarPorIdUsuario(UsuarioEscolhido.Id_Usuario);
+            AdicionarEditarUsuario.FuncionarioGetSet = new Funcionario();
+            AdicionarEditarUsuario.AtualizarFuncionario = true;
+            AdicionarEditarUsuario.AtualizarUsuario = true;
             //AdicionarEditarFuncionario.PessoaGetSet = funcionarioEscolhido.Pessoa;
             this.Close();
         }

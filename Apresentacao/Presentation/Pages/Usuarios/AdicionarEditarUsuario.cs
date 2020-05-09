@@ -23,6 +23,8 @@ namespace Apresentacao.Presentation.Pages
         }
 
         private static Pessoa pessoaGetSet;
+        public static Boolean AtualizarUsuario = false;
+        public static Boolean AtualizarFuncionario = false;
 
         public static Pessoa PessoaGetSet
         {
@@ -104,41 +106,21 @@ namespace Apresentacao.Presentation.Pages
 
         private void timerpreenche_Tick(object sender, EventArgs e)
         {
-            if (FuncionarioGetSet != null)
+            if (AtualizarFuncionario == true)
             {
-                if (lblIdFuncionário.Text == "None")
-                {
-                    CamposPessoa();
-                    btnAtualizar.Enabled = true;
-                    btnSalvar.Enabled = false;
-                    btnAtualizar.Enabled = true;
-                }
-                else if (FuncionarioGetSet.Id_Funcionario != Convert.ToInt32(lblIdFuncionário.Text))
-                {
-                    CamposPessoa();
-                    btnAtualizar.Enabled = true;
-                    btnSalvar.Enabled = false;
-                    btnAtualizar.Enabled = true;
-                }
+                CamposPessoa();
+                btnAtualizar.Enabled = true;
+                btnSalvar.Enabled = false;
+                btnAtualizar.Enabled = true;
+                AtualizarFuncionario = false;
             }
-            if (usuarioGetSet != null)
+            if (AtualizarUsuario == true)
             {
-                if (lblIdUsuario.Text == "None")
-                {
-                    CamposPessoa();
-                    CamposUsuario();
-                    btnAtualizar.Enabled = true;
-                    btnSalvar.Enabled = false;
-                    btnAtualizar.Enabled = true;
-                }
-                else if (usuarioGetSet.Id_Usuario != Convert.ToInt32(lblIdUsuario.Text))
-                {
-                    CamposUsuario();
-                    CamposPessoa();
-                    btnAtualizar.Enabled = true;
-                    btnSalvar.Enabled = false;
-                    btnAtualizar.Enabled = true;
-                }
+                CamposUsuario();
+                btnAtualizar.Enabled = true;
+                btnSalvar.Enabled = false;
+                btnAtualizar.Enabled = true;
+                AtualizarUsuario = false;
             }
 
         }
@@ -206,6 +188,11 @@ namespace Apresentacao.Presentation.Pages
         private void cbxGrupo_Click(object sender, EventArgs e)
         {
             CarregaComboBox();
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

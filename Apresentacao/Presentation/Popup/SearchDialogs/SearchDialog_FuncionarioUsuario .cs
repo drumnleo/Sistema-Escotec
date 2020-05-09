@@ -62,10 +62,12 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
             AdicionarEditarUsuario.FuncionarioGetSet = funcionarioEscolhido;
+            AdicionarEditarUsuario.AtualizarFuncionario = true;
             AdicionarEditarUsuario.PessoaGetSet = funcionarioEscolhido.Pessoa;
             if (usuarioEscolhido.Id_Usuario.ToString() != "")
             {
                 AdicionarEditarUsuario.UsuarioGetSet = usuarioEscolhido;
+                AdicionarEditarUsuario.AtualizarUsuario = true;
             }
             this.Close();
         }
