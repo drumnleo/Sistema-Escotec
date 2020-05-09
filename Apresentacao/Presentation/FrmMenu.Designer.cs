@@ -67,7 +67,6 @@
             // 
             // parentContainer
             // 
-            this.parentContainer.AutoScroll = true;
             this.bunifuTransition1.SetDecoration(this.parentContainer, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.parentContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.parentContainer.Location = new System.Drawing.Point(402, 0);

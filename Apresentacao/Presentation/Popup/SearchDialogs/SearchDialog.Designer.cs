@@ -1598,7 +1598,7 @@
             this.dataGrid.RowHeadersVisible = false;
             this.dataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGrid.RowTemplate.Height = 40;
-            this.dataGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrid.Size = new System.Drawing.Size(722, 170);
             this.dataGrid.TabIndex = 0;

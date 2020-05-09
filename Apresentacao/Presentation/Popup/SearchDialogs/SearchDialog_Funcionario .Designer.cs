@@ -52,7 +52,6 @@
             this.lblpesquisa = new System.Windows.Forms.Label();
             this.PanelCenter = new System.Windows.Forms.Panel();
             this.dataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.verifica = new System.Windows.Forms.Timer(this.components);
             this.ID_FUNCIONARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +59,7 @@
             this.DATA_ADMISSAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HORA_ENTRADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HORA_SAIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.verifica = new System.Windows.Forms.Timer(this.components);
             this.PanelDown.SuspendLayout();
             this.PanelTop.SuspendLayout();
             this.PanelCenter.SuspendLayout();
@@ -405,6 +405,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -418,6 +419,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid.ColumnHeadersHeight = 40;
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_FUNCIONARIO,
             this.Nome,
@@ -462,8 +464,9 @@
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.ReadOnly = true;
             this.dataGrid.RowHeadersVisible = false;
+            this.dataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGrid.RowTemplate.Height = 40;
-            this.dataGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrid.Size = new System.Drawing.Size(847, 434);
             this.dataGrid.TabIndex = 0;

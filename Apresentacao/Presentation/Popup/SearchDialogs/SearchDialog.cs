@@ -296,6 +296,15 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                     Pessoa pessoaCadastrada = pessoaNegocios.ConsultarPorId(idPessoa);
                     MessageBox.Show("Cadastro base inserido com sucesso!");
                     AdicionarEditarFuncionario.PessoaGetSet = pessoaCadastrada;
+                    AdicionarEditarFuncionario.AtualizarPessoa = true;
+
+                    FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
+                    if (funcionarioNegocios.ConsultarPorIdPessoa(pessoaescolhida.Id_Pessoa).Count > 0)
+                    {
+                        AdicionarEditarFuncionario.FuncionarioGetSet = funcionarioNegocios.ConsultarPorIdPessoa(pessoaescolhida.Id_Pessoa)[0];
+                        AdicionarEditarFuncionario.AtualizarFuncionario = true;
+                    }
+
                     this.Close();
                 }
                 catch (Exception)
@@ -460,6 +469,15 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                     Pessoa pessoaCadastrada = pessoaNegocios.ConsultarPorId(idPessoa);
                     MessageBox.Show("Cadastro base atualizado com sucesso!");
                     AdicionarEditarFuncionario.PessoaGetSet = pessoaCadastrada;
+                    AdicionarEditarFuncionario.AtualizarPessoa = true;
+
+                    FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
+                    if (funcionarioNegocios.ConsultarPorIdPessoa(pessoaescolhida.Id_Pessoa).Count > 0)
+                    {
+                        AdicionarEditarFuncionario.FuncionarioGetSet = funcionarioNegocios.ConsultarPorIdPessoa(pessoaescolhida.Id_Pessoa)[0];
+                        AdicionarEditarFuncionario.AtualizarFuncionario = true;
+                    }
+
                     this.Close();
                 }
                 catch (Exception)
@@ -473,6 +491,13 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
             AdicionarEditarFuncionario.PessoaGetSet = pessoaescolhida;
+            AdicionarEditarFuncionario.AtualizarPessoa = true;
+            FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
+            if (funcionarioNegocios.ConsultarPorIdPessoa(pessoaescolhida.Id_Pessoa).Count > 0)
+            {
+                AdicionarEditarFuncionario.FuncionarioGetSet = funcionarioNegocios.ConsultarPorIdPessoa(pessoaescolhida.Id_Pessoa)[0];
+                AdicionarEditarFuncionario.AtualizarFuncionario = true;
+            }
             this.Close();
         }
 

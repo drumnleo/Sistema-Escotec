@@ -73,6 +73,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties41 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties42 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties43 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
@@ -86,7 +87,6 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties51 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties52 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TimerEnd = new System.Windows.Forms.Timer(this.components);
             this.TimerPessoa = new System.Windows.Forms.Timer(this.components);
             this.TimerTel = new System.Windows.Forms.Timer(this.components);
@@ -139,6 +139,13 @@
             this.lblCpf = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.dataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.ID_Orcamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Turma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Promocao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor_Entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor_Parcela_Demais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qtde_Parcelas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuário = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAvisoEndereco = new System.Windows.Forms.Label();
             this.lblIdEndereco = new System.Windows.Forms.Label();
             this.lblCep = new System.Windows.Forms.Label();
@@ -164,13 +171,6 @@
             this.bunifuSeparator7 = new Bunifu.Framework.UI.BunifuSeparator();
             this.TimerAtend = new System.Windows.Forms.Timer(this.components);
             this.TimerOrc = new System.Windows.Forms.Timer(this.components);
-            this.ID_Orcamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Turma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Promocao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor_Entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor_Parcela_Demais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qtde_Parcelas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuário = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchPessoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchOrc)).BeginInit();
@@ -1404,7 +1404,7 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGrid.BackgroundColor = System.Drawing.Color.White;
+            this.dataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -1469,6 +1469,74 @@
             this.dataGrid.TabIndex = 238;
             this.dataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGrid_CellFormatting);
+            // 
+            // ID_Orcamento
+            // 
+            this.ID_Orcamento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ID_Orcamento.DataPropertyName = "Orcamento.Id_Orcamento";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID_Orcamento.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ID_Orcamento.FillWeight = 50.76142F;
+            this.ID_Orcamento.HeaderText = "ID Orça.";
+            this.ID_Orcamento.Name = "ID_Orcamento";
+            this.ID_Orcamento.ReadOnly = true;
+            this.ID_Orcamento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ID_Orcamento.Width = 80;
+            // 
+            // ID_Turma
+            // 
+            this.ID_Turma.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ID_Turma.DataPropertyName = "Turma.Id_Turma";
+            this.ID_Turma.FillWeight = 128.6512F;
+            this.ID_Turma.HeaderText = "ID Turma";
+            this.ID_Turma.Name = "ID_Turma";
+            this.ID_Turma.ReadOnly = true;
+            this.ID_Turma.Width = 80;
+            // 
+            // ID_Promocao
+            // 
+            this.ID_Promocao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ID_Promocao.DataPropertyName = "PromocaoValor.Id_Promocao_Valor";
+            this.ID_Promocao.FillWeight = 145.8665F;
+            this.ID_Promocao.HeaderText = "ID Promo.";
+            this.ID_Promocao.Name = "ID_Promocao";
+            this.ID_Promocao.ReadOnly = true;
+            this.ID_Promocao.Width = 90;
+            // 
+            // Valor_Entrada
+            // 
+            this.Valor_Entrada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Valor_Entrada.DataPropertyName = "Valor_Entrada_Turma";
+            this.Valor_Entrada.FillWeight = 74.72088F;
+            this.Valor_Entrada.HeaderText = "Entrada";
+            this.Valor_Entrada.Name = "Valor_Entrada";
+            this.Valor_Entrada.ReadOnly = true;
+            this.Valor_Entrada.Width = 140;
+            // 
+            // Valor_Parcela_Demais
+            // 
+            this.Valor_Parcela_Demais.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Valor_Parcela_Demais.DataPropertyName = "Valor_Parcela_Demais";
+            this.Valor_Parcela_Demais.HeaderText = "Demais Parcelas";
+            this.Valor_Parcela_Demais.Name = "Valor_Parcela_Demais";
+            this.Valor_Parcela_Demais.ReadOnly = true;
+            this.Valor_Parcela_Demais.Width = 140;
+            // 
+            // Qtde_Parcelas
+            // 
+            this.Qtde_Parcelas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Qtde_Parcelas.DataPropertyName = "QTDE_PARCELAS";
+            this.Qtde_Parcelas.HeaderText = "Qtde Parc.";
+            this.Qtde_Parcelas.Name = "Qtde_Parcelas";
+            this.Qtde_Parcelas.ReadOnly = true;
+            this.Qtde_Parcelas.Width = 110;
+            // 
+            // Usuário
+            // 
+            this.Usuário.DataPropertyName = "Usuario.Id_Usuario";
+            this.Usuário.HeaderText = "Usuario";
+            this.Usuário.Name = "Usuário";
+            this.Usuário.ReadOnly = true;
             // 
             // lblAvisoEndereco
             // 
@@ -1714,6 +1782,7 @@
             // container
             // 
             this.container.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.container.Controls.Add(this.dataGrid);
             this.container.Controls.Add(this.lblAvisoOrcamento);
             this.container.Controls.Add(this.CbxCurso);
             this.container.Controls.Add(this.LblCurso);
@@ -1732,7 +1801,6 @@
             this.container.Controls.Add(this.lblCep);
             this.container.Controls.Add(this.lblIdEndereco);
             this.container.Controls.Add(this.lblAvisoEndereco);
-            this.container.Controls.Add(this.dataGrid);
             this.container.Controls.Add(this.lblEmail);
             this.container.Controls.Add(this.lblCpf);
             this.container.Controls.Add(this.btnInsert);
@@ -1785,7 +1853,7 @@
             this.container.Controls.Add(this.bunifuSeparator3);
             this.container.Controls.Add(this.bunifuSeparator1);
             this.container.Controls.Add(this.bunifuSeparator7);
-            this.container.Location = new System.Drawing.Point(90, -42);
+            this.container.Location = new System.Drawing.Point(90, -56);
             this.container.Name = "container";
             this.container.Size = new System.Drawing.Size(754, 821);
             this.container.TabIndex = 0;
@@ -2006,7 +2074,7 @@
             this.BtnNovo.IdleIconLeftImage = null;
             this.BtnNovo.IdleIconRightImage = null;
             this.BtnNovo.IndicateFocus = true;
-            this.BtnNovo.Location = new System.Drawing.Point(600, 775);
+            this.BtnNovo.Location = new System.Drawing.Point(600, 763);
             this.BtnNovo.Name = "BtnNovo";
             this.BtnNovo.onHoverState.BorderColor = System.Drawing.Color.Blue;
             this.BtnNovo.onHoverState.BorderRadius = 30;
@@ -2046,7 +2114,7 @@
             this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bunifuSeparator2.LineThickness = 1;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(-19, 746);
+            this.bunifuSeparator2.Location = new System.Drawing.Point(-19, 738);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
             this.bunifuSeparator2.Size = new System.Drawing.Size(809, 35);
             this.bunifuSeparator2.TabIndex = 149;
@@ -2092,74 +2160,6 @@
             this.TimerOrc.Enabled = true;
             this.TimerOrc.Interval = 500;
             this.TimerOrc.Tick += new System.EventHandler(this.TimerOrc_Tick);
-            // 
-            // ID_Orcamento
-            // 
-            this.ID_Orcamento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ID_Orcamento.DataPropertyName = "Orcamento.Id_Orcamento";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID_Orcamento.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ID_Orcamento.FillWeight = 50.76142F;
-            this.ID_Orcamento.HeaderText = "ID Orça.";
-            this.ID_Orcamento.Name = "ID_Orcamento";
-            this.ID_Orcamento.ReadOnly = true;
-            this.ID_Orcamento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ID_Orcamento.Width = 80;
-            // 
-            // ID_Turma
-            // 
-            this.ID_Turma.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ID_Turma.DataPropertyName = "Turma.Id_Turma";
-            this.ID_Turma.FillWeight = 128.6512F;
-            this.ID_Turma.HeaderText = "ID Turma";
-            this.ID_Turma.Name = "ID_Turma";
-            this.ID_Turma.ReadOnly = true;
-            this.ID_Turma.Width = 80;
-            // 
-            // ID_Promocao
-            // 
-            this.ID_Promocao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ID_Promocao.DataPropertyName = "PromocaoValor.Id_Promocao_Valor";
-            this.ID_Promocao.FillWeight = 145.8665F;
-            this.ID_Promocao.HeaderText = "ID Promo.";
-            this.ID_Promocao.Name = "ID_Promocao";
-            this.ID_Promocao.ReadOnly = true;
-            this.ID_Promocao.Width = 90;
-            // 
-            // Valor_Entrada
-            // 
-            this.Valor_Entrada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Valor_Entrada.DataPropertyName = "Valor_Entrada_Turma";
-            this.Valor_Entrada.FillWeight = 74.72088F;
-            this.Valor_Entrada.HeaderText = "Entrada";
-            this.Valor_Entrada.Name = "Valor_Entrada";
-            this.Valor_Entrada.ReadOnly = true;
-            this.Valor_Entrada.Width = 140;
-            // 
-            // Valor_Parcela_Demais
-            // 
-            this.Valor_Parcela_Demais.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Valor_Parcela_Demais.DataPropertyName = "Valor_Parcela_Demais";
-            this.Valor_Parcela_Demais.HeaderText = "Demais Parcelas";
-            this.Valor_Parcela_Demais.Name = "Valor_Parcela_Demais";
-            this.Valor_Parcela_Demais.ReadOnly = true;
-            this.Valor_Parcela_Demais.Width = 140;
-            // 
-            // Qtde_Parcelas
-            // 
-            this.Qtde_Parcelas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Qtde_Parcelas.DataPropertyName = "QTDE_PARCELAS";
-            this.Qtde_Parcelas.HeaderText = "Qtde Parc.";
-            this.Qtde_Parcelas.Name = "Qtde_Parcelas";
-            this.Qtde_Parcelas.ReadOnly = true;
-            this.Qtde_Parcelas.Width = 110;
-            // 
-            // Usuário
-            // 
-            this.Usuário.DataPropertyName = "Usuario.Id_Usuario";
-            this.Usuário.HeaderText = "Usuario";
-            this.Usuário.Name = "Usuário";
-            this.Usuário.ReadOnly = true;
             // 
             // AdicionarEditarAtendimento
             // 

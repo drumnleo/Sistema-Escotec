@@ -727,7 +727,11 @@ namespace Apresentacao.Presentation.Pages
                 AtualizaTel = true;
 
                 OrcamentoNegocios orcamentoNegocios = new OrcamentoNegocios();
-                OrcamentoGetSet = orcamentoNegocios.ConsultarPorIdAtendimento(AtendimentoGetset.Id_Atendimento)[0];
+                if(orcamentoNegocios.ConsultarPorIdAtendimento(AtendimentoGetset.Id_Atendimento).Count > 0)
+                {
+                    OrcamentoGetSet = orcamentoNegocios.ConsultarPorIdAtendimento(AtendimentoGetset.Id_Atendimento)[0];
+                };
+
                 AtualizaOrcamento = true;
 
                 TurmaOrcamentoNegocios turmaOrcamentoNegocios = new TurmaOrcamentoNegocios();

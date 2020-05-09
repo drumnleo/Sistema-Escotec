@@ -34,6 +34,9 @@ namespace Apresentacao.Presentation.Pages
 
         public static Funcionario FuncionarioGetSet { get; set; }
 
+        public static Boolean AtualizarPessoa = false;
+        public static Boolean AtualizarFuncionario = false;
+
         private void CamposPessoa()
         {
             tbxCPF.Text = PessoaGetSet.CPF;
@@ -65,31 +68,19 @@ namespace Apresentacao.Presentation.Pages
         private void timerpreenche_Tick(object sender, EventArgs e)
         {
 
-            if (FuncionarioGetSet != null)
+            if (AtualizarFuncionario == true)
             {
-                if (lblIdFuncionario.Text == "None")
-                {
-                    CamposPessoa();
-                    CamposFuncionario();
-                    btnAtualizar.Enabled = true;
-                    btnSalvar.Enabled = false;
-                    btnAtualizar.Enabled = true;
-                }
-                else if (FuncionarioGetSet.Id_Funcionario != Convert.ToInt32(lblIdFuncionario.Text))
-                {
-                    CamposFuncionario();
-                    CamposPessoa();
-                    btnAtualizar.Enabled = true;
-                    btnSalvar.Enabled = false;
-                    btnAtualizar.Enabled = true;
-                }
+                CamposFuncionario();
+                btnAtualizar.Enabled = true;
+                btnSalvar.Enabled = false;
+                AtualizarFuncionario = false;
             }
-            else if (PessoaGetSet != null)
+            else if (AtualizarPessoa == true)
             {
                 CamposPessoa();
-                btnAtualizar.Enabled = true;
-                btnSalvar.Enabled = true;
                 btnAtualizar.Enabled = false;
+                btnSalvar.Enabled = true;
+                AtualizarPessoa = false;
             }
             else if (PessoaGetSet != null && FuncionarioGetSet != null)
             {

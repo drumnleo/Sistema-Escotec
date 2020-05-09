@@ -131,11 +131,11 @@ namespace Negocios
             }
         }
 
-        public Funcionario ConsultarPorId(int id)
+        public FuncionarioColecao ConsultarPorId(int id)
         {
             try
             {
-                Funcionario funcionario = new Funcionario();
+                FuncionarioColecao funcionarioColecao = new FuncionarioColecao();
 
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@ID_FUNCIONARIO", id);
@@ -144,7 +144,7 @@ namespace Negocios
 
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    funcionario = new Funcionario();
+                    Funcionario funcionario = new Funcionario();
 
                     funcionario.Id_Funcionario = Convert.ToInt32(dataRow["ID_FUNCIONARIO"]);
                     funcionario.Data_Admissao = Convert.ToDateTime(dataRow["DATA_ADMISSAO"]);
@@ -171,9 +171,11 @@ namespace Negocios
 
                     funcionario.Usuario_Cad_Alt = usuario;
                     funcionario.Pessoa = pessoa;
+
+                    funcionarioColecao.Add(funcionario);
                 }
 
-                return funcionario;
+                return funcionarioColecao;
             }
             catch (Exception ex)
             {
@@ -181,11 +183,11 @@ namespace Negocios
             }
         }
 
-        public Funcionario ConsultarPorIdUsuario(int id)
+        public FuncionarioColecao ConsultarPorIdUsuario(int id)
         {
             try
             {
-                Funcionario funcionario = new Funcionario();
+                FuncionarioColecao funcionarioColecao = new FuncionarioColecao();
 
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@ID_USUARIO", id);
@@ -194,7 +196,7 @@ namespace Negocios
 
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    funcionario = new Funcionario();
+                    Funcionario funcionario = new Funcionario();
 
                     funcionario.Id_Funcionario = Convert.ToInt32(dataRow["ID_FUNCIONARIO"]);
                     funcionario.Data_Admissao = Convert.ToDateTime(dataRow["DATA_ADMISSAO"]);
@@ -221,9 +223,63 @@ namespace Negocios
 
                     funcionario.Usuario_Cad_Alt = usuario;
                     funcionario.Pessoa = pessoa;
+
+                    funcionarioColecao.Add(funcionario);
                 }
 
-                return funcionario;
+                return funcionarioColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar Funcionário. Detalhes: " + ex.Message);
+            }
+        }
+
+        public FuncionarioColecao ConsultarPorIdPessoa(int id)
+        {
+            try
+            {
+                FuncionarioColecao funcionarioColecao = new FuncionarioColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_PESSOA", id);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_FUNCIONARIO_CONSULTARPORIDPESSOA");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    Funcionario funcionario = new Funcionario();
+
+                    funcionario.Id_Funcionario = Convert.ToInt32(dataRow["ID_FUNCIONARIO"]);
+                    funcionario.Data_Admissao = Convert.ToDateTime(dataRow["DATA_ADMISSAO"]);
+                    if (dataRow["DATA_DEMISSAO"].ToString() != "")
+                    {
+                        funcionario.Data_Demissao = Convert.ToDateTime(dataRow["DATA_DEMISSAO"]);
+                    }
+                    funcionario.Hora_Entrada = DateTime.ParseExact(dataRow["HORA_ENTRADA"].ToString(), "HH:mm:ss", null, System.Globalization.DateTimeStyles.None);
+                    funcionario.Hora_Saida = DateTime.ParseExact(dataRow["HORA_SAIDA"].ToString(), "HH:mm:ss", null, System.Globalization.DateTimeStyles.None);
+                    funcionario.Num_CTPS = Convert.ToInt32(dataRow["NUM_CTPS"]);
+                    funcionario.Serie_CTPS = Convert.ToInt32(dataRow["SERIE_CTPS"]);
+                    funcionario.Num_NIS = Convert.ToInt32(dataRow["NUM_NIS"]);
+                    funcionario.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    funcionario.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    Pessoa pessoa = new Pessoa();
+                    pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
+                    pessoa.Nome = Convert.ToString(dataRow["NOME"]);
+                    pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
+                    pessoa.CPF = Convert.ToString(dataRow["CPF"]);
+
+                    funcionario.Usuario_Cad_Alt = usuario;
+                    funcionario.Pessoa = pessoa;
+
+                    funcionarioColecao.Add(funcionario);
+                }
+
+                return funcionarioColecao;
             }
             catch (Exception ex)
             {

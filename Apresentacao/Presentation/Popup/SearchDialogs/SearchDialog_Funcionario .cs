@@ -67,7 +67,9 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
             AdicionarEditarFuncionario.FuncionarioGetSet = funcionarioEscolhido;
+            AdicionarEditarFuncionario.AtualizarFuncionario = true;
             AdicionarEditarFuncionario.PessoaGetSet = funcionarioEscolhido.Pessoa;
+            AdicionarEditarFuncionario.AtualizarPessoa = true;
             this.Close();
         }
 
