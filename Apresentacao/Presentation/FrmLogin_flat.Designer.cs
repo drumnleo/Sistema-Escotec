@@ -72,7 +72,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(296, 440);
+            this.panel1.Size = new System.Drawing.Size(283, 390);
             this.panel1.TabIndex = 0;
             // 
             // bunifuCustomLabel2
@@ -102,11 +102,11 @@
             this.txtLogin.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(105)))), ((int)(((byte)(165)))));
             this.txtLogin.LineMouseHoverColor = System.Drawing.Color.Gray;
             this.txtLogin.LineThickness = 2;
-            this.txtLogin.Location = new System.Drawing.Point(353, 187);
+            this.txtLogin.Location = new System.Drawing.Point(353, 141);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.MaxLength = 32767;
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(324, 33);
+            this.txtLogin.Size = new System.Drawing.Size(246, 33);
             this.txtLogin.TabIndex = 1;
             this.txtLogin.Text = "Usuário";
             this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -117,7 +117,7 @@
             this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Book Antiqua", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(343, 65);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(405, 32);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(149, 58);
             this.bunifuCustomLabel3.TabIndex = 2;
@@ -129,7 +129,7 @@
             this.bunifuCustomLabel4.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(350, 130);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(381, 92);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(184, 17);
             this.bunifuCustomLabel4.TabIndex = 4;
@@ -142,7 +142,7 @@
             this.bunifuCheckbox1.Checked = true;
             this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(210)))), ((int)(((byte)(66)))));
             this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(355, 316);
+            this.bunifuCheckbox1.Location = new System.Drawing.Point(355, 270);
             this.bunifuCheckbox1.Name = "bunifuCheckbox1";
             this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox1.TabIndex = 5;
@@ -153,7 +153,7 @@
             this.bunifuCustomLabel5.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(381, 320);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(381, 274);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(105, 17);
             this.bunifuCustomLabel5.TabIndex = 6;
@@ -177,7 +177,7 @@
             this.btnLogin.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(210)))), ((int)(((byte)(66)))));
             this.btnLogin.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnLogin.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(210)))), ((int)(((byte)(66)))));
-            this.btnLogin.Location = new System.Drawing.Point(523, 368);
+            this.btnLogin.Location = new System.Drawing.Point(488, 322);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(5);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(135, 41);
@@ -203,7 +203,7 @@
             this.btnSair.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(210)))), ((int)(((byte)(66)))));
             this.btnSair.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnSair.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(210)))), ((int)(((byte)(66)))));
-            this.btnSair.Location = new System.Drawing.Point(351, 368);
+            this.btnSair.Location = new System.Drawing.Point(313, 322);
             this.btnSair.Margin = new System.Windows.Forms.Padding(5);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(135, 41);
@@ -226,11 +226,11 @@
             this.txtSenha.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(105)))), ((int)(((byte)(165)))));
             this.txtSenha.LineMouseHoverColor = System.Drawing.Color.Gray;
             this.txtSenha.LineThickness = 2;
-            this.txtSenha.Location = new System.Drawing.Point(353, 264);
+            this.txtSenha.Location = new System.Drawing.Point(353, 218);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.MaxLength = 32767;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(324, 33);
+            this.txtSenha.Size = new System.Drawing.Size(246, 33);
             this.txtSenha.TabIndex = 3;
             this.txtSenha.Text = "Usuário";
             this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -245,7 +245,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(699, 440);
+            this.ClientSize = new System.Drawing.Size(649, 390);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.bunifuCustomLabel5);

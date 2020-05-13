@@ -46,11 +46,19 @@ namespace Negocios
                 acessoDados.AdicionarParametros("@ID_FUNCIONARIO", funcionario.Id_Funcionario);
                 acessoDados.AdicionarParametros("@ID_PESSOA", funcionario.Pessoa.Id_Pessoa);
                 acessoDados.AdicionarParametros("@DATA_ADMISSAO", funcionario.Data_Admissao);
+                if (funcionario.Data_Demissao.Day != DateTime.Now.AddDays(1).Day)
+                {
+                    acessoDados.AdicionarParametros("@DATA_DEMISSAO", funcionario.Data_Demissao);
+                }
+                else
+                {
+                    acessoDados.AdicionarParametros("@DATA_DEMISSAO", DBNull.Value);
+                }    
                 acessoDados.AdicionarParametros("@HORA_ENTRADA", funcionario.Hora_Entrada);
                 acessoDados.AdicionarParametros("@HORA_SAIDA", funcionario.Hora_Saida);
                 acessoDados.AdicionarParametros("@NUM_CTPS", funcionario.Num_CTPS);
                 acessoDados.AdicionarParametros("@SERIE_CTPS", funcionario.Serie_CTPS);
-                acessoDados.AdicionarParametros("@NUMERO_NIS", funcionario.Num_NIS);
+                acessoDados.AdicionarParametros("@NUM_NIS", funcionario.Num_NIS);
                 acessoDados.AdicionarParametros("@ID_USUARIO", funcionario.Usuario_Cad_Alt.Id_Usuario);
 
                 string idFuncionario = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_FUNCIONARIO_ATUALIZARPORID").ToString();

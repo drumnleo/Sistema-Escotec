@@ -124,13 +124,18 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         private void atualizarcampos()
         {
             PessoaNegocios pessoaNegocios = new PessoaNegocios();
-            pessoaSelecionada = pessoaNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value));
+            if (dataGrid.CurrentRow != null)
+            {
+                pessoaSelecionada = pessoaNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value));
 
-            CarregarPessoaSelecionada(pessoaSelecionada);
-            btnAtualizar.Enabled = true;
-            btnNovo.Text = "Novo";
-            btnSelecionar.Enabled = true;
-            pessoaescolhida = pessoaSelecionada;
+                CarregarPessoaSelecionada(pessoaSelecionada);
+                btnAtualizar.Enabled = true;
+                btnNovo.Text = "Novo";
+                btnSelecionar.Enabled = true;
+                btnExcluir.Enabled = true;
+                pessoaescolhida = pessoaSelecionada;
+            }
+            
         }
 
         private void CarregarPessoaSelecionada(Pessoa pessoa)
@@ -295,9 +300,15 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                     int idPessoa = Convert.ToInt32(retorno);
                     Pessoa pessoaCadastrada = pessoaNegocios.ConsultarPorId(idPessoa);
                     MessageBox.Show("Cadastro base inserido com sucesso!");
+
+                    //Pessoa
+                    AdicionarEditarFuncionario.PessoaGetSet = new Pessoa();
                     AdicionarEditarFuncionario.PessoaGetSet = pessoaCadastrada;
                     AdicionarEditarFuncionario.AtualizarPessoa = true;
 
+
+                    //Se for funcionario
+                    AdicionarEditarFuncionario.FuncionarioGetSet = new Funcionario();
                     FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
                     if (funcionarioNegocios.ConsultarPorIdPessoa(pessoaescolhida.Id_Pessoa).Count > 0)
                     {
@@ -468,9 +479,15 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                     int idPessoa = Convert.ToInt32(retorno);
                     Pessoa pessoaCadastrada = pessoaNegocios.ConsultarPorId(idPessoa);
                     MessageBox.Show("Cadastro base atualizado com sucesso!");
+
+                    //Pessoa
+                    AdicionarEditarFuncionario.PessoaGetSet = new Pessoa();
                     AdicionarEditarFuncionario.PessoaGetSet = pessoaCadastrada;
                     AdicionarEditarFuncionario.AtualizarPessoa = true;
 
+
+                    //Se for funcionário
+                    AdicionarEditarFuncionario.FuncionarioGetSet = new Funcionario();
                     FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
                     if (funcionarioNegocios.ConsultarPorIdPessoa(pessoaescolhida.Id_Pessoa).Count > 0)
                     {
@@ -490,8 +507,14 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
+            AdicionarEditarFuncionario.FuncionarioGetSet = new Funcionario();
+            AdicionarEditarFuncionario.PessoaGetSet = new Pessoa();
+
+            //Pessoa
             AdicionarEditarFuncionario.PessoaGetSet = pessoaescolhida;
             AdicionarEditarFuncionario.AtualizarPessoa = true;
+
+            //Se for funcionário
             FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
             if (funcionarioNegocios.ConsultarPorIdPessoa(pessoaescolhida.Id_Pessoa).Count > 0)
             {
