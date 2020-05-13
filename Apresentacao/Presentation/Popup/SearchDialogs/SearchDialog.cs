@@ -36,6 +36,9 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             InitializeComponent();
 
             dataGrid.AutoGenerateColumns = false;
+            dataGrid.AllowUserToResizeColumns = false;
+            dataGrid.AllowUserToResizeRows = false;
+            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             ckboxfem.Checked = false;
             ckboxmasc.Checked = false;
             btnAtualizar.Enabled = false;
@@ -237,8 +240,12 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
             dataGrid.DataSource = null;
             dataGrid.DataSource = pessoaColecao;
+            dataGrid.AllowUserToResizeColumns = false;
+            dataGrid.AllowUserToResizeRows = false;
+            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGrid.Update();
             dataGrid.Refresh();
+
 
             btnNovo.Text = "Novo";
             btnNovo.Enabled = true;
@@ -291,7 +298,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 {
                     MessageBox.Show("Há um erro na seleção do sexo, verifique!");
                 }
-                pessoa.Usuario.Id_Usuario = LoginNegocios.UsuarioLogadoGetSet.Id_Usuario;
+                pessoa.Usuario = LoginNegocios.UsuarioLogadoGetSet;
 
                 string retorno = pessoaNegocios.Inserir(pessoa);
 

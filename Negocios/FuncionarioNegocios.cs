@@ -46,7 +46,7 @@ namespace Negocios
                 acessoDados.AdicionarParametros("@ID_FUNCIONARIO", funcionario.Id_Funcionario);
                 acessoDados.AdicionarParametros("@ID_PESSOA", funcionario.Pessoa.Id_Pessoa);
                 acessoDados.AdicionarParametros("@DATA_ADMISSAO", funcionario.Data_Admissao);
-                if (funcionario.Data_Demissao.Day != DateTime.Now.AddDays(1).Day)
+                if (funcionario.Data_Demissao != new DateTime(0001,01,01,00,00,00))
                 {
                     acessoDados.AdicionarParametros("@DATA_DEMISSAO", funcionario.Data_Demissao);
                 }
@@ -108,8 +108,8 @@ namespace Negocios
                     {
                         funcionario.Data_Demissao = Convert.ToDateTime(dataRow["DATA_DEMISSAO"]);
                     }
-                    funcionario.Hora_Entrada = DateTime.ParseExact(dataRow["HORA_ENTRADA"].ToString(), "HH:mm:ss", null, System.Globalization.DateTimeStyles.None);
-                    funcionario.Hora_Saida = DateTime.ParseExact(dataRow["HORA_SAIDA"].ToString(), "HH:mm:ss", null, System.Globalization.DateTimeStyles.None);
+                    funcionario.Hora_Entrada = (TimeSpan)(dataRow["HORA_ENTRADA"]);
+                    funcionario.Hora_Saida = (TimeSpan)(dataRow["HORA_SAIDA"]);
                     funcionario.Num_CTPS = Convert.ToInt32(dataRow["NUM_CTPS"]);
                     funcionario.Serie_CTPS = Convert.ToInt32(dataRow["SERIE_CTPS"]);
                     funcionario.Num_NIS = Convert.ToInt32(dataRow["NUM_NIS"]);
@@ -160,8 +160,8 @@ namespace Negocios
                     {
                         funcionario.Data_Demissao = Convert.ToDateTime(dataRow["DATA_DEMISSAO"]);
                     }
-                    funcionario.Hora_Entrada = DateTime.ParseExact(dataRow["HORA_ENTRADA"].ToString(), "HH:mm:ss", null, System.Globalization.DateTimeStyles.None);
-                    funcionario.Hora_Saida = DateTime.ParseExact(dataRow["HORA_SAIDA"].ToString(), "HH:mm:ss", null, System.Globalization.DateTimeStyles.None);
+                    funcionario.Hora_Entrada = (TimeSpan)(dataRow["HORA_ENTRADA"]);
+                    funcionario.Hora_Saida = (TimeSpan)(dataRow["HORA_SAIDA"]);
                     funcionario.Num_CTPS = Convert.ToInt32(dataRow["NUM_CTPS"]);
                     funcionario.Serie_CTPS = Convert.ToInt32(dataRow["SERIE_CTPS"]);
                     funcionario.Num_NIS = Convert.ToInt32(dataRow["NUM_NIS"]);
@@ -212,8 +212,8 @@ namespace Negocios
                     {
                         funcionario.Data_Demissao = Convert.ToDateTime(dataRow["DATA_DEMISSAO"]);
                     }
-                    funcionario.Hora_Entrada = DateTime.ParseExact(dataRow["HORA_ENTRADA"].ToString(), "HH:mm:ss", null, System.Globalization.DateTimeStyles.None);
-                    funcionario.Hora_Saida = DateTime.ParseExact(dataRow["HORA_SAIDA"].ToString(), "HH:mm:ss", null, System.Globalization.DateTimeStyles.None);
+                    funcionario.Hora_Entrada = (TimeSpan)(dataRow["HORA_ENTRADA"]);
+                    funcionario.Hora_Saida = (TimeSpan)(dataRow["HORA_SAIDA"]);
                     funcionario.Num_CTPS = Convert.ToInt32(dataRow["NUM_CTPS"]);
                     funcionario.Serie_CTPS = Convert.ToInt32(dataRow["SERIE_CTPS"]);
                     funcionario.Num_NIS = Convert.ToInt32(dataRow["NUM_NIS"]);
@@ -264,8 +264,8 @@ namespace Negocios
                     {
                         funcionario.Data_Demissao = Convert.ToDateTime(dataRow["DATA_DEMISSAO"]);
                     }
-                    funcionario.Hora_Entrada = DateTime.ParseExact(dataRow["HORA_ENTRADA"].ToString(), "HH:mm:ss", null, System.Globalization.DateTimeStyles.None);
-                    funcionario.Hora_Saida = DateTime.ParseExact(dataRow["HORA_SAIDA"].ToString(), "HH:mm:ss", null, System.Globalization.DateTimeStyles.None);
+                    funcionario.Hora_Entrada = (TimeSpan)(dataRow["HORA_ENTRADA"]);
+                    funcionario.Hora_Saida = (TimeSpan)(dataRow["HORA_SAIDA"]);
                     funcionario.Num_CTPS = Convert.ToInt32(dataRow["NUM_CTPS"]);
                     funcionario.Serie_CTPS = Convert.ToInt32(dataRow["SERIE_CTPS"]);
                     funcionario.Num_NIS = Convert.ToInt32(dataRow["NUM_NIS"]);

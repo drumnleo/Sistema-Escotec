@@ -52,6 +52,7 @@
             this.lblpesquisa = new System.Windows.Forms.Label();
             this.PanelCenter = new System.Windows.Forms.Panel();
             this.dataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.verifica = new System.Windows.Forms.Timer(this.components);
             this.ID_FUNCIONARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +60,6 @@
             this.DATA_ADMISSAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HORA_ENTRADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HORA_SAIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.verifica = new System.Windows.Forms.Timer(this.components);
             this.PanelDown.SuspendLayout();
             this.PanelTop.SuspendLayout();
             this.PanelCenter.SuspendLayout();
@@ -419,7 +419,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid.ColumnHeadersHeight = 40;
-            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_FUNCIONARIO,
             this.Nome,
@@ -527,7 +526,8 @@
             // 
             this.HORA_ENTRADA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.HORA_ENTRADA.DataPropertyName = "HORA_ENTRADA";
-            dataGridViewCellStyle3.Format = "HH:mm";
+            dataGridViewCellStyle3.Format = "t";
+            dataGridViewCellStyle3.NullValue = null;
             this.HORA_ENTRADA.DefaultCellStyle = dataGridViewCellStyle3;
             this.HORA_ENTRADA.FillWeight = 97.82865F;
             this.HORA_ENTRADA.HeaderText = "Entrada";
@@ -539,7 +539,8 @@
             // 
             this.HORA_SAIDA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.HORA_SAIDA.DataPropertyName = "HORA_SAIDA";
-            dataGridViewCellStyle4.Format = "HH:mm";
+            dataGridViewCellStyle4.Format = "t";
+            dataGridViewCellStyle4.NullValue = null;
             this.HORA_SAIDA.DefaultCellStyle = dataGridViewCellStyle4;
             this.HORA_SAIDA.FillWeight = 97.82865F;
             this.HORA_SAIDA.HeaderText = "Saida";

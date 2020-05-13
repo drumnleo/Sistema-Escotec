@@ -61,8 +61,8 @@ namespace Apresentacao.Presentation.Pages
             {
                 funcionario.Data_Demissao = dtDemissao.Value;
             }        
-            funcionario.Hora_Entrada = horaEntrada.Value;
-            funcionario.Hora_Saida = horaSaida.Value;
+            funcionario.Hora_Entrada = horaEntrada.Value.TimeOfDay;
+            funcionario.Hora_Saida = horaSaida.Value.TimeOfDay;
             funcionario.Num_CTPS = Convert.ToInt32(tbxCTPS.Text);
             funcionario.Serie_CTPS = Convert.ToInt32(tbxSerieCTPS.Text);
             funcionario.Num_NIS = Convert.ToInt32(tbxNIS.Text);
@@ -91,8 +91,8 @@ namespace Apresentacao.Presentation.Pages
             {
                 funcionario.Pessoa = PessoaGetSet;
                 funcionario.Data_Admissao = dtAdmissao.Value;
-                funcionario.Hora_Entrada = horaEntrada.Value;
-                funcionario.Hora_Saida = horaSaida.Value;
+                funcionario.Hora_Entrada = horaEntrada.Value.TimeOfDay;
+                funcionario.Hora_Saida = horaSaida.Value.TimeOfDay;
                 funcionario.Num_CTPS = Convert.ToInt32(tbxCTPS.Text);
                 funcionario.Serie_CTPS = Convert.ToInt32(tbxSerieCTPS.Text);
                 funcionario.Num_NIS = Convert.ToInt32(tbxNIS.Text);
@@ -179,19 +179,19 @@ namespace Apresentacao.Presentation.Pages
         //Metodos
         private void AtualizaBotoes()
         {
-            if (PessoaGetSet != null && FuncionarioGetSet != null)
+            if (PessoaGetSet.Id_Pessoa > 0 && FuncionarioGetSet.Id_Funcionario == 0)
             {
-                btnAtualizar.Enabled = true;
-                btnSalvar.Enabled = false;
-            }
-            else if (PessoaGetSet != null && FuncionarioGetSet != null)
-            {
-                btnSalvar.Enabled = false;
                 btnAtualizar.Enabled = false;
+                btnSalvar.Enabled = true;
+            }
+            else if (PessoaGetSet.Id_Pessoa > 0 && FuncionarioGetSet.Id_Funcionario > 0)
+            {
+                btnSalvar.Enabled = false;
+                btnAtualizar.Enabled = true;
             }
             else
             {
-                btnSalvar.Enabled = true;
+                btnSalvar.Enabled = false;
                 btnAtualizar.Enabled = false;
             }
         }
@@ -289,8 +289,10 @@ namespace Apresentacao.Presentation.Pages
                 {
                     TbxdtDemissao.Visible = false;
                 }
-                horaEntrada.Value = FuncionarioGetSet.Hora_Entrada;
-                horaSaida.Value = FuncionarioGetSet.Hora_Saida;
+                DateTime entrada = new DateTime(2000, 01, 01, 00, 00, 00) + FuncionarioGetSet.Hora_Entrada;
+                horaEntrada.Value = entrada;
+                DateTime saida = new DateTime(2000, 01, 01, 00, 00, 00) + FuncionarioGetSet.Hora_Saida;
+                horaSaida.Value = saida;
                 tbxCTPS.Text = FuncionarioGetSet.Num_CTPS.ToString();
                 tbxSerieCTPS.Text = FuncionarioGetSet.Serie_CTPS.ToString();
                 tbxNIS.Text = FuncionarioGetSet.Num_NIS.ToString();
