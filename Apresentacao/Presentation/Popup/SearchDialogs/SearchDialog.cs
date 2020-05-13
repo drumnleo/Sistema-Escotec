@@ -407,7 +407,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void tbxCPF_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true;
                 MessageBox.Show("este campo aceita somente numero");
