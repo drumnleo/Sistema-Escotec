@@ -23,13 +23,10 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         Pessoa pessoaSelecionada = new Pessoa();
 
         private TipoDocColecao TipoDocGetSet;
-        private int TipoDocSel = 0;
 
         private ProfissaoColecao ProfissaoGetSet;
-        private int ProfissaoSel = 0;
 
         private EstadoCivilColecao EstadoCivilGetSet;
-        private int EstadoCivilSel = 0;
 
         public SearchDialog()
         {
@@ -275,9 +272,9 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 PessoaNegocios pessoaNegocios = new PessoaNegocios();
                 Validadocs validadocs = new Validadocs();
 
-                pessoa.Profissao = ProfissaoGetSet[ProfissaoSel];
-                pessoa.TipoDoc = TipoDocGetSet[TipoDocSel];
-                pessoa.EstadoCivil = EstadoCivilGetSet[EstadoCivilSel];
+                pessoa.Profissao = ProfissaoGetSet[cbxProfissao.SelectedIndex];
+                pessoa.TipoDoc = TipoDocGetSet[cbxTipoDoc.SelectedIndex];
+                pessoa.EstadoCivil = EstadoCivilGetSet[cbxEstadoCivil.SelectedIndex];
                 pessoa.Nome = tbxNome.Text;
                 pessoa.Sobrenome = tbxSobrenome.Text;
                 pessoa.CPF = validadocs.SemFormatacao(tbxCPF.Text);
@@ -454,9 +451,9 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 Validadocs validadocs = new Validadocs();
 
                 pessoa.Id_Pessoa = pessoaSelecionada.Id_Pessoa;
-                pessoa.Profissao = ProfissaoGetSet[ProfissaoSel];
-                pessoa.TipoDoc = TipoDocGetSet[TipoDocSel];
-                pessoa.EstadoCivil = EstadoCivilGetSet[EstadoCivilSel];
+                pessoa.Profissao = ProfissaoGetSet[cbxProfissao.SelectedIndex];
+                pessoa.TipoDoc = TipoDocGetSet[cbxTipoDoc.SelectedIndex];
+                pessoa.EstadoCivil = EstadoCivilGetSet[cbxEstadoCivil.SelectedIndex];
                 pessoa.Nome = tbxNome.Text;
                 pessoa.Sobrenome = tbxSobrenome.Text;
                 pessoa.CPF = validadocs.SemFormatacao(tbxCPF.Text);

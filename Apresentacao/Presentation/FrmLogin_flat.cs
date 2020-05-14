@@ -31,6 +31,7 @@ namespace Apresentacao
 
                 Usuario usuario = new Usuario();
                 usuario.Id_Usuario = retorno;
+                usuario.Senha = txtSenha.Text;
                 LoginNegocios.UsuarioLogadoGetSet = usuario;
 
                 FrmMenu frmMenu = new FrmMenu();

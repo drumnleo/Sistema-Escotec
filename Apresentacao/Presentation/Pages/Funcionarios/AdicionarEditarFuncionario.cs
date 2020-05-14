@@ -81,8 +81,6 @@ namespace Apresentacao.Presentation.Pages
             {
                 MessageBox.Show("Erro ao atualizar funcionário. Detalhes: " + retorno);
             }
-
-
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -112,9 +110,9 @@ namespace Apresentacao.Presentation.Pages
                 try
                 {
                     int idFuncionario = Convert.ToInt32(retorno);
-                    Funcionario funcionarioCadastrado = funcionarioNegocios.ConsultarPorId(idFuncionario)[0];
+                    FuncionarioGetSet = funcionarioNegocios.ConsultarPorId(idFuncionario)[0];
                     MessageBox.Show("Funcionario inserido com sucesso!");
-                    lblIdFuncionario.Text = funcionarioCadastrado.Id_Funcionario.ToString();
+                    AtualizarFuncionario = true;
                 }
                 catch (Exception)
                 {
@@ -205,22 +203,6 @@ namespace Apresentacao.Presentation.Pages
             TbxdtDemissao.Visible = false;
             TbxdtAdmissao.Visible = false;
         }
-        private void limpaCampos()
-        {
-            tbxNome.Text = "";
-            tbxSobrenome.Text = "";
-            tbxCPF.Text = "";
-            dtAdmissao.Value = new DateTime(2020, 01, 01);
-            TbxdtAdmissao.Visible = true;
-            dtDemissao.Value = new DateTime(2020, 01, 01);
-            TbxdtDemissao.Visible = true;
-            tbxCTPS.Text = "";
-            tbxSerieCTPS.Text = "";
-            tbxNIS.Text = "";
-            dtDataCadastro.Value = DateTime.Now;
-            dtUltimaAtualizacao.Value = DateTime.Now;
-        }
-
         private void LimpaCamposFuncionario()
         {
             lblIdFuncionario.Text = "";
@@ -235,29 +217,6 @@ namespace Apresentacao.Presentation.Pages
             tbxNIS.Text = "";
             dtDataCadastro.Value = DateTime.Now;
             dtUltimaAtualizacao.Value = DateTime.Now;
-        }
-        private Boolean VerificaFuncionarioCadastrado()
-        {
-            Boolean retorno = true;
-
-            if (retorno == true)
-            {
-                retorno = TbxdtAdmissao.Visible == false;
-            }
-            if (retorno == true)
-            {
-                retorno = TbxdtAdmissao.Visible == false;
-            }
-            if (retorno == true)
-            {
-                retorno = TbxdtDemissao.Visible == false;
-            }
-
-
-
-
-            return retorno;
-
         }
         private void CamposPessoa()
         {

@@ -17,6 +17,5 @@ namespace ObjetoTransferencia
         public DateTime Data_Cadastro { get; set; }
         public DateTime Data_Ultima_Alteracao { get; set; }
         public Usuario Usuario_cad_alt { get; set; }
-        public bool Ativo { get; set; }
     }
 }

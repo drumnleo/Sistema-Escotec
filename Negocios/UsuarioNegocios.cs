@@ -20,7 +20,7 @@ namespace Negocios
 
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@ID_FUNCIONARIO", usuario.Funcionario.Id_Funcionario);
-                acessoDados.AdicionarParametros("@ID_GRUPO", usuario.GrupoUsuario.Id_Grupo);
+                acessoDados.AdicionarParametros("@ID_GRUPO_USUARIO", usuario.GrupoUsuario.Id_Grupo);
                 acessoDados.AdicionarParametros("@NOME_USUARIO", usuario.Nome_Usuario);
                 acessoDados.AdicionarParametros("@SENHA", usuario.Senha);
                 acessoDados.AdicionarParametros("@EMAIL_PROFISSIONAL", usuario.Email_Profissional);
@@ -88,7 +88,7 @@ namespace Negocios
                 Usuario usuario = new Usuario();
 
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("@id", id);
+                acessoDados.AdicionarParametros("@ID_USUARIO", id);
 
                 DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_USUARIO_CONSULTARPORID");
 
@@ -178,7 +178,7 @@ namespace Negocios
                 acessoDados.AdicionarParametros("@NOME_USUARIO", usuario.Nome_Usuario);
                 acessoDados.AdicionarParametros("@SENHA", usuario.Senha);
                 acessoDados.AdicionarParametros("@EMAIL_PROFISSIONAL", usuario.Email_Profissional);
-                acessoDados.AdicionarParametros("USUARIO_CAD_ALT", usuario.Usuario_cad_alt);
+                acessoDados.AdicionarParametros("USUARIO_CAD_ALT", usuario.Usuario_cad_alt.Id_Usuario);
 
                 string idUsuario = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_USUARIO_ATUALIZARPORID").ToString();
 

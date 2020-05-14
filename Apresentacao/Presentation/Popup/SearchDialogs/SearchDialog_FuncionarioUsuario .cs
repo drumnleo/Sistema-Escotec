@@ -19,6 +19,9 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             InitializeComponent();
 
             dataGrid.AutoGenerateColumns = false;
+            dataGrid.AllowUserToResizeColumns = false;
+            dataGrid.AllowUserToResizeRows = false;
+            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             btnSelecionar.Visible = false;
         }
 
@@ -34,12 +37,14 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void Atualizarcampos()
         {
-            FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
-            funcionarioEscolhido = funcionarioNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value))[0];
-            UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
-            usuarioEscolhido = usuarioNegocios.ConsultarPorIdFuncionario(funcionarioEscolhido.Id_Funcionario);
-
-            btnSelecionar.Visible = true;
+            if (dataGrid.CurrentRow != null)
+            {
+                FuncionarioNegocios funcionarioNegocios = new FuncionarioNegocios();
+                funcionarioEscolhido = funcionarioNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value))[0];
+                UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
+                usuarioEscolhido = usuarioNegocios.ConsultarPorIdFuncionario(funcionarioEscolhido.Id_Funcionario);
+                btnSelecionar.Visible = true;
+            }
         }
 
         private void btnpesquisar_Click(object sender, EventArgs e)
@@ -50,6 +55,9 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
             dataGrid.DataSource = null;
             dataGrid.DataSource = funcionarioColecao;
+            dataGrid.AllowUserToResizeColumns = false;
+            dataGrid.AllowUserToResizeRows = false;
+            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGrid.Update();
             dataGrid.Refresh();
         }
@@ -61,13 +69,24 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
-            AdicionarEditarUsuario.FuncionarioGetSet = funcionarioEscolhido;
+            AdicionarEditarUsuario.FuncionarioGetSet = new Funcionario();
+            AdicionarEditarUsuario.UsuarioGetSet = new Usuario();
             AdicionarEditarUsuario.AtualizarFuncionario = true;
-            AdicionarEditarUsuario.PessoaGetSet = funcionarioEscolhido.Pessoa;
+            AdicionarEditarUsuario.AtualizarUsuario = true;
+
+
+            AdicionarEditarUsuario.FuncionarioGetSet = funcionarioEscolhido;
+            PessoaNegocios pessoaNegocios = new PessoaNegocios();
+            AdicionarEditarUsuario.FuncionarioGetSet.Pessoa = pessoaNegocios.ConsultarPorId(funcionarioEscolhido.Pessoa.Id_Pessoa);
+            AdicionarEditarUsuario.AtualizarFuncionario = true;
+
             if (usuarioEscolhido.Id_Usuario.ToString() != "")
             {
                 AdicionarEditarUsuario.UsuarioGetSet = usuarioEscolhido;
-                AdicionarEditarUsuario.AtualizarUsuario = true;
+            }
+            else
+            {
+                AdicionarEditarUsuario.UsuarioGetSet = new Usuario();
             }
             this.Close();
         }

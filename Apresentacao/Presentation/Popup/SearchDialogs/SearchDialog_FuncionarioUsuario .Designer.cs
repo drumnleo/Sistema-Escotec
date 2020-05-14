@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchDialog_Funcionario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchDialog_FuncionarioUsuario));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
@@ -405,6 +405,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -524,7 +525,8 @@
             // 
             this.HORA_ENTRADA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.HORA_ENTRADA.DataPropertyName = "HORA_ENTRADA";
-            dataGridViewCellStyle3.Format = "HH:mm";
+            dataGridViewCellStyle3.Format = "t";
+            dataGridViewCellStyle3.NullValue = null;
             this.HORA_ENTRADA.DefaultCellStyle = dataGridViewCellStyle3;
             this.HORA_ENTRADA.FillWeight = 97.82865F;
             this.HORA_ENTRADA.HeaderText = "Entrada";
@@ -536,7 +538,8 @@
             // 
             this.HORA_SAIDA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.HORA_SAIDA.DataPropertyName = "HORA_SAIDA";
-            dataGridViewCellStyle4.Format = "HH:mm";
+            dataGridViewCellStyle4.Format = "t";
+            dataGridViewCellStyle4.NullValue = null;
             this.HORA_SAIDA.DefaultCellStyle = dataGridViewCellStyle4;
             this.HORA_SAIDA.FillWeight = 97.82865F;
             this.HORA_SAIDA.HeaderText = "Saida";
@@ -544,7 +547,7 @@
             this.HORA_SAIDA.ReadOnly = true;
             this.HORA_SAIDA.Width = 90;
             // 
-            // SearchDialog_Funcionario
+            // SearchDialog_FuncionarioUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -555,7 +558,7 @@
             this.Controls.Add(this.PanelDown);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SearchDialog_Funcionario";
+            this.Name = "SearchDialog_FuncionarioUsuario";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SearchDialog";

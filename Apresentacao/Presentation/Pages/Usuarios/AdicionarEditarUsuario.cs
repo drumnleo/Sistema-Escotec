@@ -19,51 +19,122 @@ namespace Apresentacao.Presentation.Pages
         {
             if (Program.IsInDesignMode()) return;
             InitializeComponent();
-
         }
 
-        private static Pessoa pessoaGetSet;
+        public static Funcionario FuncionarioGetSet { get; set; }
+        public static Usuario UsuarioGetSet { get; set; }
+        public static GrupoUsuarioColecao GrupoUsuarioGetSet { get; set; }
         public static Boolean AtualizarUsuario = false;
         public static Boolean AtualizarFuncionario = false;
 
-        public static Pessoa PessoaGetSet
+        //Load
+        private void AdicionarEditarUsuario_Load(object sender, EventArgs e)
         {
-            get { return pessoaGetSet; }
-            set { pessoaGetSet = value; }
+            CarregaComboBox();
         }
-        private static Funcionario funcionarioGetSet;
-        public static Funcionario FuncionarioGetSet
+
+        //Metodos botões
+        private void btnNovo_Click(object sender, EventArgs e)
         {
-            get { return funcionarioGetSet; }
-            set { funcionarioGetSet = value; }
+            FuncionarioGetSet = new Funcionario();
+            AtualizarFuncionario = true;
         }
-        private static Usuario usuarioGetSet;
-        public static Usuario UsuarioGetSet
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
-            get { return usuarioGetSet; }
-            set { usuarioGetSet = value; }
+            Usuario usuario = new Usuario();
+            GrupoUsuario grupoUsuario = new GrupoUsuario();
+            UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
+            try
+            {
+                usuario.Funcionario = FuncionarioGetSet;
+                usuario.GrupoUsuario = GrupoUsuarioGetSet[cbxGrupo.SelectedIndex];
+                usuario.Nome_Usuario = tbxUsuario.Text;
+                usuario.Senha = TbxSenha.Text;
+                usuario.Email_Profissional = tbxEmail.Text;
+                usuario.Usuario_cad_alt = LoginNegocios.UsuarioLogadoGetSet;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao carregar campos. Verifique os campos digitados");
+            }
+
+            string retorno = usuarioNegocios.Inserir(usuario);
+
+            try
+            {
+                int idusuario = Convert.ToInt32(retorno);
+                MessageBox.Show("Usuário inserido com sucesso!");
+                UsuarioGetSet = usuarioNegocios.ConsultarPorId(idusuario);
+                AtualizarUsuario = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao inserir usuário. Mensagem: " + retorno);
+            }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            new Apresentacao.Presentation.Popup.transparentBg(new Apresentacao.Presentation.Popup.SearchDialogs.SearchDialog_FuncionarioUsuario());
+        }
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            if (UsuarioGetSet != null)
+            {
+                UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
+                Usuario usuario = new Usuario();
+
+                usuario.Id_Usuario = Convert.ToInt32(lblIdUsuario.Text);
+                usuario.Funcionario = FuncionarioGetSet;
+                usuario.GrupoUsuario = GrupoUsuarioGetSet[cbxGrupo.SelectedIndex];
+                usuario.Nome_Usuario = tbxUsuario.Text;
+                usuario.Senha = TbxSenha.Text;
+                usuario.Email_Profissional = tbxEmail.Text;
+                usuario.Usuario_cad_alt = LoginNegocios.UsuarioLogadoGetSet;
+
+                string retorno = usuarioNegocios.AtualizarporId(usuario);
+                try
+                {
+                    int idusuario = Convert.ToInt32(retorno);
+                    UsuarioGetSet = usuarioNegocios.ConsultarPorId(idusuario);
+                    MessageBox.Show("Usuário atualizado com sucesso!");
+                    AtualizarUsuario = true;
+                    AtualizarFuncionario = true;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao atualizar usuário. Detalhes: " + retorno);
+                }
+            }
+        }
+        private void btnSearchUsuario_Click(object sender, EventArgs e)
+        {
+            new Popup.transparentBg(new Popup.SearchDialogs.SearchDialog_Usuario());
+        }
+
+
+        //Métodos Void
         private void CamposPessoa()
         {
-            tbxCPF.Text = PessoaGetSet.CPF;
+            tbxCPF.Text = FuncionarioGetSet.Pessoa.CPF;
             tbxCPF.Enabled = false;
-            tbxNome.Text = PessoaGetSet.Nome;
+            tbxNome.Text = FuncionarioGetSet.Pessoa.Nome;
             tbxNome.Enabled = false;
-            tbxSobrenome.Text = PessoaGetSet.Sobrenome;
+            tbxSobrenome.Text = FuncionarioGetSet.Pessoa.Sobrenome;
             tbxSobrenome.Enabled = false;
             lblIdFuncionário.Text = FuncionarioGetSet.Id_Funcionario.ToString();
         }
-
         private void CamposUsuario()
         {
             dtAdmissao.Value = FuncionarioGetSet.Data_Admissao;
-            tbxUsuario.Text = usuarioGetSet.Nome_Usuario;
-            tbxEmail.Text = usuarioGetSet.Email_Profissional;
-            
-            if (usuarioGetSet.Id_Usuario > 0)
+            tbxUsuario.Text = UsuarioGetSet.Nome_Usuario;
+            tbxEmail.Text = UsuarioGetSet.Email_Profissional;
+            TbxSenha.Text = "123456";
+            TbxSenha2.Text = "654321";
+            if (UsuarioGetSet.Id_Usuario > 0)
             {
                 GrupoUsuariosNegocios grupoUsuariosNegocios = new GrupoUsuariosNegocios();
-                GrupoUsuarioColecao grupoUsuarioColecao = grupoUsuariosNegocios.ConsultarPorId(usuarioGetSet.GrupoUsuario.Id_Grupo);
+                GrupoUsuarioColecao grupoUsuarioColecao = grupoUsuariosNegocios.ConsultarPorId(UsuarioGetSet.GrupoUsuario.Id_Grupo);
                 try
                 {
                     cbxGrupo.DataSource = null;
@@ -72,7 +143,7 @@ namespace Apresentacao.Presentation.Pages
                     cbxGrupo.DisplayMember = "NOME";
                     cbxGrupo.SelectedIndex = 0;
                     cbxGrupo.DropDownStyle = ComboBoxStyle.DropDownList;
-                    lblIdUsuario.Text = usuarioGetSet.Id_Usuario.ToString();
+                    lblIdUsuario.Text = UsuarioGetSet.Id_Usuario.ToString();
                     btnSearchUsuario.Visible = false;
                     lblBuscarUsuario.Visible = false;
                 }
@@ -82,107 +153,91 @@ namespace Apresentacao.Presentation.Pages
                 }
             } 
         }
-
-        private void AdicionarEditarUsuario_Load(object sender, EventArgs e)
+        private void LimpaCamposUsuario()
         {
-            
+            UsuarioGetSet = new Usuario();
+            CarregaComboBox();
+            tbxEmail.Text = "";
+            tbxUsuario.Text = "";
+            TbxSenha.Text = "";
+            lblIdUsuario.Text = "";
+            dtCadastro.Value = DateTime.Now;
+            dtAdmissao.Value = DateTime.Now;
+            btnAtualizar.Enabled = false;
+            btnSalvar.Enabled = true;
+            BtnExcluir.Enabled = false;
         }
+        private void LimpaCamposFuncionario()
+        {
+            FuncionarioGetSet = new Funcionario();
+            tbxNome.Text = "";
+            tbxSobrenome.Text = "";
+            tbxCPF.Text = "";
+            lblIdFuncionário.Text = "";
+        }
+        private void CarregaComboBox()
+        {
+            GrupoUsuariosNegocios grupoUsuariosNegocios = new GrupoUsuariosNegocios();
 
+            string txt = "";
+            GrupoUsuarioGetSet = grupoUsuariosNegocios.ConsultarPorNome(txt);
+
+            cbxGrupo.DataSource = null;
+            cbxGrupo.DataSource = GrupoUsuarioGetSet;
+            cbxGrupo.ValueMember = "ID_GRUPO";
+            cbxGrupo.DisplayMember = "NOME";
+        }
         private void LimparCamposTela()
         {
-            funcionarioGetSet = new Funcionario();
+            FuncionarioGetSet = new Funcionario();
+            tbxNome.Text = "";
+            tbxSobrenome.Text = "";
+            tbxCPF.Text = "";
+            lblIdFuncionário.Text = "";
+
             UsuarioGetSet = new Usuario();
-        }
-
-        private void AddEditMember_Resize(object sender, EventArgs e)
-        {
-            container.Left = this.Width / 2 - container.Width / 2;
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            new Apresentacao.Presentation.Popup.transparentBg(new Apresentacao.Presentation.Popup.SearchDialogs.SearchDialog_FuncionarioUsuario());
+            CarregaComboBox();
+            tbxEmail.Text = "";
+            tbxUsuario.Text = "";
+            TbxSenha.Text = "";
+            dtCadastro.Value = DateTime.Now;
+            dtAdmissao.Value = DateTime.Now;
         }
 
         private void timerpreenche_Tick(object sender, EventArgs e)
         {
             if (AtualizarFuncionario == true)
             {
-                CamposPessoa();
-                btnAtualizar.Enabled = true;
-                btnSalvar.Enabled = false;
-                btnAtualizar.Enabled = true;
-                AtualizarFuncionario = false;
+                if (FuncionarioGetSet.Id_Funcionario > 0)
+                {
+                    CamposPessoa();
+                    btnAtualizar.Enabled = false;
+                    btnSalvar.Enabled = true;
+                    BtnExcluir.Enabled = false;
+                    AtualizarFuncionario = false;
+                    AtualizarUsuario = true;
+                }
+                else
+                {
+                    LimpaCamposFuncionario();
+                    LimpaCamposUsuario();
+                    AtualizarFuncionario = false;
+                    AtualizarUsuario = false;
+                }
+                
             }
             if (AtualizarUsuario == true)
             {
-                CamposUsuario();
-                btnAtualizar.Enabled = true;
-                btnSalvar.Enabled = false;
-                btnAtualizar.Enabled = true;
-                AtualizarUsuario = false;
-            }
-
-        }
-
-        private void CarregaComboBox()
-        {
-            GrupoUsuariosNegocios grupoUsuariosNegocios = new GrupoUsuariosNegocios();
-
-
-            string txt = "";
-            GrupoUsuarioColecao grupoColecao = grupoUsuariosNegocios.ConsultarPorNome(txt);
-
-
-            cbxGrupo.DataSource = null;
-            cbxGrupo.DataSource = grupoColecao;
-            cbxGrupo.ValueMember = "ID_GRUPO";
-            cbxGrupo.DisplayMember = "NOME";
-        }
-
-        private void btnSearchUsuario_Click(object sender, EventArgs e)
-        {
-            new Popup.transparentBg(new Popup.SearchDialogs.SearchDialog_Usuario());
-        }
-
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            LimparCamposTela();
-            CarregaComboBox();
-            lblBuscarUsuario.Visible = true;
-            btnSearchUsuario.Visible = true;
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            Usuario usuario = new Usuario();
-            GrupoUsuario grupoUsuario = new GrupoUsuario();
-            UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
-            if (int.TryParse(lblIdFuncionário.Text, out _))
-            {
-                usuario.Nome_Usuario = tbxUsuario.Text;
-                usuario.Funcionario.Id_Funcionario = Convert.ToInt32(lblIdFuncionário.Text);
-                usuario.Senha = txtSenha.Text;
-                usuario.GrupoUsuario.Id_Grupo = Convert.ToInt32(cbxGrupo.SelectedValue);
-                tbxEmail.Text = usuario.Email_Profissional;
-
-                string retorno = usuarioNegocios.Inserir(usuario);
-
-                try
+                if (UsuarioGetSet.Id_Usuario > 0)
                 {
-                    int msgretorno = Convert.ToInt32(retorno);
-                    MessageBox.Show("Usuário inserido com sucesso. Código: " + msgretorno.ToString());
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Erro ao inserir usuário. Mensagem: " + retorno);
+                    CamposUsuario();
+                    btnAtualizar.Enabled = true;
+                    BtnExcluir.Enabled = true;
+                    btnSalvar.Enabled = false;
+                    AtualizarUsuario = false;
                 }
             }
-            else
-            {
-                MessageBox.Show("Não foi selecionado um funcionário!");
-            }
-            
+
         }
 
         private void cbxGrupo_Click(object sender, EventArgs e)
@@ -190,9 +245,49 @@ namespace Apresentacao.Presentation.Pages
             CarregaComboBox();
         }
 
-        private void btnAtualizar_Click(object sender, EventArgs e)
+        private void TimerSenha_Tick(object sender, EventArgs e)
         {
+            if (TbxSenha.Text == "" && TbxSenha2.Text == "")
+            {
+                ImgNega.Visible = false;
+                ImgOk.Visible = false;
+            }
+            else if (TbxSenha.Text == TbxSenha2.Text)
+            {
+                ImgNega.Visible = false;
+                ImgOk.Visible = true;
+            }
+            else
+            {
+                ImgNega.Visible = true;
+                ImgOk.Visible = false;
+            }
+        }
 
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
+            DialogResult resultado = MessageBox.Show("Tem certeza?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.No)
+            {
+                return;
+            }
+            UsuarioGetSet.Usuario_cad_alt = LoginNegocios.UsuarioLogadoGetSet;
+            string retorno = usuarioNegocios.Excluir(UsuarioGetSet);
+
+            try
+            {
+                int idusuario = Convert.ToInt32(retorno);
+                MessageBox.Show("Cadastro excluído com sucesso!");
+                UsuarioGetSet = new Usuario();
+                FuncionarioGetSet = new Funcionario();
+                AtualizarFuncionario = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao excluir. Detalhes: " + retorno);
+            }
         }
     }
 }
