@@ -271,30 +271,37 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 Pessoa pessoa = new Pessoa();
                 PessoaNegocios pessoaNegocios = new PessoaNegocios();
                 Validadocs validadocs = new Validadocs();
+                try
+                {
+                    pessoa.Profissao = ProfissaoGetSet[cbxProfissao.SelectedIndex];
+                    pessoa.TipoDoc = TipoDocGetSet[cbxTipoDoc.SelectedIndex];
+                    pessoa.EstadoCivil = EstadoCivilGetSet[cbxEstadoCivil.SelectedIndex];
+                    pessoa.Nome = tbxNome.Text;
+                    pessoa.Sobrenome = tbxSobrenome.Text;
+                    pessoa.CPF = validadocs.SemFormatacao(tbxCPF.Text);
+                    pessoa.Doc = tbxNumDoc.Text;
+                    pessoa.Data_Nasc = dtnascimento.Value;
+                    pessoa.Email = tbxEmail.Text;
+                    pessoa.Pai = tbxPai.Text;
+                    pessoa.Mae = tbxMae.Text;
+                    if (ckboxfem.Checked == true)
+                    {
+                        pessoa.Sexo = 'F';
+                    }
+                    else if (ckboxmasc.Checked == true)
+                    {
+                        pessoa.Sexo = 'M';
+                    }
+                    else
+                    {
+                        MessageBox.Show("Há um erro na seleção do sexo, verifique!");
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao carregar campos. Verifique os campos digitados");
+                }
 
-                pessoa.Profissao = ProfissaoGetSet[cbxProfissao.SelectedIndex];
-                pessoa.TipoDoc = TipoDocGetSet[cbxTipoDoc.SelectedIndex];
-                pessoa.EstadoCivil = EstadoCivilGetSet[cbxEstadoCivil.SelectedIndex];
-                pessoa.Nome = tbxNome.Text;
-                pessoa.Sobrenome = tbxSobrenome.Text;
-                pessoa.CPF = validadocs.SemFormatacao(tbxCPF.Text);
-                pessoa.Doc = tbxNumDoc.Text;
-                pessoa.Data_Nasc = dtnascimento.Value;
-                pessoa.Email = tbxEmail.Text;
-                pessoa.Pai = tbxPai.Text;
-                pessoa.Mae = tbxMae.Text;
-                if (ckboxfem.Checked == true)
-                {
-                    pessoa.Sexo = 'F';
-                }
-                else if (ckboxmasc.Checked == true)
-                {
-                    pessoa.Sexo = 'M';
-                }
-                else
-                {
-                    MessageBox.Show("Há um erro na seleção do sexo, verifique!");
-                }
                 pessoa.Usuario = LoginNegocios.UsuarioLogadoGetSet;
 
                 string retorno = pessoaNegocios.Inserir(pessoa);

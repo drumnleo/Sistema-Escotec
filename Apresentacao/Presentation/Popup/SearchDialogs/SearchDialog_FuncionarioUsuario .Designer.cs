@@ -52,7 +52,6 @@
             this.lblpesquisa = new System.Windows.Forms.Label();
             this.PanelCenter = new System.Windows.Forms.Panel();
             this.dataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.verifica = new System.Windows.Forms.Timer(this.components);
             this.ID_FUNCIONARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +59,7 @@
             this.DATA_ADMISSAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HORA_ENTRADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HORA_SAIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.verifica = new System.Windows.Forms.Timer(this.components);
             this.PanelDown.SuspendLayout();
             this.PanelTop.SuspendLayout();
             this.PanelCenter.SuspendLayout();

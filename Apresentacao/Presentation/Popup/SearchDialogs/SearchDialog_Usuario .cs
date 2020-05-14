@@ -17,7 +17,10 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             InitializeComponent();
 
             dataGrid.AutoGenerateColumns = false;
-            btnSelecionar.Visible = false;
+            dataGrid.AllowUserToResizeColumns = false;
+            dataGrid.AllowUserToResizeRows = false;
+            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            btnSelecionar.Enabled = false;
         }
 
         private void SearchDialog_Shown(object sender, EventArgs e)
@@ -32,10 +35,14 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void atualizarcampos()
         {
-            UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
-            UsuarioEscolhido = usuarioNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value));
+            if (dataGrid.CurrentRow != null)
+            {
+                UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
+                UsuarioEscolhido = usuarioNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value));
 
-            btnSelecionar.Visible = true;
+                btnSelecionar.Enabled = true;
+            }
+                
         }
 
         private void btnpesquisar_Click(object sender, EventArgs e)
@@ -46,6 +53,10 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
             dataGrid.DataSource = null;
             dataGrid.DataSource = usuarioColecao;
+            dataGrid.AutoGenerateColumns = false;
+            dataGrid.AllowUserToResizeColumns = false;
+            dataGrid.AllowUserToResizeRows = false;
+            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGrid.Update();
             dataGrid.Refresh();
         }

@@ -70,6 +70,11 @@ namespace Negocios
                     GrupoUsuario grupoUsuario = new GrupoUsuario();
                     grupoUsuario.Id_Grupo = Convert.ToInt32(dataRow["ID_GRUPO_USUARIO"]);
                     grupoUsuario.Nome = Convert.ToString(dataRow["GRUPO_NOME"]);
+
+                    usuario.Funcionario = funcionario;
+                    usuario.Funcionario.Pessoa = pessoa;
+                    usuario.GrupoUsuario = grupoUsuario;
+
                     usuarioColecao.Add(usuario);
                 }
 
