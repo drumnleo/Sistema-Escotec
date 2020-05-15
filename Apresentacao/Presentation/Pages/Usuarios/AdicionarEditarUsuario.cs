@@ -76,15 +76,36 @@ namespace Apresentacao.Presentation.Pages
         {
             if (UsuarioGetSet != null)
             {
+
                 UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
                 Usuario usuario = new Usuario();
-
-                usuario.Id_Usuario = Convert.ToInt32(lblIdUsuario.Text);
-                usuario.Funcionario = FuncionarioGetSet;
-                usuario.GrupoUsuario = GrupoUsuarioGetSet[cbxGrupo.SelectedIndex];
-                usuario.Nome_Usuario = tbxUsuario.Text;
-                usuario.Senha = TbxSenha.Text;
-                usuario.Email_Profissional = tbxEmail.Text;
+                try
+                {
+                    usuario.Id_Usuario = Convert.ToInt32(lblIdUsuario.Text);
+                    usuario.Funcionario = FuncionarioGetSet;
+                    usuario.GrupoUsuario = GrupoUsuarioGetSet[cbxGrupo.SelectedIndex];
+                    usuario.Nome_Usuario = tbxUsuario.Text;
+                    if (ImgOk.Visible == true)
+                    {
+                        usuario.Senha = TbxSenha.Text;
+                    }
+                    else if (ImgNega.Visible == true)
+                    {
+                        throw new Exception("Erro ao inserir senha, verifique!");
+                        ;
+                    }
+                    else
+                    {
+                        usuario.Senha = "";
+                    }
+                    usuario.Email_Profissional = tbxEmail.Text;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao carregar campos ditados. Detalhes: " + ex.Message);
+                    goto skipend;
+                }
+                
                 usuario.Usuario_cad_alt = LoginNegocios.UsuarioLogadoGetSet;
 
                 string retorno = usuarioNegocios.AtualizarporId(usuario);
@@ -100,25 +121,36 @@ namespace Apresentacao.Presentation.Pages
                 {
                     MessageBox.Show("Erro ao atualizar usuário. Detalhes: " + retorno);
                 }
+
+            skipend:
+                return;
             }
         }
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
-            GrupoUsuario grupoUsuario = new GrupoUsuario();
+            _ = new GrupoUsuario();
             UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
             try
             {
                 usuario.Funcionario = FuncionarioGetSet;
                 usuario.GrupoUsuario = GrupoUsuarioGetSet[cbxGrupo.SelectedIndex];
                 usuario.Nome_Usuario = tbxUsuario.Text;
+                if (ImgOk.Visible == true)
+                {
+                    usuario.Senha = TbxSenha.Text;
+                }
+                else
+                {
+                    throw new Exception("Erro ao inserir senha, verifique!");
+                }
                 usuario.Senha = TbxSenha.Text;
                 usuario.Email_Profissional = tbxEmail.Text;
                 usuario.Usuario_cad_alt = LoginNegocios.UsuarioLogadoGetSet;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar campos. Verifique os campos digitados");
+                MessageBox.Show("Erro ao carregar campos ditados. Detalhes: " + ex.Message);
             }
 
             string retorno = usuarioNegocios.Inserir(usuario);
@@ -194,8 +226,8 @@ namespace Apresentacao.Presentation.Pages
             lblIdUsuario.Text = "";
             tbxEmail.Text = "";
             tbxUsuario.Text = "";
-            TbxSenha.Text = "123456";
-            TbxSenha2.Text = "654321";
+            TbxSenha.Text = "";
+            TbxSenha2.Text = "";
             dtCadastro.Value = DateTime.Now;
             dtAdmissao.Value = DateTime.Now;
         }
