@@ -21,25 +21,88 @@ namespace Apresentacao.Presentation.Pages
             InitializeComponent();
         }
 
+
+        //-----------     Variáveis e Instancias de Objetos---------------------
         public static Funcionario FuncionarioGetSet { get; set; }
         public static Usuario UsuarioGetSet { get; set; }
         public static GrupoUsuarioColecao GrupoUsuarioGetSet { get; set; }
         public static Boolean AtualizarUsuario = false;
         public static Boolean AtualizarFuncionario = false;
 
-        //Load
+
+        //---------------Load (Carrega ao iniciar formulário)-------------------
         private void AdicionarEditarUsuario_Load(object sender, EventArgs e)
         {
             CarregaComboBox();
+            btnAtualizar.Enabled = false;
+            btnSalvar.Enabled = false;
+            BtnExcluir.Enabled = false;
         }
 
-        //Metodos botões
-        private void btnNovo_Click(object sender, EventArgs e)
+
+        //------------------------Métodos botões--------------------------------
+        private void BtnNovo_Click(object sender, EventArgs e)
         {
             FuncionarioGetSet = new Funcionario();
+            UsuarioGetSet = new Usuario();
             AtualizarFuncionario = true;
         }
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
+            DialogResult resultado = MessageBox.Show("Tem certeza?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.No)
+            {
+                return;
+            }
+            UsuarioGetSet.Usuario_cad_alt = LoginNegocios.UsuarioLogadoGetSet;
+            string retorno = usuarioNegocios.Excluir(UsuarioGetSet);
+
+            try
+            {
+                int idusuario = Convert.ToInt32(retorno);
+                MessageBox.Show("Cadastro excluído com sucesso!");
+                UsuarioGetSet = new Usuario();
+                FuncionarioGetSet = new Funcionario();
+                AtualizarFuncionario = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao excluir. Detalhes: " + retorno);
+            }
+        }
+        private void BtnAtualizar_Click(object sender, EventArgs e)
+        {
+            if (UsuarioGetSet != null)
+            {
+                UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
+                Usuario usuario = new Usuario();
+
+                usuario.Id_Usuario = Convert.ToInt32(lblIdUsuario.Text);
+                usuario.Funcionario = FuncionarioGetSet;
+                usuario.GrupoUsuario = GrupoUsuarioGetSet[cbxGrupo.SelectedIndex];
+                usuario.Nome_Usuario = tbxUsuario.Text;
+                usuario.Senha = TbxSenha.Text;
+                usuario.Email_Profissional = tbxEmail.Text;
+                usuario.Usuario_cad_alt = LoginNegocios.UsuarioLogadoGetSet;
+
+                string retorno = usuarioNegocios.AtualizarporId(usuario);
+                try
+                {
+                    int idusuario = Convert.ToInt32(retorno);
+                    UsuarioGetSet = usuarioNegocios.ConsultarPorId(idusuario);
+                    MessageBox.Show("Usuário atualizado com sucesso!");
+                    AtualizarFuncionario = true;
+                    AtualizarUsuario = true;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao atualizar usuário. Detalhes: " + retorno);
+                }
+            }
+        }
+        private void BtnSalvar_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
             GrupoUsuario grupoUsuario = new GrupoUsuario();
@@ -72,48 +135,17 @@ namespace Apresentacao.Presentation.Pages
                 MessageBox.Show("Erro ao inserir usuário. Mensagem: " + retorno);
             }
         }
-
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void BtnSearchFuncionario_Click(object sender, EventArgs e)
         {
             new Apresentacao.Presentation.Popup.transparentBg(new Apresentacao.Presentation.Popup.SearchDialogs.SearchDialog_FuncionarioUsuario());
-        }
-        private void btnAtualizar_Click(object sender, EventArgs e)
-        {
-            if (UsuarioGetSet != null)
-            {
-                UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
-                Usuario usuario = new Usuario();
-
-                usuario.Id_Usuario = Convert.ToInt32(lblIdUsuario.Text);
-                usuario.Funcionario = FuncionarioGetSet;
-                usuario.GrupoUsuario = GrupoUsuarioGetSet[cbxGrupo.SelectedIndex];
-                usuario.Nome_Usuario = tbxUsuario.Text;
-                usuario.Senha = TbxSenha.Text;
-                usuario.Email_Profissional = tbxEmail.Text;
-                usuario.Usuario_cad_alt = LoginNegocios.UsuarioLogadoGetSet;
-
-                string retorno = usuarioNegocios.AtualizarporId(usuario);
-                try
-                {
-                    int idusuario = Convert.ToInt32(retorno);
-                    UsuarioGetSet = usuarioNegocios.ConsultarPorId(idusuario);
-                    MessageBox.Show("Usuário atualizado com sucesso!");
-                    AtualizarUsuario = true;
-                    AtualizarFuncionario = true;
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Erro ao atualizar usuário. Detalhes: " + retorno);
-                }
-            }
-        }
-        private void btnSearchUsuario_Click(object sender, EventArgs e)
+        }    
+        private void BtnSearchUsuario_Click(object sender, EventArgs e)
         {
             new Popup.transparentBg(new Popup.SearchDialogs.SearchDialog_Usuario());
         }
 
 
-        //Métodos Void
+        //-------------------------Métodos Void----------------------------------
         private void CamposPessoa()
         {
             tbxCPF.Text = FuncionarioGetSet.Pessoa.CPF;
@@ -144,8 +176,6 @@ namespace Apresentacao.Presentation.Pages
                     cbxGrupo.SelectedIndex = 0;
                     cbxGrupo.DropDownStyle = ComboBoxStyle.DropDownList;
                     lblIdUsuario.Text = UsuarioGetSet.Id_Usuario.ToString();
-                    btnSearchUsuario.Visible = false;
-                    lblBuscarUsuario.Visible = false;
                 }
                 catch (Exception ex)
                 {
@@ -153,27 +183,21 @@ namespace Apresentacao.Presentation.Pages
                 }
             } 
         }
-        private void LimpaCamposUsuario()
+        private void LimparCamposTela()
         {
-            UsuarioGetSet = new Usuario();
-            CarregaComboBox();
-            tbxEmail.Text = "";
-            tbxUsuario.Text = "";
-            TbxSenha.Text = "";
-            lblIdUsuario.Text = "";
-            dtCadastro.Value = DateTime.Now;
-            dtAdmissao.Value = DateTime.Now;
-            btnAtualizar.Enabled = false;
-            btnSalvar.Enabled = true;
-            BtnExcluir.Enabled = false;
-        }
-        private void LimpaCamposFuncionario()
-        {
-            FuncionarioGetSet = new Funcionario();
             tbxNome.Text = "";
             tbxSobrenome.Text = "";
             tbxCPF.Text = "";
             lblIdFuncionário.Text = "";
+
+            CarregaComboBox();
+            lblIdUsuario.Text = "";
+            tbxEmail.Text = "";
+            tbxUsuario.Text = "";
+            TbxSenha.Text = "123456";
+            TbxSenha2.Text = "654321";
+            dtCadastro.Value = DateTime.Now;
+            dtAdmissao.Value = DateTime.Now;
         }
         private void CarregaComboBox()
         {
@@ -187,29 +211,23 @@ namespace Apresentacao.Presentation.Pages
             cbxGrupo.ValueMember = "ID_GRUPO";
             cbxGrupo.DisplayMember = "NOME";
         }
-        private void LimparCamposTela()
-        {
-            FuncionarioGetSet = new Funcionario();
-            tbxNome.Text = "";
-            tbxSobrenome.Text = "";
-            tbxCPF.Text = "";
-            lblIdFuncionário.Text = "";
 
-            UsuarioGetSet = new Usuario();
+
+        //----------------------Metodos Componentes-----------------------------
+        private void CbxGrupo_Click(object sender, EventArgs e)
+        {
             CarregaComboBox();
-            tbxEmail.Text = "";
-            tbxUsuario.Text = "";
-            TbxSenha.Text = "";
-            dtCadastro.Value = DateTime.Now;
-            dtAdmissao.Value = DateTime.Now;
         }
 
-        private void timerpreenche_Tick(object sender, EventArgs e)
+
+        //---------------------------Timers-------------------------------------
+        private void Timerpreenche_Tick(object sender, EventArgs e)
         {
             if (AtualizarFuncionario == true)
             {
                 if (FuncionarioGetSet.Id_Funcionario > 0)
                 {
+                    LimparCamposTela();
                     CamposPessoa();
                     btnAtualizar.Enabled = false;
                     btnSalvar.Enabled = true;
@@ -219,8 +237,8 @@ namespace Apresentacao.Presentation.Pages
                 }
                 else
                 {
-                    LimpaCamposFuncionario();
-                    LimpaCamposUsuario();
+                    LimparCamposTela();
+                    btnSalvar.Enabled = false;
                     AtualizarFuncionario = false;
                     AtualizarUsuario = false;
                 }
@@ -237,14 +255,7 @@ namespace Apresentacao.Presentation.Pages
                     AtualizarUsuario = false;
                 }
             }
-
         }
-
-        private void cbxGrupo_Click(object sender, EventArgs e)
-        {
-            CarregaComboBox();
-        }
-
         private void TimerSenha_Tick(object sender, EventArgs e)
         {
             if (TbxSenha.Text == "" && TbxSenha2.Text == "")
@@ -264,30 +275,6 @@ namespace Apresentacao.Presentation.Pages
             }
         }
 
-        private void BtnExcluir_Click(object sender, EventArgs e)
-        {
-            UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
-            DialogResult resultado = MessageBox.Show("Tem certeza?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (resultado == DialogResult.No)
-            {
-                return;
-            }
-            UsuarioGetSet.Usuario_cad_alt = LoginNegocios.UsuarioLogadoGetSet;
-            string retorno = usuarioNegocios.Excluir(UsuarioGetSet);
-
-            try
-            {
-                int idusuario = Convert.ToInt32(retorno);
-                MessageBox.Show("Cadastro excluído com sucesso!");
-                UsuarioGetSet = new Usuario();
-                FuncionarioGetSet = new Funcionario();
-                AtualizarFuncionario = true;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Erro ao excluir. Detalhes: " + retorno);
-            }
-        }
+        
     }
 }
