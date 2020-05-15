@@ -36,13 +36,12 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
@@ -75,7 +74,6 @@
             this.btnpesquisar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.tbxSearch = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.PanelDown = new System.Windows.Forms.Panel();
-            this.btnExcluir = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnAtualizar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.ckboxfem = new Bunifu.Framework.UI.BunifuCheckbox();
             this.ckboxmasc = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -274,7 +272,6 @@
             // 
             // PanelDown
             // 
-            this.PanelDown.Controls.Add(this.btnExcluir);
             this.PanelDown.Controls.Add(this.btnAtualizar);
             this.PanelDown.Controls.Add(this.ckboxfem);
             this.PanelDown.Controls.Add(this.ckboxmasc);
@@ -313,76 +310,6 @@
             this.PanelDown.Size = new System.Drawing.Size(722, 331);
             this.PanelDown.TabIndex = 2;
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.AllowToggling = false;
-            this.btnExcluir.AnimationSpeed = 220;
-            this.btnExcluir.AutoGenerateColors = false;
-            this.btnExcluir.BackColor = System.Drawing.Color.Transparent;
-            this.btnExcluir.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExcluir.BackgroundImage")));
-            this.btnExcluir.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnExcluir.ButtonText = "Excluir";
-            this.btnExcluir.ButtonTextMarginLeft = 0;
-            this.btnExcluir.ColorContrastOnClick = 45;
-            this.btnExcluir.ColorContrastOnHover = 45;
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnExcluir.CustomizableEdges = borderEdges3;
-            this.btnExcluir.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnExcluir.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.btnExcluir.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnExcluir.DisabledForecolor = System.Drawing.Color.White;
-            this.btnExcluir.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnExcluir.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.IconMarginLeft = 11;
-            this.btnExcluir.IconPadding = 10;
-            this.btnExcluir.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnExcluir.IdleBorderRadius = 30;
-            this.btnExcluir.IdleBorderThickness = 1;
-            this.btnExcluir.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnExcluir.IdleIconLeftImage = null;
-            this.btnExcluir.IdleIconRightImage = null;
-            this.btnExcluir.IndicateFocus = true;
-            this.btnExcluir.Location = new System.Drawing.Point(553, 291);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.onHoverState.BorderColor = System.Drawing.Color.Blue;
-            this.btnExcluir.onHoverState.BorderRadius = 30;
-            this.btnExcluir.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnExcluir.onHoverState.BorderThickness = 1;
-            this.btnExcluir.onHoverState.FillColor = System.Drawing.Color.Blue;
-            this.btnExcluir.onHoverState.ForeColor = System.Drawing.Color.Empty;
-            this.btnExcluir.onHoverState.IconLeftImage = null;
-            this.btnExcluir.onHoverState.IconRightImage = null;
-            this.btnExcluir.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnExcluir.OnIdleState.BorderRadius = 30;
-            this.btnExcluir.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnExcluir.OnIdleState.BorderThickness = 1;
-            this.btnExcluir.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnExcluir.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.OnIdleState.IconLeftImage = null;
-            this.btnExcluir.OnIdleState.IconRightImage = null;
-            this.btnExcluir.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnExcluir.OnPressedState.BorderRadius = 30;
-            this.btnExcluir.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnExcluir.OnPressedState.BorderThickness = 1;
-            this.btnExcluir.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnExcluir.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.OnPressedState.IconLeftImage = null;
-            this.btnExcluir.OnPressedState.IconRightImage = null;
-            this.btnExcluir.Size = new System.Drawing.Size(127, 35);
-            this.btnExcluir.TabIndex = 73;
-            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnExcluir.TextMarginLeft = 0;
-            this.btnExcluir.UseDefaultRadiusAndThickness = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
             // btnAtualizar
             // 
             this.btnAtualizar.AllowToggling = false;
@@ -397,11 +324,11 @@
             this.btnAtualizar.ColorContrastOnClick = 45;
             this.btnAtualizar.ColorContrastOnHover = 45;
             this.btnAtualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnAtualizar.CustomizableEdges = borderEdges4;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnAtualizar.CustomizableEdges = borderEdges3;
             this.btnAtualizar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAtualizar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
             this.btnAtualizar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -420,7 +347,7 @@
             this.btnAtualizar.IdleIconLeftImage = null;
             this.btnAtualizar.IdleIconRightImage = null;
             this.btnAtualizar.IndicateFocus = true;
-            this.btnAtualizar.Location = new System.Drawing.Point(267, 291);
+            this.btnAtualizar.Location = new System.Drawing.Point(409, 291);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.onHoverState.BorderColor = System.Drawing.Color.Blue;
             this.btnAtualizar.onHoverState.BorderRadius = 30;
@@ -589,11 +516,11 @@
             this.btnSelecionar.ColorContrastOnClick = 45;
             this.btnSelecionar.ColorContrastOnHover = 45;
             this.btnSelecionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.btnSelecionar.CustomizableEdges = borderEdges5;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnSelecionar.CustomizableEdges = borderEdges4;
             this.btnSelecionar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSelecionar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
             this.btnSelecionar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -612,7 +539,7 @@
             this.btnSelecionar.IdleIconLeftImage = null;
             this.btnSelecionar.IdleIconRightImage = null;
             this.btnSelecionar.IndicateFocus = true;
-            this.btnSelecionar.Location = new System.Drawing.Point(124, 291);
+            this.btnSelecionar.Location = new System.Drawing.Point(266, 291);
             this.btnSelecionar.Name = "btnSelecionar";
             this.btnSelecionar.onHoverState.BorderColor = System.Drawing.Color.Blue;
             this.btnSelecionar.onHoverState.BorderRadius = 30;
@@ -659,11 +586,11 @@
             this.btnNovo.ColorContrastOnClick = 45;
             this.btnNovo.ColorContrastOnHover = 45;
             this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.btnNovo.CustomizableEdges = borderEdges6;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btnNovo.CustomizableEdges = borderEdges5;
             this.btnNovo.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnNovo.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
             this.btnNovo.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -682,7 +609,7 @@
             this.btnNovo.IdleIconLeftImage = null;
             this.btnNovo.IdleIconRightImage = null;
             this.btnNovo.IndicateFocus = true;
-            this.btnNovo.Location = new System.Drawing.Point(410, 291);
+            this.btnNovo.Location = new System.Drawing.Point(552, 291);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.onHoverState.BorderColor = System.Drawing.Color.Blue;
             this.btnNovo.onHoverState.BorderRadius = 30;
@@ -1558,7 +1485,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid.ColumnHeadersHeight = 40;
-            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Nome,
@@ -1722,7 +1648,6 @@
         private Bunifu.Framework.UI.BunifuCheckbox ckboxmasc;
         private Bunifu.Framework.UI.BunifuCheckbox ckboxfem;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAtualizar;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnExcluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sobrenome;
