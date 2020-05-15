@@ -23,8 +23,11 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         public SearchDialog_Funcionario()
         {
             InitializeComponent();
-
             dataGrid.AutoGenerateColumns = false;
+            dataGrid.AllowUserToResizeColumns = false;
+            dataGrid.AllowUserToResizeRows = false;
+            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+
             btnSelecionar.Visible = false;
         }
 
@@ -55,6 +58,9 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
             dataGrid.DataSource = null;
             dataGrid.DataSource = funcionarioColecao;
+            dataGrid.AllowUserToResizeColumns = false;
+            dataGrid.AllowUserToResizeRows = false;
+            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGrid.Update();
             dataGrid.Refresh();
         }

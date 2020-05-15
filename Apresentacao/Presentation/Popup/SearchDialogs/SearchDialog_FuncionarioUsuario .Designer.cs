@@ -52,6 +52,7 @@
             this.lblpesquisa = new System.Windows.Forms.Label();
             this.PanelCenter = new System.Windows.Forms.Panel();
             this.dataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.verifica = new System.Windows.Forms.Timer(this.components);
             this.ID_FUNCIONARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +60,6 @@
             this.DATA_ADMISSAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HORA_ENTRADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HORA_SAIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.verifica = new System.Windows.Forms.Timer(this.components);
             this.PanelDown.SuspendLayout();
             this.PanelTop.SuspendLayout();
             this.PanelCenter.SuspendLayout();
@@ -402,14 +402,17 @@
             this.dataGrid.AllowCustomTheming = false;
             this.dataGrid.AllowUserToAddRows = false;
             this.dataGrid.AllowUserToDeleteRows = false;
+            this.dataGrid.AllowUserToResizeColumns = false;
+            this.dataGrid.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid.BackgroundColor = System.Drawing.Color.White;
-            this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
@@ -460,11 +463,16 @@
             this.dataGrid.HeaderBgColor = System.Drawing.Color.Empty;
             this.dataGrid.HeaderForeColor = System.Drawing.Color.White;
             this.dataGrid.Location = new System.Drawing.Point(0, 0);
+            this.dataGrid.MultiSelect = false;
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.ReadOnly = true;
+            this.dataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGrid.RowHeadersVisible = false;
+            this.dataGrid.RowHeadersWidth = 35;
+            this.dataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGrid.RowTemplate.Height = 40;
             this.dataGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrid.Size = new System.Drawing.Size(847, 434);
             this.dataGrid.TabIndex = 0;
@@ -480,6 +488,7 @@
             this.ID_FUNCIONARIO.HeaderText = "ID";
             this.ID_FUNCIONARIO.Name = "ID_FUNCIONARIO";
             this.ID_FUNCIONARIO.ReadOnly = true;
+            this.ID_FUNCIONARIO.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ID_FUNCIONARIO.Width = 50;
             // 
             // Nome
@@ -490,6 +499,7 @@
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
+            this.Nome.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Nome.Width = 150;
             // 
             // Sobrenome
@@ -500,6 +510,7 @@
             this.Sobrenome.HeaderText = "Sobrenome";
             this.Sobrenome.Name = "Sobrenome";
             this.Sobrenome.ReadOnly = true;
+            this.Sobrenome.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Sobrenome.Width = 200;
             // 
             // CPF
@@ -510,6 +521,7 @@
             this.CPF.HeaderText = "CPF";
             this.CPF.Name = "CPF";
             this.CPF.ReadOnly = true;
+            this.CPF.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // DATA_ADMISSAO
             // 
@@ -519,6 +531,7 @@
             this.DATA_ADMISSAO.HeaderText = "Data Admissão";
             this.DATA_ADMISSAO.Name = "DATA_ADMISSAO";
             this.DATA_ADMISSAO.ReadOnly = true;
+            this.DATA_ADMISSAO.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.DATA_ADMISSAO.Width = 160;
             // 
             // HORA_ENTRADA
@@ -532,6 +545,7 @@
             this.HORA_ENTRADA.HeaderText = "Entrada";
             this.HORA_ENTRADA.Name = "HORA_ENTRADA";
             this.HORA_ENTRADA.ReadOnly = true;
+            this.HORA_ENTRADA.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.HORA_ENTRADA.Width = 90;
             // 
             // HORA_SAIDA
@@ -545,6 +559,7 @@
             this.HORA_SAIDA.HeaderText = "Saida";
             this.HORA_SAIDA.Name = "HORA_SAIDA";
             this.HORA_SAIDA.ReadOnly = true;
+            this.HORA_SAIDA.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.HORA_SAIDA.Width = 90;
             // 
             // SearchDialog_FuncionarioUsuario
