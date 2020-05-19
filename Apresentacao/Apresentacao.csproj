@@ -232,6 +232,18 @@
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Atendimento .Designer.cs">
       <DependentUpon>SearchDialog_Atendimento .cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Orcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Orcamento.Designer.cs">
+      <DependentUpon>SearchDialog_Orcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_TurmaOrcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_TurmaOrcamento.Designer.cs">
+      <DependentUpon>SearchDialog_TurmaOrcamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Pessoa_Atendimento .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +336,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Atendimento .resx">
       <DependentUpon>SearchDialog_Atendimento .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Orcamento.resx">
+      <DependentUpon>SearchDialog_Orcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_TurmaOrcamento.resx">
+      <DependentUpon>SearchDialog_TurmaOrcamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Pessoa_Atendimento .resx">
       <DependentUpon>SearchDialog_Pessoa_Atendimento .cs</DependentUpon>

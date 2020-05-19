@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using Negocios;
 using ObjetoTransferencia;
 
@@ -19,7 +20,13 @@ namespace Apresentacao
             InitializeComponent();
         }
 
-        private void Login()
+        public static FormWindowState EstadoForm { get; set; }
+        public static Boolean Taskbar { get; set; }
+        public static Boolean TrocaEstado { get; set; } = false;
+        FrmMenu frmMenu = null;
+        
+
+        public void Login()
         {
             LoginNegocios loginNegocios = new LoginNegocios();
 
@@ -28,19 +35,21 @@ namespace Apresentacao
             try
             {
                 int retorno = int.Parse(login);
-
                 Usuario usuario = new Usuario();
                 usuario.Id_Usuario = retorno;
                 usuario.Senha = txtSenha.Text;
                 LoginNegocios.UsuarioLogadoGetSet = usuario;
 
-                FrmMenu frmMenu = new FrmMenu();
+                frmMenu = new FrmMenu();
                 frmMenu.Show();
-
-                this.WindowState = FormWindowState.Minimized;
-                this.ShowInTaskbar = false;
-            }
-            catch(Exception ex)
+                this.Hide();
+                //EstadoForm = FormWindowState.Minimized;
+                //this.WindowState = EstadoForm;
+                //Taskbar = false;
+                //this.ShowInTaskbar = Taskbar;
+                TrocaEstado = false;
+        }
+            catch(Exception)
             {
                 MessageBox.Show("Erro ao fazer login. Detalhes: " + login, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -48,7 +57,10 @@ namespace Apresentacao
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
+            txtSenha.Focus();
+            txtSenha.Select();
             Login();
+            
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -56,19 +68,17 @@ namespace Apresentacao
             Application.Exit();
         }
 
-        private void txtSenha_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                this.Cursor = Cursors.WaitCursor;
-                Login();    
-            }
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Stop();
-            this.Close();
+            if (TrocaEstado == true)
+            {
+                txtSenha.Text = "";
+                txtLogin.Text = "";
+                
+                this.Show();
+                frmMenu.Close();
+                TrocaEstado = false;
+            }
         }
     }
 }

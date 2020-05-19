@@ -99,14 +99,16 @@ namespace Apresentacao
 
         private void FrmMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (FrmLogin_flat.TrocaEstado == false)
+            {
+                Application.Exit();
+            }
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-
-            FrmLogin_flat.ActiveForm.WindowState = FormWindowState.Maximized;
-            this.Close();
+            FrmLogin_flat.TrocaEstado = true;
+            this.Hide();
         }
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)

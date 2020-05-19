@@ -234,10 +234,10 @@
             this.txtSenha.TabIndex = 3;
             this.txtSenha.Text = "Usuário";
             this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtSenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyUp);
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FrmLogin_flat
