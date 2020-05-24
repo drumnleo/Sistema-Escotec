@@ -4,18 +4,34 @@ using ObjetoTransferencia;
 using Negocios;
 using System.Reflection;
 using Microsoft.Reporting.WinForms;
+using System.Drawing;
 
 namespace Apresentacao.Presentation.Pages
 {
     public partial class ConsultaMatricula : UserControl
     {
         MatriculaColecao matriculasBuscadas = new MatriculaColecao();
-        ReportDataSource rs = new ReportDataSource(); 
+        ReportDataSource rs = new ReportDataSource();
+        int busca = 0;
         public ConsultaMatricula()
         {
             if (Program.IsInDesignMode()) return;
             InitializeComponent();
             dataGrid.AutoGenerateColumns = false;
+            dataGrid.RowsDefaultCellStyle.Font = new Font("Segoe UI Semibold", 10F, GraphicsUnit.Pixel);
+            dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 10F, GraphicsUnit.Pixel);
+            dataGrid.RowTemplate.Height = 30;
+            dataGrid.ColumnHeadersHeight = 30;
+            dataGrid.AllowUserToResizeColumns = false;
+            dataGrid.AllowUserToResizeRows = false;
+            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+
+            PanelNome.Visible = true;
+            PanelCpf.Visible = false;
+            PanelData.Visible = false;
+            PanelTurma.Visible = false;
+            PanelUsuario.Visible = false;
+            CbxBusca.SelectedIndex = 0;
         }
         private void cbxUsuario_Click(object sender, EventArgs e)
         {
@@ -23,72 +39,71 @@ namespace Apresentacao.Presentation.Pages
         }
         private void cbxCurso_Click(object sender, EventArgs e)
         {
-            Carregacbxcurso();
+            Carregacbxturma();
         }
         private void carregacbxusuario()
         {
             UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
             UsuarioColecao usuarioColecao = usuarioNegocios.ConsultarPorNome("");
 
-            cbxUsuario.DataSource = null;
-            cbxUsuario.DataSource = usuarioColecao;
-            cbxUsuario.ValueMember = "Id_Usuario";
-            cbxUsuario.DisplayMember = "Nome_Usuario";
+            CbxUsuario.DataSource = null;
+            CbxUsuario.DataSource = usuarioColecao;
+            CbxUsuario.ValueMember = "Id_Usuario";
+            CbxUsuario.DisplayMember = "Nome_Usuario";
         }
-        private void Carregacbxcurso()
+        private void Carregacbxturma()
         {
-            CursoNegocios cursoNegocios = new CursoNegocios();
-            CursoColecao cursoColecao = cursoNegocios.ConsultarPorNome("");
+            TurmaNegocios turmaNegocios = new TurmaNegocios();
+            TurmaColecao turmaColecao = turmaNegocios.ConsultarPorNome("");
 
-            cbxCurso.DataSource = null;
-            cbxCurso.DataSource = cursoColecao;
-            cbxCurso.ValueMember = "Id_Curso";
-            cbxCurso.DisplayMember = "Nome";
-        }
-        private void timerpreenche_Tick(object sender, EventArgs e)
-        {
-            if (rd01.Checked)
-            {
-                cbxCurso.Enabled = false;
-                cbxUsuario.Enabled = false;
-                dtInicio.Enabled = true;
-                dtFim.Enabled = true;
-            }
-            else if (rd02.Checked)
-            {
-                cbxCurso.Enabled = false;
-                cbxUsuario.Enabled = true;
-                dtInicio.Enabled = false;
-                dtFim.Enabled = false;
-            }
-            else if (rd03.Checked)
-            {
-                cbxCurso.Enabled = true;
-                cbxUsuario.Enabled = false;
-                dtInicio.Enabled = false;
-                dtFim.Enabled = false;
-            }
+            CbxTurma.DataSource = null;
+            CbxTurma.DataSource = turmaColecao;
+            CbxTurma.ValueMember = "Id_Turma";
+            CbxTurma.DisplayMember = "Nome_Turma";
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (rd01.Checked)
+            if (busca > -1)
             {
                 MatriculaNegocios matriculaNegocios = new MatriculaNegocios();
-                matriculasBuscadas = matriculaNegocios.ConsultarPorDatas(dtInicio.Value, dtFim.Value);
-
-                dataGrid.DataSource = null;
-                dataGrid.DataSource = matriculasBuscadas;
-
-                dataGrid.Update();
-                dataGrid.Refresh();
-            }
-            else if (rd02.Checked)
-            {
-                
-            }
-            else if (rd03.Checked)
-            {
-                
+                switch (busca)
+                {
+                    case 0:
+                        matriculasBuscadas = matriculaNegocios.ConsultarPorNomeAluno(TbxNome.Text, TbxSobrenome.Text);
+                        dataGrid.DataSource = null;
+                        dataGrid.DataSource = matriculasBuscadas;
+                        dataGrid.Update();
+                        dataGrid.Refresh();
+                        break;
+                    case 1:
+                        matriculasBuscadas = matriculaNegocios.ConsultarPorCpfAluno(TbxCpf.Text);
+                        dataGrid.DataSource = null;
+                        dataGrid.DataSource = matriculasBuscadas;
+                        dataGrid.Update();
+                        dataGrid.Refresh();
+                        break;
+                    case 2:
+                        matriculasBuscadas = matriculaNegocios.ConsultarPorDatas(DtInicio.Value, DtFim.Value);
+                        dataGrid.DataSource = null;
+                        dataGrid.DataSource = matriculasBuscadas;
+                        dataGrid.Update();
+                        dataGrid.Refresh();
+                        break;
+                    case 3:
+                        matriculasBuscadas = matriculaNegocios.ConsultarPorTurma(Convert.ToInt32(CbxTurma.SelectedValue));
+                        dataGrid.DataSource = null;
+                        dataGrid.DataSource = matriculasBuscadas;
+                        dataGrid.Update();
+                        dataGrid.Refresh();
+                        break;
+                    case 4:
+                        matriculasBuscadas = matriculaNegocios.ConsultarPorIdUsuario(Convert.ToInt32(CbxUsuario.SelectedValue));
+                        dataGrid.DataSource = null;
+                        dataGrid.DataSource = matriculasBuscadas;
+                        dataGrid.Update();
+                        dataGrid.Refresh();
+                        break;
+                }
             }
         }
         private string BindProperty(object property, string propertyName)
@@ -132,6 +147,56 @@ namespace Apresentacao.Presentation.Pages
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
             new Popup.transparentBg(new Popup.SearchDialogs.ReportMatriculacolecao(matriculasBuscadas));
+        }
+
+        private void CbxBusca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CbxBusca.SelectedIndex != -1)
+            {
+                switch (CbxBusca.SelectedIndex)
+                {
+                    case 0:
+                        PanelNome.Visible = true;
+                        PanelCpf.Visible = false;
+                        PanelData.Visible = false;
+                        PanelTurma.Visible = false;          
+                        PanelUsuario.Visible = false;
+                        busca = CbxBusca.SelectedIndex;
+                        break;
+                    case 1:
+                        PanelNome.Visible = false;
+                        PanelCpf.Visible = true;
+                        PanelData.Visible = false;
+                        PanelTurma.Visible = false;
+                        PanelUsuario.Visible = false;
+                        busca = CbxBusca.SelectedIndex;
+                        break;
+                    case 2:
+                        PanelNome.Visible = false;
+                        PanelCpf.Visible = false;
+                        PanelData.Visible = true;
+                        PanelTurma.Visible = false;
+                        PanelUsuario.Visible = false;
+                        busca = CbxBusca.SelectedIndex;
+                        break;
+                    case 3:
+                        PanelNome.Visible = false;
+                        PanelCpf.Visible = false;
+                        PanelData.Visible = false;
+                        PanelTurma.Visible = true;
+                        PanelUsuario.Visible = false;
+                        busca = CbxBusca.SelectedIndex;
+                        break;
+                    case 4:
+                        PanelNome.Visible = false;
+                        PanelCpf.Visible = false;
+                        PanelData.Visible = false;
+                        PanelTurma.Visible = false;
+                        PanelUsuario.Visible = true;
+                        busca = CbxBusca.SelectedIndex;
+                        break;
+                }
+            }
         }
     }
 

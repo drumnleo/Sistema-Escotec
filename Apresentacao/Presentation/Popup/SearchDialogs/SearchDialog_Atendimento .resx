@@ -147,11 +147,10 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tbxSobrenome.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAASUAAAAZCAYAAAB3qDgVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACQSURBVHhe7dQxDQMxAARB80fll2EERgDkZclNEHiLGema
-        A7ADIGet9Zlz/szMbm136CRpjH0A3LQ7dJIkSsB9ogSkiBKQIkpAiigBKaIEpIgSkCJKQIooASmiBKSI
-        EpAiSkCKKAEpogSkiBKQIkpAiigBKaIEpIgSkCJKQMpflJ7n+e7DzOzWdodOkgAqxngB7T9kb066iPEA
-        AAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAPIAAAAZCAYAAAAL63PlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB+SURBVHhe7dzBCcNAEATBC02hKfOzLQ6EQ9imCuaz//7u
+        AiL23td3t5mN23UyfkL+HYB57pOxkGEwIUOAkCFAyBAgZAgQMgQIGQKEDAFChgAhQ4CQIUDIECBkCBAy
+        BAgZAoQMAUKGACFDgJAhQMgQ8BeyL5pmM/d+0QQmW+sDp7jqtyUDm0cAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnpesquisar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -320,10 +319,10 @@
   </data>
   <data name="tbxNome.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAKMAAAAZCAYAAABdPZ6TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB+SURBVHhe7dIxDQMxAARB80fll2EERgDkZclNEHiLGema
-        q3dAylrrM+f8md3Y7u+kOMY+4Jbd30lRjNwlRjLESIYYyRAjGWIkQ4xkiJEMMZIhRjLESIYYyRAjGWIk
-        Q4xkiJEMMZIhRjLESIYYyfiL8Xme7z7Mbmz3d1KEgjFeVHOYaTJwckMAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAALcAAAAZCAYAAABzeL8BAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABzSURBVHhe7du7CcAwEAVBlabS1Ln8QWDcwjIDL7l40xuQ
+        tvee95ZZZPOk/cb9HKBinbTFTY64yRI3WeImS9xkiZsscZMlbrLETZa4yRI3WeImS9xkiZsscZMlbrLE
+        TZa4yRI3WeIm6xe373cr7ft+h54xLoZNBUkmA9+eAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnSair.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

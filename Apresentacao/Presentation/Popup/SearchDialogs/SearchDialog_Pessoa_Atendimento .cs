@@ -475,7 +475,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
             AdicionarEditarAtendimento.PessoaGetSet = pessoaescolhida;
-            AdicionarEditarAtendimento.AtualizaPessoa = true;
+            AdicionarEditarAtendimento.AtualizaAtendimento = true;
             this.Close();
         }
 

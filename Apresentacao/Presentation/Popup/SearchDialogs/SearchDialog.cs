@@ -40,7 +40,6 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             ckboxmasc.Checked = false;
             btnAtualizar.Enabled = false;
             btnSelecionar.Enabled = false;
-            btnExcluir.Enabled = false;
         }
 
         private void SearchDialog_Load(object sender, EventArgs e)
@@ -132,7 +131,6 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 btnAtualizar.Enabled = true;
                 btnNovo.Text = "Novo";
                 btnSelecionar.Enabled = true;
-                btnExcluir.Enabled = true;
                 pessoaescolhida = pessoaSelecionada;
             }
             
@@ -249,7 +247,6 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             btnAtualizar.Enabled = false;
             btnAtualizar.Text = "Atualizar";
             btnSelecionar.Enabled = false;
-            btnExcluir.Enabled = false;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -264,7 +261,6 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 btnNovo.Text = "Salvar";
                 btnAtualizar.Enabled = false;
                 btnSelecionar.Enabled = false;
-                btnExcluir.Enabled = false;
             }
             else if (btnNovo.Text == "Salvar")
             {

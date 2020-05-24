@@ -1231,7 +1231,7 @@
             this.tbxNome.AnimationSpeed = 220;
             this.tbxNome.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.tbxNome.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.tbxNome.BackColor = System.Drawing.Color.Transparent;
+            this.tbxNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tbxNome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tbxNome.BackgroundImage")));
             this.tbxNome.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
             this.tbxNome.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));

@@ -1,6 +1,6 @@
 ﻿namespace Apresentacao.Presentation.Popup.SearchDialogs
 {
-    partial class SearchDialog_Usuario
+    partial class SearchDialog_TurmaOrcamento
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchDialog_Usuario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchDialog_TurmaOrcamento));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
@@ -39,8 +39,9 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btnpesquisar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.tbxSearch = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
@@ -51,14 +52,14 @@
             this.lblpesquisa = new System.Windows.Forms.Label();
             this.PanelCenter = new System.Windows.Forms.Panel();
             this.dataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.Id_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email_Profissional = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data_Cadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.verifica = new System.Windows.Forms.Timer(this.components);
+            this.ID_ORCAMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_TURMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome_Turma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor_Entrada_Turma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor_Parcela_Demais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Validade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelDown.SuspendLayout();
             this.PanelTop.SuspendLayout();
             this.PanelCenter.SuspendLayout();
@@ -420,15 +421,15 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGrid.ColumnHeadersHeight = 40;
+            this.dataGrid.ColumnHeadersHeight = 35;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id_Usuario,
-            this.CPF,
-            this.Nome,
-            this.Sobrenome,
-            this.Nome_Usuario,
-            this.Email_Profissional,
-            this.Data_Cadastro});
+            this.ID_ORCAMENTO,
+            this.ID_TURMA,
+            this.Nome_Turma,
+            this.Valor_Entrada_Turma,
+            this.Valor_Parcela_Demais,
+            this.Validade,
+            this.Id_Usuario});
             this.dataGrid.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.dataGrid.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.dataGrid.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -447,14 +448,14 @@
             this.dataGrid.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGrid.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.dataGrid.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGrid.EnableHeadersVisualStyles = false;
             this.dataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
@@ -469,8 +470,8 @@
             this.dataGrid.RowHeadersVisible = false;
             this.dataGrid.RowHeadersWidth = 35;
             this.dataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGrid.RowTemplate.Height = 40;
-            this.dataGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.RowTemplate.Height = 35;
+            this.dataGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrid.Size = new System.Drawing.Size(847, 434);
@@ -479,79 +480,86 @@
             this.dataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellClick);
             this.dataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGrid_CellFormatting);
             // 
-            // Id_Usuario
+            // ID_ORCAMENTO
             // 
-            this.Id_Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Id_Usuario.DataPropertyName = "Id_Usuario";
-            this.Id_Usuario.FillWeight = 114.0973F;
-            this.Id_Usuario.HeaderText = "ID";
-            this.Id_Usuario.Name = "Id_Usuario";
-            this.Id_Usuario.ReadOnly = true;
-            this.Id_Usuario.Width = 40;
+            this.ID_ORCAMENTO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ID_ORCAMENTO.DataPropertyName = "Orcamento.Id_Orcamento";
+            this.ID_ORCAMENTO.FillWeight = 114.0973F;
+            this.ID_ORCAMENTO.HeaderText = "Id Orç.";
+            this.ID_ORCAMENTO.Name = "ID_ORCAMENTO";
+            this.ID_ORCAMENTO.ReadOnly = true;
+            this.ID_ORCAMENTO.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID_ORCAMENTO.Width = 70;
             // 
-            // CPF
+            // ID_TURMA
             // 
-            this.CPF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CPF.DataPropertyName = "Funcionario.Id_Funcionario";
-            this.CPF.FillWeight = 97.82865F;
-            this.CPF.HeaderText = "Func.";
-            this.CPF.Name = "CPF";
-            this.CPF.ReadOnly = true;
-            this.CPF.Width = 60;
+            this.ID_TURMA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ID_TURMA.DataPropertyName = "Turma.Id_Turma";
+            this.ID_TURMA.FillWeight = 97.82865F;
+            this.ID_TURMA.HeaderText = "Id Turma";
+            this.ID_TURMA.Name = "ID_TURMA";
+            this.ID_TURMA.ReadOnly = true;
+            this.ID_TURMA.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID_TURMA.Width = 80;
             // 
-            // Nome
+            // Nome_Turma
             // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Nome.DataPropertyName = "Funcionario.Pessoa.Nome";
-            this.Nome.FillWeight = 125.8577F;
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 120;
+            this.Nome_Turma.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Nome_Turma.DataPropertyName = "Turma.Nome_Turma";
+            this.Nome_Turma.FillWeight = 125.8577F;
+            this.Nome_Turma.HeaderText = "Turma";
+            this.Nome_Turma.Name = "Nome_Turma";
+            this.Nome_Turma.ReadOnly = true;
+            this.Nome_Turma.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Nome_Turma.Width = 200;
             // 
-            // Sobrenome
+            // Valor_Entrada_Turma
             // 
-            this.Sobrenome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Sobrenome.DataPropertyName = "Funcionario.Pessoa.Sobrenome";
-            this.Sobrenome.FillWeight = 142.6992F;
-            this.Sobrenome.HeaderText = "Sobrenome";
-            this.Sobrenome.Name = "Sobrenome";
-            this.Sobrenome.ReadOnly = true;
-            this.Sobrenome.Width = 160;
+            this.Valor_Entrada_Turma.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Valor_Entrada_Turma.DataPropertyName = "Valor_Entrada_Turma";
+            this.Valor_Entrada_Turma.FillWeight = 142.6992F;
+            this.Valor_Entrada_Turma.HeaderText = "Valor Ent.";
+            this.Valor_Entrada_Turma.Name = "Valor_Entrada_Turma";
+            this.Valor_Entrada_Turma.ReadOnly = true;
+            this.Valor_Entrada_Turma.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Valor_Entrada_Turma.Width = 120;
             // 
-            // Nome_Usuario
+            // Valor_Parcela_Demais
             // 
-            this.Nome_Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Nome_Usuario.DataPropertyName = "Nome_Usuario";
-            this.Nome_Usuario.FillWeight = 73.09843F;
-            this.Nome_Usuario.HeaderText = "Nome Usuário";
-            this.Nome_Usuario.Name = "Nome_Usuario";
-            this.Nome_Usuario.ReadOnly = true;
-            this.Nome_Usuario.Width = 130;
+            this.Valor_Parcela_Demais.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Valor_Parcela_Demais.DataPropertyName = "Valor_Parcela_Demais";
+            this.Valor_Parcela_Demais.FillWeight = 73.09843F;
+            this.Valor_Parcela_Demais.HeaderText = "Valor Demais";
+            this.Valor_Parcela_Demais.Name = "Valor_Parcela_Demais";
+            this.Valor_Parcela_Demais.ReadOnly = true;
+            this.Valor_Parcela_Demais.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Valor_Parcela_Demais.Width = 120;
             // 
-            // Email_Profissional
+            // Validade
             // 
-            this.Email_Profissional.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Email_Profissional.DataPropertyName = "Email_Profissional";
-            this.Email_Profissional.FillWeight = 97.82865F;
-            this.Email_Profissional.HeaderText = "Email";
-            this.Email_Profissional.Name = "Email_Profissional";
-            this.Email_Profissional.ReadOnly = true;
-            // 
-            // Data_Cadastro
-            // 
-            this.Data_Cadastro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Data_Cadastro.DataPropertyName = "Data_Cadastro";
+            this.Validade.DataPropertyName = "Orcamento.Validade_Orcamento";
             dataGridViewCellStyle3.Format = "d";
             dataGridViewCellStyle3.NullValue = null;
-            this.Data_Cadastro.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Data_Cadastro.FillWeight = 97.82865F;
-            this.Data_Cadastro.HeaderText = "Data Cadastro";
-            this.Data_Cadastro.Name = "Data_Cadastro";
-            this.Data_Cadastro.ReadOnly = true;
-            this.Data_Cadastro.Width = 130;
+            this.Validade.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Validade.HeaderText = "Validade";
+            this.Validade.Name = "Validade";
+            this.Validade.ReadOnly = true;
+            this.Validade.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // SearchDialog_Usuario
+            // Id_Usuario
+            // 
+            this.Id_Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Id_Usuario.DataPropertyName = "Usuario.Id_Usuario";
+            dataGridViewCellStyle4.Format = "t";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Id_Usuario.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Id_Usuario.FillWeight = 97.82865F;
+            this.Id_Usuario.HeaderText = "Usuario";
+            this.Id_Usuario.Name = "Id_Usuario";
+            this.Id_Usuario.ReadOnly = true;
+            this.Id_Usuario.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // SearchDialog_TurmaOrcamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -562,7 +570,7 @@
             this.Controls.Add(this.PanelDown);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SearchDialog_Usuario";
+            this.Name = "SearchDialog_TurmaOrcamento";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SearchDialog";
@@ -589,12 +597,12 @@
         private System.Windows.Forms.Timer verifica;
         private System.Windows.Forms.Label lblpesquisa;
         private Bunifu.UI.WinForms.BunifuDataGridView dataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_ORCAMENTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_TURMA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome_Turma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor_Entrada_Turma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor_Parcela_Demais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Validade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sobrenome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome_Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email_Profissional;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Cadastro;
     }
 }

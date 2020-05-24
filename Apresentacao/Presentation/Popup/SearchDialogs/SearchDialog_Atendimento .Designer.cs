@@ -53,12 +53,9 @@
             this.btnSair = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSelecionar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.PanelTop = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.tbxSobrenome = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
-            this.lblpesquisa = new System.Windows.Forms.Label();
             this.PanelCenter = new System.Windows.Forms.Panel();
             this.dataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.verifica = new System.Windows.Forms.Timer(this.components);
             this.ID_ATENDIMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +64,11 @@
             this.DATA_CADASTRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Receptivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.verifica = new System.Windows.Forms.Timer(this.components);
+            this.bunifuCustomTextbox1 = new Bunifu.Framework.BunifuCustomTextbox();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.PanelDown.SuspendLayout();
             this.PanelTop.SuspendLayout();
             this.PanelCenter.SuspendLayout();
@@ -115,7 +117,7 @@
             this.btnpesquisar.IdleIconLeftImage = null;
             this.btnpesquisar.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnpesquisar.IdleIconRightImage")));
             this.btnpesquisar.IndicateFocus = false;
-            this.btnpesquisar.Location = new System.Drawing.Point(750, 18);
+            this.btnpesquisar.Location = new System.Drawing.Point(750, 50);
             this.btnpesquisar.Name = "btnpesquisar";
             this.btnpesquisar.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             this.btnpesquisar.onHoverState.BorderRadius = 3;
@@ -157,10 +159,10 @@
             this.tbxNome.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.tbxNome.BackColor = System.Drawing.Color.Transparent;
             this.tbxNome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tbxNome.BackgroundImage")));
-            this.tbxNome.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.tbxNome.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.tbxNome.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.tbxNome.BorderColorIdle = System.Drawing.Color.Silver;
+            this.tbxNome.BorderColorActive = System.Drawing.Color.Transparent;
+            this.tbxNome.BorderColorDisabled = System.Drawing.Color.Transparent;
+            this.tbxNome.BorderColorHover = System.Drawing.Color.Transparent;
+            this.tbxNome.BorderColorIdle = System.Drawing.Color.Transparent;
             this.tbxNome.BorderRadius = 1;
             this.tbxNome.BorderThickness = 1;
             this.tbxNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
@@ -175,49 +177,49 @@
             this.tbxNome.IconRight = null;
             this.tbxNome.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.tbxNome.Lines = new string[0];
-            this.tbxNome.Location = new System.Drawing.Point(180, 26);
+            this.tbxNome.Location = new System.Drawing.Point(177, 55);
             this.tbxNome.MaxLength = 32767;
             this.tbxNome.MinimumSize = new System.Drawing.Size(1, 1);
             this.tbxNome.Modified = false;
             this.tbxNome.Multiline = false;
             this.tbxNome.Name = "tbxNome";
-            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties5.BorderColor = System.Drawing.Color.Transparent;
             stateProperties5.FillColor = System.Drawing.Color.Empty;
             stateProperties5.ForeColor = System.Drawing.Color.Empty;
             stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.tbxNome.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.Empty;
+            stateProperties6.BorderColor = System.Drawing.Color.Transparent;
             stateProperties6.FillColor = System.Drawing.Color.White;
             stateProperties6.ForeColor = System.Drawing.Color.Empty;
             stateProperties6.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.tbxNome.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.BorderColor = System.Drawing.Color.Transparent;
             stateProperties7.FillColor = System.Drawing.Color.Empty;
             stateProperties7.ForeColor = System.Drawing.Color.Empty;
             stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.tbxNome.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.BorderColor = System.Drawing.Color.Transparent;
             stateProperties8.FillColor = System.Drawing.Color.White;
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.tbxNome.OnIdleState = stateProperties8;
             this.tbxNome.PasswordChar = '\0';
             this.tbxNome.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.tbxNome.PlaceholderText = "Digite o nome";
+            this.tbxNome.PlaceholderText = "";
             this.tbxNome.ReadOnly = false;
             this.tbxNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbxNome.SelectedText = "";
             this.tbxNome.SelectionLength = 0;
             this.tbxNome.SelectionStart = 0;
             this.tbxNome.ShortcutsEnabled = true;
-            this.tbxNome.Size = new System.Drawing.Size(163, 25);
+            this.tbxNome.Size = new System.Drawing.Size(183, 25);
             this.tbxNome.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.tbxNome.TabIndex = 0;
             this.tbxNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbxNome.TextMarginBottom = 0;
-            this.tbxNome.TextMarginLeft = 5;
-            this.tbxNome.TextMarginTop = 0;
-            this.tbxNome.TextPlaceholder = "Digite o nome";
+            this.tbxNome.TextMarginLeft = 0;
+            this.tbxNome.TextMarginTop = 3;
+            this.tbxNome.TextPlaceholder = "";
             this.tbxNome.UseSystemPasswordChar = false;
             this.tbxNome.WordWrap = true;
             // 
@@ -375,27 +377,18 @@
             // 
             // PanelTop
             // 
-            this.PanelTop.Controls.Add(this.label1);
+            this.PanelTop.Controls.Add(this.bunifuCustomLabel2);
+            this.PanelTop.Controls.Add(this.bunifuCustomTextbox1);
             this.PanelTop.Controls.Add(this.tbxSobrenome);
-            this.PanelTop.Controls.Add(this.lblpesquisa);
             this.PanelTop.Controls.Add(this.btnpesquisar);
             this.PanelTop.Controls.Add(this.tbxNome);
+            this.PanelTop.Controls.Add(this.bunifuCustomLabel1);
+            this.PanelTop.Controls.Add(this.bunifuSeparator2);
             this.PanelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTop.Location = new System.Drawing.Point(0, 0);
             this.PanelTop.Name = "PanelTop";
-            this.PanelTop.Size = new System.Drawing.Size(847, 60);
+            this.PanelTop.Size = new System.Drawing.Size(847, 98);
             this.PanelTop.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(349, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 21);
-            this.label1.TabIndex = 74;
-            this.label1.Text = "Sobrenome";
             // 
             // tbxSobrenome
             // 
@@ -406,10 +399,10 @@
             this.tbxSobrenome.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.tbxSobrenome.BackColor = System.Drawing.Color.Transparent;
             this.tbxSobrenome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tbxSobrenome.BackgroundImage")));
-            this.tbxSobrenome.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.tbxSobrenome.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.tbxSobrenome.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.tbxSobrenome.BorderColorIdle = System.Drawing.Color.Silver;
+            this.tbxSobrenome.BorderColorActive = System.Drawing.Color.Transparent;
+            this.tbxSobrenome.BorderColorDisabled = System.Drawing.Color.Transparent;
+            this.tbxSobrenome.BorderColorHover = System.Drawing.Color.Transparent;
+            this.tbxSobrenome.BorderColorIdle = System.Drawing.Color.Transparent;
             this.tbxSobrenome.BorderRadius = 1;
             this.tbxSobrenome.BorderThickness = 1;
             this.tbxSobrenome.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
@@ -424,70 +417,59 @@
             this.tbxSobrenome.IconRight = null;
             this.tbxSobrenome.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.tbxSobrenome.Lines = new string[0];
-            this.tbxSobrenome.Location = new System.Drawing.Point(451, 26);
+            this.tbxSobrenome.Location = new System.Drawing.Point(502, 55);
             this.tbxSobrenome.MaxLength = 32767;
             this.tbxSobrenome.MinimumSize = new System.Drawing.Size(1, 1);
             this.tbxSobrenome.Modified = false;
             this.tbxSobrenome.Multiline = false;
             this.tbxSobrenome.Name = "tbxSobrenome";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.BorderColor = System.Drawing.Color.Transparent;
             stateProperties1.FillColor = System.Drawing.Color.Empty;
             stateProperties1.ForeColor = System.Drawing.Color.Empty;
             stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.tbxSobrenome.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.Empty;
+            stateProperties2.BorderColor = System.Drawing.Color.Transparent;
             stateProperties2.FillColor = System.Drawing.Color.White;
             stateProperties2.ForeColor = System.Drawing.Color.Empty;
             stateProperties2.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.tbxSobrenome.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.BorderColor = System.Drawing.Color.Transparent;
             stateProperties3.FillColor = System.Drawing.Color.Empty;
             stateProperties3.ForeColor = System.Drawing.Color.Empty;
             stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.tbxSobrenome.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.BorderColor = System.Drawing.Color.Transparent;
             stateProperties4.FillColor = System.Drawing.Color.White;
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.tbxSobrenome.OnIdleState = stateProperties4;
             this.tbxSobrenome.PasswordChar = '\0';
             this.tbxSobrenome.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.tbxSobrenome.PlaceholderText = "Digite o sobrenome";
+            this.tbxSobrenome.PlaceholderText = "";
             this.tbxSobrenome.ReadOnly = false;
             this.tbxSobrenome.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbxSobrenome.SelectedText = "";
             this.tbxSobrenome.SelectionLength = 0;
             this.tbxSobrenome.SelectionStart = 0;
             this.tbxSobrenome.ShortcutsEnabled = true;
-            this.tbxSobrenome.Size = new System.Drawing.Size(293, 25);
+            this.tbxSobrenome.Size = new System.Drawing.Size(242, 25);
             this.tbxSobrenome.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.tbxSobrenome.TabIndex = 73;
             this.tbxSobrenome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbxSobrenome.TextMarginBottom = 0;
-            this.tbxSobrenome.TextMarginLeft = 5;
-            this.tbxSobrenome.TextMarginTop = 0;
-            this.tbxSobrenome.TextPlaceholder = "Digite o sobrenome";
+            this.tbxSobrenome.TextMarginLeft = 0;
+            this.tbxSobrenome.TextMarginTop = 3;
+            this.tbxSobrenome.TextPlaceholder = "";
             this.tbxSobrenome.UseSystemPasswordChar = false;
             this.tbxSobrenome.WordWrap = true;
-            // 
-            // lblpesquisa
-            // 
-            this.lblpesquisa.AutoSize = true;
-            this.lblpesquisa.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblpesquisa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblpesquisa.Location = new System.Drawing.Point(22, 30);
-            this.lblpesquisa.Name = "lblpesquisa";
-            this.lblpesquisa.Size = new System.Drawing.Size(152, 21);
-            this.lblpesquisa.TabIndex = 72;
-            this.lblpesquisa.Text = "Pesquisa por nome:";
             // 
             // PanelCenter
             // 
             this.PanelCenter.Controls.Add(this.dataGrid);
             this.PanelCenter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelCenter.Location = new System.Drawing.Point(0, 60);
+            this.PanelCenter.Location = new System.Drawing.Point(0, 98);
             this.PanelCenter.Name = "PanelCenter";
-            this.PanelCenter.Size = new System.Drawing.Size(847, 440);
+            this.PanelCenter.Size = new System.Drawing.Size(847, 402);
             this.PanelCenter.TabIndex = 4;
             // 
             // dataGrid
@@ -551,7 +533,7 @@
             this.dataGrid.EnableHeadersVisualStyles = false;
             this.dataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.dataGrid.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.dataGrid.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dataGrid.HeaderBackColor = System.Drawing.Color.Empty;
             this.dataGrid.HeaderForeColor = System.Drawing.Color.White;
             this.dataGrid.Location = new System.Drawing.Point(0, 0);
             this.dataGrid.Name = "dataGrid";
@@ -559,8 +541,9 @@
             this.dataGrid.RowHeadersVisible = false;
             this.dataGrid.RowTemplate.Height = 40;
             this.dataGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGrid.Size = new System.Drawing.Size(847, 440);
+            this.dataGrid.Size = new System.Drawing.Size(847, 402);
             this.dataGrid.TabIndex = 0;
             this.dataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellClick);
@@ -648,6 +631,58 @@
             this.Usuario.ReadOnly = true;
             this.Usuario.Width = 90;
             // 
+            // bunifuCustomTextbox1
+            // 
+            this.bunifuCustomTextbox1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuCustomTextbox1.BorderColor = System.Drawing.Color.White;
+            this.bunifuCustomTextbox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bunifuCustomTextbox1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomTextbox1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomTextbox1.Location = new System.Drawing.Point(114, 0);
+            this.bunifuCustomTextbox1.Name = "bunifuCustomTextbox1";
+            this.bunifuCustomTextbox1.Size = new System.Drawing.Size(618, 22);
+            this.bunifuCustomTextbox1.TabIndex = 170;
+            this.bunifuCustomTextbox1.Text = "Busca de Atendimentos";
+            this.bunifuCustomTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Gray;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(74, 61);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(107, 19);
+            this.bunifuCustomLabel1.TabIndex = 172;
+            this.bunifuCustomLabel1.Text = "Digite o nome:";
+            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuSeparator2.LineThickness = 2;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(78, 67);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Size = new System.Drawing.Size(666, 35);
+            this.bunifuSeparator2.TabIndex = 171;
+            this.bunifuSeparator2.Transparency = 255;
+            this.bunifuSeparator2.Vertical = false;
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Gray;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(362, 61);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(144, 19);
+            this.bunifuCustomLabel2.TabIndex = 173;
+            this.bunifuCustomLabel2.Text = "Digite o sobrenome:";
+            this.bunifuCustomLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // SearchDialog_Atendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -684,9 +719,7 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSair;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSelecionar;
         private System.Windows.Forms.Timer verifica;
-        private System.Windows.Forms.Label lblpesquisa;
         private Bunifu.UI.WinForms.BunifuDataGridView dataGrid;
-        private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox tbxSobrenome;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_ATENDIMENTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
@@ -696,5 +729,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DATA_CADASTRO;
         private System.Windows.Forms.DataGridViewTextBoxColumn Receptivo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
+        private Bunifu.Framework.BunifuCustomTextbox bunifuCustomTextbox1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
     }
 }

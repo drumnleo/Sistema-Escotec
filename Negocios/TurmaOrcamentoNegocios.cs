@@ -76,9 +76,196 @@ namespace Negocios
 
                     Turma turma = new Turma();
                     turma.Id_Turma = Convert.ToInt32(dataRow["ID_TURMA"]);
+                    turma.Nome_Turma = Convert.ToString(dataRow["NOME_TURMA"]);
 
                     PromocaoValor promocaoValor = new PromocaoValor();
                     promocaoValor.Id_Promocao_Valor = Convert.ToInt32(dataRow["ID_PROMOCAO_VALOR"]);
+                    promocaoValor.Nome_Promocao = Convert.ToString(dataRow["NOME_PROMOCAO"]);
+
+                    Curso curso = new Curso();
+                    curso.Id_Curso = Convert.ToInt32(dataRow["ID_CURSO"]);
+                    curso.Nome = Convert.ToString(dataRow["NOME_CURSO"]);
+                    turma.Curso = curso;
+
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    turmaOrcamento.Orcamento = orcamento;
+                    turmaOrcamento.Turma = turma;       
+                    turmaOrcamento.PromocaoValor = promocaoValor;
+                    turmaOrcamento.Usuario = usuario;
+                    turmaOrcamentoColecao.Add(turmaOrcamento);
+                }
+
+                return turmaOrcamentoColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar orçamento turma. Detalhes: " + ex.Message);
+            }
+        }
+
+        public TurmaOrcamentoColecao ConsultarPorPessoa(string nome)
+        {
+            try
+            {
+                TurmaOrcamentoColecao turmaOrcamentoColecao = new TurmaOrcamentoColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@NOME", nome);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_TURMA_ORCAMENTO_CONSULTARPORPESSOA");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    TurmaOrcamento turmaOrcamento = new TurmaOrcamento();
+                    turmaOrcamento.Qtde_Parcelas = Convert.ToInt16(dataRow["QTDE_PARCELAS"]);
+                    turmaOrcamento.Valor_Entrada_Turma = Convert.ToDecimal(dataRow["VALOR_ENTRADA_TURMA"]);
+                    turmaOrcamento.Valor_Parcela_Demais = Convert.ToDecimal(dataRow["VALOR_PARCELA_DEMAIS"]);
+                    turmaOrcamento.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    turmaOrcamento.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    Pessoa pessoa = new Pessoa();
+                    pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
+                    pessoa.CPF = Convert.ToString(dataRow["CPF"]);
+
+                    Pessoa pessoaFuncionario = new Pessoa();
+                    pessoaFuncionario.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA_PROFESSOR"]);
+                    pessoaFuncionario.Nome = Convert.ToString(dataRow["NOME_PROFESSOR"]);
+
+                    Funcionario funcionario = new Funcionario();
+                    funcionario.Pessoa = pessoaFuncionario;
+
+                    Professor professor = new Professor();
+                    professor.Funcionario = funcionario;
+
+                    ProfessorMinistra professorMinistra = new ProfessorMinistra();
+                    professorMinistra.Professor = professor;
+
+                    Atendimento atendimento = new Atendimento();
+                    atendimento.Pessoa = pessoa;
+
+                    Orcamento orcamento = new Orcamento();
+                    orcamento.Id_Orcamento = Convert.ToInt32(dataRow["ID_ORCAMENTO"]);
+                    orcamento.Validade_Orcamento = Convert.ToDateTime(dataRow["VALIDADE_ORCAMENTO"]);
+                    orcamento.Atendimento = atendimento;
+
+                    Laboratorio laboratorio = new Laboratorio();
+                    laboratorio.Id_Laboratorio = Convert.ToInt32(dataRow["ID_LABORATORIO"]);
+                    laboratorio.Nome = Convert.ToString(dataRow["NOME_LABORATORIO"]);
+
+                    Turma turma = new Turma();
+                    turma.Id_Turma = Convert.ToInt32(dataRow["ID_TURMA"]);
+                    turma.Nome_Turma = Convert.ToString(dataRow["NOME_TURMA"]);
+                    turma.Segunda_Aula = Convert.ToBoolean(dataRow["SEGUNDA_AULA"]);
+                    turma.Terca_Aula = Convert.ToBoolean(dataRow["TERCA_AULA"]);
+                    turma.Quarta_Aula = Convert.ToBoolean(dataRow["QUARTA_AULA"]);
+                    turma.Quinta_Aula = Convert.ToBoolean(dataRow["QUINTA_AULA"]);
+                    turma.Sexta_Aula = Convert.ToBoolean(dataRow["SEXTA_AULA"]);
+                    turma.Sabado_Aula = Convert.ToBoolean(dataRow["SABADO_AULA"]);
+                    turma.Domingo_Aula = Convert.ToBoolean(dataRow["DOMINGO_AULA"]);
+                    turma.Laboratorio = laboratorio;
+                    turma.ProfessorMinistra = professorMinistra;
+
+                    Curso curso = new Curso();
+                    curso.Id_Curso = Convert.ToInt32(dataRow["ID_CURSO"]);
+                    curso.Nome = Convert.ToString(dataRow["NOME_CURSO"]);
+                    curso.Qtde_Parcelas = Convert.ToInt16(dataRow["QTDE_PARCELAS"]);
+                    turma.Curso = curso;
+
+                    PromocaoValor promocaoValor = new PromocaoValor();
+                    promocaoValor.Id_Promocao_Valor = Convert.ToInt32(dataRow["ID_PROMOCAO_VALOR"]);
+                    promocaoValor.Nome_Promocao = Convert.ToString(dataRow["NOME_PROMOCAO"]);
+
+                    Usuario usuario = new Usuario();
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    turmaOrcamento.Orcamento = orcamento;
+                    turmaOrcamento.Turma = turma;
+                    turmaOrcamento.PromocaoValor = promocaoValor;
+                    turmaOrcamento.Usuario = usuario;
+                    turmaOrcamentoColecao.Add(turmaOrcamento);
+                }
+
+                return turmaOrcamentoColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar orçamento turma. Detalhes: " + ex.Message);
+            }
+        }
+
+        public TurmaOrcamentoColecao ConsultarPorCpf(string cpf)
+        {
+            try
+            {
+                TurmaOrcamentoColecao turmaOrcamentoColecao = new TurmaOrcamentoColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@CPF", cpf);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_TURMA_ORCAMENTO_CONSULTARPORCPF");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    TurmaOrcamento turmaOrcamento = new TurmaOrcamento();
+                    turmaOrcamento.Qtde_Parcelas = Convert.ToInt16(dataRow["QTDE_PARCELAS"]);
+                    turmaOrcamento.Valor_Entrada_Turma = Convert.ToDecimal(dataRow["VALOR_ENTRADA_TURMA"]);
+                    turmaOrcamento.Valor_Parcela_Demais = Convert.ToDecimal(dataRow["VALOR_PARCELA_DEMAIS"]);
+                    turmaOrcamento.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    turmaOrcamento.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    Pessoa pessoa = new Pessoa();
+                    pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
+                    pessoa.CPF = Convert.ToString(dataRow["CPF"]);
+
+                    Pessoa pessoaFuncionario = new Pessoa();
+                    pessoaFuncionario.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA_PROFESSOR"]);
+                    pessoaFuncionario.Nome = Convert.ToString(dataRow["NOME_PROFESSOR"]);
+
+                    Funcionario funcionario = new Funcionario();
+                    funcionario.Pessoa = pessoaFuncionario;
+
+                    Professor professor = new Professor();
+                    professor.Funcionario = funcionario;
+
+                    ProfessorMinistra professorMinistra = new ProfessorMinistra();
+                    professorMinistra.Professor = professor;
+
+                    Atendimento atendimento = new Atendimento();
+                    atendimento.Pessoa = pessoa;
+
+                    Orcamento orcamento = new Orcamento();
+                    orcamento.Id_Orcamento = Convert.ToInt32(dataRow["ID_ORCAMENTO"]);
+                    orcamento.Validade_Orcamento = Convert.ToDateTime(dataRow["VALIDADE_ORCAMENTO"]);
+                    orcamento.Atendimento = atendimento;
+
+                    Laboratorio laboratorio = new Laboratorio();
+                    laboratorio.Id_Laboratorio = Convert.ToInt32(dataRow["ID_LABORATORIO"]);
+                    laboratorio.Nome = Convert.ToString(dataRow["NOME_LABORATORIO"]);
+
+                    Turma turma = new Turma();
+                    turma.Id_Turma = Convert.ToInt32(dataRow["ID_TURMA"]);
+                    turma.Nome_Turma = Convert.ToString(dataRow["NOME_TURMA"]);
+                    turma.Segunda_Aula = Convert.ToBoolean(dataRow["SEGUNDA_AULA"]);
+                    turma.Terca_Aula = Convert.ToBoolean(dataRow["TERCA_AULA"]);
+                    turma.Quarta_Aula = Convert.ToBoolean(dataRow["QUARTA_AULA"]);
+                    turma.Quinta_Aula = Convert.ToBoolean(dataRow["QUINTA_AULA"]);
+                    turma.Sexta_Aula = Convert.ToBoolean(dataRow["SEXTA_AULA"]);
+                    turma.Sabado_Aula = Convert.ToBoolean(dataRow["SABADO_AULA"]);
+                    turma.Domingo_Aula = Convert.ToBoolean(dataRow["DOMINGO_AULA"]);
+                    turma.Laboratorio = laboratorio;
+                    turma.ProfessorMinistra = professorMinistra;
+
+                    Curso curso = new Curso();
+                    curso.Id_Curso = Convert.ToInt32(dataRow["ID_CURSO"]);
+                    curso.Nome = Convert.ToString(dataRow["NOME_CURSO"]);
+                    curso.Qtde_Parcelas = Convert.ToInt16(dataRow["QTDE_PARCELAS"]);
+                    turma.Curso = curso;
+
+                    PromocaoValor promocaoValor = new PromocaoValor();
+                    promocaoValor.Id_Promocao_Valor = Convert.ToInt32(dataRow["ID_PROMOCAO_VALOR"]);
+                    promocaoValor.Nome_Promocao = Convert.ToString(dataRow["NOME_PROMOCAO"]);
 
                     Usuario usuario = new Usuario();
                     usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
@@ -116,18 +303,63 @@ namespace Negocios
                     turmaOrcamento.Qtde_Parcelas = Convert.ToInt16(dataRow["QTDE_PARCELAS"]);
                     turmaOrcamento.Valor_Entrada_Turma = Convert.ToDecimal(dataRow["VALOR_ENTRADA_TURMA"]);
                     turmaOrcamento.Valor_Parcela_Demais = Convert.ToDecimal(dataRow["VALOR_PARCELA_DEMAIS"]);
+                    turmaOrcamento.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    turmaOrcamento.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    Pessoa pessoa = new Pessoa();
+                    pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
+                    pessoa.CPF = Convert.ToString(dataRow["CPF"]);
+
+                    Pessoa pessoaFuncionario = new Pessoa();
+                    pessoaFuncionario.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA_PROFESSOR"]);
+                    pessoaFuncionario.Nome = Convert.ToString(dataRow["NOME_PROFESSOR"]);
+
+                    Funcionario funcionario = new Funcionario();
+                    funcionario.Pessoa = pessoaFuncionario;
+
+                    Professor professor = new Professor();
+                    professor.Funcionario = funcionario;
+
+                    ProfessorMinistra professorMinistra = new ProfessorMinistra();
+                    professorMinistra.Professor = professor;
+
+                    Atendimento atendimento = new Atendimento();
+                    atendimento.Pessoa = pessoa;
 
                     Orcamento orcamento = new Orcamento();
                     orcamento.Id_Orcamento = Convert.ToInt32(dataRow["ID_ORCAMENTO"]);
+                    orcamento.Validade_Orcamento = Convert.ToDateTime(dataRow["VALIDADE_ORCAMENTO"]);
+                    orcamento.Atendimento = atendimento;
+
+                    Laboratorio laboratorio = new Laboratorio();
+                    laboratorio.Id_Laboratorio = Convert.ToInt32(dataRow["ID_LABORATORIO"]);
+                    laboratorio.Nome = Convert.ToString(dataRow["NOME_LABORATORIO"]);
 
                     Turma turma = new Turma();
                     turma.Id_Turma = Convert.ToInt32(dataRow["ID_TURMA"]);
+                    turma.Nome_Turma = Convert.ToString(dataRow["NOME_TURMA"]);
+                    turma.Segunda_Aula = Convert.ToBoolean(dataRow["SEGUNDA_AULA"]);
+                    turma.Terca_Aula = Convert.ToBoolean(dataRow["TERCA_AULA"]);
+                    turma.Quarta_Aula = Convert.ToBoolean(dataRow["QUARTA_AULA"]);
+                    turma.Quinta_Aula = Convert.ToBoolean(dataRow["QUINTA_AULA"]);
+                    turma.Sexta_Aula = Convert.ToBoolean(dataRow["SEXTA_AULA"]);
+                    turma.Sabado_Aula = Convert.ToBoolean(dataRow["SABADO_AULA"]);
+                    turma.Domingo_Aula = Convert.ToBoolean(dataRow["DOMINGO_AULA"]);
+                    turma.Laboratorio = laboratorio;
+                    turma.ProfessorMinistra = professorMinistra;
+
+                    Curso curso = new Curso();
+                    curso.Id_Curso = Convert.ToInt32(dataRow["ID_CURSO"]);
+                    curso.Nome = Convert.ToString(dataRow["NOME_CURSO"]);
+                    curso.Qtde_Parcelas = Convert.ToInt16(dataRow["QTDE_PARCELAS"]);
+                    turma.Curso = curso;
 
                     PromocaoValor promocaoValor = new PromocaoValor();
                     promocaoValor.Id_Promocao_Valor = Convert.ToInt32(dataRow["ID_PROMOCAO_VALOR"]);
+                    promocaoValor.Nome_Promocao = Convert.ToString(dataRow["NOME_PROMOCAO"]);
 
                     Usuario usuario = new Usuario();
-                    usuario.Usuario_cad_alt.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
                     turmaOrcamento.Orcamento = orcamento;
                     turmaOrcamento.Turma = turma;
@@ -144,6 +376,81 @@ namespace Negocios
             }
         }
 
+        public TurmaOrcamentoColecao ConsultarPorIdAtendimento(int idAtendimento)
+        {
+            try
+            {
+                TurmaOrcamentoColecao turmaOrcamentoColecao = new TurmaOrcamentoColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_ATENDIMENTO", idAtendimento);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_ORCAMENTO_CONSULTARPORATENDIMENTO");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    Orcamento orcamento = new Orcamento();
+
+                    orcamento.Id_Orcamento = Convert.ToInt32(dataRow["ID_ORCAMENTO"]);
+                    orcamento.Validade_Orcamento = Convert.ToDateTime(dataRow["VALIDADE_ORCAMENTO"]);
+                    orcamento.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    orcamento.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+                    orcamento.Aprovado = Convert.ToBoolean(dataRow["APROVADO"]);
+                    orcamento.Comentario_Aprovacao = Convert.ToString(dataRow["COMENTARIO_APROVACAO"]);
+
+                    Usuario usuarioAprova = new Usuario();
+                    if (int.TryParse(dataRow["APROVADO_USUARIO"].ToString(), out int v))
+                    {
+                        usuarioAprova.Id_Usuario = v;
+                    }
+
+                    Usuario usuarioGera = new Usuario();
+                    usuarioGera.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_GERA_ORCAMENTO"]);
+
+                    Usuario usuarioCadAlt = new Usuario();
+                    usuarioCadAlt.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    Atendimento atendimento = new Atendimento();
+                    atendimento.Id_Atendimento = Convert.ToInt32(dataRow["ID_ATENDIMENTO"]);
+
+                    Pessoa pessoa = new Pessoa();
+                    pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
+                    pessoa.Nome = Convert.ToString(dataRow["NOME"]);
+                    pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
+
+                    Turma turma = new Turma();
+                    turma.Id_Turma = Convert.ToInt32(dataRow["ID_TURMA"]);
+                    turma.Nome_Turma = Convert.ToString(dataRow["NOME_TURMA"]);
+
+                    orcamento.Usuario_Cad_Alt = usuarioCadAlt;
+                    orcamento.Aprovado_Usuario = usuarioAprova;
+                    orcamento.UsuarioGeraOrcamento = usuarioGera;
+                    orcamento.Atendimento = atendimento;
+                    orcamento.Atendimento.Pessoa = pessoa;
+
+                    PromocaoValor promocaoValor = new PromocaoValor();
+                    promocaoValor.Id_Promocao_Valor = Convert.ToInt32(dataRow["ID_PROMOCAO_VALOR"]);
+                    promocaoValor.Nome_Promocao = Convert.ToString(dataRow["NOME_PROMOCAO"]);
+
+                    TurmaOrcamento turmaOrcamento = new TurmaOrcamento();
+                    turmaOrcamento.Qtde_Parcelas = Convert.ToInt16(dataRow["QTDE_PARCELAS"]);
+                    turmaOrcamento.Valor_Entrada_Turma = Convert.ToDecimal(dataRow["VALOR_ENTRADA_TURMA"]);
+                    turmaOrcamento.Valor_Parcela_Demais = Convert.ToDecimal(dataRow["VALOR_PARCELA_DEMAIS"]);
+                    turmaOrcamento.Orcamento = orcamento;
+                    turmaOrcamento.Turma = turma;
+                    turmaOrcamento.PromocaoValor = promocaoValor;
+
+                    turmaOrcamentoColecao.Add(turmaOrcamento);
+                }
+
+                return turmaOrcamentoColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar Orçamento. Detalhes: " + ex.Message);
+            }
+        }
+
         public string Excluir(TurmaOrcamento turmaOrcamento)
         {
             try
@@ -153,7 +460,7 @@ namespace Negocios
                 acessoDados.AdicionarParametros("@ID_TURMA", turmaOrcamento.Turma.Id_Turma);
                 acessoDados.AdicionarParametros("@ID_USUARIO", turmaOrcamento.Usuario.Id_Usuario);
 
-                string idTurma = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_ALUNO_EXCLUIR").ToString();
+                string idTurma = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_TURMA_ORCAMENTO_EXCLUIR").ToString();
 
                 return idTurma;
             }

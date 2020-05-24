@@ -16,10 +16,10 @@ namespace ObjetoTransferencia
         public decimal  Valor { get; set; }
         public DateTime Vencimento { get; set; }
         public Int16 Acrescimo_Atraso { get; set; }
-        public string Situacao_Pg { get; set; }
+        public char Situacao_Pg { get; set; }
         public DateTime Data_Pagamento { get; set; }
         public DateTime Data_Cadastro { get; set; }
-        public DateTime Data_Ultimo_Cadastro { get; set; }
+        public DateTime Data_Ultima_Alteracao { get; set; }
         public Usuario Usuario { get; set; }
     }
 }

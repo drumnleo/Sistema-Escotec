@@ -11,7 +11,7 @@ namespace Negocios
 {
     public class OrcamentoNegocios
     {
-        AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
+        readonly AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
 
         public string Inserir(Orcamento orcamento)
         {
@@ -109,6 +109,9 @@ namespace Negocios
 
                     Pessoa pessoa = new Pessoa();
                     pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
+                    pessoa.Nome = Convert.ToString(dataRow["NOME"]);
+                    pessoa.Sobrenome = Convert.ToString(dataRow["SOBRENOME"]);
+
 
                     orcamento.Usuario_Cad_Alt = usuarioCadAlt;
                     orcamento.Aprovado_Usuario = usuarioAprova;
@@ -183,5 +186,120 @@ namespace Negocios
                 throw new Exception("Erro ao consultar Orçamento. Detalhes: " + ex.Message);
             }
         }
+
+        public OrcamentoColecao ConsultarPorNomePessoa(string nome)
+        {
+            try
+            {
+                OrcamentoColecao orcamentoColecao = new OrcamentoColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@NOME", nome);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_ORCAMENTO_CONSULTARPORID");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    Orcamento orcamento = new Orcamento();
+
+                    orcamento.Id_Orcamento = Convert.ToInt32(dataRow["ID_ORCAMENTO"]);
+                    orcamento.Validade_Orcamento = Convert.ToDateTime(dataRow["VALIDADE_ORCAMENTO"]);
+                    orcamento.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    orcamento.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+                    orcamento.Aprovado = Convert.ToBoolean(dataRow["APROVADO"]);
+                    orcamento.Comentario_Aprovacao = Convert.ToString(dataRow["COMENTARIO_APROVACAO"]);
+
+                    Usuario usuarioAprova = new Usuario();
+                    if (int.TryParse(dataRow["APROVADO_USUARIO"].ToString(), out int v))
+                    {
+                        usuarioAprova.Id_Usuario = v;
+                    }
+
+                    Usuario usuarioGera = new Usuario();
+                    usuarioGera.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_GERA_ORCAMENTO"]);
+
+                    Usuario usuarioCadAlt = new Usuario();
+                    usuarioCadAlt.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    Atendimento atendimento = new Atendimento();
+                    atendimento.Id_Atendimento = Convert.ToInt32(dataRow["ID_ATENDIMENTO"]);
+
+                    Pessoa pessoa = new Pessoa();
+                    pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
+
+                    orcamento.Usuario_Cad_Alt = usuarioCadAlt;
+                    orcamento.Aprovado_Usuario = usuarioAprova;
+                    orcamento.UsuarioGeraOrcamento = usuarioGera;
+                    orcamento.Atendimento = atendimento;
+                    orcamento.Atendimento.Pessoa = pessoa;
+
+                    orcamentoColecao.Add(orcamento);
+                }
+
+                return orcamentoColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar Orçamento. Detalhes: " + ex.Message);
+            }
+        }
+
+        public OrcamentoColecao ConsultarPorIdPessoa(int id)
+        {
+            try
+            {
+                OrcamentoColecao orcamentoColecao = new OrcamentoColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_PESSOA", id);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_ORCAMENTO_CONSULTARPORIDPESSOA");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    Orcamento orcamento = new Orcamento();
+
+                    orcamento.Id_Orcamento = Convert.ToInt32(dataRow["ID_ORCAMENTO"]);
+                    orcamento.Validade_Orcamento = Convert.ToDateTime(dataRow["VALIDADE_ORCAMENTO"]);
+                    orcamento.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    orcamento.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+                    orcamento.Aprovado = Convert.ToBoolean(dataRow["APROVADO"]);
+                    orcamento.Comentario_Aprovacao = Convert.ToString(dataRow["COMENTARIO_APROVACAO"]);
+
+                    Usuario usuarioAprova = new Usuario();
+                    if (int.TryParse(dataRow["APROVADO_USUARIO"].ToString(), out int v))
+                    {
+                        usuarioAprova.Id_Usuario = v;
+                    }
+
+                    Usuario usuarioGera = new Usuario();
+                    usuarioGera.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_GERA_ORCAMENTO"]);
+
+                    Usuario usuarioCadAlt = new Usuario();
+                    usuarioCadAlt.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    Atendimento atendimento = new Atendimento();
+                    atendimento.Id_Atendimento = Convert.ToInt32(dataRow["ID_ATENDIMENTO"]);
+
+                    Pessoa pessoa = new Pessoa();
+                    pessoa.Id_Pessoa = Convert.ToInt32(dataRow["ID_PESSOA"]);
+
+                    orcamento.Usuario_Cad_Alt = usuarioCadAlt;
+                    orcamento.Aprovado_Usuario = usuarioAprova;
+                    orcamento.UsuarioGeraOrcamento = usuarioGera;
+                    orcamento.Atendimento = atendimento;
+                    orcamento.Atendimento.Pessoa = pessoa;
+
+                    orcamentoColecao.Add(orcamento);
+                }
+
+                return orcamentoColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar Orçamento. Detalhes: " + ex.Message);
+            }
+        }
+
     }
 }

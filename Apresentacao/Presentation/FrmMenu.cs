@@ -16,6 +16,7 @@ namespace Apresentacao
             addPageType(new Presentation.Pages.AdicionarEditarFuncionario());
             addPageType(new Presentation.Pages.ConsultaMatricula());
             addPageType(new Presentation.Pages.AdicionarEditarAtendimento());
+            addPageType(new Presentation.Pages.AdicionarEditarMatricula());
 
             VSReactive<string>.Subscribe(VSroute.page, (e) => SetPage(e));
         }
@@ -91,7 +92,7 @@ namespace Apresentacao
 
         }
 
-    private void btnDrawerPin_Click(object sender, EventArgs e)
+        private void btnDrawerPin_Click(object sender, EventArgs e)
         {
             MouseDetect.Enabled = !MouseDetect.Enabled;
             btnDrawerPin.Image = MouseDetect.Enabled ? pinnerImages.Images[0] : pinnerImages.Images[1];
@@ -99,14 +100,16 @@ namespace Apresentacao
 
         private void FrmMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (FrmLogin_flat.TrocaEstado == false)
+            {
+                Application.Exit();
+            }
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-
-            FrmLogin_flat.ActiveForm.WindowState = FormWindowState.Maximized;
-            this.Close();
+            FrmLogin_flat.TrocaEstado = true;
+            this.Hide();
         }
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
