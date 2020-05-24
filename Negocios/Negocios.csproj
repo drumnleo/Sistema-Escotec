@@ -46,6 +46,7 @@
     <Compile Include="AlunoNegocios.cs" />
     <Compile Include="AtendimentoNegocios.cs" />
     <Compile Include="CargoNegocios.cs" />
+    <Compile Include="ContasReceberNegocios.cs" />
     <Compile Include="CursoNegocios.cs" />
     <Compile Include="EnderecoNegocios.cs" />
     <Compile Include="EstadoCivilNegocios.cs" />

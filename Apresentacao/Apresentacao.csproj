@@ -134,8 +134,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\Escotec\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\Escotec\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\Escotec\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
@@ -143,8 +143,11 @@
     <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\Escotec\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\Escotec\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\Escotec\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\Escotec\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\Escotec\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
@@ -176,6 +179,12 @@
     </Compile>
     <Compile Include="Presentation\Pages\Atendimento\AdicionarEditarAtendimento.Designer.cs">
       <DependentUpon>AdicionarEditarAtendimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Pages\Matriculas\AdicionarEditarMatricula.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Pages\Matriculas\AdicionarEditarMatricula.Designer.cs">
+      <DependentUpon>AdicionarEditarMatricula.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Pages\Modelo.cs">
       <SubType>UserControl</SubType>
@@ -214,6 +223,12 @@
     <Compile Include="Presentation\FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Pages\TurmaCurso\AdicionarEditarTurmaCurso.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Pages\TurmaCurso\AdicionarEditarTurmaCurso.Designer.cs">
+      <DependentUpon>AdicionarEditarTurmaCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Pages\Usuarios\AdicionarEditarUsuario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -237,6 +252,12 @@
     </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Orcamento.Designer.cs">
       <DependentUpon>SearchDialog_Orcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_TurmaOrcamentoMatricula .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_TurmaOrcamentoMatricula .Designer.cs">
+      <DependentUpon>SearchDialog_TurmaOrcamentoMatricula .cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_TurmaOrcamento.cs">
       <SubType>Form</SubType>
@@ -286,6 +307,12 @@
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog.Designer.cs">
       <DependentUpon>SearchDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Popup\Tipos\Frm_TipoCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\Tipos\Frm_TipoCurso.Designer.cs">
+      <DependentUpon>Frm_TipoCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Popup\transparentBg1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +337,9 @@
     <EmbeddedResource Include="Presentation\Pages\Atendimento\AdicionarEditarAtendimento.resx">
       <DependentUpon>AdicionarEditarAtendimento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Pages\Matriculas\AdicionarEditarMatricula.resx">
+      <DependentUpon>AdicionarEditarMatricula.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Pages\Modelo.resx">
       <DependentUpon>Modelo.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,6 +358,9 @@
     <EmbeddedResource Include="Presentation\Pages\Matriculas\ConsultaMatricula_old.resx">
       <DependentUpon>ConsultaMatricula_old.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Pages\TurmaCurso\AdicionarEditarTurmaCurso.resx">
+      <DependentUpon>AdicionarEditarTurmaCurso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Pages\Usuarios\AdicionarEditarUsuario.resx">
       <DependentUpon>AdicionarEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Orcamento.resx">
       <DependentUpon>SearchDialog_Orcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_TurmaOrcamentoMatricula .resx">
+      <DependentUpon>SearchDialog_TurmaOrcamentoMatricula .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_TurmaOrcamento.resx">
       <DependentUpon>SearchDialog_TurmaOrcamento.cs</DependentUpon>
@@ -363,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog.resx">
       <DependentUpon>SearchDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\Tipos\Frm_TipoCurso.resx">
+      <DependentUpon>Frm_TipoCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\transparentBg1.resx">
       <DependentUpon>transparentBg1.cs</DependentUpon>
