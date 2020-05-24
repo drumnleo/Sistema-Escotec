@@ -358,6 +358,7 @@
     <EmbeddedResource Include="Presentation\Drawer\SubMenu.resx">
       <DependentUpon>SubMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RpContrato.rdlc" />
     <EmbeddedResource Include="RpMatCol.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ObjetoTransferencia.MatriculaRelatorio.datasource" />
