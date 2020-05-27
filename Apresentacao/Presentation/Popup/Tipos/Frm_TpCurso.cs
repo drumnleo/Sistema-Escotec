@@ -1,17 +1,21 @@
 ﻿using Negocios;
 using ObjetoTransferencia;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Apresentacao.Presentation.Popup.SearchDialogs
+namespace Apresentacao.Presentation.Popup.Tipos
 {
-
-    public partial class Frm_TipoCurso : Form
+    public partial class Frm_TpCurso : Form
     {
-
-        public Frm_TipoCurso()
+        public Frm_TpCurso()
         {
             InitializeComponent();
 
@@ -24,6 +28,8 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             dataGrid.RowTemplate.Height = 20;
             dataGrid.RowHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+
+            CarregarDataGrid();
         }
 
         public TipoCurso TipoCursoEscolhido { get; set; }
@@ -34,16 +40,6 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             BtnSalvar.Enabled = true;
             BtnAtualizar.Enabled = false;
             BtnExcluir.Enabled = false;
-
-            //dataGrid.AutoGenerateColumns = false;
-            //dataGrid.AllowUserToResizeColumns = false;
-            //dataGrid.AllowUserToResizeRows = false;
-            //dataGrid.ColumnHeadersHeight = 20;
-            //dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            //dataGrid.RowHeadersWidth = 20;
-            //dataGrid.RowTemplate.Height = 20;
-            //dataGrid.RowHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            //dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
         }
         private void SearchDialog_Shown(object sender, EventArgs e)
         {
@@ -76,7 +72,8 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                     throw new Exception("Erro ao inserir Laboratório, verifique!");
                 }
                 tipoCurso.Nome = VerificaCampoDigitado(TbxNomeCurso.Text, "Nome Curso");
-                tipoCurso.Descricao = VerificaCampoDigitado(TbxCursoDescricao.Text, "Obeservação");
+                tipoCurso.Descricao = TbxCursoDescricao.Text;
+                tipoCurso.Usuario = LoginNegocios.UsuarioLogadoGetSet;
             }
             catch (Exception ex)
             {
@@ -103,6 +100,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             try
             {
                 string vagas = VerificaCampoDigitado(TbxVagas.Text, "Vagas");
+                tipoCurso.Id_Tipo_Curso = Convert.ToInt32(TbxId.Text);
                 tipoCurso.Vagas = Convert.ToInt16(vagas);
                 if (CbxLaboratorio.SelectedValue != null)
                 {
@@ -114,7 +112,8 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                     throw new Exception("Erro ao carregar Laboratório selecionado, verifique!");
                 }
                 tipoCurso.Nome = VerificaCampoDigitado(TbxNomeCurso.Text, "Nome Curso");
-                tipoCurso.Descricao = VerificaCampoDigitado(TbxCursoDescricao.Text, "Obeservação");
+                tipoCurso.Descricao = TbxCursoDescricao.Text;
+                tipoCurso.Usuario = LoginNegocios.UsuarioLogadoGetSet;
             }
             catch (Exception ex)
             {
@@ -127,6 +126,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             {
                 int idTipoTurma = Convert.ToInt32(retorno);
                 MessageBox.Show("Atualizado com sucesso!", "Confirmado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CarregarDataGrid();
             }
             catch (Exception)
             {
@@ -187,6 +187,8 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             LaboratorioColecao laboratorios = laboratorioNegocios.ConsultarPorId(TipoCursoEscolhido.Laboratorio.Id_Laboratorio);
 
             CbxLaboratorio.DataSource = laboratorios;
+            CbxLaboratorio.DisplayMember = "NOME";
+            CbxLaboratorio.ValueMember = "ID_LABORATORIO";
             CbxLaboratorio.Update();
             CbxLaboratorio.Refresh();
             CbxLaboratorio.SelectedIndex = 0;
@@ -204,7 +206,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
                 throw new Exception("Erro ao inserir o campo " + campo + ". Verifique!");
             }
 
-            return retorno; 
+            return retorno;
         }
         private void LimpaCampos()
         {
@@ -236,20 +238,11 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         }
         private void CarregarDataGrid()
         {
-            CursoNegocios cursoNegocios = new CursoNegocios();
-            CursoColecao cursos = cursoNegocios.ConsultarPorNome("");
+            TipoCursoNegocios tipoCursoNegocios = new TipoCursoNegocios();
+            TipoCursoColecao tipoCursos = tipoCursoNegocios.ConsultarPorNome("");
 
             dataGrid.DataSource = null;
-            dataGrid.DataSource = cursos;
-            //dataGrid.AutoGenerateColumns = false;
-            //dataGrid.AllowUserToResizeColumns = false;
-            //dataGrid.AllowUserToResizeRows = false;
-            //dataGrid.ColumnHeadersHeight = 20;
-            //dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            //dataGrid.RowHeadersWidth = 20;
-            //dataGrid.RowTemplate.Height = 20;
-            //dataGrid.RowHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            //dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGrid.DataSource = tipoCursos;
             dataGrid.Update();
             dataGrid.Refresh();
         }

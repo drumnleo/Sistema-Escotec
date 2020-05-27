@@ -14,7 +14,7 @@ namespace ObjetoTransferencia
         public Int16 Qtde_Aulas { get; set; }
         public Int16 Qtde_Aulas_Semana { get; set; }
         public Int16 Duracao_Meses { get; set; }
-        public short Carga_Horaria { get; set; }
+        public Int16 Carga_Horaria { get; set; }
         public Int16 Horas_Por_Aula { get; set; }
         public bool Apostila { get; set; }
         public decimal Valor_Total { get; set; }

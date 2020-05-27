@@ -79,8 +79,6 @@
             this.tbxIdUsuarioTexto = new System.Windows.Forms.Label();
             this.btnSearchUsuario = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblBuscarUsuario = new System.Windows.Forms.Label();
-            this.lblDtCadastro = new System.Windows.Forms.Label();
-            this.dtCadastro = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.btnAtualizar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label9 = new System.Windows.Forms.Label();
             this.lblCPF = new System.Windows.Forms.Label();
@@ -93,8 +91,6 @@
             this.tbxEmail = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.btnSalvar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.lblDtAdmissao = new System.Windows.Forms.Label();
-            this.dtAdmissao = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.btnSelecionarFoto = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label7 = new System.Windows.Forms.Label();
             this.cbxGrupo = new Bunifu.UI.WinForms.BunifuDropdown();
@@ -108,6 +104,10 @@
             this.tbxNome = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.timerpreenche = new System.Windows.Forms.Timer(this.components);
             this.TimerSenha = new System.Windows.Forms.Timer(this.components);
+            this.lblDtCadastro = new System.Windows.Forms.Label();
+            this.dtCadastro = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.lblDtAdmissao = new System.Windows.Forms.Label();
+            this.dtAdmissao = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImgNega)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgOk)).BeginInit();
@@ -545,39 +545,6 @@
             this.lblBuscarUsuario.TabIndex = 168;
             this.lblBuscarUsuario.Text = "Buscar Cadastro Usuário";
             // 
-            // lblDtCadastro
-            // 
-            this.lblDtCadastro.AutoSize = true;
-            this.lblDtCadastro.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.lblDtCadastro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblDtCadastro.Location = new System.Drawing.Point(30, 513);
-            this.lblDtCadastro.Name = "lblDtCadastro";
-            this.lblDtCadastro.Size = new System.Drawing.Size(105, 20);
-            this.lblDtCadastro.TabIndex = 167;
-            this.lblDtCadastro.Text = "Data Cadastro";
-            // 
-            // dtCadastro
-            // 
-            this.dtCadastro.BackColor = System.Drawing.Color.Gainsboro;
-            this.dtCadastro.BorderRadius = 1;
-            this.dtCadastro.Color = System.Drawing.Color.Gainsboro;
-            this.dtCadastro.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thick;
-            this.dtCadastro.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
-            this.dtCadastro.DisabledColor = System.Drawing.Color.Gray;
-            this.dtCadastro.DisplayWeekNumbers = false;
-            this.dtCadastro.DPHeight = 0;
-            this.dtCadastro.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtCadastro.FillDatePicker = false;
-            this.dtCadastro.ForeColor = System.Drawing.Color.Black;
-            this.dtCadastro.Icon = ((System.Drawing.Image)(resources.GetObject("dtCadastro.Icon")));
-            this.dtCadastro.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dtCadastro.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
-            this.dtCadastro.Location = new System.Drawing.Point(29, 536);
-            this.dtCadastro.MinimumSize = new System.Drawing.Size(309, 32);
-            this.dtCadastro.Name = "dtCadastro";
-            this.dtCadastro.Size = new System.Drawing.Size(309, 32);
-            this.dtCadastro.TabIndex = 166;
-            // 
             // btnAtualizar
             // 
             this.btnAtualizar.AllowToggling = false;
@@ -962,39 +929,6 @@
             this.bunifuSeparator2.TabIndex = 53;
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
-            // 
-            // lblDtAdmissao
-            // 
-            this.lblDtAdmissao.AutoSize = true;
-            this.lblDtAdmissao.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.lblDtAdmissao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblDtAdmissao.Location = new System.Drawing.Point(400, 513);
-            this.lblDtAdmissao.Name = "lblDtAdmissao";
-            this.lblDtAdmissao.Size = new System.Drawing.Size(110, 20);
-            this.lblDtAdmissao.TabIndex = 49;
-            this.lblDtAdmissao.Text = "Data Admissão";
-            // 
-            // dtAdmissao
-            // 
-            this.dtAdmissao.BackColor = System.Drawing.Color.Gainsboro;
-            this.dtAdmissao.BorderRadius = 1;
-            this.dtAdmissao.Color = System.Drawing.Color.Gainsboro;
-            this.dtAdmissao.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thick;
-            this.dtAdmissao.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
-            this.dtAdmissao.DisabledColor = System.Drawing.Color.Gray;
-            this.dtAdmissao.DisplayWeekNumbers = false;
-            this.dtAdmissao.DPHeight = 0;
-            this.dtAdmissao.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtAdmissao.FillDatePicker = false;
-            this.dtAdmissao.ForeColor = System.Drawing.Color.Black;
-            this.dtAdmissao.Icon = ((System.Drawing.Image)(resources.GetObject("dtAdmissao.Icon")));
-            this.dtAdmissao.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dtAdmissao.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
-            this.dtAdmissao.Location = new System.Drawing.Point(399, 536);
-            this.dtAdmissao.MinimumSize = new System.Drawing.Size(309, 32);
-            this.dtAdmissao.Name = "dtAdmissao";
-            this.dtAdmissao.Size = new System.Drawing.Size(309, 32);
-            this.dtAdmissao.TabIndex = 9;
             // 
             // btnSelecionarFoto
             // 
@@ -1463,6 +1397,74 @@
             this.TimerSenha.Interval = 500;
             this.TimerSenha.Tick += new System.EventHandler(this.TimerSenha_Tick);
             // 
+            // lblDtCadastro
+            // 
+            this.lblDtCadastro.AutoSize = true;
+            this.lblDtCadastro.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lblDtCadastro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblDtCadastro.Location = new System.Drawing.Point(30, 513);
+            this.lblDtCadastro.Name = "lblDtCadastro";
+            this.lblDtCadastro.Size = new System.Drawing.Size(105, 20);
+            this.lblDtCadastro.TabIndex = 167;
+            this.lblDtCadastro.Text = "Data Cadastro";
+            // 
+            // dtCadastro
+            // 
+            this.dtCadastro.BackColor = System.Drawing.Color.Gainsboro;
+            this.dtCadastro.BorderRadius = 1;
+            this.dtCadastro.Color = System.Drawing.Color.Gainsboro;
+            this.dtCadastro.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thick;
+            this.dtCadastro.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.dtCadastro.DisabledColor = System.Drawing.Color.Gray;
+            this.dtCadastro.DisplayWeekNumbers = false;
+            this.dtCadastro.DPHeight = 0;
+            this.dtCadastro.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtCadastro.Enabled = false;
+            this.dtCadastro.FillDatePicker = false;
+            this.dtCadastro.ForeColor = System.Drawing.Color.Black;
+            this.dtCadastro.Icon = ((System.Drawing.Image)(resources.GetObject("dtCadastro.Icon")));
+            this.dtCadastro.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtCadastro.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.dtCadastro.Location = new System.Drawing.Point(29, 536);
+            this.dtCadastro.MinimumSize = new System.Drawing.Size(309, 32);
+            this.dtCadastro.Name = "dtCadastro";
+            this.dtCadastro.Size = new System.Drawing.Size(309, 32);
+            this.dtCadastro.TabIndex = 166;
+            // 
+            // lblDtAdmissao
+            // 
+            this.lblDtAdmissao.AutoSize = true;
+            this.lblDtAdmissao.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lblDtAdmissao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblDtAdmissao.Location = new System.Drawing.Point(400, 513);
+            this.lblDtAdmissao.Name = "lblDtAdmissao";
+            this.lblDtAdmissao.Size = new System.Drawing.Size(110, 20);
+            this.lblDtAdmissao.TabIndex = 49;
+            this.lblDtAdmissao.Text = "Data Admissão";
+            // 
+            // dtAdmissao
+            // 
+            this.dtAdmissao.BackColor = System.Drawing.Color.Gainsboro;
+            this.dtAdmissao.BorderRadius = 1;
+            this.dtAdmissao.Color = System.Drawing.Color.Gainsboro;
+            this.dtAdmissao.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thick;
+            this.dtAdmissao.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.dtAdmissao.DisabledColor = System.Drawing.Color.Gray;
+            this.dtAdmissao.DisplayWeekNumbers = false;
+            this.dtAdmissao.DPHeight = 0;
+            this.dtAdmissao.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtAdmissao.Enabled = false;
+            this.dtAdmissao.FillDatePicker = false;
+            this.dtAdmissao.ForeColor = System.Drawing.Color.Black;
+            this.dtAdmissao.Icon = ((System.Drawing.Image)(resources.GetObject("dtAdmissao.Icon")));
+            this.dtAdmissao.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtAdmissao.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.dtAdmissao.Location = new System.Drawing.Point(399, 536);
+            this.dtAdmissao.MinimumSize = new System.Drawing.Size(309, 32);
+            this.dtAdmissao.Name = "dtAdmissao";
+            this.dtAdmissao.Size = new System.Drawing.Size(309, 32);
+            this.dtAdmissao.TabIndex = 9;
+            // 
             // AdicionarEditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1495,8 +1497,6 @@
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox tbxEmail;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSalvar;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
-        private System.Windows.Forms.Label lblDtAdmissao;
-        private Bunifu.UI.WinForms.BunifuDatePicker dtAdmissao;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSelecionarFoto;
         private System.Windows.Forms.Label label7;
         private Bunifu.UI.WinForms.BunifuDropdown cbxGrupo;
@@ -1513,8 +1513,6 @@
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox tbxCPF;
         private System.Windows.Forms.Timer timerpreenche;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblDtCadastro;
-        private Bunifu.UI.WinForms.BunifuDatePicker dtCadastro;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAtualizar;
         private System.Windows.Forms.Label lblIdUsuario;
         private System.Windows.Forms.Label tbxIdUsuarioTexto;
@@ -1532,5 +1530,9 @@
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox TbxSenha2;
         private System.Windows.Forms.Timer TimerSenha;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnExcluir;
+        private System.Windows.Forms.Label lblDtCadastro;
+        private Bunifu.UI.WinForms.BunifuDatePicker dtCadastro;
+        private System.Windows.Forms.Label lblDtAdmissao;
+        private Bunifu.UI.WinForms.BunifuDatePicker dtAdmissao;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using Apresentacao.Presentation.Popup;
 using Negocios;
 using ObjetoTransferencia;
 
@@ -19,11 +20,12 @@ namespace Apresentacao
         {
             InitializeComponent();
         }
-
-        public static FormWindowState EstadoForm { get; set; }
         public static Boolean Taskbar { get; set; }
         public static Boolean TrocaEstado { get; set; } = false;
+        public static Boolean TrocaEstadoCaixa { get; set; } = false;
+
         FrmMenu frmMenu = null;
+        FrmCaixa frmCaixa = null;
         
 
         public void Login()
@@ -43,13 +45,42 @@ namespace Apresentacao
                 frmMenu = new FrmMenu();
                 frmMenu.Show();
                 this.Hide();
-                //EstadoForm = FormWindowState.Minimized;
-                //this.WindowState = EstadoForm;
-                //Taskbar = false;
-                //this.ShowInTaskbar = Taskbar;
                 TrocaEstado = false;
         }
             catch(Exception)
+            {
+                MessageBox.Show("Erro ao fazer login. Detalhes: " + login, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void LoginCaixa()
+        {
+            LoginNegocios loginNegocios = new LoginNegocios();
+
+            string login = loginNegocios.Login(txtLogin.Text, txtSenha.Text);
+
+            try
+            {
+                int retorno = int.Parse(login);
+                Usuario usuario = new Usuario();
+                usuario.Id_Usuario = retorno;
+                usuario.Senha = txtSenha.Text;
+                LoginNegocios.UsuarioLogadoGetSet = usuario;
+
+                CaixaNegocios caixaNegocios = new CaixaNegocios();
+                CaixaColecao caixas = caixaNegocios.ConsultarPorFuncRecebe(retorno);
+                if (caixas.Count > 0)
+                {
+                    frmCaixa = new FrmCaixa();
+                    frmCaixa.Show();
+                    this.Hide();
+                    TrocaEstadoCaixa = false;
+                }
+                else
+                {
+                    MessageBox.Show("Usuário não possui caixa aberto.");
+                }           
+            }
+            catch (Exception)
             {
                 MessageBox.Show("Erro ao fazer login. Detalhes: " + login, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -79,6 +110,20 @@ namespace Apresentacao
                 frmMenu.Close();
                 TrocaEstado = false;
             }
+            if (TrocaEstadoCaixa == true)
+            {
+                txtSenha.Text = "";
+                txtLogin.Text = "";
+
+                this.Show();
+                frmCaixa.Close();
+                TrocaEstadoCaixa = false;
+            }
+        }
+
+        private void bunifuThinButton21_Click_1(object sender, EventArgs e)
+        {
+            LoginCaixa();
         }
     }
 }

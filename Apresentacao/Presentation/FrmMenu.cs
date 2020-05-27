@@ -12,11 +12,13 @@ namespace Apresentacao
         {
             InitializeComponent();
 
+            addPageType(new Presentation.Pages.CaixaAbrirFechar());
             addPageType(new Presentation.Pages.AdicionarEditarUsuario());
             addPageType(new Presentation.Pages.AdicionarEditarFuncionario());
             addPageType(new Presentation.Pages.ConsultaMatricula());
             addPageType(new Presentation.Pages.AdicionarEditarAtendimento());
             addPageType(new Presentation.Pages.AdicionarEditarMatricula());
+            addPageType(new Presentation.Pages.AdicionarEditarTurmaCurso());
 
             VSReactive<string>.Subscribe(VSroute.page, (e) => SetPage(e));
         }

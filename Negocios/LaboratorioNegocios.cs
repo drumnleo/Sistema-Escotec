@@ -91,7 +91,48 @@ namespace Negocios
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
                     Laboratorio laboratorio = new Laboratorio();
+                    laboratorio.Id_Laboratorio = Convert.ToInt32(dataRow["ID_LABORATORIO"]);
+                    laboratorio.Nome = Convert.ToString(dataRow["NOME"]);
+                    laboratorio.Numero_Sala = Convert.ToInt16(dataRow["NUMERO_SALA"]);
+                    laboratorio.Capacidade = Convert.ToInt16(dataRow["CAPACIDADE"]);
+                    laboratorio.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    laboratorio.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
 
+                    Usuario usuario = new Usuario();
+
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    TipoLaboratorio tipoLaboratorio = new TipoLaboratorio();
+
+                    tipoLaboratorio.Tipo = Convert.ToString(dataRow["TIPO"]);
+
+                    laboratorio.Usuario = usuario;
+                    laboratorio.TipoLaboratorio = tipoLaboratorio;
+                    laboratorioColecao.Add(laboratorio);
+                }
+
+                return laboratorioColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar Laboratório. Detalhes: " + ex.Message);
+            }
+        }
+        public LaboratorioColecao ConsultarPorId(int id)
+        {
+            try
+            {
+                LaboratorioColecao laboratorioColecao = new LaboratorioColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_LABORATORIO", id);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_LABORATORIO_CONSULTAR_ID");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    Laboratorio laboratorio = new Laboratorio();
+                    laboratorio.Id_Laboratorio = Convert.ToInt32(dataRow["ID_LABORATORIO"]);
                     laboratorio.Nome = Convert.ToString(dataRow["NOME"]);
                     laboratorio.Numero_Sala = Convert.ToInt16(dataRow["NUMERO_SALA"]);
                     laboratorio.Capacidade = Convert.ToInt16(dataRow["CAPACIDADE"]);

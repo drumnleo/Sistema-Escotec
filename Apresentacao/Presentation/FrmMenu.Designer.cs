@@ -266,7 +266,7 @@
             this.tab6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
             this.tab6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tab6.BorderRadius = 0;
-            this.tab6.ButtonText = "      Ajuda";
+            this.tab6.ButtonText = "      Cadastros";
             this.tab6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTransition1.SetDecoration(this.tab6, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.tab6.DisabledColor = System.Drawing.Color.Gray;
@@ -291,11 +291,12 @@
             this.tab6.selected = false;
             this.tab6.Size = new System.Drawing.Size(200, 51);
             this.tab6.TabIndex = 7;
-            this.tab6.Tag = "6";
-            this.tab6.Text = "      Ajuda";
+            this.tab6.Tag = "5";
+            this.tab6.Text = "      Cadastros";
             this.tab6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tab6.Textcolor = System.Drawing.Color.White;
             this.tab6.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tab6.Click += new System.EventHandler(this.sideMenu_Click);
             // 
             // tab5
             // 
@@ -460,7 +461,7 @@
             this.tab1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(36)))), ((int)(((byte)(88)))));
             this.tab1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tab1.BorderRadius = 0;
-            this.tab1.ButtonText = "      Dashboard";
+            this.tab1.ButtonText = "      Caixa";
             this.tab1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTransition1.SetDecoration(this.tab1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.tab1.DisabledColor = System.Drawing.Color.Gray;
@@ -486,7 +487,7 @@
             this.tab1.Size = new System.Drawing.Size(200, 51);
             this.tab1.TabIndex = 1;
             this.tab1.Tag = "0";
-            this.tab1.Text = "      Dashboard";
+            this.tab1.Text = "      Caixa";
             this.tab1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tab1.Textcolor = System.Drawing.Color.White;
             this.tab1.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
