@@ -19,8 +19,8 @@ namespace Apresentacao.Presentation.Pages
             dataGrid.AutoGenerateColumns = false;
             dataGrid.AllowUserToResizeColumns = false;
             dataGrid.AllowUserToResizeRows = false;
-            dataGrid.ColumnHeadersHeight = 30;
-            dataGrid.RowHeadersWidth = 30;
+            dataGrid.ColumnHeadersHeight = 20;
+            dataGrid.RowHeadersWidth = 20;
             dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 
             TimerDatagrid.Stop();

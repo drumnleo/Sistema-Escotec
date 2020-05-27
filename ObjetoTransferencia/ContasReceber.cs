@@ -14,6 +14,7 @@ namespace ObjetoTransferencia
         public Int16 Numero_Parcela { get; set; }
         public Int16 Total_Parcelas { get; set; }
         public decimal  Valor { get; set; }
+        public decimal Desconto { get; set; }
         public DateTime Vencimento { get; set; }
         public Int16 Acrescimo_Atraso { get; set; }
         public char Situacao_Pg { get; set; }

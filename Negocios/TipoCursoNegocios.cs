@@ -89,7 +89,50 @@ namespace Negocios
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
                     TipoCurso tipoCurso = new TipoCurso();
+                    tipoCurso.Id_Tipo_Curso = Convert.ToInt32(dataRow["ID_TIPO_CURSO"]);
+                    tipoCurso.Nome = Convert.ToString(dataRow["NOME"]);
+                    tipoCurso.Descricao = Convert.ToString(dataRow["DESCRICAO"]);
+                    tipoCurso.Vagas = Convert.ToInt16(dataRow["VAGAS"]);
+                    tipoCurso.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    tipoCurso.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
 
+                    Usuario usuario = new Usuario();
+
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    Laboratorio laboratorio = new Laboratorio();
+
+                    laboratorio.Id_Laboratorio = Convert.ToInt32(dataRow["ID_LABORATORIO"]);
+                    laboratorio.Nome = Convert.ToString(dataRow["NOME"]);
+
+                    tipoCurso.Usuario = usuario;
+                    tipoCurso.Laboratorio = laboratorio;
+                    tipoCursoColecao.Add(tipoCurso);
+                }
+
+                return tipoCursoColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar tipo de curso. Detalhes: " + ex.Message);
+            }
+        }
+
+        public TipoCursoColecao ConsultarPorId(int id)
+        {
+            try
+            {
+                TipoCursoColecao tipoCursoColecao = new TipoCursoColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_TIPO_CURSO", id);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_TIPO_CURSO_CONSULTARPORID");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    TipoCurso tipoCurso = new TipoCurso();
+                    tipoCurso.Id_Tipo_Curso = Convert.ToInt32(dataRow["ID_TIPO_CURSO"]);
                     tipoCurso.Nome = Convert.ToString(dataRow["NOME"]);
                     tipoCurso.Descricao = Convert.ToString(dataRow["DESCRICAO"]);
                     tipoCurso.Vagas = Convert.ToInt16(dataRow["VAGAS"]);

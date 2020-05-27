@@ -43,6 +43,7 @@
             this.btnSair = new Bunifu.Framework.UI.BunifuThinButton2();
             this.txtSenha = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -168,7 +169,7 @@
             this.btnLogin.ActiveLineColor = System.Drawing.Color.SeaGreen;
             this.btnLogin.BackColor = System.Drawing.Color.White;
             this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
-            this.btnLogin.ButtonText = "Login";
+            this.btnLogin.ButtonText = "Login Sis";
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
@@ -177,10 +178,10 @@
             this.btnLogin.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(210)))), ((int)(((byte)(66)))));
             this.btnLogin.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnLogin.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(210)))), ((int)(((byte)(66)))));
-            this.btnLogin.Location = new System.Drawing.Point(488, 322);
+            this.btnLogin.Location = new System.Drawing.Point(423, 322);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(5);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(135, 41);
+            this.btnLogin.Size = new System.Drawing.Size(121, 41);
             this.btnLogin.TabIndex = 7;
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogin.Click += new System.EventHandler(this.bunifuThinButton21_Click);
@@ -203,10 +204,10 @@
             this.btnSair.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(210)))), ((int)(((byte)(66)))));
             this.btnSair.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnSair.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(210)))), ((int)(((byte)(66)))));
-            this.btnSair.Location = new System.Drawing.Point(313, 322);
+            this.btnSair.Location = new System.Drawing.Point(308, 322);
             this.btnSair.Margin = new System.Windows.Forms.Padding(5);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(135, 41);
+            this.btnSair.Size = new System.Drawing.Size(105, 41);
             this.btnSair.TabIndex = 8;
             this.btnSair.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -240,12 +241,39 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // bunifuThinButton21
+            // 
+            this.bunifuThinButton21.ActiveBorderThickness = 1;
+            this.bunifuThinButton21.ActiveCornerRadius = 20;
+            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.BackColor = System.Drawing.Color.White;
+            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
+            this.bunifuThinButton21.ButtonText = "Login Caixa";
+            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton21.ForeColor = System.Drawing.Color.White;
+            this.bunifuThinButton21.IdleBorderThickness = 1;
+            this.bunifuThinButton21.IdleCornerRadius = 20;
+            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(210)))), ((int)(((byte)(66)))));
+            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(210)))), ((int)(((byte)(66)))));
+            this.bunifuThinButton21.Location = new System.Drawing.Point(554, 322);
+            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
+            this.bunifuThinButton21.Name = "bunifuThinButton21";
+            this.bunifuThinButton21.Size = new System.Drawing.Size(111, 41);
+            this.bunifuThinButton21.TabIndex = 9;
+            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click_1);
+            // 
             // FrmLogin_flat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(649, 390);
+            this.ClientSize = new System.Drawing.Size(699, 390);
+            this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.bunifuCustomLabel5);
@@ -281,5 +309,6 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnSair;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtSenha;
         private System.Windows.Forms.Timer timer1;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
     }
 }

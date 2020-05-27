@@ -26,7 +26,6 @@
         /// Método necessário para suporte ao Designer - não modifique 
         /// o conteúdo deste método com o editor de código.
         /// </summary>
-        [System.Obsolete]
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();

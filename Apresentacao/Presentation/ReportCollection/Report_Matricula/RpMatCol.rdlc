@@ -4992,7 +4992,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Sum(Fields!counts.Value)</Value>
+                  <Value></Value>
                   <Style />
                 </TextRun>
               </TextRuns>

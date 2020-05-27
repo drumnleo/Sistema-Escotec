@@ -144,7 +144,6 @@ namespace Apresentacao.Presentation.Pages
                 {
                     throw new Exception("Erro ao inserir senha, verifique!");
                 }
-                usuario.Senha = TbxSenha.Text;
                 usuario.Email_Profissional = tbxEmail.Text;
                 usuario.Usuario_cad_alt = LoginNegocios.UsuarioLogadoGetSet;
             }

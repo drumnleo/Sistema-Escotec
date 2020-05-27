@@ -20,14 +20,11 @@ namespace Negocios
 
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("@ID_FUNCIONARIO", usuario.Funcionario.Id_Funcionario);
-                acessoDados.AdicionarParametros("@ID_GRUPO_USUARIO", usuario.GrupoUsuario.Id_Grupo);
+                acessoDados.AdicionarParametros("@ID_GRUPO", usuario.GrupoUsuario.Id_Grupo);
                 acessoDados.AdicionarParametros("@NOME_USUARIO", usuario.Nome_Usuario);
                 acessoDados.AdicionarParametros("@SENHA", usuario.Senha);
                 acessoDados.AdicionarParametros("@EMAIL_PROFISSIONAL", usuario.Email_Profissional);
-                acessoDados.AdicionarParametros("USUARIO_CAD_ALT", usuario.Usuario_cad_alt);
-
-
-
+                acessoDados.AdicionarParametros("USUARIO_CAD_ALT", usuario.Usuario_cad_alt.Id_Usuario);
 
                 string idusuario = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_USUARIO_INSERIR").ToString();
 
@@ -201,7 +198,7 @@ namespace Negocios
             {
                 acessoDados.LimparParametros();
                 acessoDados.AdicionarParametros("ID_USUARIO", usuario.Id_Usuario);
-                acessoDados.AdicionarParametros("ID_USUARIO_LOGADO", usuario.Id_Usuario);
+                acessoDados.AdicionarParametros("ID_USUARIO_LOGADO", usuario.Usuario_cad_alt.Id_Usuario);
 
                 string id_usuario = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_USUARIO_EXCLUIR").ToString();
 

@@ -61,7 +61,7 @@ namespace Negocios
                     Endereco endereco = new Endereco();
                     endereco.Id_Endereco = Convert.ToInt32(dataRow["ID_ENDERECO"]);
                     endereco.CEP = Convert.ToString(dataRow["CEP"]);
-                    endereco.Logradouro = Convert.ToString(dataRow["LOGRADURO"]);
+                    endereco.Logradouro = Convert.ToString(dataRow["LOGRADOURO"]);
                     endereco.Bairro = Convert.ToString(dataRow["BAIRRO"]);
                     endereco.Cidade = Convert.ToString(dataRow["CIDADE"]);
                     endereco.Estado = Convert.ToString(dataRow["ESTADO"]);
@@ -107,7 +107,7 @@ namespace Negocios
                     Endereco endereco = new Endereco();
                     endereco.Id_Endereco = Convert.ToInt32(dataRow["ID_ENDERECO"]);
                     endereco.CEP = Convert.ToString(dataRow["CEP"]);
-                    endereco.Logradouro = Convert.ToString(dataRow["LOGRADURO"]);
+                    endereco.Logradouro = Convert.ToString(dataRow["LOGRADOURO"]);
                     endereco.Bairro = Convert.ToString(dataRow["BAIRRO"]);
                     endereco.Cidade = Convert.ToString(dataRow["CIDADE"]);
                     endereco.Estado = Convert.ToString(dataRow["ESTADO"]);

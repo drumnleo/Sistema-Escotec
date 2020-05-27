@@ -158,7 +158,7 @@ namespace Apresentacao.Presentation.Pages
                     case 0:
                         PanelNome.Visible = true;
                         PanelCpf.Visible = false;
-                        PanelData.Visible = false;
+                        PanelData.Visible = true;
                         PanelTurma.Visible = false;          
                         PanelUsuario.Visible = false;
                         busca = CbxBusca.SelectedIndex;
