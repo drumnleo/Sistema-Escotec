@@ -232,7 +232,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -5112,9 +5111,41 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="Bairro">
+          <DataField>Bairro</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Carga_Horaria">
+          <DataField>Carga_Horaria</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="Cidade">
+          <DataField>Cidade</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CPF">
+          <DataField>CPF</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Curso">
           <DataField>Curso</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Data_Fim">
+          <DataField>Data_Fim</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Doc">
+          <DataField>Doc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Estado">
+          <DataField>Estado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Hora_Inicio">
+          <DataField>Hora_Inicio</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="Id_Aluno">
           <DataField>Id_Aluno</DataField>
@@ -5124,16 +5155,24 @@
           <DataField>Id_Matricula</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Nome">
-          <DataField>Nome</DataField>
+        <Field Name="Nome_Profissao">
+          <DataField>Nome_Profissao</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Qtde_Parcela">
-          <DataField>Qtde_Parcela</DataField>
+        <Field Name="Nome_Rua">
+          <DataField>Nome_Rua</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NomeAluno">
+          <DataField>NomeAluno</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Qtde_Parcelas">
+          <DataField>Qtde_Parcelas</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
-        <Field Name="Sobrenome">
-          <DataField>Sobrenome</DataField>
+        <Field Name="SobrenomeAluno">
+          <DataField>SobrenomeAluno</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Total">
@@ -5143,6 +5182,10 @@
         <Field Name="Usuario">
           <DataField>Usuario</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Valor_Entrada_Turma">
+          <DataField>Valor_Entrada_Turma</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
