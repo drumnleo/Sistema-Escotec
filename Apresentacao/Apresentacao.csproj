@@ -482,7 +482,6 @@
     <EmbeddedResource Include="RpMatCol.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ObjetoTransferencia.MatriculaRelatorio.datasource" />
-    <None Include="Properties\DataSources\ObjetoTransferencia.MatriculaRelatorioColecao.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
