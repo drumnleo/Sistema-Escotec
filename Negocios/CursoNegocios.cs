@@ -123,6 +123,7 @@ namespace Negocios
                     TipoCurso tipoCurso = new TipoCurso();
 
                     tipoCurso.Id_Tipo_Curso = Convert.ToInt32(dataRow["ID_TIPO_CURSO"]);
+                    tipoCurso.Nome = Convert.ToString(dataRow["NOME_TIPO_CURSO"]);
 
                     curso.Usuario = usuario;
                     curso.TipoCurso = tipoCurso;
@@ -172,6 +173,7 @@ namespace Negocios
                     TipoCurso tipoCurso = new TipoCurso();
 
                     tipoCurso.Id_Tipo_Curso = Convert.ToInt32(dataRow["ID_TIPO_CURSO"]);
+                    tipoCurso.Nome = Convert.ToString(dataRow["NOME_TIPO_CURSO"]);
 
                     curso.Usuario = usuario;
                     curso.TipoCurso = tipoCurso;

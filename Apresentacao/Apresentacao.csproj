@@ -232,17 +232,17 @@
     <Compile Include="Presentation\Pages\Usuarios\AdicionarEditarUsuario.Designer.cs">
       <DependentUpon>AdicionarEditarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Popup\FrmBuscaContas.cs">
+    <Compile Include="Presentation\Popup\Caixa\FrmCaixa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Popup\FrmBuscaContas.Designer.cs">
-      <DependentUpon>FrmBuscaContas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Popup\FrmCaixa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\Popup\FrmCaixa.Designer.cs">
+    <Compile Include="Presentation\Popup\Caixa\FrmCaixa.Designer.cs">
       <DependentUpon>FrmCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Popup\ConfirmaUsuario\Frm_UsuarioConfirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\ConfirmaUsuario\Frm_UsuarioConfirma.Designer.cs">
+      <DependentUpon>Frm_UsuarioConfirma.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\ReportMatriculaColecao.cs">
       <SubType>Form</SubType>
@@ -256,6 +256,12 @@
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Atendimento .Designer.cs">
       <DependentUpon>SearchDialog_Atendimento .cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_MovimentoCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_MovimentoCaixa.Designer.cs">
+      <DependentUpon>SearchDialog_MovimentoCaixa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_ContasReceber.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,12 @@
     </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Orcamento.Designer.cs">
       <DependentUpon>SearchDialog_Orcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Curso .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Curso .Designer.cs">
+      <DependentUpon>SearchDialog_Curso .cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_TurmaOrcamentoMatricula .cs">
       <SubType>Form</SubType>
@@ -322,11 +334,17 @@
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog.Designer.cs">
       <DependentUpon>SearchDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Popup\Tipos\Frm_TipoCurso.cs">
+    <Compile Include="Presentation\Popup\Tipos\Frm_Lab.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Popup\Tipos\Frm_TipoCurso.Designer.cs">
-      <DependentUpon>Frm_TipoCurso.cs</DependentUpon>
+    <Compile Include="Presentation\Popup\Tipos\Frm_Lab.Designer.cs">
+      <DependentUpon>Frm_Lab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Popup\Tipos\Frm_TpLab .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\Tipos\Frm_TpLab .Designer.cs">
+      <DependentUpon>Frm_TpLab .cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Popup\Tipos\Frm_TpCurso.cs">
       <SubType>Form</SubType>
@@ -388,11 +406,11 @@
     <EmbeddedResource Include="Presentation\Pages\Usuarios\AdicionarEditarUsuario.resx">
       <DependentUpon>AdicionarEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Popup\FrmBuscaContas.resx">
-      <DependentUpon>FrmBuscaContas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Popup\FrmCaixa.resx">
+    <EmbeddedResource Include="Presentation\Popup\Caixa\FrmCaixa.resx">
       <DependentUpon>FrmCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\ConfirmaUsuario\Frm_UsuarioConfirma.resx">
+      <DependentUpon>Frm_UsuarioConfirma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\ReportMatriculaColecao.resx">
       <DependentUpon>ReportMatriculaColecao.cs</DependentUpon>
@@ -400,11 +418,17 @@
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Atendimento .resx">
       <DependentUpon>SearchDialog_Atendimento .cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_MovimentoCaixa.resx">
+      <DependentUpon>SearchDialog_MovimentoCaixa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_ContasReceber.resx">
       <DependentUpon>SearchDialog_ContasReceber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Orcamento.resx">
       <DependentUpon>SearchDialog_Orcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Curso .resx">
+      <DependentUpon>SearchDialog_Curso .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_TurmaOrcamentoMatricula .resx">
       <DependentUpon>SearchDialog_TurmaOrcamentoMatricula .cs</DependentUpon>
@@ -433,8 +457,11 @@
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog.resx">
       <DependentUpon>SearchDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Popup\Tipos\Frm_TipoCurso.resx">
-      <DependentUpon>Frm_TipoCurso.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Popup\Tipos\Frm_Lab.resx">
+      <DependentUpon>Frm_Lab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\Tipos\Frm_TpLab .resx">
+      <DependentUpon>Frm_TpLab .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\Tipos\Frm_TpCurso.resx">
       <DependentUpon>Frm_TpCurso.cs</DependentUpon>
@@ -524,7 +551,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Presentation\Popup\Caixa\" />
     <Folder Include="Presentation\ReportCollection\Report_Caixa\" />
     <Folder Include="Presentation\Shared\" />
   </ItemGroup>

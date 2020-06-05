@@ -1,6 +1,6 @@
 ﻿namespace Apresentacao.Presentation.Popup.SearchDialogs
 {
-    partial class SearchDialog_ContasReceber
+    partial class SearchDialog_MovimentoCaixa
     {
         /// <summary>
         /// Required designer variable.
@@ -51,7 +51,6 @@
             this.lblpesquisa = new System.Windows.Forms.Label();
             this.PanelCenter = new System.Windows.Forms.Panel();
             this.dataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.verifica = new System.Windows.Forms.Timer(this.components);
             this.Id_Mat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_Conta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +58,7 @@
             this.Total_Parcelas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HORA_ENTRADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.verifica = new System.Windows.Forms.Timer(this.components);
             this.PanelDown.SuspendLayout();
             this.PanelTop.SuspendLayout();
             this.PanelCenter.SuspendLayout();

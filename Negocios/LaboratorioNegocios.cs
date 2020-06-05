@@ -99,12 +99,11 @@ namespace Negocios
                     laboratorio.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
 
                     Usuario usuario = new Usuario();
-
                     usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
                     TipoLaboratorio tipoLaboratorio = new TipoLaboratorio();
-
                     tipoLaboratorio.Tipo = Convert.ToString(dataRow["TIPO"]);
+                    tipoLaboratorio.Id_Tipo_Laboratorio = Convert.ToInt32(dataRow["ID_TIPO_LABORATORIO"]);
 
                     laboratorio.Usuario = usuario;
                     laboratorio.TipoLaboratorio = tipoLaboratorio;
@@ -144,7 +143,7 @@ namespace Negocios
                     usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
 
                     TipoLaboratorio tipoLaboratorio = new TipoLaboratorio();
-
+                    tipoLaboratorio.Id_Tipo_Laboratorio = Convert.ToInt32(dataRow["ID_TIPO_LABORATORIO"]);
                     tipoLaboratorio.Tipo = Convert.ToString(dataRow["TIPO"]);
 
                     laboratorio.Usuario = usuario;

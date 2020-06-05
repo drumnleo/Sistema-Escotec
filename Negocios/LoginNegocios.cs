@@ -35,6 +35,23 @@ namespace Negocios
             
         }
 
+        public bool VerificaSenhaUsuario(string usuario, string senha)
+        {
+            LoginNegocios loginNegocios = new LoginNegocios();
+
+            string login = loginNegocios.Login(usuario, senha);
+
+            try
+            {
+                int retorno = int.Parse(login);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public static Usuario UsuarioLogadoGetSet { get; set; }
 
     }

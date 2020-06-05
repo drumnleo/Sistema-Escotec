@@ -61,6 +61,7 @@
     <Compile Include="OrcamentoNegocios.cs" />
     <Compile Include="PerfilNegocios.cs" />
     <Compile Include="PessoaNegocios.cs" />
+    <Compile Include="ProfessorNegocios.cs" />
     <Compile Include="ProfissaoNegocios.cs" />
     <Compile Include="PromocaoNegocios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

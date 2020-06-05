@@ -240,7 +240,7 @@ namespace Apresentacao.Presentation.Pages
 
             if (CbxIdOrc.DataSource == null)
             {
-                if (CbxIdOrc.SelectedIndex != -1)
+                if (CbxIdOrc.SelectedIndex == -1)
                 {
                     OrcamentoNegocios orcamentoNegocios = new OrcamentoNegocios();
 

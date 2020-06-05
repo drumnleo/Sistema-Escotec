@@ -16,14 +16,19 @@ using Apresentacao.Validacao_cpf_e_afins;
 namespace Apresentacao.Presentation.Popup.SearchDialogs
 {
     
-    public partial class SearchDialog_ContasReceber : Form
+    public partial class SearchDialog_Curso : Form
     {
-        ContasReceber ContaEscolhida = new ContasReceber();
+        Curso CursoEscolhido = new Curso();
 
-        public SearchDialog_ContasReceber()
+        public SearchDialog_Curso()
         {
             InitializeComponent();
+
             dataGrid.AutoGenerateColumns = false;
+            dataGrid.RowsDefaultCellStyle.Font = new Font("Segoe UI Semibold", 11F, GraphicsUnit.Pixel);
+            dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 11F, GraphicsUnit.Pixel);
+            dataGrid.RowTemplate.Height = 30;
+            dataGrid.ColumnHeadersHeight = 30;
             dataGrid.AllowUserToResizeColumns = false;
             dataGrid.AllowUserToResizeRows = false;
             dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -38,41 +43,34 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void dataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            atualizarcampos();
+            CarregaCursoSelecionado();
         }
 
-        private void atualizarcampos()
+        private void CarregaCursoSelecionado()
         {
-            ContasReceberNegocios contasReceberNegocios = new ContasReceberNegocios();
-            ContasReceberColecao contaColecao = contasReceberNegocios.ConsultarPorIdConta(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[1].FormattedValue));
-            ContaEscolhida = contaColecao[0];
+            CursoNegocios cursoNegocios = new CursoNegocios();
+            int IdCurso = Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].FormattedValue);
 
-
+            CursoEscolhido = cursoNegocios.ConsultarPorId(IdCurso)[0];
 
             btnSelecionar.Enabled = true;
         }
 
         private void btnpesquisar_Click(object sender, EventArgs e)
         {
-            ContasReceberNegocios contasReceberNegocios = new ContasReceberNegocios();
-            ContasReceberColecao contas = new ContasReceberColecao();
-            Validadocs validadocs = new Validadocs();
-            bool cpfvalido = validadocs.ValidaCPF(tbxSearch.Text);
-            if (cpfvalido)
-            {
-                contas = contasReceberNegocios.ConsultarPorCPF(tbxSearch.Text);
-                dataGrid.DataSource = null;
-                dataGrid.DataSource = contas;
-                dataGrid.AllowUserToResizeColumns = false;
-                dataGrid.AllowUserToResizeRows = false;
-                dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-                dataGrid.Update();
-                dataGrid.Refresh();
-            }
-            else
-            {
-                MessageBox.Show("CPF inválido!");
-            } 
+            CursoNegocios cursoNegocios = new CursoNegocios();
+            CursoColecao cursoColecao = cursoNegocios.ConsultarPorNome(tbxSearch.Text);
+
+            dataGrid.DataSource = null;
+            dataGrid.DataSource = cursoColecao;
+            dataGrid.AllowUserToResizeColumns = false;
+            dataGrid.AllowUserToResizeRows = false;
+            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGrid.Update();
+            dataGrid.Refresh();
+
+            CursoEscolhido = new Curso();
+            btnSelecionar.Enabled = false;
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -82,8 +80,9 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
-            FrmCaixa.ContaGetSet = ContaEscolhida;
-            FrmCaixa.AtualizaCampos = true;
+            AdicionarEditarTurmaCurso.CursoGetSet = CursoEscolhido;
+            AdicionarEditarTurmaCurso.atualizarCampos = true;
+
             this.Close();
         }
 

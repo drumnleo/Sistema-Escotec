@@ -16,13 +16,15 @@ using Apresentacao.Validacao_cpf_e_afins;
 namespace Apresentacao.Presentation.Popup.SearchDialogs
 {
     
-    public partial class SearchDialog_ContasReceber : Form
+    public partial class SearchDialog_MovimentoCaixa : Form
     {
         ContasReceber ContaEscolhida = new ContasReceber();
-
-        public SearchDialog_ContasReceber()
+        int caixaSelecionado;
+        public SearchDialog_MovimentoCaixa(int idCaixa)
         {
             InitializeComponent();
+            caixaSelecionado = idCaixa;
+
             dataGrid.AutoGenerateColumns = false;
             dataGrid.AllowUserToResizeColumns = false;
             dataGrid.AllowUserToResizeRows = false;
@@ -44,9 +46,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
         private void atualizarcampos()
         {
             ContasReceberNegocios contasReceberNegocios = new ContasReceberNegocios();
-            ContasReceberColecao contaColecao = contasReceberNegocios.ConsultarPorIdConta(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[1].FormattedValue));
-            ContaEscolhida = contaColecao[0];
-
+            ContaEscolhida = contasReceberNegocios.ConsultarPorIdMatricula(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].FormattedValue))[0];
 
 
             btnSelecionar.Enabled = true;

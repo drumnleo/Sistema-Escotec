@@ -12,4 +12,10 @@ namespace Apresentacao
         current_wizard_tab,
         report_type
     }
+
+    public enum UsuarioAutoriza
+    {
+        caixa,
+        teste
+    }
 }

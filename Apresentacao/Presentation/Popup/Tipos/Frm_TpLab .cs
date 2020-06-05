@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Apresentacao.Presentation.Popup.Tipos
 {
-    public partial class Frm_TpCurso : Form
+    public partial class Frm_TpLab : Form
     {
-        public Frm_TpCurso()
+        public Frm_TpLab()
         {
             InitializeComponent();
 
@@ -32,7 +32,7 @@ namespace Apresentacao.Presentation.Popup.Tipos
             CarregarDataGrid();
         }
 
-        public TipoCurso TipoCursoEscolhido { get; set; }
+        public TipoLaboratorio TipoLaboratorioEscolhido { get; set; }
 
         private void SearchDialog_Load(object sender, EventArgs e)
         {
@@ -43,7 +43,7 @@ namespace Apresentacao.Presentation.Popup.Tipos
         }
         private void SearchDialog_Shown(object sender, EventArgs e)
         {
-            TbxVagas.Focus();
+            TbxTipo.Focus();
         }
 
 
@@ -56,35 +56,24 @@ namespace Apresentacao.Presentation.Popup.Tipos
         }
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            TipoCursoNegocios tipoCursoNegocios = new TipoCursoNegocios();
-            TipoCurso tipoCurso = new TipoCurso();
+            TipoLaboratorioNegocios tipoLaboratorioNegocios = new TipoLaboratorioNegocios();
+            TipoLaboratorio tipoLaboratorio = new TipoLaboratorio();
             try
             {
-                string vagas = VerificaCampoDigitado(TbxVagas.Text, "Vagas");
-                tipoCurso.Vagas = Convert.ToInt16(vagas);
-                if (CbxLaboratorio.SelectedValue != null)
-                {
-                    tipoCurso.Laboratorio = new Laboratorio();
-                    tipoCurso.Laboratorio.Id_Laboratorio = Convert.ToInt32(CbxLaboratorio.SelectedValue.ToString());
-                }
-                else
-                {
-                    throw new Exception("Erro ao inserir Laboratório, verifique!");
-                }
-                tipoCurso.Nome = VerificaCampoDigitado(TbxNomeCurso.Text, "Nome Curso");
-                tipoCurso.Descricao = TbxCursoDescricao.Text;
-                tipoCurso.Usuario = LoginNegocios.UsuarioLogadoGetSet;
+                tipoLaboratorio.Tipo = VerificaCampoDigitado(TbxTipo.Text, "Tipo");
+                tipoLaboratorio.Descricao = VerificaCampoDigitado(TbxDescricao.Text, "Descrição");
+                tipoLaboratorio.Usuario = LoginNegocios.UsuarioLogadoGetSet;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
-            string retorno = tipoCursoNegocios.Inserir(tipoCurso);
+            string retorno = tipoLaboratorioNegocios.Inserir(tipoLaboratorio);
 
             try
             {
-                int idTipoTurma = Convert.ToInt32(retorno);
+                int idTipoLaboratorio = Convert.ToInt32(retorno);
                 MessageBox.Show("Salvo com sucesso!", "Confirmado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -96,48 +85,37 @@ namespace Apresentacao.Presentation.Popup.Tipos
         }
         private void BtnAtualizar_Click(object sender, EventArgs e)
         {
-            TipoCursoNegocios tipoCursoNegocios = new TipoCursoNegocios();
-            TipoCurso tipoCurso = new TipoCurso();
+            TipoLaboratorioNegocios tipoLaboratorioNegocios = new TipoLaboratorioNegocios();
+            TipoLaboratorio tipoLaboratorio = new TipoLaboratorio();
             try
             {
-                string vagas = VerificaCampoDigitado(TbxVagas.Text, "Vagas");
-                tipoCurso.Id_Tipo_Curso = Convert.ToInt32(TbxId.Text);
-                tipoCurso.Vagas = Convert.ToInt16(vagas);
-                if (CbxLaboratorio.SelectedValue != null)
-                {
-                    tipoCurso.Laboratorio = new Laboratorio();
-                    tipoCurso.Laboratorio.Id_Laboratorio = Convert.ToInt32(CbxLaboratorio.SelectedValue.ToString());
-                }
-                else
-                {
-                    throw new Exception("Erro ao carregar Laboratório selecionado, verifique!");
-                }
-                tipoCurso.Nome = VerificaCampoDigitado(TbxNomeCurso.Text, "Nome Curso");
-                tipoCurso.Descricao = TbxCursoDescricao.Text;
-                tipoCurso.Usuario = LoginNegocios.UsuarioLogadoGetSet;
+                tipoLaboratorio.Id_Tipo_Laboratorio = Convert.ToInt32(TbxId.Text);
+                tipoLaboratorio.Tipo = VerificaCampoDigitado(TbxTipo.Text, "Tipo");
+                tipoLaboratorio.Descricao = VerificaCampoDigitado(TbxDescricao.Text, "Descrição");
+                tipoLaboratorio.Usuario = LoginNegocios.UsuarioLogadoGetSet;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
-            string retorno = tipoCursoNegocios.AtualizarporId(tipoCurso);
+            string retorno = tipoLaboratorioNegocios.AtualizarporId(tipoLaboratorio);
 
             try
             {
-                int idTipoTurma = Convert.ToInt32(retorno);
+                int idTipoLaboratorio = Convert.ToInt32(retorno);
                 MessageBox.Show("Atualizado com sucesso!", "Confirmado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception)
             {
-                MessageBox.Show("Erro ao inserir. Detalhes: " + retorno, "Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao atualizar. Detalhes: " + retorno, "Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
-            TipoCursoNegocios tipoCursoNegocios = new TipoCursoNegocios();
+            TipoLaboratorioNegocios tipoLaboratorioNegocios = new TipoLaboratorioNegocios();
             if (TbxId.Text == "")
             {
                 MessageBox.Show("Nenhum cadastro selecionado.");
@@ -149,14 +127,14 @@ namespace Apresentacao.Presentation.Popup.Tipos
             {
                 return;
             }
-            TipoCurso tipoCurso = new TipoCurso();
-            tipoCurso.Usuario = LoginNegocios.UsuarioLogadoGetSet;
-            tipoCurso.Id_Tipo_Curso = Convert.ToInt32(TbxId.Text);
-            string retorno = tipoCursoNegocios.Excluir(tipoCurso);
+            TipoLaboratorio tipoLaboratorio = new TipoLaboratorio();
+            tipoLaboratorio.Usuario = LoginNegocios.UsuarioLogadoGetSet;
+            tipoLaboratorio.Id_Tipo_Laboratorio = Convert.ToInt32(TbxId.Text);
+            string retorno = tipoLaboratorioNegocios.Excluir(tipoLaboratorio);
 
             try
             {
-                int idTipoCurso = Convert.ToInt32(retorno);
+                int idTipoLaboratorio = Convert.ToInt32(retorno);
                 MessageBox.Show("Excluído com sucesso!", "Confirmado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -175,26 +153,14 @@ namespace Apresentacao.Presentation.Popup.Tipos
         //Métodos Personalizados
         private void Atualizarcampos()
         {
-            TipoCursoNegocios tipoCursoNegocios = new TipoCursoNegocios();
-            TipoCursoEscolhido = tipoCursoNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value))[0];
+            TipoLaboratorioNegocios tipoLaboratorioNegocios = new TipoLaboratorioNegocios();
+            TipoLaboratorioEscolhido = tipoLaboratorioNegocios.ConsultarPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].Value))[0];
 
-            TbxId.Text = TipoCursoEscolhido.Id_Tipo_Curso.ToString();
-            TbxVagas.Text = TipoCursoEscolhido.Vagas.ToString();
-            TbxDataCadastro.Text = TipoCursoEscolhido.Data_Cadastro.ToShortDateString();
-            TbxDataAtualizacao.Text = TipoCursoEscolhido.Data_Ultima_Alteracao.ToShortDateString();
-            TbxNomeCurso.Text = TipoCursoEscolhido.Nome;
-            TbxCursoDescricao.Text = TipoCursoEscolhido.Descricao;
-
-            CbxLaboratorio.DataSource = null;
-            LaboratorioNegocios laboratorioNegocios = new LaboratorioNegocios();
-            LaboratorioColecao laboratorios = laboratorioNegocios.ConsultarPorId(TipoCursoEscolhido.Laboratorio.Id_Laboratorio);
-
-            CbxLaboratorio.DataSource = laboratorios;
-            CbxLaboratorio.DisplayMember = "NOME";
-            CbxLaboratorio.ValueMember = "ID_LABORATORIO";
-            CbxLaboratorio.Update();
-            CbxLaboratorio.Refresh();
-            CbxLaboratorio.SelectedIndex = 0;
+            TbxId.Text = TipoLaboratorioEscolhido.Id_Tipo_Laboratorio.ToString();
+            TbxDataCadastro.Text = TipoLaboratorioEscolhido.Data_Cadastro.ToShortDateString();
+            TbxDataAtualizacao.Text = TipoLaboratorioEscolhido.Data_Ultima_Alteracao.ToShortDateString();
+            TbxTipo.Text = TipoLaboratorioEscolhido.Tipo;
+            TbxDescricao.Text = TipoLaboratorioEscolhido.Descricao;
         }
         private string VerificaCampoDigitado(string valor, string campo)
         {
@@ -213,15 +179,12 @@ namespace Apresentacao.Presentation.Popup.Tipos
         }
         private void LimpaCampos()
         {
-            TipoCursoEscolhido = null;
+            TipoLaboratorioEscolhido = null;
             TbxId.Text = "";
-            TbxVagas.Text = "";
             TbxDataCadastro.Text = "";
             TbxDataAtualizacao.Text = "";
-            TbxNomeCurso.Text = "";
-            TbxCursoDescricao.Text = "";
-            CarregarComboBox();
-            CbxLaboratorio.SelectedIndex = -1;
+            TbxTipo.Text = "";
+            TbxDescricao.Text = "";
 
             CarregarDataGrid();
 
@@ -241,11 +204,11 @@ namespace Apresentacao.Presentation.Popup.Tipos
         }
         private void CarregarDataGrid()
         {
-            TipoCursoNegocios tipoCursoNegocios = new TipoCursoNegocios();
-            TipoCursoColecao tipoCursos = tipoCursoNegocios.ConsultarPorNome("");
+            TipoLaboratorioNegocios tipoLaboratorioNegocios = new TipoLaboratorioNegocios();
+            TipoLaboratorioColecao tipoLaboratorios = tipoLaboratorioNegocios.ConsultarPorTipo("");
 
             dataGrid.DataSource = null;
-            dataGrid.DataSource = tipoCursos;
+            dataGrid.DataSource = tipoLaboratorios;
             dataGrid.Update();
             dataGrid.Refresh();
         }
@@ -285,24 +248,6 @@ namespace Apresentacao.Presentation.Popup.Tipos
                 retValue = propertyInfo.GetValue(property, null).ToString();
             }
             return retValue;
-        }
-
-
-        //Método ComboBox
-        private void CarregarComboBox()
-        {
-            LaboratorioNegocios laboratorioNegocios = new LaboratorioNegocios();
-            LaboratorioColecao laboratorios = laboratorioNegocios.ConsultarPorNome("");
-
-            CbxLaboratorio.DataSource = null;
-            CbxLaboratorio.DataSource = laboratorios;
-            CbxLaboratorio.DisplayMember = "NOME";
-            CbxLaboratorio.ValueMember = "ID_LABORATORIO";
-            CbxLaboratorio.SelectedIndex = -1;
-        }
-        private void CbxLaboratorio_Click(object sender, EventArgs e)
-        {
-            CarregarComboBox();
         }
     }
 }

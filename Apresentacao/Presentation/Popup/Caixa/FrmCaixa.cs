@@ -184,5 +184,10 @@ namespace Apresentacao.Presentation.Popup
         {
 
         }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            new Popup.transparentBg(new Popup.ConfirmaUsuario.Frm_UsuarioConfirma(UsuarioAutoriza.caixa));
+        }
     }
 }

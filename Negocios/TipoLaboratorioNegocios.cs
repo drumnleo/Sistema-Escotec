@@ -94,7 +94,44 @@ namespace Negocios
                 {
                     TipoLaboratorio tipoLaboratorio = new TipoLaboratorio();
 
-                    tipoLaboratorio.Id_Tipo_Laboratorio = Convert.ToInt32(dataRow["ID_TIPO"]);
+                    tipoLaboratorio.Id_Tipo_Laboratorio = Convert.ToInt32(dataRow["ID_TIPO_LABORATORIO"]);
+                    tipoLaboratorio.Tipo = Convert.ToString(dataRow["TIPO"]);
+                    tipoLaboratorio.Descricao = Convert.ToString(dataRow["DESCRICAO"]);
+                    tipoLaboratorio.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
+                    tipoLaboratorio.Data_Ultima_Alteracao = Convert.ToDateTime(dataRow["DATA_ULTIMA_ALTERACAO"]);
+
+                    Usuario usuario = new Usuario();
+
+                    usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    tipoLaboratorio.Usuario = usuario;
+                    tipoLaboratorioColecao.Add(tipoLaboratorio);
+                }
+
+                return tipoLaboratorioColecao;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar Tipo de Laboratório. Detalhes: " + ex.Message);
+            }
+        }
+
+        public TipoLaboratorioColecao ConsultarPorId(int id)
+        {
+            try
+            {
+                TipoLaboratorioColecao tipoLaboratorioColecao = new TipoLaboratorioColecao();
+
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_TIPO_LABORATORIO", id);
+
+                DataTable dataTable = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_TIPO_LABORATORIO_CONSULTAR_PORID");
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    TipoLaboratorio tipoLaboratorio = new TipoLaboratorio();
+
+                    tipoLaboratorio.Id_Tipo_Laboratorio = Convert.ToInt32(dataRow["ID_TIPO_LABORATORIO"]);
                     tipoLaboratorio.Tipo = Convert.ToString(dataRow["TIPO"]);
                     tipoLaboratorio.Descricao = Convert.ToString(dataRow["DESCRICAO"]);
                     tipoLaboratorio.Data_Cadastro = Convert.ToDateTime(dataRow["DATA_CADASTRO"]);
