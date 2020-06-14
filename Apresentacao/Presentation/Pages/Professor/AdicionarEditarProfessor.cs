@@ -163,7 +163,7 @@ namespace Apresentacao.Presentation.Pages
                 ProfessorGetSet = professores[0];
                 CarregaCamposProfessor();
                 BtnSearchMinistra.Enabled = true;
-                BtnSalvarProfessor.Enable = false;
+                BtnSalvarProfessor.Enabled = false;
                 BtnExcluirProfessor.Enabled = true;
             }
             else
