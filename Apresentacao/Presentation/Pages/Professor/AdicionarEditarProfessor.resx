@@ -142,7 +142,7 @@
         RU5ErkJggg==
 </value>
   </data>
-  <data name="BtnExcluirCurso.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnExcluirMinistra.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAA4xJREFUeF7t
         mTtvFEEQhE+y75wCOSYBhHjkQM4jB+c2d7cWCZBjJFIgB34AIAgIDD8AyDE5BgkiMDHGEaapsUtWT+8a
@@ -172,7 +172,7 @@
         YII=
 </value>
   </data>
-  <data name="BtnAtualizarCurso.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnAtualizarMinistra.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAABPtJREFUeF7t
         ml2LHEUUhifOzE70Qojf8QNEVAiiN/4H9UJFSILohbjZnt7dxL0Ioqt3K0jwK6J/QlTwQghqFHIhBBGC
@@ -199,7 +199,7 @@
         5DBskOEk8i+xgICF/XnfsAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="BtnSalvarCurso.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnSalvarMinistra.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAchJREFUeF7t
         lsFOw0AMBSuVHwSuCC6U/z+XopBFJgdn21nlrZM9eCSrap7rsVxV6ilJkiRJkiRJHvN0maZB6nq+TM+2

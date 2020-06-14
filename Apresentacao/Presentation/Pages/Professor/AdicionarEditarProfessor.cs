@@ -28,6 +28,10 @@ namespace Apresentacao.Presentation.Pages
 
             BtnSearchMinistra.Enabled = false;
             BtnSalvarProfessor.Enabled = false;
+            BtnExcluirProfessor.Enabled = false;
+            BtnSalvarMinistra.Enabled = false;
+            BtnAtualizarMinistra.Enabled = false;
+            BtnExcluirMinistra.Enabled = false;
         }
 
 
@@ -99,6 +103,11 @@ namespace Apresentacao.Presentation.Pages
             TbxNomeMinistra.Text = ProfessorGetSet.Funcionario.Pessoa.Nome;
             TbxSobrenomeMinistra.Text = ProfessorGetSet.Funcionario.Pessoa.Sobrenome;
             CarregaComboBoxCurso();
+            BtnSalvarProfessor.Enabled = false;
+            BtnExcluirProfessor.Enabled = true;
+            BtnSalvarMinistra.Enabled = true;
+            BtnAtualizarMinistra.Enabled = false;
+            BtnExcluirMinistra.Enabled = false;
         }
 
 
@@ -108,18 +117,26 @@ namespace Apresentacao.Presentation.Pages
             limparTela();
             ProfessorGetSet = professorNegocios.ConsultaPorId(MinistraGetSet.Professor.Id_Professor)[0];
             CarregaCamposProfessor();
-            TbxIdMinistra.Text = MinistraGetSet.Id_Professor_Ministra.ToString();
-            TbxDtCadastroMinistra.Text = MinistraGetSet.Data_Cadastro.ToShortDateString();
+            if (MinistraGetSet.Id_Professor_Ministra > 0)
+            {
+                TbxIdMinistra.Text = MinistraGetSet.Id_Professor_Ministra.ToString();
+                TbxDtCadastroMinistra.Text = MinistraGetSet.Data_Cadastro.ToShortDateString();
 
-            CursoNegocios cursoNegocios = new CursoNegocios();
-            CursoColecao cursoColecao = cursoNegocios.ConsultarPorId(MinistraGetSet.Curso.Id_Curso);
+                CursoNegocios cursoNegocios = new CursoNegocios();
+                CursoColecao cursoColecao = cursoNegocios.ConsultarPorId(MinistraGetSet.Curso.Id_Curso);
 
-            CbxCurso.DataSource = null;
-            CbxCurso.DataSource = cursoColecao;
-            CbxCurso.DisplayMember = "Nome";
-            CbxCurso.ValueMember = "Id_Curso";
-            CbxCurso.Update();
-            CbxCurso.Refresh();
+                CbxCurso.DataSource = null;
+                CbxCurso.DataSource = cursoColecao;
+                CbxCurso.DisplayMember = "Nome";
+                CbxCurso.ValueMember = "Id_Curso";
+                CbxCurso.Update();
+                CbxCurso.Refresh();
+
+                BtnAtualizarMinistra.Enabled = true;
+                BtnExcluirMinistra.Enabled = true;
+                BtnSalvarMinistra.Enabled = false;
+            }
+            
         }
         private void CarregaComboBoxCurso()
         {
@@ -146,6 +163,8 @@ namespace Apresentacao.Presentation.Pages
                 ProfessorGetSet = professores[0];
                 CarregaCamposProfessor();
                 BtnSearchMinistra.Enabled = true;
+                BtnSalvarProfessor.Enable = false;
+                BtnExcluirProfessor.Enabled = true;
             }
             else
             {
@@ -156,6 +175,8 @@ namespace Apresentacao.Presentation.Pages
                 TbxEntrada.Text = FuncionarioGetSet.Hora_Entrada.ToString();
                 TbxSaida.Text = FuncionarioGetSet.Hora_Saida.ToString();
                 BtnSearchMinistra.Enabled = false;
+                BtnSalvarProfessor.Enabled = true;
+                BtnExcluirProfessor.Enabled = false;
             }
         }
 
@@ -194,6 +215,7 @@ namespace Apresentacao.Presentation.Pages
             {
                 CarregaCamposFuncionario();
                 PreencheFuncionario.Enabled = false;
+                
             }
         }
 
