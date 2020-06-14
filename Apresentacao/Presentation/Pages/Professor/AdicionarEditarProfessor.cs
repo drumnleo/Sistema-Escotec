@@ -242,6 +242,7 @@ namespace Apresentacao.Presentation.Pages
 
         private void BtnExcluirProfessor_Click(object sender, EventArgs e)
         {
+            ProfessorGetSet.Usuario = LoginNegocios.UsuarioLogadoGetSet;
             string retorno = professorNegocios.ExcluirProfessor(ProfessorGetSet);
             try
             {
