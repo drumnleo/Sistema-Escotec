@@ -67,53 +67,12 @@ namespace Apresentacao.Presentation.Pages
         {
             UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
             UsuarioColecao usuarioColecao = usuarioNegocios.ConsultarPorNome("");
-            UsuarioColecao usuarioAtual = new UsuarioColecao
-            {
-                usuarioNegocios.ConsultarPorId(LoginNegocios.UsuarioLogadoGetSet.Id_Usuario)
-            };
-
-            CbxUsuarioAbertura.DataSource = null;
-            CbxUsuarioAbertura.DataSource = usuarioAtual;
-            CbxUsuarioAbertura.ValueMember = "Id_Usuario";
-            CbxUsuarioAbertura.DisplayMember = "Nome_Usuario";
-            CbxUsuarioAbertura.SelectedIndex = -1;
 
             CbxUsuarioRecebe.DataSource = null;
             CbxUsuarioRecebe.DataSource = usuarioColecao;
             CbxUsuarioRecebe.ValueMember = "Id_Usuario";
             CbxUsuarioRecebe.DisplayMember = "Nome_Usuario";
             CbxUsuarioRecebe.SelectedIndex = -1;
-
-            CbxUsuarioFechamento.DataSource = null;
-            CbxUsuarioFechamento.DataSource = usuarioColecao;
-            CbxUsuarioFechamento.ValueMember = "Id_Usuario";
-            CbxUsuarioFechamento.DisplayMember = "Nome_Usuario";
-            CbxUsuarioFechamento.SelectedIndex = -1;
-            CbxUsuarioFechamento.Enabled = false;
-        }
-
-        private void Carregacbxusuariofechamento()
-        {
-            UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
-            UsuarioColecao usuarioColecao = usuarioNegocios.ConsultarPorNome("");
-
-            CbxUsuarioFechamento.DataSource = null;
-            CbxUsuarioFechamento.DataSource = usuarioColecao;
-            CbxUsuarioFechamento.ValueMember = "Id_Usuario";
-            CbxUsuarioFechamento.DisplayMember = "Nome_Usuario";
-            CbxUsuarioFechamento.SelectedIndex = -1;
-        }
-
-        private void Carregacbxusuarioabre()
-        {
-            UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
-            UsuarioColecao usuarioColecao = usuarioNegocios.ConsultarPorNome("");
-
-            CbxUsuarioAbertura.DataSource = null;
-            CbxUsuarioAbertura.DataSource = usuarioColecao;
-            CbxUsuarioAbertura.ValueMember = "Id_Usuario";
-            CbxUsuarioAbertura.DisplayMember = "Nome_Usuario";
-            CbxUsuarioAbertura.SelectedIndex = -1;
         }
 
         private void Carregacbxusuariorecebe()
@@ -242,10 +201,12 @@ namespace Apresentacao.Presentation.Pages
             if (CaixaEscolhido.Situacao == "a")
             {
                 TbxSituacao.Text = "Aberto";
+                TbxUsuarioAbre.Text = CaixaEscolhido.Func_Abre.Nome_Usuario;
             }
             else if (CaixaEscolhido.Situacao == "f")
             {
                 TbxSituacao.Text = "Fechado";
+                TbxUsuarioFecha.Text = CaixaEscolhido.Func_Fechamento.Nome_Usuario;
             }
             else
             {
@@ -253,20 +214,11 @@ namespace Apresentacao.Presentation.Pages
             }
             TbxDataFechamento.Text = CaixaEscolhido.Data_Ultima_Alteracao.ToShortDateString();
 
-            CbxUsuarioAbertura.DataSource = null;
             UsuarioNegocios usuarioNegocios = new UsuarioNegocios();
-            UsuarioColecao usuarios = new UsuarioColecao();
-            Usuario usuarioabre = usuarioNegocios.ConsultarPorId(CaixaEscolhido.Func_Abre.Id_Usuario);
-            usuarios.Add(usuarioabre);
-            CbxUsuarioAbertura.DataSource = usuarios;
-            CbxUsuarioAbertura.DisplayMember = "NOME_USUARIO";
-            CbxUsuarioAbertura.ValueMember = "ID_USUARIO";
-            CbxUsuarioAbertura.Update();
-            CbxUsuarioAbertura.Refresh();
-            CbxUsuarioAbertura.SelectedIndex = 0;
+            
 
             CbxUsuarioRecebe.DataSource = null;
-            UsuarioNegocios usuarioNegocios2 = new UsuarioNegocios();
+            
             UsuarioColecao usuarios2 = new UsuarioColecao();
             Usuario usuarioRecebe = usuarioNegocios.ConsultarPorId(CaixaEscolhido.Func_Recebe.Id_Usuario);
             usuarios2.Add(usuarioRecebe);
@@ -275,27 +227,7 @@ namespace Apresentacao.Presentation.Pages
             CbxUsuarioRecebe.ValueMember = "ID_USUARIO";
             CbxUsuarioRecebe.Update();
             CbxUsuarioRecebe.Refresh();
-            CbxUsuarioRecebe.SelectedIndex = 0;
-
-            if (CaixaEscolhido.Func_Fechamento != null && CaixaEscolhido.Situacao == "f")
-            {
-                CbxUsuarioFechamento.DataSource = null;
-                UsuarioNegocios usuarioNegocios3 = new UsuarioNegocios();
-                UsuarioColecao usuarios3 = new UsuarioColecao();
-                Usuario usuarioFecha = usuarioNegocios.ConsultarPorId(CaixaEscolhido.Func_Fechamento.Id_Usuario);
-                usuarios3.Add(usuarioFecha);
-                CbxUsuarioFechamento.DataSource = usuarios3;
-                CbxUsuarioFechamento.DisplayMember = "NOME_USUARIO";
-                CbxUsuarioFechamento.ValueMember = "ID_USUARIO";
-                CbxUsuarioFechamento.Update();
-                CbxUsuarioFechamento.Refresh();
-                CbxUsuarioFechamento.SelectedIndex = 0;
-            }
-            else if (CaixaEscolhido.Situacao == "a")
-            {
-                Carregacbxusuariofechamento();
-            }
-            
+            CbxUsuarioRecebe.SelectedIndex = 0;            
         }
         private void LimparCampos()
         {
@@ -317,6 +249,8 @@ namespace Apresentacao.Presentation.Pages
             BtnExcluir.Enabled = false;
             BtnAtualizar.Enabled = false;
             BtnNovo.Enabled = true;
+            BtnFechar.Enabled = false;
+            
         }
 
         private void dataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -328,7 +262,7 @@ namespace Apresentacao.Presentation.Pages
                 BtnAtualizar.Enabled = false;
                 BtnAbrir.Enabled = false;
                 BtnNovo.Enabled = true;
-                CbxUsuarioFechamento.Enabled = false;
+                BtnFechar.Enabled = false;
             }
             if (CaixaEscolhido.Situacao == "a")
             {
@@ -336,9 +270,7 @@ namespace Apresentacao.Presentation.Pages
                 BtnAtualizar.Enabled = true;
                 BtnAbrir.Enabled = false;
                 BtnNovo.Enabled = true;
-                CbxUsuarioFechamento.Enabled = true;
-                CbxUsuarioFechamento.SelectedIndex = -1;
-                CbxUsuarioFechamento.Update();
+                BtnFechar.Enabled = true;
 
                 TbxDataFechamento.Enabled = true;
             }
@@ -364,14 +296,6 @@ namespace Apresentacao.Presentation.Pages
             Carregacbxusuariorecebe();
         }
 
-        private void CbxUsuarioAbertura_Click(object sender, EventArgs e)
-        {
-            if (TbxIdCaixa.Text != "")
-            {
-                Carregacbxusuarioabre();
-            }        
-        }
-
         private void BtnNovo_Click(object sender, EventArgs e)
         {
             LimparCampos();
@@ -381,18 +305,9 @@ namespace Apresentacao.Presentation.Pages
         {
             CaixaNegocios caixaNegocios = new CaixaNegocios();
             Caixa caixa = new Caixa();
+            caixa.Func_Abre = LoginNegocios.UsuarioLogadoGetSet;
             try
             {
-                if (CbxUsuarioAbertura.SelectedValue != null)
-                {
-                    caixa.Func_Abre = new Usuario();
-                    caixa.Func_Abre.Id_Usuario = Convert.ToInt32(CbxUsuarioAbertura.SelectedValue.ToString());
-                }
-                else
-                {
-                    throw new Exception("Erro ao inserir Usuario de Abertura, verifique!");
-                }
-
                 if (CbxUsuarioRecebe.SelectedValue != null)
                 {
                     caixa.Func_Recebe = new Usuario();
@@ -464,15 +379,7 @@ namespace Apresentacao.Presentation.Pages
             try
             {
                 caixa.Id_Caixa = Convert.ToInt32(TbxIdCaixa.Text);
-                if (CbxUsuarioAbertura.SelectedValue != null)
-                {
-                    caixa.Func_Abre = new Usuario();
-                    caixa.Func_Abre.Id_Usuario = Convert.ToInt32(CbxUsuarioAbertura.SelectedValue.ToString());
-                }
-                else
-                {
-                    throw new Exception("Erro ao inserir Usuario de Abertura, verifique!");
-                }
+                caixa.Func_Abre = LoginNegocios.UsuarioLogadoGetSet;
 
                 if (CbxUsuarioRecebe.SelectedValue != null)
                 {
@@ -568,6 +475,26 @@ namespace Apresentacao.Presentation.Pages
             catch (Exception)
             {
                 MessageBox.Show("Erro ao excluir. Detalhes: " + retorno);
+            }
+        }
+
+        private void BtnFechar_Click(object sender, EventArgs e)
+        {
+            CaixaNegocios caixaNegocios = new CaixaNegocios();
+            CaixaEscolhido.Func_Fechamento = LoginNegocios.UsuarioLogadoGetSet;
+            string retorno = caixaNegocios.FechaCaixa(CaixaEscolhido);
+
+            try
+            {
+                int idCaixa = Convert.ToInt32(retorno);
+                MessageBox.Show("Caixa fechado com sucesso!");
+                LimparCampos();
+                busca = 2;
+                CarregaDataGrid();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao fechar caixa. Detalhes: " + retorno);
             }
         }
     }
