@@ -76,6 +76,8 @@ namespace Apresentacao.Presentation.Pages
         private void BtnSearchFuncionario_Click(object sender, EventArgs e)
         {
             new Popup.transparentBg(new Popup.SearchDialogs.SearchDialog_Professor_Funcionario());
+            //ProfessorGetSet = new Professor();
+            //FuncionarioGetSet = new Funcionario();
 
             PreencheFuncionario.Enabled = true;
         }
@@ -85,58 +87,72 @@ namespace Apresentacao.Presentation.Pages
         {
             metodosNegocios.LimpaTextBox(this.Controls);
         }
-
         //------------Professor
         private void CarregaCamposProfessor()
         {
-            limparTela();
-            TbxIdProfessor.Text = ProfessorGetSet.Id_Professor.ToString();
-            TbxIdFuncionario.Text = ProfessorGetSet.Funcionario.Id_Funcionario.ToString();
-            TbxNomeProfessor.Text = ProfessorGetSet.Funcionario.Pessoa.Nome;
-            TbxSobrenomeProfessor.Text = ProfessorGetSet.Funcionario.Pessoa.Sobrenome;
-            TbxDtCadastroProfessor.Text = ProfessorGetSet.Data_Cadastro.ToShortDateString();
-            TbxDtAdmissao.Text = ProfessorGetSet.Funcionario.Data_Admissao.ToShortDateString();
-            TbxEntrada.Text = ProfessorGetSet.Funcionario.Hora_Entrada.ToString();
-            TbxSaida.Text = ProfessorGetSet.Funcionario.Hora_Saida.ToString();
+            if (ProfessorGetSet != null)
+            {
+                if (ProfessorGetSet.Id_Professor > 0)
+                {
+                    limparTela();
+                    TbxIdProfessor.Text = ProfessorGetSet.Id_Professor.ToString();
+                    TbxIdFuncionario.Text = ProfessorGetSet.Funcionario.Id_Funcionario.ToString();
+                    TbxNomeProfessor.Text = ProfessorGetSet.Funcionario.Pessoa.Nome;
+                    TbxSobrenomeProfessor.Text = ProfessorGetSet.Funcionario.Pessoa.Sobrenome;
+                    TbxDtCadastroProfessor.Text = ProfessorGetSet.Data_Cadastro.ToShortDateString();
+                    TbxDtAdmissao.Text = ProfessorGetSet.Funcionario.Data_Admissao.ToShortDateString();
+                    TbxEntrada.Text = ProfessorGetSet.Funcionario.Hora_Entrada.ToString();
+                    TbxSaida.Text = ProfessorGetSet.Funcionario.Hora_Saida.ToString();
 
-            TbxIdProfMinistra.Text = ProfessorGetSet.Id_Professor.ToString();
-            TbxNomeMinistra.Text = ProfessorGetSet.Funcionario.Pessoa.Nome;
-            TbxSobrenomeMinistra.Text = ProfessorGetSet.Funcionario.Pessoa.Sobrenome;
-            CarregaComboBoxCurso();
-            BtnSalvarProfessor.Enabled = false;
-            BtnExcluirProfessor.Enabled = true;
-            BtnSalvarMinistra.Enabled = true;
-            BtnAtualizarMinistra.Enabled = false;
-            BtnExcluirMinistra.Enabled = false;
+                    TbxIdProfMinistra.Text = ProfessorGetSet.Id_Professor.ToString();
+                    TbxNomeMinistra.Text = ProfessorGetSet.Funcionario.Pessoa.Nome;
+                    TbxSobrenomeMinistra.Text = ProfessorGetSet.Funcionario.Pessoa.Sobrenome;
+                    CarregaComboBoxCurso();
+                    BtnSalvarProfessor.Enabled = false;
+                    BtnExcluirProfessor.Enabled = true;
+                    BtnSalvarMinistra.Enabled = true;
+                    BtnAtualizarMinistra.Enabled = false;
+                    BtnExcluirMinistra.Enabled = false;
+                }
+                else
+                {
+                    limparTela();
+                }
+            }      
         }
 
 
         //------------Ministra
         private void CarregaCamposMinistra()
         {
-            limparTela();
-            ProfessorGetSet = professorNegocios.ConsultaPorId(MinistraGetSet.Professor.Id_Professor)[0];
-            CarregaCamposProfessor();
-            if (MinistraGetSet.Id_Professor_Ministra > 0)
+            if (MinistraGetSet != null)
             {
-                TbxIdMinistra.Text = MinistraGetSet.Id_Professor_Ministra.ToString();
-                TbxDtCadastroMinistra.Text = MinistraGetSet.Data_Cadastro.ToShortDateString();
+                if (MinistraGetSet.Id_Professor_Ministra > 0)
+                {
+                    limparTela();
+                    ProfessorGetSet = professorNegocios.ConsultaPorId(MinistraGetSet.Professor.Id_Professor)[0];
+                    CarregaCamposProfessor();
+                    if (MinistraGetSet.Id_Professor_Ministra > 0)
+                    {
+                        TbxIdMinistra.Text = MinistraGetSet.Id_Professor_Ministra.ToString();
+                        TbxDtCadastroMinistra.Text = MinistraGetSet.Data_Cadastro.ToShortDateString();
 
-                CursoNegocios cursoNegocios = new CursoNegocios();
-                CursoColecao cursoColecao = cursoNegocios.ConsultarPorId(MinistraGetSet.Curso.Id_Curso);
+                        CursoNegocios cursoNegocios = new CursoNegocios();
+                        CursoColecao cursoColecao = cursoNegocios.ConsultarPorId(MinistraGetSet.Curso.Id_Curso);
 
-                CbxCurso.DataSource = null;
-                CbxCurso.DataSource = cursoColecao;
-                CbxCurso.DisplayMember = "Nome";
-                CbxCurso.ValueMember = "Id_Curso";
-                CbxCurso.Update();
-                CbxCurso.Refresh();
+                        CbxCurso.DataSource = null;
+                        CbxCurso.DataSource = cursoColecao;
+                        CbxCurso.DisplayMember = "Nome";
+                        CbxCurso.ValueMember = "Id_Curso";
+                        CbxCurso.Update();
+                        CbxCurso.Refresh();
 
-                BtnAtualizarMinistra.Enabled = true;
-                BtnExcluirMinistra.Enabled = true;
-                BtnSalvarMinistra.Enabled = false;
-            }
-            
+                        BtnAtualizarMinistra.Enabled = true;
+                        BtnExcluirMinistra.Enabled = true;
+                        BtnSalvarMinistra.Enabled = false;
+                    }
+                }
+            }             
         }
         private void CarregaComboBoxCurso()
         {
@@ -156,28 +172,38 @@ namespace Apresentacao.Presentation.Pages
         //------------Funcionario
         private void CarregaCamposFuncionario()
         {
-            limparTela();
-            ProfessorColecao professores = professorNegocios.ConsultaPorIdFuncionario(FuncionarioGetSet.Id_Funcionario);
-            if (professores.Count > 0)
+            if (FuncionarioGetSet != null)
             {
-                ProfessorGetSet = professores[0];
-                CarregaCamposProfessor();
-                BtnSearchMinistra.Enabled = true;
-                BtnSalvarProfessor.Enabled = false;
-                BtnExcluirProfessor.Enabled = true;
-            }
-            else
-            {
-                TbxIdFuncionario.Text = FuncionarioGetSet.Id_Funcionario.ToString();
-                TbxNomeProfessor.Text = FuncionarioGetSet.Pessoa.Nome;
-                TbxSobrenomeProfessor.Text = FuncionarioGetSet.Pessoa.Sobrenome;
-                TbxDtAdmissao.Text = FuncionarioGetSet.Data_Admissao.ToShortDateString();
-                TbxEntrada.Text = FuncionarioGetSet.Hora_Entrada.ToString();
-                TbxSaida.Text = FuncionarioGetSet.Hora_Saida.ToString();
-                BtnSearchMinistra.Enabled = false;
-                BtnSalvarProfessor.Enabled = true;
-                BtnExcluirProfessor.Enabled = false;
-            }
+                if (FuncionarioGetSet.Id_Funcionario > 0)
+                {
+                    limparTela();
+                    ProfessorColecao professores = professorNegocios.ConsultaPorIdFuncionario(FuncionarioGetSet.Id_Funcionario);
+                    if (professores.Count > 0)
+                    {
+                        ProfessorGetSet = professores[0];
+                        CarregaCamposProfessor();
+                        BtnSearchMinistra.Enabled = true;
+                        BtnSalvarProfessor.Enabled = false;
+                        BtnExcluirProfessor.Enabled = true;
+                    }
+                    else
+                    {
+                        TbxIdFuncionario.Text = FuncionarioGetSet.Id_Funcionario.ToString();
+                        TbxNomeProfessor.Text = FuncionarioGetSet.Pessoa.Nome;
+                        TbxSobrenomeProfessor.Text = FuncionarioGetSet.Pessoa.Sobrenome;
+                        TbxDtAdmissao.Text = FuncionarioGetSet.Data_Admissao.ToShortDateString();
+                        TbxEntrada.Text = FuncionarioGetSet.Hora_Entrada.ToString();
+                        TbxSaida.Text = FuncionarioGetSet.Hora_Saida.ToString();
+                        BtnSearchMinistra.Enabled = false;
+                        BtnSalvarProfessor.Enabled = true;
+                        BtnExcluirProfessor.Enabled = false;
+                    }
+                }
+                else
+                {
+                    limparTela();
+                }
+            }    
         }
 
 
@@ -248,6 +274,9 @@ namespace Apresentacao.Presentation.Pages
             {
                 int idProfessor = Convert.ToInt32(retorno);
                 MessageBox.Show("Professor excluído com sucesso!");
+                ProfessorGetSet = null;
+                FuncionarioGetSet = null;
+                MinistraGetSet = null;
                 limparTela();
             }
             catch (Exception)
@@ -349,6 +378,18 @@ namespace Apresentacao.Presentation.Pages
             {
                 MessageBox.Show("Nenhum curso ministrado selecionado, verifique!");
             }
+        }
+
+        private void BtnNovoMinistra_Click(object sender, EventArgs e)
+        {
+            MinistraGetSet = new ProfessorMinistra();
+            CarregaCamposMinistra();
+            TbxIdMinistra.Text = "";
+            TbxDtCadastroMinistra.Text = "";
+            CarregaComboBoxCurso();
+            BtnSalvarMinistra.Enabled = true;
+            BtnAtualizarMinistra.Enabled = false;
+            BtnExcluirMinistra.Enabled = false;
         }
     }
 }

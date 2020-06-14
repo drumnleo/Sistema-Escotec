@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarEditarProfessor));
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
@@ -82,6 +81,7 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties50 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties51 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties52 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarEditarProfessor));
             this.container = new System.Windows.Forms.Panel();
             this.PanelMinistra = new System.Windows.Forms.Panel();
             this.TbxIdMinistra = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
@@ -133,6 +133,7 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.PreencheProfMinistra = new System.Windows.Forms.Timer(this.components);
             this.PreencheFuncionario = new System.Windows.Forms.Timer(this.components);
+            this.BtnNovoMinistra = new Bunifu.Framework.UI.BunifuImageButton();
             this.container.SuspendLayout();
             this.PanelMinistra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnExcluirMinistra)).BeginInit();
@@ -145,6 +146,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnExcluirProfessor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSalvarProfessor)).BeginInit();
             this.PainelSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnNovoMinistra)).BeginInit();
             this.SuspendLayout();
             // 
             // container
@@ -160,6 +162,7 @@
             // 
             // PanelMinistra
             // 
+            this.PanelMinistra.Controls.Add(this.BtnNovoMinistra);
             this.PanelMinistra.Controls.Add(this.TbxIdMinistra);
             this.PanelMinistra.Controls.Add(this.LblIdMinistra);
             this.PanelMinistra.Controls.Add(this.TbxDtCadastroMinistra);
@@ -1589,6 +1592,19 @@
             // 
             this.PreencheFuncionario.Tick += new System.EventHandler(this.PreencheFuncionario_Tick);
             // 
+            // BtnNovoMinistra
+            // 
+            this.BtnNovoMinistra.Image = ((System.Drawing.Image)(resources.GetObject("BtnNovoMinistra.Image")));
+            this.BtnNovoMinistra.ImageActive = null;
+            this.BtnNovoMinistra.Location = new System.Drawing.Point(580, 195);
+            this.BtnNovoMinistra.Name = "BtnNovoMinistra";
+            this.BtnNovoMinistra.Size = new System.Drawing.Size(38, 38);
+            this.BtnNovoMinistra.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnNovoMinistra.TabIndex = 375;
+            this.BtnNovoMinistra.TabStop = false;
+            this.BtnNovoMinistra.Zoom = 10;
+            this.BtnNovoMinistra.Click += new System.EventHandler(this.BtnNovoMinistra_Click);
+            // 
             // AdicionarEditarProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1613,6 +1629,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnSalvarProfessor)).EndInit();
             this.PainelSuperior.ResumeLayout(false);
             this.PainelSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnNovoMinistra)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1670,5 +1687,6 @@
         private Bunifu.Framework.UI.BunifuImageButton BtnSearchFuncionario;
         private System.Windows.Forms.Label LblBuscaFuncionario;
         private System.Windows.Forms.Timer PreencheFuncionario;
+        private Bunifu.Framework.UI.BunifuImageButton BtnNovoMinistra;
     }
 }

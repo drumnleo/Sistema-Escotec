@@ -118,6 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BtnNovoMinistra.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAR+SURBVHhe7ZrPixxFFMd7M7uz669cNEEEFQMSg/k7DAYUIe7N6GZ3pg2RBHLKIQhLIJdAIKIG
+        CfEsgYi5RhD8QRCvHgy6wvqLzcGgxE0ibhJeXs18V2q+Pd1T3V1V0+h84Mvuvnr1fa9rpqt7ejaZMGHC
+        hAkT3JnuikTSRiuVV1C2OQxpNKTutjryGko3gyFNhlazFmFIgzF0t9WV/WhhvHBzCHuD/S1t6CLsQ9r4
+        4MYQ9gb7k8b/TuCmEPYG+6s26G+zJ7yO9PhQM8EXQA/2Vf3ZnEWgRoIvgIk1ahGoiSgLYDAboP6dXYRU
+        3kBKHKiBaAtgyFmEe1EXgYpHXQDD2BeBCgdfgBKKswhcGGFvsH9J3YFNOLgowt5g/7KCTThCF2T/soJN
+        OKIXHEH0fqIXHEH0fqIXHEH0fqIXHEH0flwLcl5dwTaDa543XAtyXl3BNoNrnjdcC3JeXcE2g2ueN1wL
+        cl5dwTaDa543ohccQfR+ohccQfR+ohfc5Kg8oB+FX1Z9qHW/VH2n+n2zj021luQlk4tZ/uGCCIfjgDyJ
+        g77FtQt0U+ecN3Ph4g8uhnAGzhuTbk+ncipJ5UG0VR8ugnAGzhuzvk2W5Gm0Vg82RzgD53nSmr6139dX
+        9YV2R3bpK/uYkfndxFodOTvdkWtD5slMKr+0u/I82qsOGyOcgfPqSA96pZXKfLIsW2Cfj+aYXJ3z4xCv
+        tdr7ApsiXB/dudXvG/bXV/bjZL88hCx3FuURnX8p49eVr5MFmUNWedgQ4drogZ5kb9XpJJEppJRH3w3q
+        cYY8RU+TE8goD5shXI9UnlKvv23fma58VHTwdq4RwkOQKfW6QPm3K58KZORlAfR8/YB8fzVvYQwPhfKL
+        +zgsWzVnzc43mylGy2GbGCGcgfPKSHfzkf8RwnMQzkXfBQs0Z73SXkAm3hdAX5lVl92e5yGcz7y0zKVw
+        YJ5eOjHqzoCBCuEMnOesjrwDi0J4HsKF6OXxPXuOLva7GHLHNjBCOAPnldAeWBTC8xAuRE+tvTTvMwy5
+        QwZOhYtQjx9sv9k35VkM9bDHqgg2PWYXZSeNX8WQO2TgYwHWB/wOycMY6mGPVRFs+vRvjuzxvzDiDhn4
+        XwC667PHqgg2fRq6AN/bfiFPgXYqz9F4I06Bz8nz/7UJ9j7C2p4hL4NUK+hl0BVt4kXbT+/YfjI3LRjO
+        xZ5jhHA+qcxo3sDtcNAbIWf6jf1pe850JMVoLna+EcK56F3gEZrzh6mNYXfIJJR+8/5hiJ4UefswFFCX
+        i04Fzkc4y7JM6/inlH9DPw5vQ0Y5yCi0mv9AJIIuVnokpneUOvcT8jKq90gsKG/Jo3puDnuYab4BOubU
+        eP/Z4jF9la9b83tS7xVTA5nNpL0ku/VS+DM3D/37WHyuI8/o5jZrNLcoO3RsT+86n/NYXOetenksHoWD
+        sl2b/ooPorI68kXlTW9szEtbX+m39QBuZg7IXevqcbzS9b4xLMoT+vY9rwdT9svRc7oRPg6X/wCDX49f
+        wT7xjxF+v2IWqtzX40lyH1327zPhrmbEAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="TbxIdMinistra.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAcCAYAAAAjmez3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
