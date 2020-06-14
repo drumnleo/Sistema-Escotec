@@ -329,7 +329,7 @@ namespace Apresentacao.Presentation.Pages
                 {
                     int idMinistra = Convert.ToInt32(retorno);
                     MessageBox.Show("Cadastro curso ministrado excluído com sucesso!");
-                    limparTela();
+                    CarregaCamposProfessor();
                 }
                 catch (Exception)
                 {
