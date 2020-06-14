@@ -260,6 +260,7 @@ namespace Apresentacao.Presentation.Pages
             if (CbxCurso.SelectedItem != null)
             {
                 ProfessorMinistra professorMinistra = new ProfessorMinistra();
+                professorMinistra.Professor = ProfessorGetSet;
                 professorMinistra.Curso = new Curso();
                 professorMinistra.Usuario = LoginNegocios.UsuarioLogadoGetSet;
                 professorMinistra.Curso = (Curso)CbxCurso.SelectedItem;
