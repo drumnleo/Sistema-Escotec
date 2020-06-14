@@ -63,10 +63,10 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
             {
                 matriculaRelatorio.Id_Matricula = matricula.Id_Matricula;
                 matriculaRelatorio.Id_Aluno = matricula.Aluno.Id_Aluno;
-                matriculaRelatorio.Nome = matricula.Aluno.Pessoa.Nome;
-                matriculaRelatorio.Sobrenome = matricula.Aluno.Pessoa.Sobrenome;
+                matriculaRelatorio.NomeAluno = matricula.Aluno.Pessoa.Nome;
+                matriculaRelatorio.SobrenomeAluno = matricula.Aluno.Pessoa.Sobrenome;
                 matriculaRelatorio.Curso = matricula.Turma.Curso.Nome;
-                matriculaRelatorio.Qtde_Parcela = matricula.Turma.Curso.Qtde_Parcelas;
+                matriculaRelatorio.Qtde_Parcelas = matricula.Turma.Curso.Qtde_Parcelas;
                 matriculaRelatorio.Usuario = matricula.Usuario.Id_Usuario;
                 matriculaRelatorio.Total = matricula.Turma.Curso.Valor_Total;
 

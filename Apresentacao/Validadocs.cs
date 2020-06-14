@@ -23,14 +23,21 @@ namespace Apresentacao.Validacao_cpf_e_afins
                 return false;
 
 
-
             bool igual = true;
 
             for (int i = 1; i < 11 && igual; i++)
-
+            {
+                char valoresq = valor[i];
+                char valordir = valor[0];
                 if (valor[i] != valor[0])
-
+                {
                     igual = false;
+                }
+            }
+
+                
+
+                    
 
 
 

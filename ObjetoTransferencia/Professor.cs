@@ -9,6 +9,7 @@ namespace ObjetoTransferencia
     public class Professor
     {
         public int Id_Professor { get; set; }
+        public string Nome { get; set; }
         public Funcionario Funcionario { get; set; }
         public DateTime Data_Cadastro { get; set; }
         public DateTime Data_Ultima_Alteracao { get; set; }

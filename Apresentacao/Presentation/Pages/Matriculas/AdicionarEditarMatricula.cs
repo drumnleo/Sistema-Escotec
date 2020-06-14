@@ -101,8 +101,8 @@ namespace Apresentacao.Presentation.Pages
             TbxProfessor.Text = TurmaOrcamentoGetSet.Turma.ProfessorMinistra.Professor.Funcionario.Pessoa.Nome + "" + TurmaOrcamentoGetSet.Turma.ProfessorMinistra.Professor.Funcionario.Pessoa.Sobrenome;
             TbxDtInicio.Text = TurmaOrcamentoGetSet.Turma.Data_Inicio.ToShortDateString();
             TbxDtFim.Text = TurmaOrcamentoGetSet.Turma.Data_Fim.ToShortDateString();
-            TbxHoraInicio.Text = TurmaOrcamentoGetSet.Turma.Hora_Inicio.ToShortTimeString();
-            TbxHoraFim.Text = TurmaOrcamentoGetSet.Turma.Hora_Fim.ToShortTimeString();
+            TbxHoraInicio.Text = TurmaOrcamentoGetSet.Turma.Hora_Inicio.ToString();
+            TbxHoraFim.Text = TurmaOrcamentoGetSet.Turma.Hora_Fim.ToString();
             ChSeg.Checked = TurmaOrcamentoGetSet.Turma.Segunda_Aula;
             ChTerca.Checked = TurmaOrcamentoGetSet.Turma.Terca_Aula;
             ChQuarta.Checked = TurmaOrcamentoGetSet.Turma.Quarta_Aula;

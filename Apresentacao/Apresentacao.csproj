@@ -207,6 +207,12 @@
     <Compile Include="Presentation\Pages\Matriculas\ConsultaMatricula_old.Designer.cs">
       <DependentUpon>ConsultaMatricula_old.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Pages\Professor\AdicionarEditarProfessor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Pages\Professor\AdicionarEditarProfessor.Designer.cs">
+      <DependentUpon>AdicionarEditarProfessor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Pages\Rotas.cs" />
     <Compile Include="Presentation\FrmLogin_flat.cs">
       <SubType>Form</SubType>
@@ -255,6 +261,30 @@
     </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Atendimento .Designer.cs">
       <DependentUpon>SearchDialog_Atendimento .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Professor_Funcionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Professor_Funcionario.Designer.cs">
+      <DependentUpon>SearchDialog_Professor_Funcionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_ProfessorMinistra .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_ProfessorMinistra .Designer.cs">
+      <DependentUpon>SearchDialog_ProfessorMinistra .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Professor .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Professor .Designer.cs">
+      <DependentUpon>SearchDialog_Professor .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Turma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_Turma.Designer.cs">
+      <DependentUpon>SearchDialog_Turma.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Popup\SearchDialogs\SearchDialog_MovimentoCaixa.cs">
       <SubType>Form</SubType>
@@ -400,6 +430,9 @@
     <EmbeddedResource Include="Presentation\Pages\Matriculas\ConsultaMatricula_old.resx">
       <DependentUpon>ConsultaMatricula_old.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Pages\Professor\AdicionarEditarProfessor.resx">
+      <DependentUpon>AdicionarEditarProfessor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Pages\TurmaCurso\AdicionarEditarTurmaCurso.resx">
       <DependentUpon>AdicionarEditarTurmaCurso.cs</DependentUpon>
     </EmbeddedResource>
@@ -417,6 +450,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Atendimento .resx">
       <DependentUpon>SearchDialog_Atendimento .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Professor_Funcionario.resx">
+      <DependentUpon>SearchDialog_Professor_Funcionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_ProfessorMinistra .resx">
+      <DependentUpon>SearchDialog_ProfessorMinistra .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Professor .resx">
+      <DependentUpon>SearchDialog_Professor .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_Turma.resx">
+      <DependentUpon>SearchDialog_Turma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Popup\SearchDialogs\SearchDialog_MovimentoCaixa.resx">
       <DependentUpon>SearchDialog_MovimentoCaixa.cs</DependentUpon>

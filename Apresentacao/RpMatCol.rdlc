@@ -62,21 +62,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Nome">
+                    <Textbox Name="NomeAluno">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Nome.Value</Value>
+                              <Value>=Fields!NomeAluno.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Nome</rd:DefaultName>
+                      <rd:DefaultName>NomeAluno</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -91,21 +91,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Sobrenome">
+                    <Textbox Name="SobrenomeAluno">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Sobrenome.Value</Value>
+                              <Value>=Fields!SobrenomeAluno.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Sobrenome</rd:DefaultName>
+                      <rd:DefaultName>SobrenomeAluno</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -149,21 +149,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Qtde_Parcela">
+                    <Textbox Name="Qtde_Parcelas">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Qtde_Parcela.Value</Value>
+                              <Value>=Fields!Qtde_Parcelas.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Qtde_Parcela</rd:DefaultName>
+                      <rd:DefaultName>Qtde_Parcelas</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -203,6 +203,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1820,7 +1821,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Sum(Fields!Qtde_Parcelas.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
