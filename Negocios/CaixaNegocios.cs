@@ -39,13 +39,14 @@ namespace Negocios
             try
             {
                 acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_CAIXA", caixa.Id_Caixa);
                 acessoDados.AdicionarParametros("@USUARIO_ABRE", caixa.Func_Abre.Id_Usuario);
                 acessoDados.AdicionarParametros("@USUARIO_RECEBE", caixa.Func_Recebe.Id_Usuario);
                 acessoDados.AdicionarParametros("@VALOR_ABERTURA", caixa.Valor_Abertura);
                 acessoDados.AdicionarParametros("@VALOR_SANGRIA", caixa.Valor_Sangria);
                 acessoDados.AdicionarParametros("@DATA_CAIXA", caixa.Data_Caixa);
 
-                string retorno = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_CAIXA_ABRE").ToString();
+                string retorno = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_CAIXA_ATUALIZARPORID").ToString();
 
                 return retorno;
             }
