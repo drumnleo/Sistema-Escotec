@@ -613,5 +613,24 @@ namespace Apresentacao.Presentation.Pages
                 TbxParcelasCurso.Text = TbxDurMes.Text;
             }
         }
+
+        private void BtnExcluirTurma_Click(object sender, EventArgs e)
+        {
+            TurmaNegocios turmaNegocios = new TurmaNegocios();
+            Turma turma = CarregaTurma();
+            turma.Usuario = LoginNegocios.UsuarioLogadoGetSet;
+            string retorno = turmaNegocios.Excluir(turma);
+
+            try
+            {
+                int idTurma = Convert.ToInt32(retorno);
+                MessageBox.Show("Turma excluída com sucesso!");
+                LimparCamposTurma();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao excluir turma. Detalhes: " + retorno);
+            }
+        }
     }
 }
