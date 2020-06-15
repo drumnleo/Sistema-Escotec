@@ -218,71 +218,79 @@ namespace Apresentacao.Presentation.Pages
         }
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            if (TbxIdAtend.Text == "")
+            if (TurmaGetSet != null)
             {
-                AtendimentoNegocios atendimentoNegocios = new AtendimentoNegocios();
-
-                Atendimento atendimento = GeraAtetndimento();
-
-                string retorno = atendimentoNegocios.Inserir(atendimento);
-
-                try
+                if (TbxIdAtend.Text == "")
                 {
-                    int idAtendimento = Convert.ToInt32(retorno);
-                    AtendimentoGetset = atendimentoNegocios.ConsultarPorId(idAtendimento)[0];
-                    TbxIdAtend.Text = AtendimentoGetset.Id_Atendimento.ToString();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Erro: Detalhes: " + retorno);
-                }
-            }
+                    AtendimentoNegocios atendimentoNegocios = new AtendimentoNegocios();
 
-            if (CbxIdOrc.DataSource == null)
-            {
-                if (CbxIdOrc.SelectedIndex == -1)
-                {
-                    OrcamentoNegocios orcamentoNegocios = new OrcamentoNegocios();
+                    Atendimento atendimento = GeraAtetndimento();
 
-                    Orcamento orcamento = GeraOrcamento();
-
-                    string retornoOrc = orcamentoNegocios.Inserir(orcamento);
+                    string retorno = atendimentoNegocios.Inserir(atendimento);
 
                     try
                     {
-                        int idOrcamento = Convert.ToInt32(retornoOrc);
-                        OrcamentoGetSet = orcamentoNegocios.ConsultarPorIdAtendimento(AtendimentoGetset.Id_Atendimento);
-                        CarregaComboBoxIdOrc(AtendimentoGetset.Id_Atendimento);
-                        int index = CbxIdOrc.FindString(idOrcamento.ToString());
-                        CbxIdOrc.SelectedIndex = index;
+                        int idAtendimento = Convert.ToInt32(retorno);
+                        AtendimentoGetset = atendimentoNegocios.ConsultarPorId(idAtendimento)[0];
+                        TbxIdAtend.Text = AtendimentoGetset.Id_Atendimento.ToString();
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Erro: Detalhes: " + retornoOrc);
+                        MessageBox.Show("Erro: Detalhes: " + retorno);
                     }
                 }
-                
+
+                if (CbxIdOrc.DataSource == null)
+                {
+                    if (CbxIdOrc.SelectedIndex == -1)
+                    {
+                        OrcamentoNegocios orcamentoNegocios = new OrcamentoNegocios();
+
+                        Orcamento orcamento = GeraOrcamento();
+
+                        string retornoOrc = orcamentoNegocios.Inserir(orcamento);
+
+                        try
+                        {
+                            int idOrcamento = Convert.ToInt32(retornoOrc);
+                            OrcamentoGetSet = orcamentoNegocios.ConsultarPorIdAtendimento(AtendimentoGetset.Id_Atendimento);
+                            CarregaComboBoxIdOrc(AtendimentoGetset.Id_Atendimento);
+                            int index = CbxIdOrc.FindString(idOrcamento.ToString());
+                            CbxIdOrc.SelectedIndex = index;
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Erro: Detalhes: " + retornoOrc);
+                        }
+                    }
+
+                }
+
+                TurmaOrcamentoNegocios turmaOrcamentoNegocios = new TurmaOrcamentoNegocios();
+
+                TurmaOrcamento turmaOrcamento = GeraTOrcamento();
+
+                string retornotOrcamento = turmaOrcamentoNegocios.Inserir(turmaOrcamento);
+
+                try
+                {
+                    int idTOrcamento = Convert.ToInt32(retornotOrcamento);
+                    TurmaOrcamentoGetSet = turmaOrcamentoNegocios.ConsultarPorOrcamento(Convert.ToInt32(CbxIdOrc.SelectedValue));
+                    dataGrid.DataSource = null;
+                    dataGrid.DataSource = TurmaOrcamentoGetSet;
+                    dataGrid.Update();
+                    dataGrid.Refresh();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro: Detalhes: " + retornotOrcamento);
+                }
             }
-
-            TurmaOrcamentoNegocios turmaOrcamentoNegocios = new TurmaOrcamentoNegocios();
-
-            TurmaOrcamento turmaOrcamento = GeraTOrcamento();
-
-            string retornotOrcamento = turmaOrcamentoNegocios.Inserir(turmaOrcamento);
-
-            try
+            else
             {
-                int idTOrcamento = Convert.ToInt32(retornotOrcamento);
-                TurmaOrcamentoGetSet = turmaOrcamentoNegocios.ConsultarPorOrcamento(Convert.ToInt32(CbxIdOrc.SelectedValue));
-                dataGrid.DataSource = null;
-                dataGrid.DataSource = TurmaOrcamentoGetSet;
-                dataGrid.Update();
-                dataGrid.Refresh();
+                MessageBox.Show("Nenhuma turma selecionada, verifique!");
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Erro: Detalhes: " + retornotOrcamento);
-            }
+            
         }
         private void BtnNovo_Click(object sender, EventArgs e)
         {
