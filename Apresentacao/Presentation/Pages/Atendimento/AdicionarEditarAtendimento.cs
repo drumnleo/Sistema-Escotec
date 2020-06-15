@@ -253,6 +253,8 @@ namespace Apresentacao.Presentation.Pages
                         int idOrcamento = Convert.ToInt32(retornoOrc);
                         OrcamentoGetSet = orcamentoNegocios.ConsultarPorIdAtendimento(AtendimentoGetset.Id_Atendimento);
                         CarregaComboBoxIdOrc(AtendimentoGetset.Id_Atendimento);
+                        int index = CbxIdOrc.FindString(idOrcamento.ToString());
+                        CbxIdOrc.SelectedIndex = index;
                     }
                     catch (Exception)
                     {
@@ -297,6 +299,9 @@ namespace Apresentacao.Presentation.Pages
 
 
             ClearTextBoxes(this.Controls);
+            CbxIdOrc.DataSource = null;
+            CbxIdOrc.Update();
+            CbxIdOrc.Refresh();
 
             CarregarComboBoxTipoAtendimento();
             CarregarComboBoxMarketing();
@@ -489,7 +494,7 @@ namespace Apresentacao.Presentation.Pages
                     CarregaComboBoxIdOrc(AtendimentoGetset.Id_Atendimento);
                     CarregaDataGrid(Convert.ToInt32(CbxIdOrc.SelectedValue));
                     tbxUsuarioGera.Text = OrcamentoGetSet[CbxIdOrc.SelectedIndex].UsuarioGeraOrcamento.Id_Usuario.ToString();
-                    cboxAprovado.Checked = OrcamentoGetSet[CbxIdOrc.SelectedIndex].Aprovado;
+                    //cboxAprovado.Checked = OrcamentoGetSet[CbxIdOrc.SelectedIndex].Aprovado;
                     if (OrcamentoGetSet[CbxIdOrc.SelectedIndex].Validade_Orcamento.ToString() != "01 / 01 / 0001 00:00:00")
                     {
                         dtpValidade.Value = OrcamentoGetSet[CbxIdOrc.SelectedIndex].Validade_Orcamento;
@@ -631,7 +636,7 @@ namespace Apresentacao.Presentation.Pages
         private TurmaOrcamento GeraTOrcamento()
         {
             TurmaOrcamento tOrcamento = new TurmaOrcamento();
-            tOrcamento.Orcamento = OrcamentoGetSet[0];
+            tOrcamento.Orcamento = (Orcamento)CbxIdOrc.SelectedItem;
             tOrcamento.Turma = TurmaGetSet[turmaSel];
             tOrcamento.PromocaoValor = PromocaoGetSet[PromoSel];
             tOrcamento.Usuario = LoginNegocios.UsuarioLogadoGetSet;
@@ -712,12 +717,20 @@ namespace Apresentacao.Presentation.Pages
                 TurmaNegocios turmaNegocios = new TurmaNegocios();
 
                 TurmaGetSet = turmaNegocios.ConsultarPorCurso(idCurso);
-
-                cbxTurma.DataSource = null;
-                cbxTurma.DataSource = TurmaGetSet;
-                cbxTurma.DisplayMember = "NOME_TURMA";
-                cbxTurma.ValueMember = "ID_TURMA";
-                cbxTurma.SelectedIndex = 0;
+                if (TurmaGetSet.Count > 0)
+                {
+                    cbxTurma.DataSource = null;
+                    cbxTurma.DataSource = TurmaGetSet;
+                    cbxTurma.DisplayMember = "NOME_TURMA";
+                    cbxTurma.ValueMember = "ID_TURMA";
+                    cbxTurma.SelectedIndex = 0;
+                }
+                else
+                {
+                    cbxTurma.DataSource = null;
+                    cbxTurma.Update();
+                    cbxTurma.Refresh();
+                }
             }
         }
         private void CarregarComboBoxTipoTelefone()
@@ -1019,7 +1032,7 @@ namespace Apresentacao.Presentation.Pages
             }
         }
 
-        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        private void BtnExcluir_Click(object sender, EventArgs e)
         {
             TurmaOrcamentoNegocios turmaOrcamentoNegocios = new TurmaOrcamentoNegocios();
             DialogResult resultado = MessageBox.Show("Tem certeza?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -1053,15 +1066,22 @@ namespace Apresentacao.Presentation.Pages
             }
         }
 
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        private void BtnNovoOrcamento_Click(object sender, EventArgs e)
         {
             OrcamentoGetSet = null;
             tbxUsuarioGera.Text = "";
-            cboxAprovado.Checked = false;
-            CbxIdOrc.SelectedIndex = -1;
+            //cboxAprovado.Checked = false;
+            CbxIdOrc.DataSource = null;
+            CbxIdOrc.Update();
+            CbxIdOrc.Refresh();
             dataGrid.DataSource = null;
             dataGrid.Update();
             dataGrid.Refresh();
+        }
+
+        private void BtnSalvar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
