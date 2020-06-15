@@ -576,5 +576,10 @@ namespace Apresentacao.Presentation.Pages
                 CarregaComboBox(CbxLaboratorio, laboratorios, "Nome", "Id_Laboratorio");
             }
         }
+
+        private void CbxProfessor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
