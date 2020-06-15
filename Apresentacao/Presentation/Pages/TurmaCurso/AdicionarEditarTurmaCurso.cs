@@ -348,7 +348,6 @@ namespace Apresentacao.Presentation.Pages
             TbxDtDataCadastroTurma.Text = TurmaGetSet.Data_Cadastro.ToShortDateString();
             TbxDtUltAltTurma.Text = TurmaGetSet.Data_Ultima_Alteracao.ToShortDateString();
             TbxNomeTurma.Text = TurmaGetSet.Nome_Turma;
-            TbxFeriados.Text = TurmaGetSet.Qtde_Feriado.ToString();
             TbxVagas.Text = TurmaGetSet.Vagas_Disponiveis.ToString();
             TbxDataInicio.Text = TurmaGetSet.Data_Inicio.ToShortDateString();
             TbxDataFim.Text = TurmaGetSet.Data_Fim.ToShortDateString();
@@ -468,7 +467,14 @@ namespace Apresentacao.Presentation.Pages
                 turma.Laboratorio = (Laboratorio)CbxLaboratorio.SelectedItem;
                 turma.ProfessorMinistra = (ProfessorMinistra)CbxProfessor.SelectedItem;
                 string vagas = VerificaCampoDigitado(TbxVagas.Text, "Vagas");
-                turma.Vagas_Disponiveis = Convert.ToInt16(vagas);
+                try
+                {
+                    turma.Vagas_Disponiveis = Convert.ToInt16(vagas);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Campo vagas não preenchido ou preenchido incorretamente.");
+                }          
                 turma.Nome_Turma = VerificaCampoDigitado(TbxNomeTurma.Text, "Nome Turma");
                 string datainicio = VerificaCampoDigitado(TbxDataInicio.Text, "Data Início");
                 turma.Data_Inicio = Convert.ToDateTime(datainicio);
@@ -514,22 +520,25 @@ namespace Apresentacao.Presentation.Pages
         {
             TurmaNegocios turmaNegocios = new TurmaNegocios();
             Turma turma = CarregaTurma();
+
+            if (turma.Vagas_Disponiveis > 0)
+            {
+                string idTurma = turmaNegocios.Inserir(turma);
+
+                try
+                {
+                    int retorno = Convert.ToInt32(idTurma);
+                    TurmaGetSet = null;
+                    TurmaGetSet = turmaNegocios.ConsultarPorId(retorno)[0];
+                    MessageBox.Show("Turma inserida com sucesso!");
+                    CarregaCamposTurma();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao inserir turma. Detalhes: " + idTurma);
+                }
+            }
             
-
-            string idTurma = turmaNegocios.Inserir(turma);
-
-            try
-            {
-                int retorno = Convert.ToInt32(idTurma);
-                TurmaGetSet = null;
-                TurmaGetSet = turmaNegocios.ConsultarPorId(retorno)[0];
-                MessageBox.Show("Turma inserida com sucesso!");
-                CarregaCamposTurma();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Erro ao inserir turma. Detalhes: " + idTurma);
-            }
         }
         private void TbxHoraInicio_Leave(object sender, EventArgs e)
         {
