@@ -351,6 +351,7 @@ namespace Apresentacao.Presentation.Pages
             if (AtendimentoGetset != null)
             {
                 TbxIdAtend.Text = AtendimentoGetset.Id_Atendimento.ToString();
+                rtbxObsOrc.Text = AtendimentoGetset.Observacao;
 
                 TipoAtendimentoNegocios tipoAtendimentoNegocios = new TipoAtendimentoNegocios();
                 TipoAtendimentoGetSet = new TipoAtendimentoColecao();
@@ -695,12 +696,14 @@ namespace Apresentacao.Presentation.Pages
             CursoNegocios cursoNegocios = new CursoNegocios();
 
             CursoColecao cursoColecao = cursoNegocios.ConsultarPorNome("");
-
-            CbxCurso.DataSource = null;
-            CbxCurso.DataSource = cursoColecao;
-            CbxCurso.DisplayMember = "NOME";
-            CbxCurso.ValueMember = "ID_CURSO";
-            CbxCurso.SelectedIndex = 0;
+            if (cursoColecao.Count > 0)
+            {
+                CbxCurso.DataSource = null;
+                CbxCurso.DataSource = cursoColecao;
+                CbxCurso.DisplayMember = "NOME";
+                CbxCurso.ValueMember = "ID_CURSO";
+                CbxCurso.SelectedIndex = 0;
+            }        
         }
 
         private void CarregaComboBoxIdOrc(int idAtendimento)
