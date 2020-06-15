@@ -77,6 +77,7 @@ namespace Apresentacao.Presentation.Pages
                 curso.Qtde_Parcelas = Convert.ToInt16(qtdeParc);
                 string valorTotal = VerificaCampoDigitado(TbxValorTotal.Text, "Valor Total");
                 curso.Valor_Total = Convert.ToDecimal(valorTotal);
+                curso.Usuario = LoginNegocios.UsuarioLogadoGetSet;
             }
             catch (Exception ex)
             {

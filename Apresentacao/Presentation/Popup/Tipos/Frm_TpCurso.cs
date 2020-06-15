@@ -58,6 +58,7 @@ namespace Apresentacao.Presentation.Popup.Tipos
         {
             TipoCursoNegocios tipoCursoNegocios = new TipoCursoNegocios();
             TipoCurso tipoCurso = new TipoCurso();
+            string retorno = "erro";
             try
             {
                 string vagas = VerificaCampoDigitado(TbxVagas.Text, "Vagas");
@@ -74,14 +75,14 @@ namespace Apresentacao.Presentation.Popup.Tipos
                 tipoCurso.Nome = VerificaCampoDigitado(TbxNomeCurso.Text, "Nome Curso");
                 tipoCurso.Descricao = TbxCursoDescricao.Text;
                 tipoCurso.Usuario = LoginNegocios.UsuarioLogadoGetSet;
+                retorno = tipoCursoNegocios.Inserir(tipoCurso);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
-            string retorno = tipoCursoNegocios.Inserir(tipoCurso);
-
+            
             try
             {
                 int idTipoTurma = Convert.ToInt32(retorno);
