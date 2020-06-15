@@ -594,5 +594,15 @@ namespace Apresentacao.Presentation.Pages
         {
             LimparCamposCurso();
         }
+
+        private void TbxHorasAula_Leave(object sender, EventArgs e)
+        {
+            if (TbxAulasSem.Text != "" && TbxDurMes.Text != "" && TbxHorasAula.Text != "")
+            {
+                TbxQtdAulas.Text = (Convert.ToInt32(TbxAulasSem.Text) * 4 * Convert.ToInt32(TbxDurMes.Text)).ToString();
+                TbxCargHor.Text = (Convert.ToInt32(TbxQtdAulas.Text) + Convert.ToInt32(TbxHorasAula.Text)).ToString();
+                TbxParcelasCurso.Text = TbxDurMes.Text;
+            }
+        }
     }
 }
