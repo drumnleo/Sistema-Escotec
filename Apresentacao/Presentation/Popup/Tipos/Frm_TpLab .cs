@@ -61,7 +61,7 @@ namespace Apresentacao.Presentation.Popup.Tipos
             try
             {
                 tipoLaboratorio.Tipo = VerificaCampoDigitado(TbxTipo.Text, "Tipo");
-                tipoLaboratorio.Descricao = VerificaCampoDigitado(TbxDescricao.Text, "Descrição");
+                tipoLaboratorio.Descricao = TbxDescricao.Text;
                 tipoLaboratorio.Usuario = LoginNegocios.UsuarioLogadoGetSet;
             }
             catch (Exception ex)
@@ -91,7 +91,7 @@ namespace Apresentacao.Presentation.Popup.Tipos
             {
                 tipoLaboratorio.Id_Tipo_Laboratorio = Convert.ToInt32(TbxId.Text);
                 tipoLaboratorio.Tipo = VerificaCampoDigitado(TbxTipo.Text, "Tipo");
-                tipoLaboratorio.Descricao = VerificaCampoDigitado(TbxDescricao.Text, "Descrição");
+                tipoLaboratorio.Descricao = TbxDescricao.Text;
                 tipoLaboratorio.Usuario = LoginNegocios.UsuarioLogadoGetSet;
             }
             catch (Exception ex)
