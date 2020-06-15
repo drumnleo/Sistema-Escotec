@@ -156,6 +156,7 @@ namespace Apresentacao.Presentation.Pages
                 curso.Qtde_Parcelas = Convert.ToInt16(qtdeParc);
                 string valorTotal = VerificaCampoDigitado(TbxValorTotal.Text, "Valor Total");
                 curso.Valor_Total = Convert.ToDecimal(valorTotal);
+                curso.Usuario = LoginNegocios.UsuarioLogadoGetSet;
             }
             catch (Exception ex)
             {
@@ -235,7 +236,7 @@ namespace Apresentacao.Presentation.Pages
         }
         private void VerificaSeDecimalDigitado(object sender, KeyPressEventArgs e)
         {
-            if ((!char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != '.'))
+            if ((!char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != ','))
             {
                 e.Handled = true;
                 MessageBox.Show("este campo aceita somente numero");
