@@ -378,6 +378,14 @@ namespace Apresentacao.Presentation.Pages
         {
             metodosNegocios.MarcaChkBox(panel1.Controls);
             metodosNegocios.LimpaTextBox(panel1.Controls);
+            ChkBoxSegunda.Checked = true;
+            ChkBoxTerca.Checked = true;
+            ChkBoxQuarta.Checked = true;
+            ChkBoxQuinta.Checked = true;
+            ChkBoxSexta.Checked = true;
+            ChkBoxSabado.Checked = true;
+            ChkBoxDomingo.Checked = true;
+            
 
             TurmaGetSet = new Turma();
             CarregaComboBoxLaboratorio();
@@ -580,6 +588,11 @@ namespace Apresentacao.Presentation.Pages
         private void CbxProfessor_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnNovoCurso_Click(object sender, EventArgs e)
+        {
+            LimparCamposCurso();
         }
     }
 }
