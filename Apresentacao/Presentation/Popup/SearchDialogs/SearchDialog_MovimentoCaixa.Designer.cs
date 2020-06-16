@@ -29,36 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchDialog_ContasReceber));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchDialog_MovimentoCaixa));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.btnpesquisar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.tbxSearch = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.PanelDown = new System.Windows.Forms.Panel();
             this.btnSair = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSelecionar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.PanelTop = new System.Windows.Forms.Panel();
-            this.lblpesquisa = new System.Windows.Forms.Label();
+            this.TbxTitulo = new Bunifu.Framework.BunifuCustomTextbox();
             this.PanelCenter = new System.Windows.Forms.Panel();
             this.dataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.Id_Mat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id_Conta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero_Parcela = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total_Parcelas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HORA_ENTRADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.verifica = new System.Windows.Forms.Timer(this.components);
+            this.Id_Mov_Caixa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_Caixa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_CONTA_RECEBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Movimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saida_Entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelDown.SuspendLayout();
             this.PanelTop.SuspendLayout();
             this.PanelCenter.SuspendLayout();
@@ -70,149 +62,6 @@
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
             // 
-            // btnpesquisar
-            // 
-            this.btnpesquisar.AllowToggling = false;
-            this.btnpesquisar.AnimationSpeed = 200;
-            this.btnpesquisar.AutoGenerateColors = false;
-            this.btnpesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.btnpesquisar.BackColor1 = System.Drawing.Color.Gainsboro;
-            this.btnpesquisar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnpesquisar.BackgroundImage")));
-            this.btnpesquisar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnpesquisar.ButtonText = "";
-            this.btnpesquisar.ButtonTextMarginLeft = 0;
-            this.btnpesquisar.ColorContrastOnClick = 45;
-            this.btnpesquisar.ColorContrastOnHover = 45;
-            this.btnpesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnpesquisar.CustomizableEdges = borderEdges1;
-            this.btnpesquisar.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnpesquisar.DisabledBorderColor = System.Drawing.Color.Empty;
-            this.btnpesquisar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnpesquisar.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnpesquisar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnpesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.btnpesquisar.ForeColor = System.Drawing.Color.White;
-            this.btnpesquisar.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnpesquisar.IconMarginLeft = 11;
-            this.btnpesquisar.IconPadding = 10;
-            this.btnpesquisar.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnpesquisar.IdleBorderColor = System.Drawing.Color.Transparent;
-            this.btnpesquisar.IdleBorderRadius = 3;
-            this.btnpesquisar.IdleBorderThickness = 1;
-            this.btnpesquisar.IdleFillColor = System.Drawing.Color.Gainsboro;
-            this.btnpesquisar.IdleIconLeftImage = null;
-            this.btnpesquisar.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnpesquisar.IdleIconRightImage")));
-            this.btnpesquisar.IndicateFocus = false;
-            this.btnpesquisar.Location = new System.Drawing.Point(534, 15);
-            this.btnpesquisar.Name = "btnpesquisar";
-            this.btnpesquisar.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnpesquisar.onHoverState.BorderRadius = 3;
-            this.btnpesquisar.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnpesquisar.onHoverState.BorderThickness = 1;
-            this.btnpesquisar.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnpesquisar.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnpesquisar.onHoverState.IconLeftImage = null;
-            this.btnpesquisar.onHoverState.IconRightImage = null;
-            this.btnpesquisar.OnIdleState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnpesquisar.OnIdleState.BorderRadius = 3;
-            this.btnpesquisar.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnpesquisar.OnIdleState.BorderThickness = 1;
-            this.btnpesquisar.OnIdleState.FillColor = System.Drawing.Color.Gainsboro;
-            this.btnpesquisar.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnpesquisar.OnIdleState.IconLeftImage = null;
-            this.btnpesquisar.OnIdleState.IconRightImage = ((System.Drawing.Image)(resources.GetObject("btnpesquisar.OnIdleState.IconRightImage")));
-            this.btnpesquisar.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnpesquisar.OnPressedState.BorderRadius = 3;
-            this.btnpesquisar.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnpesquisar.OnPressedState.BorderThickness = 1;
-            this.btnpesquisar.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnpesquisar.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnpesquisar.OnPressedState.IconLeftImage = null;
-            this.btnpesquisar.OnPressedState.IconRightImage = null;
-            this.btnpesquisar.Size = new System.Drawing.Size(34, 34);
-            this.btnpesquisar.TabIndex = 1;
-            this.btnpesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnpesquisar.TextMarginLeft = 0;
-            this.btnpesquisar.UseDefaultRadiusAndThickness = true;
-            this.btnpesquisar.Click += new System.EventHandler(this.btnpesquisar_Click);
-            // 
-            // tbxSearch
-            // 
-            this.tbxSearch.AcceptsReturn = false;
-            this.tbxSearch.AcceptsTab = false;
-            this.tbxSearch.AnimationSpeed = 200;
-            this.tbxSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.tbxSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.tbxSearch.BackColor = System.Drawing.Color.Transparent;
-            this.tbxSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tbxSearch.BackgroundImage")));
-            this.tbxSearch.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.tbxSearch.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.tbxSearch.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.tbxSearch.BorderColorIdle = System.Drawing.Color.Silver;
-            this.tbxSearch.BorderRadius = 1;
-            this.tbxSearch.BorderThickness = 1;
-            this.tbxSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.tbxSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxSearch.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.tbxSearch.DefaultText = "";
-            this.tbxSearch.FillColor = System.Drawing.Color.White;
-            this.tbxSearch.HideSelection = true;
-            this.tbxSearch.IconLeft = null;
-            this.tbxSearch.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxSearch.IconPadding = 10;
-            this.tbxSearch.IconRight = null;
-            this.tbxSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxSearch.Lines = new string[0];
-            this.tbxSearch.Location = new System.Drawing.Point(182, 15);
-            this.tbxSearch.MaxLength = 32767;
-            this.tbxSearch.MinimumSize = new System.Drawing.Size(1, 1);
-            this.tbxSearch.Modified = false;
-            this.tbxSearch.Multiline = false;
-            this.tbxSearch.Name = "tbxSearch";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.tbxSearch.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.Empty;
-            stateProperties2.FillColor = System.Drawing.Color.White;
-            stateProperties2.ForeColor = System.Drawing.Color.Empty;
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.tbxSearch.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.tbxSearch.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.tbxSearch.OnIdleState = stateProperties4;
-            this.tbxSearch.PasswordChar = '\0';
-            this.tbxSearch.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.tbxSearch.PlaceholderText = "Digite o CPF (apenas números)";
-            this.tbxSearch.ReadOnly = false;
-            this.tbxSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tbxSearch.SelectedText = "";
-            this.tbxSearch.SelectionLength = 0;
-            this.tbxSearch.SelectionStart = 0;
-            this.tbxSearch.ShortcutsEnabled = true;
-            this.tbxSearch.Size = new System.Drawing.Size(336, 34);
-            this.tbxSearch.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
-            this.tbxSearch.TabIndex = 0;
-            this.tbxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tbxSearch.TextMarginBottom = 0;
-            this.tbxSearch.TextMarginLeft = 5;
-            this.tbxSearch.TextMarginTop = 0;
-            this.tbxSearch.TextPlaceholder = "Digite o CPF (apenas números)";
-            this.tbxSearch.UseSystemPasswordChar = false;
-            this.tbxSearch.WordWrap = true;
-            // 
             // PanelDown
             // 
             this.PanelDown.Controls.Add(this.btnSair);
@@ -220,7 +69,7 @@
             this.PanelDown.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelDown.Location = new System.Drawing.Point(0, 500);
             this.PanelDown.Name = "PanelDown";
-            this.PanelDown.Size = new System.Drawing.Size(733, 67);
+            this.PanelDown.Size = new System.Drawing.Size(631, 67);
             this.PanelDown.TabIndex = 2;
             // 
             // btnSair
@@ -238,11 +87,11 @@
             this.btnSair.ColorContrastOnClick = 45;
             this.btnSair.ColorContrastOnHover = 45;
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnSair.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnSair.CustomizableEdges = borderEdges1;
             this.btnSair.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSair.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
             this.btnSair.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -261,7 +110,7 @@
             this.btnSair.IdleIconLeftImage = null;
             this.btnSair.IdleIconRightImage = null;
             this.btnSair.IndicateFocus = true;
-            this.btnSair.Location = new System.Drawing.Point(578, 15);
+            this.btnSair.Location = new System.Drawing.Point(476, 15);
             this.btnSair.Name = "btnSair";
             this.btnSair.onHoverState.BorderColor = System.Drawing.Color.Blue;
             this.btnSair.onHoverState.BorderRadius = 30;
@@ -309,11 +158,11 @@
             this.btnSelecionar.ColorContrastOnClick = 45;
             this.btnSelecionar.ColorContrastOnHover = 45;
             this.btnSelecionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnSelecionar.CustomizableEdges = borderEdges3;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnSelecionar.CustomizableEdges = borderEdges2;
             this.btnSelecionar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSelecionar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
             this.btnSelecionar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -332,7 +181,7 @@
             this.btnSelecionar.IdleIconLeftImage = null;
             this.btnSelecionar.IdleIconRightImage = null;
             this.btnSelecionar.IndicateFocus = true;
-            this.btnSelecionar.Location = new System.Drawing.Point(427, 15);
+            this.btnSelecionar.Location = new System.Drawing.Point(325, 15);
             this.btnSelecionar.Name = "btnSelecionar";
             this.btnSelecionar.onHoverState.BorderColor = System.Drawing.Color.Blue;
             this.btnSelecionar.onHoverState.BorderRadius = 30;
@@ -367,25 +216,28 @@
             // 
             // PanelTop
             // 
-            this.PanelTop.Controls.Add(this.lblpesquisa);
-            this.PanelTop.Controls.Add(this.btnpesquisar);
-            this.PanelTop.Controls.Add(this.tbxSearch);
+            this.PanelTop.Controls.Add(this.TbxTitulo);
             this.PanelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTop.Location = new System.Drawing.Point(0, 0);
             this.PanelTop.Name = "PanelTop";
-            this.PanelTop.Size = new System.Drawing.Size(733, 66);
+            this.PanelTop.Size = new System.Drawing.Size(631, 66);
             this.PanelTop.TabIndex = 3;
             // 
-            // lblpesquisa
+            // TbxTitulo
             // 
-            this.lblpesquisa.AutoSize = true;
-            this.lblpesquisa.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lblpesquisa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblpesquisa.Location = new System.Drawing.Point(23, 20);
-            this.lblpesquisa.Name = "lblpesquisa";
-            this.lblpesquisa.Size = new System.Drawing.Size(153, 25);
-            this.lblpesquisa.TabIndex = 72;
-            this.lblpesquisa.Text = "Pesquisa por cpf:";
+            this.TbxTitulo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.TbxTitulo.BorderColor = System.Drawing.Color.White;
+            this.TbxTitulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TbxTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TbxTitulo.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
+            this.TbxTitulo.ForeColor = System.Drawing.Color.White;
+            this.TbxTitulo.Location = new System.Drawing.Point(0, 0);
+            this.TbxTitulo.Name = "TbxTitulo";
+            this.TbxTitulo.Size = new System.Drawing.Size(631, 28);
+            this.TbxTitulo.TabIndex = 177;
+            this.TbxTitulo.TabStop = false;
+            this.TbxTitulo.Text = "MOVIMENTO CAIXA";
+            this.TbxTitulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // PanelCenter
             // 
@@ -393,7 +245,7 @@
             this.PanelCenter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelCenter.Location = new System.Drawing.Point(0, 66);
             this.PanelCenter.Name = "PanelCenter";
-            this.PanelCenter.Size = new System.Drawing.Size(733, 434);
+            this.PanelCenter.Size = new System.Drawing.Size(631, 434);
             this.PanelCenter.TabIndex = 4;
             // 
             // dataGrid
@@ -422,13 +274,12 @@
             this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid.ColumnHeadersHeight = 40;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id_Mat,
-            this.Id_Conta,
-            this.Vencimento,
-            this.Numero_Parcela,
-            this.Total_Parcelas,
-            this.Valor,
-            this.HORA_ENTRADA});
+            this.Id_Mov_Caixa,
+            this.Id_Caixa,
+            this.ID_CONTA_RECEBER,
+            this.ValorFinal,
+            this.Data_Movimento,
+            this.Saida_Entrada});
             this.dataGrid.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.dataGrid.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.dataGrid.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -473,101 +324,91 @@
             this.dataGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGrid.Size = new System.Drawing.Size(733, 434);
+            this.dataGrid.Size = new System.Drawing.Size(631, 434);
             this.dataGrid.TabIndex = 0;
             this.dataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellClick);
             this.dataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGrid_CellFormatting);
             // 
-            // Id_Mat
+            // Id_Mov_Caixa
             // 
-            this.Id_Mat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Id_Mat.DataPropertyName = "Matricula.Id_Matricula";
-            this.Id_Mat.HeaderText = "Id_Mat";
-            this.Id_Mat.Name = "Id_Mat";
-            this.Id_Mat.ReadOnly = true;
-            this.Id_Mat.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Id_Mat.Width = 90;
+            this.Id_Mov_Caixa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Id_Mov_Caixa.DataPropertyName = "ID_MOV_CAIXA";
+            this.Id_Mov_Caixa.HeaderText = "Id";
+            this.Id_Mov_Caixa.Name = "Id_Mov_Caixa";
+            this.Id_Mov_Caixa.ReadOnly = true;
+            this.Id_Mov_Caixa.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Id_Mov_Caixa.Width = 90;
             // 
-            // Id_Conta
+            // Id_Caixa
             // 
-            this.Id_Conta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Id_Conta.DataPropertyName = "Id_Conta_Receber";
-            this.Id_Conta.FillWeight = 114.0973F;
-            this.Id_Conta.HeaderText = "Id_Conta";
-            this.Id_Conta.Name = "Id_Conta";
-            this.Id_Conta.ReadOnly = true;
-            this.Id_Conta.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Id_Conta.Width = 80;
+            this.Id_Caixa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Id_Caixa.DataPropertyName = "Caixa.Id_Caixa";
+            this.Id_Caixa.FillWeight = 114.0973F;
+            this.Id_Caixa.HeaderText = "Id_Caixa";
+            this.Id_Caixa.Name = "Id_Caixa";
+            this.Id_Caixa.ReadOnly = true;
+            this.Id_Caixa.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Id_Caixa.Width = 80;
             // 
-            // Vencimento
+            // ID_CONTA_RECEBER
             // 
-            this.Vencimento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Vencimento.DataPropertyName = "Vencimento";
-            this.Vencimento.FillWeight = 125.8577F;
-            this.Vencimento.HeaderText = "Vencimento";
-            this.Vencimento.Name = "Vencimento";
-            this.Vencimento.ReadOnly = true;
-            this.Vencimento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Vencimento.Width = 150;
+            this.ID_CONTA_RECEBER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ID_CONTA_RECEBER.DataPropertyName = "ContasReceber.Id_Conta_Receber";
+            this.ID_CONTA_RECEBER.FillWeight = 125.8577F;
+            this.ID_CONTA_RECEBER.HeaderText = "Id_Conta";
+            this.ID_CONTA_RECEBER.Name = "ID_CONTA_RECEBER";
+            this.ID_CONTA_RECEBER.ReadOnly = true;
+            this.ID_CONTA_RECEBER.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID_CONTA_RECEBER.Width = 150;
             // 
-            // Numero_Parcela
+            // ValorFinal
             // 
-            this.Numero_Parcela.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Numero_Parcela.DataPropertyName = "Numero_Parcela";
-            this.Numero_Parcela.FillWeight = 142.6992F;
-            this.Numero_Parcela.HeaderText = "Num. Parc.";
-            this.Numero_Parcela.Name = "Numero_Parcela";
-            this.Numero_Parcela.ReadOnly = true;
-            this.Numero_Parcela.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Numero_Parcela.Width = 120;
+            this.ValorFinal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ValorFinal.DataPropertyName = "Valor_Final";
+            this.ValorFinal.FillWeight = 142.6992F;
+            this.ValorFinal.HeaderText = "Valor";
+            this.ValorFinal.Name = "ValorFinal";
+            this.ValorFinal.ReadOnly = true;
+            this.ValorFinal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ValorFinal.Width = 120;
             // 
-            // Total_Parcelas
+            // Data_Movimento
             // 
-            this.Total_Parcelas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Total_Parcelas.DataPropertyName = "Total_Parcelas";
-            this.Total_Parcelas.FillWeight = 97.82865F;
-            this.Total_Parcelas.HeaderText = "Total Parc.";
-            this.Total_Parcelas.Name = "Total_Parcelas";
-            this.Total_Parcelas.ReadOnly = true;
-            this.Total_Parcelas.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Data_Movimento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Data_Movimento.DataPropertyName = "Data_Movimento";
+            this.Data_Movimento.FillWeight = 73.09843F;
+            this.Data_Movimento.HeaderText = "Data_Movimento";
+            this.Data_Movimento.Name = "Data_Movimento";
+            this.Data_Movimento.ReadOnly = true;
+            this.Data_Movimento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // Valor
+            // Saida_Entrada
             // 
-            this.Valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Valor.DataPropertyName = "Valor";
-            this.Valor.FillWeight = 73.09843F;
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
-            this.Valor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // HORA_ENTRADA
-            // 
-            this.HORA_ENTRADA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.HORA_ENTRADA.DataPropertyName = "Situacao_PG";
+            this.Saida_Entrada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Saida_Entrada.DataPropertyName = "SAIDA_ENTRADA";
             dataGridViewCellStyle3.Format = "t";
             dataGridViewCellStyle3.NullValue = null;
-            this.HORA_ENTRADA.DefaultCellStyle = dataGridViewCellStyle3;
-            this.HORA_ENTRADA.FillWeight = 97.82865F;
-            this.HORA_ENTRADA.HeaderText = "Situacao";
-            this.HORA_ENTRADA.Name = "HORA_ENTRADA";
-            this.HORA_ENTRADA.ReadOnly = true;
-            this.HORA_ENTRADA.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.HORA_ENTRADA.Width = 90;
+            this.Saida_Entrada.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Saida_Entrada.FillWeight = 97.82865F;
+            this.Saida_Entrada.HeaderText = "S/E";
+            this.Saida_Entrada.Name = "Saida_Entrada";
+            this.Saida_Entrada.ReadOnly = true;
+            this.Saida_Entrada.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Saida_Entrada.Width = 90;
             // 
-            // SearchDialog_ContasReceber
+            // SearchDialog_MovimentoCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(733, 567);
+            this.ClientSize = new System.Drawing.Size(631, 567);
             this.Controls.Add(this.PanelCenter);
             this.Controls.Add(this.PanelTop);
             this.Controls.Add(this.PanelDown);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SearchDialog_ContasReceber";
+            this.Name = "SearchDialog_MovimentoCaixa";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SearchDialog";
@@ -584,22 +425,19 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnpesquisar;
-        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox tbxSearch;
         private System.Windows.Forms.Panel PanelCenter;
         private System.Windows.Forms.Panel PanelTop;
         private System.Windows.Forms.Panel PanelDown;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSair;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSelecionar;
         private System.Windows.Forms.Timer verifica;
-        private System.Windows.Forms.Label lblpesquisa;
         private Bunifu.UI.WinForms.BunifuDataGridView dataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Mat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Conta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Vencimento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Parcela;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total_Parcelas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HORA_ENTRADA;
+        private Bunifu.Framework.BunifuCustomTextbox TbxTitulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Mov_Caixa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Caixa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CONTA_RECEBER;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Movimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Saida_Entrada;
     }
 }

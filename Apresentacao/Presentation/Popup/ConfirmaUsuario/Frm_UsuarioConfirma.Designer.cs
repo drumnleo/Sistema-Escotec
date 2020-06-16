@@ -271,6 +271,7 @@
             this.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnCancelar.TextMarginLeft = 0;
             this.BtnCancelar.UseDefaultRadiusAndThickness = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // Frm_UsuarioConfirma
             // 

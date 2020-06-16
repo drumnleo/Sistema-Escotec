@@ -51,6 +51,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8_school.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge.Video">
       <HintPath>..\..\..\..\..\Downloads\Compressed\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Video.dll</HintPath>
@@ -554,6 +557,7 @@
     <None Include="Resources\login.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icons8_school.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

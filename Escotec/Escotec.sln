@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjetoTransferencia", "..\O
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apresentacao", "..\Apresentacao\Apresentacao.csproj", "{52AE5327-F82B-4C7E-BA5A-3B8C2DE3FB5E}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador_Escotec", "..\Instalador\Instalador_Escotec\Instalador_Escotec.vdproj", "{37C29A74-03FD-4FD5-97FD-AC2EDD406CD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{52AE5327-F82B-4C7E-BA5A-3B8C2DE3FB5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52AE5327-F82B-4C7E-BA5A-3B8C2DE3FB5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52AE5327-F82B-4C7E-BA5A-3B8C2DE3FB5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37C29A74-03FD-4FD5-97FD-AC2EDD406CD4}.Debug|Any CPU.ActiveCfg = Debug
+		{37C29A74-03FD-4FD5-97FD-AC2EDD406CD4}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -45,7 +45,19 @@ namespace Apresentacao.Presentation.Popup.ConfirmaUsuario
                 {
                     MessageBox.Show("Senha inválida para o usuario " + usuario.Nome_Usuario + ".");
                 }
+                else if (retorno == true)
+                {
+                    FrmCaixa.UsuarioEstorno = usuario;
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
             }
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.No;
+            this.Close();
         }
     }
 }

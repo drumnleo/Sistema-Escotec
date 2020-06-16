@@ -82,6 +82,14 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties50 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties51 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties52 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties53 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties54 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties55 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties56 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties57 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties58 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties59 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties60 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomTextbox1 = new Bunifu.Framework.BunifuCustomTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -126,7 +134,13 @@
             this.TbxSituacao = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.BtnSearchMovimento = new Bunifu.Framework.UI.BunifuImageButton();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.LblSangria = new System.Windows.Forms.Label();
+            this.TbxIdMovCaixa = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
+            this.LblIdMovCaixa = new System.Windows.Forms.Label();
+            this.TbxSangriaValor = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
@@ -134,7 +148,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnEstorno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSangria)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnSearchMovimento)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -323,7 +337,7 @@
             this.TbxIdConta.IconRight = null;
             this.TbxIdConta.IconRightCursor = System.Windows.Forms.Cursors.Default;
             this.TbxIdConta.Lines = new string[0];
-            this.TbxIdConta.Location = new System.Drawing.Point(12, 192);
+            this.TbxIdConta.Location = new System.Drawing.Point(102, 186);
             this.TbxIdConta.MaxLength = 32767;
             this.TbxIdConta.MinimumSize = new System.Drawing.Size(50, 26);
             this.TbxIdConta.Modified = false;
@@ -374,7 +388,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(8, 171);
+            this.label3.Location = new System.Drawing.Point(98, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 20);
             this.label3.TabIndex = 241;
@@ -459,7 +473,7 @@
             this.TbxIdMatricula.IconRight = null;
             this.TbxIdMatricula.IconRightCursor = System.Windows.Forms.Cursors.Default;
             this.TbxIdMatricula.Lines = new string[0];
-            this.TbxIdMatricula.Location = new System.Drawing.Point(107, 192);
+            this.TbxIdMatricula.Location = new System.Drawing.Point(197, 186);
             this.TbxIdMatricula.MaxLength = 32767;
             this.TbxIdMatricula.MinimumSize = new System.Drawing.Size(50, 26);
             this.TbxIdMatricula.Modified = false;
@@ -510,7 +524,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(103, 171);
+            this.label4.Location = new System.Drawing.Point(193, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 20);
             this.label4.TabIndex = 245;
@@ -1420,7 +1434,7 @@
             this.TbxSituacao.IconRight = null;
             this.TbxSituacao.IconRightCursor = System.Windows.Forms.Cursors.Default;
             this.TbxSituacao.Lines = new string[0];
-            this.TbxSituacao.Location = new System.Drawing.Point(212, 192);
+            this.TbxSituacao.Location = new System.Drawing.Point(302, 186);
             this.TbxSituacao.MaxLength = 32767;
             this.TbxSituacao.MinimumSize = new System.Drawing.Size(50, 26);
             this.TbxSituacao.Modified = false;
@@ -1455,7 +1469,7 @@
             this.TbxSituacao.SelectionLength = 0;
             this.TbxSituacao.SelectionStart = 0;
             this.TbxSituacao.ShortcutsEnabled = true;
-            this.TbxSituacao.Size = new System.Drawing.Size(87, 26);
+            this.TbxSituacao.Size = new System.Drawing.Size(107, 26);
             this.TbxSituacao.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.TbxSituacao.TabIndex = 274;
             this.TbxSituacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1471,7 +1485,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(208, 171);
+            this.label1.Location = new System.Drawing.Point(298, 165);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 20);
             this.label1.TabIndex = 273;
@@ -1488,18 +1502,206 @@
             this.label19.TabIndex = 276;
             this.label19.Text = "Busca Movimento:";
             // 
-            // bunifuImageButton1
+            // BtnSearchMovimento
             // 
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(567, 120);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(33, 33);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 275;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            this.BtnSearchMovimento.Image = ((System.Drawing.Image)(resources.GetObject("BtnSearchMovimento.Image")));
+            this.BtnSearchMovimento.ImageActive = null;
+            this.BtnSearchMovimento.Location = new System.Drawing.Point(567, 120);
+            this.BtnSearchMovimento.Name = "BtnSearchMovimento";
+            this.BtnSearchMovimento.Size = new System.Drawing.Size(33, 33);
+            this.BtnSearchMovimento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnSearchMovimento.TabIndex = 275;
+            this.BtnSearchMovimento.TabStop = false;
+            this.BtnSearchMovimento.Zoom = 10;
+            this.BtnSearchMovimento.Click += new System.EventHandler(this.BtnSearchMovimento_Click);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // LblSangria
+            // 
+            this.LblSangria.AutoSize = true;
+            this.LblSangria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSangria.ForeColor = System.Drawing.Color.DarkRed;
+            this.LblSangria.Location = new System.Drawing.Point(452, 34);
+            this.LblSangria.Name = "LblSangria";
+            this.LblSangria.Size = new System.Drawing.Size(156, 18);
+            this.LblSangria.TabIndex = 277;
+            this.LblSangria.Text = "Necessário Sangria";
+            // 
+            // TbxIdMovCaixa
+            // 
+            this.TbxIdMovCaixa.AcceptsReturn = false;
+            this.TbxIdMovCaixa.AcceptsTab = false;
+            this.TbxIdMovCaixa.AnimationSpeed = 220;
+            this.TbxIdMovCaixa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.TbxIdMovCaixa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.TbxIdMovCaixa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TbxIdMovCaixa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TbxIdMovCaixa.BackgroundImage")));
+            this.TbxIdMovCaixa.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.TbxIdMovCaixa.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.TbxIdMovCaixa.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(199)))), ((int)(((byte)(220)))));
+            this.TbxIdMovCaixa.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TbxIdMovCaixa.BorderRadius = 1;
+            this.TbxIdMovCaixa.BorderThickness = 2;
+            this.TbxIdMovCaixa.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.TbxIdMovCaixa.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TbxIdMovCaixa.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.TbxIdMovCaixa.DefaultText = "";
+            this.TbxIdMovCaixa.Enabled = false;
+            this.TbxIdMovCaixa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TbxIdMovCaixa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TbxIdMovCaixa.HideSelection = true;
+            this.TbxIdMovCaixa.IconLeft = null;
+            this.TbxIdMovCaixa.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.TbxIdMovCaixa.IconPadding = 10;
+            this.TbxIdMovCaixa.IconRight = null;
+            this.TbxIdMovCaixa.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.TbxIdMovCaixa.Lines = new string[0];
+            this.TbxIdMovCaixa.Location = new System.Drawing.Point(12, 186);
+            this.TbxIdMovCaixa.MaxLength = 32767;
+            this.TbxIdMovCaixa.MinimumSize = new System.Drawing.Size(50, 26);
+            this.TbxIdMovCaixa.Modified = false;
+            this.TbxIdMovCaixa.Multiline = false;
+            this.TbxIdMovCaixa.Name = "TbxIdMovCaixa";
+            stateProperties53.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            stateProperties53.FillColor = System.Drawing.Color.Empty;
+            stateProperties53.ForeColor = System.Drawing.Color.Empty;
+            stateProperties53.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TbxIdMovCaixa.OnActiveState = stateProperties53;
+            stateProperties54.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            stateProperties54.FillColor = System.Drawing.Color.White;
+            stateProperties54.ForeColor = System.Drawing.Color.Empty;
+            stateProperties54.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.TbxIdMovCaixa.OnDisabledState = stateProperties54;
+            stateProperties55.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(199)))), ((int)(((byte)(220)))));
+            stateProperties55.FillColor = System.Drawing.Color.Empty;
+            stateProperties55.ForeColor = System.Drawing.Color.Empty;
+            stateProperties55.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TbxIdMovCaixa.OnHoverState = stateProperties55;
+            stateProperties56.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            stateProperties56.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            stateProperties56.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            stateProperties56.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TbxIdMovCaixa.OnIdleState = stateProperties56;
+            this.TbxIdMovCaixa.PasswordChar = '\0';
+            this.TbxIdMovCaixa.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.TbxIdMovCaixa.PlaceholderText = "";
+            this.TbxIdMovCaixa.ReadOnly = false;
+            this.TbxIdMovCaixa.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TbxIdMovCaixa.SelectedText = "";
+            this.TbxIdMovCaixa.SelectionLength = 0;
+            this.TbxIdMovCaixa.SelectionStart = 0;
+            this.TbxIdMovCaixa.ShortcutsEnabled = true;
+            this.TbxIdMovCaixa.Size = new System.Drawing.Size(78, 26);
+            this.TbxIdMovCaixa.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
+            this.TbxIdMovCaixa.TabIndex = 279;
+            this.TbxIdMovCaixa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TbxIdMovCaixa.TextMarginBottom = 0;
+            this.TbxIdMovCaixa.TextMarginLeft = 5;
+            this.TbxIdMovCaixa.TextMarginTop = 0;
+            this.TbxIdMovCaixa.TextPlaceholder = "";
+            this.TbxIdMovCaixa.UseSystemPasswordChar = false;
+            this.TbxIdMovCaixa.WordWrap = true;
+            // 
+            // LblIdMovCaixa
+            // 
+            this.LblIdMovCaixa.AutoSize = true;
+            this.LblIdMovCaixa.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.LblIdMovCaixa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LblIdMovCaixa.Location = new System.Drawing.Point(8, 165);
+            this.LblIdMovCaixa.Name = "LblIdMovCaixa";
+            this.LblIdMovCaixa.Size = new System.Drawing.Size(57, 20);
+            this.LblIdMovCaixa.TabIndex = 278;
+            this.LblIdMovCaixa.Text = "Id Mov";
+            // 
+            // TbxSangriaValor
+            // 
+            this.TbxSangriaValor.AcceptsReturn = false;
+            this.TbxSangriaValor.AcceptsTab = false;
+            this.TbxSangriaValor.AnimationSpeed = 220;
+            this.TbxSangriaValor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.TbxSangriaValor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.TbxSangriaValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TbxSangriaValor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TbxSangriaValor.BackgroundImage")));
+            this.TbxSangriaValor.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.TbxSangriaValor.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.TbxSangriaValor.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(199)))), ((int)(((byte)(220)))));
+            this.TbxSangriaValor.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TbxSangriaValor.BorderRadius = 1;
+            this.TbxSangriaValor.BorderThickness = 2;
+            this.TbxSangriaValor.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.TbxSangriaValor.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TbxSangriaValor.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.TbxSangriaValor.DefaultText = "";
+            this.TbxSangriaValor.Enabled = false;
+            this.TbxSangriaValor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TbxSangriaValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TbxSangriaValor.HideSelection = true;
+            this.TbxSangriaValor.IconLeft = null;
+            this.TbxSangriaValor.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.TbxSangriaValor.IconPadding = 10;
+            this.TbxSangriaValor.IconRight = null;
+            this.TbxSangriaValor.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.TbxSangriaValor.Lines = new string[0];
+            this.TbxSangriaValor.Location = new System.Drawing.Point(167, 85);
+            this.TbxSangriaValor.MaxLength = 32767;
+            this.TbxSangriaValor.MinimumSize = new System.Drawing.Size(50, 26);
+            this.TbxSangriaValor.Modified = false;
+            this.TbxSangriaValor.Multiline = false;
+            this.TbxSangriaValor.Name = "TbxSangriaValor";
+            stateProperties57.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            stateProperties57.FillColor = System.Drawing.Color.Empty;
+            stateProperties57.ForeColor = System.Drawing.Color.Empty;
+            stateProperties57.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TbxSangriaValor.OnActiveState = stateProperties57;
+            stateProperties58.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            stateProperties58.FillColor = System.Drawing.Color.White;
+            stateProperties58.ForeColor = System.Drawing.Color.Empty;
+            stateProperties58.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.TbxSangriaValor.OnDisabledState = stateProperties58;
+            stateProperties59.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(199)))), ((int)(((byte)(220)))));
+            stateProperties59.FillColor = System.Drawing.Color.Empty;
+            stateProperties59.ForeColor = System.Drawing.Color.Empty;
+            stateProperties59.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TbxSangriaValor.OnHoverState = stateProperties59;
+            stateProperties60.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            stateProperties60.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            stateProperties60.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            stateProperties60.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TbxSangriaValor.OnIdleState = stateProperties60;
+            this.TbxSangriaValor.PasswordChar = '\0';
+            this.TbxSangriaValor.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.TbxSangriaValor.PlaceholderText = "";
+            this.TbxSangriaValor.ReadOnly = false;
+            this.TbxSangriaValor.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TbxSangriaValor.SelectedText = "";
+            this.TbxSangriaValor.SelectionLength = 0;
+            this.TbxSangriaValor.SelectionStart = 0;
+            this.TbxSangriaValor.ShortcutsEnabled = true;
+            this.TbxSangriaValor.Size = new System.Drawing.Size(92, 26);
+            this.TbxSangriaValor.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
+            this.TbxSangriaValor.TabIndex = 281;
+            this.TbxSangriaValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TbxSangriaValor.TextMarginBottom = 0;
+            this.TbxSangriaValor.TextMarginLeft = 5;
+            this.TbxSangriaValor.TextMarginTop = 0;
+            this.TbxSangriaValor.TextPlaceholder = "";
+            this.TbxSangriaValor.UseSystemPasswordChar = false;
+            this.TbxSangriaValor.WordWrap = true;
+            this.TbxSangriaValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.VerificaSeDecimalDigitado);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label20.Location = new System.Drawing.Point(163, 64);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(61, 20);
+            this.label20.TabIndex = 280;
+            this.label20.Text = "Sangria";
             // 
             // FrmCaixa
             // 
@@ -1507,8 +1709,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(620, 448);
+            this.Controls.Add(this.TbxSangriaValor);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.TbxIdMovCaixa);
+            this.Controls.Add(this.LblIdMovCaixa);
+            this.Controls.Add(this.LblSangria);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.bunifuImageButton1);
+            this.Controls.Add(this.BtnSearchMovimento);
             this.Controls.Add(this.TbxSituacao);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label18);
@@ -1562,7 +1769,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnEstorno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSair)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSangria)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnSearchMovimento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1613,6 +1820,12 @@
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox TbxSituacao;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label19;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton BtnSearchMovimento;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label LblSangria;
+        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox TbxIdMovCaixa;
+        private System.Windows.Forms.Label LblIdMovCaixa;
+        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox TbxSangriaValor;
+        private System.Windows.Forms.Label label20;
     }
 }

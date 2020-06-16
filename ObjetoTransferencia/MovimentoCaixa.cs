@@ -15,7 +15,7 @@ namespace ObjetoTransferencia
         public string Saida_Entrada { get; set; }
         public decimal Valor { get; set; }
         public short Desconto { get; set; }
-        public decimal Valor_Decimal { get; set; }
+        public decimal Valor_Final { get; set; }
         public DateTime Data_Movimento { get; set; }
         public Usuario Usuario_Aut_Estorno { get; set; }
         public Usuario Usuario_Aut_Desc { get; set; }

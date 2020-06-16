@@ -18,7 +18,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
     
     public partial class SearchDialog_MovimentoCaixa : Form
     {
-        ContasReceber ContaEscolhida = new ContasReceber();
+        MovimentoCaixa movimentoEscolhido = new MovimentoCaixa();
         int caixaSelecionado;
         public SearchDialog_MovimentoCaixa(int idCaixa)
         {
@@ -35,7 +35,7 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void SearchDialog_Shown(object sender, EventArgs e)
         {
-            tbxSearch.Focus();
+            CarregaDataGrid();
         }
 
         private void dataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -45,34 +45,27 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void atualizarcampos()
         {
-            ContasReceberNegocios contasReceberNegocios = new ContasReceberNegocios();
-            ContaEscolhida = contasReceberNegocios.ConsultarPorIdMatricula(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].FormattedValue))[0];
+            CaixaNegocios caixaNegocios = new CaixaNegocios();
+            movimentoEscolhido = caixaNegocios.ConsultarMovimentoPorId(Convert.ToInt32(dataGrid.Rows[dataGrid.CurrentRow.Index].Cells[0].FormattedValue))[0];
 
 
             btnSelecionar.Enabled = true;
         }
 
-        private void btnpesquisar_Click(object sender, EventArgs e)
+        private void CarregaDataGrid()
         {
-            ContasReceberNegocios contasReceberNegocios = new ContasReceberNegocios();
-            ContasReceberColecao contas = new ContasReceberColecao();
-            Validadocs validadocs = new Validadocs();
-            bool cpfvalido = validadocs.ValidaCPF(tbxSearch.Text);
-            if (cpfvalido)
-            {
-                contas = contasReceberNegocios.ConsultarPorCPF(tbxSearch.Text);
-                dataGrid.DataSource = null;
-                dataGrid.DataSource = contas;
-                dataGrid.AllowUserToResizeColumns = false;
-                dataGrid.AllowUserToResizeRows = false;
-                dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-                dataGrid.Update();
-                dataGrid.Refresh();
-            }
-            else
-            {
-                MessageBox.Show("CPF inválido!");
-            } 
+            CaixaNegocios caixaNegocios = new CaixaNegocios();
+            MovimentoCaixaColecao movimentoCaixas = new MovimentoCaixaColecao();
+
+            movimentoCaixas = caixaNegocios.ConsultarMovimentoPorIdCaixa(caixaSelecionado);
+            dataGrid.DataSource = null;
+            dataGrid.DataSource = movimentoCaixas;
+            dataGrid.AllowUserToResizeColumns = false;
+            dataGrid.AllowUserToResizeRows = false;
+            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGrid.Update();
+            dataGrid.Refresh();
+
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -82,8 +75,8 @@ namespace Apresentacao.Presentation.Popup.SearchDialogs
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
-            FrmCaixa.ContaGetSet = ContaEscolhida;
-            FrmCaixa.AtualizaCampos = true;
+            FrmCaixa.MovimentoGetSet = movimentoEscolhido;
+            FrmCaixa.AtualizaCamposMovimento = true;
             this.Close();
         }
 

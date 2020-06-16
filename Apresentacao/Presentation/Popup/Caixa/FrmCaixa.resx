@@ -426,13 +426,13 @@
   </metadata>
   <data name="TbxSituacao.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAFcAAAAaCAYAAADCDsDeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABwSURBVGhD7dnBCcAwDARBlebS3KnUSeIEg8Fv7W8PpoH9
-        Xjh4mTmWqTZjp/3jzqp61OPrudMat5txQcYFGRdkXJBxQcYFGRdkXJBxQcYFGRdkXJBxQcYFGRdkXJBx
-        QcYFGRdkXNAd12u917nWHbGIF/qWbwG0sD2/AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAGsAAAAaCAYAAACwwaJoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABzSURBVGhD7drRCcAwDMRQj5bRsqm9SZuWQCATWKCDN4F+
+        LxxsmTmWqbbGTvXHmlX1qKevz05lrO6MBWIsEGOBGAvEWCDGAjEWiLFAjAViLBBjgRgLxFggxgIxFoix
+        QIwFYiwQY4EYC+SO5RWtt3NFc4RFvDUTJTplVOZaAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuImageButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnSearchMovimento.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAYAAACI7Fo9AAAABGdBTUEAALGPC/xhBQAAEPJJREFUeF7t
         nXuwd9UYx4tCqqFSpBsyU7qpiH8oSRmSSxcmKpWuxpTc/kxKRFFiDLqj+4V0oUjpYnRzSxelZBgm6aZS
@@ -508,6 +508,25 @@
         +gp2ghxgYEoHO0EOMBJKBTtBDjAycgc7QQ4wUnIFO0EOMHJSg50gB6iErsFOkANUxsIGO0EOUClzDXaC
         HKByni7YCXKAiTC/YCfIASbGvMFOkANMlJlgJ8gBJg6ntQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAEBFLLLIfwGWyZTS971vpgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>104, 17</value>
+  </metadata>
+  <data name="TbxIdMovCaixa.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAE4AAAAaCAYAAAAZtWr8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABvSURBVGhD7dnBCYAwEAXRLS2lpdPdTjRKQPBiMl7nw2tg
+        rj/cj2VmG7qWtJntDter6tC3q9XMZrgdhoMMBxkOMhxkOMhwkOEgw0GGgwwHGQ4yHGQ4yHCQ4SDDQYaD
+        DAcZDjIc9A7nPbjuuQfd7iJOkFhp0LNfqC4AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="TbxSangriaValor.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFwAAAAaCAYAAAA67jspAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABxSURBVGhD7dq7CQAxDARRlebS3KnUyX2MwXC55pJZeA1M
+        vOF+WGaOx1SrsXOv4LOqLvV5G+/cBicYHGZwmMFhBocZHGZwmMFhBocZHGZwmMFhBocZHGZwmMFhBocZ
+        HGZwmMFhBod9g3uT6HduEo5axA2/FhyT7Jp11AAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

@@ -348,8 +348,11 @@ namespace Negocios
             try
             {
                 acessoDados.LimparParametros();
-                acessoDados.AdicionarParametros("@ID_TIPO_MOVIMENTO", movimentoCaixa.TipoMovimentoCaixa.Id_Tipo_Movimento);
+                acessoDados.AdicionarParametros("@ID_CAIXA", movimentoCaixa.Caixa.Id_Caixa);
+                acessoDados.AdicionarParametros("@ID_MOV_CAIXA", movimentoCaixa.Id_Mov_Caixa);
+                acessoDados.AdicionarParametros("@VALOR", movimentoCaixa.Valor_Final);
                 acessoDados.AdicionarParametros("@ID_CONTA_RECEBER", movimentoCaixa.ContasReceber.Id_Conta_Receber);
+                acessoDados.AdicionarParametros("@USUARIO_AUT_ESTORNO", movimentoCaixa.Usuario_Aut_Estorno.Id_Usuario);
                 acessoDados.AdicionarParametros("@ID_USUARIO", movimentoCaixa.Usuario.Id_Usuario);
 
                 string retorno = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_MOVIMENTA_CAIXA_ESTORNO").ToString();
@@ -359,6 +362,137 @@ namespace Negocios
             catch (Exception ex)
             {
                 return ex.Message;
+            }
+        }
+
+        public string MovimentoCaixaSangria(MovimentoCaixa movimentoCaixa)
+        {
+            try
+            {
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_CAIXA", movimentoCaixa.Caixa.Id_Caixa);
+                acessoDados.AdicionarParametros("@ID_TIPO_MOVIMENTO", movimentoCaixa.TipoMovimentoCaixa.Id_Tipo_Movimento);
+                acessoDados.AdicionarParametros("@VALOR", movimentoCaixa.Valor_Final);
+                acessoDados.AdicionarParametros("@ID_USUARIO_SANGRIA", movimentoCaixa.Usuario_Aut_Estorno.Id_Usuario);
+                acessoDados.AdicionarParametros("@ID_USUARIO", movimentoCaixa.Usuario.Id_Usuario);
+
+                string retorno = acessoDados.ExecutarManipulacao(CommandType.StoredProcedure, "USP_MOVIMENTA_CAIXA_SANGRIA").ToString();
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        public MovimentoCaixaColecao ConsultarMovimentoPorIdCaixa(int id)
+        {
+            try
+            {
+                MovimentoCaixaColecao movimentoCaixas = new MovimentoCaixaColecao();
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_CAIXA", id);
+
+                DataTable dt = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_MOVIMENTOCAIXA_BUSCARPORIDCAIXA");
+
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    MovimentoCaixa movimentoCaixa = new MovimentoCaixa();
+                    movimentoCaixa.Id_Mov_Caixa = Convert.ToInt32(dataRow["ID_MOV_CAIXA"]);
+                    movimentoCaixa.Saida_Entrada = Convert.ToString(dataRow["SAIDA_ENTRADA"]);
+                    movimentoCaixa.Valor = Convert.ToDecimal(dataRow["VALOR"]);
+                    movimentoCaixa.Desconto = Convert.ToInt16(dataRow["DESCONTO"]);
+                    movimentoCaixa.Valor_Final = Convert.ToDecimal(dataRow["VALOR_FINAL"]);
+                    movimentoCaixa.Data_Movimento = Convert.ToDateTime(dataRow["DATA_MOVIMENTO"]);
+
+                    movimentoCaixa.Caixa = new Caixa();
+                    movimentoCaixa.Caixa.Id_Caixa = Convert.ToInt32(dataRow["ID_CAIXA"]);
+
+                    movimentoCaixa.TipoMovimentoCaixa = new TipoMovimentoCaixa();
+                    movimentoCaixa.TipoMovimentoCaixa.Id_Tipo_Movimento = Convert.ToInt32(dataRow["ID_TIPO_MOVIMENTO"]);
+
+                    movimentoCaixa.ContasReceber = new ContasReceber();
+                    movimentoCaixa.ContasReceber.Id_Conta_Receber = Convert.ToInt32(dataRow["ID_CONTA_RECEBER"]);
+
+                    movimentoCaixa.Usuario_Aut_Estorno = new Usuario();
+                    if (int.TryParse(dataRow["USUARIO_AUT_ESTORNO"].ToString(), out int v))
+                    {
+                        movimentoCaixa.Usuario_Aut_Estorno.Id_Usuario = v;
+                    }
+
+                    movimentoCaixa.Usuario_Aut_Desc = new Usuario();
+                    if (int.TryParse(dataRow["USUARIO_AUT_DESCONTO"].ToString(), out int x))
+                    {
+                        movimentoCaixa.Usuario_Aut_Desc.Id_Usuario = x;
+                    }
+
+                    movimentoCaixa.Usuario = new Usuario();
+                    movimentoCaixa.Usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    movimentoCaixas.Add(movimentoCaixa);
+                }
+
+                return movimentoCaixas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar movimento. Detalhes: " + ex.Message);
+            }
+        }
+
+        public MovimentoCaixaColecao ConsultarMovimentoPorId(int id)
+        {
+            try
+            {
+                MovimentoCaixaColecao movimentoCaixas = new MovimentoCaixaColecao();
+                acessoDados.LimparParametros();
+                acessoDados.AdicionarParametros("@ID_MOV_CAIXA", id);
+
+                DataTable dt = acessoDados.ExecutarConsulta(CommandType.StoredProcedure, "USP_MOVIMENTOCAIXA_BUSCARPORID");
+
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    MovimentoCaixa movimentoCaixa = new MovimentoCaixa();
+                    movimentoCaixa.Id_Mov_Caixa = Convert.ToInt32(dataRow["ID_MOV_CAIXA"]);
+                    movimentoCaixa.Saida_Entrada = Convert.ToString(dataRow["SAIDA_ENTRADA"]);
+                    movimentoCaixa.Valor = Convert.ToDecimal(dataRow["VALOR"]);
+                    movimentoCaixa.Desconto = Convert.ToInt16(dataRow["DESCONTO"]);
+                    movimentoCaixa.Valor_Final = Convert.ToDecimal(dataRow["VALOR_FINAL"]);
+                    movimentoCaixa.Data_Movimento = Convert.ToDateTime(dataRow["DATA_MOVIMENTO"]);
+
+                    movimentoCaixa.Caixa = new Caixa();
+                    movimentoCaixa.Caixa.Id_Caixa = Convert.ToInt32(dataRow["ID_CAIXA"]);
+
+                    movimentoCaixa.TipoMovimentoCaixa = new TipoMovimentoCaixa();
+                    movimentoCaixa.TipoMovimentoCaixa.Id_Tipo_Movimento = Convert.ToInt32(dataRow["ID_TIPO_MOVIMENTO"]);
+
+                    movimentoCaixa.ContasReceber = new ContasReceber();
+                    movimentoCaixa.ContasReceber.Id_Conta_Receber = Convert.ToInt32(dataRow["ID_CONTA_RECEBER"]);
+
+                    movimentoCaixa.Usuario_Aut_Estorno = new Usuario();
+                    if (int.TryParse(dataRow["USUARIO_AUT_ESTORNO"].ToString(), out int v))
+                    {
+                        movimentoCaixa.Usuario_Aut_Estorno.Id_Usuario = v;
+                    }
+
+                    movimentoCaixa.Usuario_Aut_Desc = new Usuario();
+                    if (int.TryParse(dataRow["USUARIO_AUT_DESCONTO"].ToString(), out int x))
+                    {
+                        movimentoCaixa.Usuario_Aut_Desc.Id_Usuario = x;
+                    }
+
+                    movimentoCaixa.Usuario = new Usuario();
+                    movimentoCaixa.Usuario.Id_Usuario = Convert.ToInt32(dataRow["USUARIO_CAD_ALT"]);
+
+                    movimentoCaixas.Add(movimentoCaixa);
+                }
+
+                return movimentoCaixas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar movimento. Detalhes: " + ex.Message);
             }
         }
     }
