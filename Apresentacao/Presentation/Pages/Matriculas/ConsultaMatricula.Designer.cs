@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaMatricula));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -64,7 +63,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DtFim = new System.Windows.Forms.DateTimePicker();
             this.CbxBusca = new System.Windows.Forms.ComboBox();
-            this.btnRelatorio = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSair = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnBuscar = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomTextbox1 = new Bunifu.Framework.BunifuCustomTextbox();
@@ -100,7 +98,6 @@
             this.container.Controls.Add(this.PanelTurma);
             this.container.Controls.Add(this.PanelData);
             this.container.Controls.Add(this.CbxBusca);
-            this.container.Controls.Add(this.btnRelatorio);
             this.container.Controls.Add(this.btnSair);
             this.container.Controls.Add(this.btnBuscar);
             this.container.Controls.Add(this.bunifuCustomTextbox1);
@@ -332,76 +329,6 @@
             this.CbxBusca.TabIndex = 191;
             this.CbxBusca.SelectedIndexChanged += new System.EventHandler(this.CbxBusca_SelectedIndexChanged);
             // 
-            // btnRelatorio
-            // 
-            this.btnRelatorio.AllowToggling = false;
-            this.btnRelatorio.AnimationSpeed = 220;
-            this.btnRelatorio.AutoGenerateColors = false;
-            this.btnRelatorio.BackColor = System.Drawing.Color.Transparent;
-            this.btnRelatorio.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnRelatorio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRelatorio.BackgroundImage")));
-            this.btnRelatorio.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRelatorio.ButtonText = "Gerar Relatório";
-            this.btnRelatorio.ButtonTextMarginLeft = 0;
-            this.btnRelatorio.ColorContrastOnClick = 45;
-            this.btnRelatorio.ColorContrastOnHover = 45;
-            this.btnRelatorio.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnRelatorio.CustomizableEdges = borderEdges1;
-            this.btnRelatorio.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnRelatorio.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.btnRelatorio.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnRelatorio.DisabledForecolor = System.Drawing.Color.White;
-            this.btnRelatorio.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnRelatorio.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRelatorio.ForeColor = System.Drawing.Color.White;
-            this.btnRelatorio.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRelatorio.IconMarginLeft = 11;
-            this.btnRelatorio.IconPadding = 10;
-            this.btnRelatorio.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRelatorio.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnRelatorio.IdleBorderRadius = 30;
-            this.btnRelatorio.IdleBorderThickness = 1;
-            this.btnRelatorio.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnRelatorio.IdleIconLeftImage = null;
-            this.btnRelatorio.IdleIconRightImage = null;
-            this.btnRelatorio.IndicateFocus = true;
-            this.btnRelatorio.Location = new System.Drawing.Point(532, 565);
-            this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.onHoverState.BorderColor = System.Drawing.Color.Blue;
-            this.btnRelatorio.onHoverState.BorderRadius = 30;
-            this.btnRelatorio.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRelatorio.onHoverState.BorderThickness = 1;
-            this.btnRelatorio.onHoverState.FillColor = System.Drawing.Color.Blue;
-            this.btnRelatorio.onHoverState.ForeColor = System.Drawing.Color.Empty;
-            this.btnRelatorio.onHoverState.IconLeftImage = null;
-            this.btnRelatorio.onHoverState.IconRightImage = null;
-            this.btnRelatorio.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnRelatorio.OnIdleState.BorderRadius = 30;
-            this.btnRelatorio.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRelatorio.OnIdleState.BorderThickness = 1;
-            this.btnRelatorio.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.btnRelatorio.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnRelatorio.OnIdleState.IconLeftImage = null;
-            this.btnRelatorio.OnIdleState.IconRightImage = null;
-            this.btnRelatorio.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnRelatorio.OnPressedState.BorderRadius = 30;
-            this.btnRelatorio.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRelatorio.OnPressedState.BorderThickness = 1;
-            this.btnRelatorio.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnRelatorio.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnRelatorio.OnPressedState.IconLeftImage = null;
-            this.btnRelatorio.OnPressedState.IconRightImage = null;
-            this.btnRelatorio.Size = new System.Drawing.Size(127, 35);
-            this.btnRelatorio.TabIndex = 190;
-            this.btnRelatorio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnRelatorio.TextMarginLeft = 0;
-            this.btnRelatorio.UseDefaultRadiusAndThickness = true;
-            this.btnRelatorio.Click += new System.EventHandler(this.btnRelatorio_Click);
-            // 
             // btnSair
             // 
             this.btnSair.AllowToggling = false;
@@ -416,11 +343,11 @@
             this.btnSair.ColorContrastOnClick = 45;
             this.btnSair.ColorContrastOnHover = 45;
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnSair.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnSair.CustomizableEdges = borderEdges1;
             this.btnSair.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSair.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
             this.btnSair.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -495,7 +422,7 @@
             this.bunifuCustomTextbox1.Name = "bunifuCustomTextbox1";
             this.bunifuCustomTextbox1.Size = new System.Drawing.Size(805, 28);
             this.bunifuCustomTextbox1.TabIndex = 170;
-            this.bunifuCustomTextbox1.Text = "Consulta/Relatórios Matricula";
+            this.bunifuCustomTextbox1.Text = "Consulta Matricula";
             this.bunifuCustomTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bunifuSeparator2
@@ -535,8 +462,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGrid.ColumnHeadersHeight = 30;
-            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGrid.ColumnHeadersHeight = 40;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RM,
             this.RA,
@@ -755,7 +681,6 @@
         private System.Windows.Forms.DateTimePicker DtFim;
         private System.Windows.Forms.ComboBox CbxTurma;
         private System.Windows.Forms.ComboBox CbxUsuario;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRelatorio;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSair;
         private System.Windows.Forms.BindingSource matriculaBindingSource;
         private System.Windows.Forms.ComboBox CbxBusca;

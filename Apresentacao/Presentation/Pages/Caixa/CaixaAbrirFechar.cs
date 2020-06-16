@@ -351,6 +351,7 @@ namespace Apresentacao.Presentation.Pages
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                goto final;
             }
 
             string retorno = caixaNegocios.AbreCaixa(caixa);
@@ -370,6 +371,9 @@ namespace Apresentacao.Presentation.Pages
             {
                 MessageBox.Show("Erro ao abrir caixa. Detalhes: " + retorno);
             }
+
+        final:
+            return;
         }
 
         private void BtnAtualizar_Click(object sender, EventArgs e)
