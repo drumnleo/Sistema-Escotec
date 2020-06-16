@@ -58,7 +58,6 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.container = new System.Windows.Forms.Panel();
             this.BtnExcluir = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.BtnNovo = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -102,7 +101,6 @@
             this.lblPessoaIdTexto = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSelecionarFoto = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.picPhoto = new System.Windows.Forms.Panel();
             this.photoCanvas = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -163,7 +161,6 @@
             this.container.Controls.Add(this.lblPessoaIdTexto);
             this.container.Controls.Add(this.label3);
             this.container.Controls.Add(this.label2);
-            this.container.Controls.Add(this.btnSelecionarFoto);
             this.container.Controls.Add(this.picPhoto);
             this.container.Controls.Add(this.initPhoto);
             this.container.Controls.Add(this.label1);
@@ -1343,76 +1340,6 @@
             this.label2.TabIndex = 127;
             this.label2.Text = "Nome";
             // 
-            // btnSelecionarFoto
-            // 
-            this.btnSelecionarFoto.AllowToggling = false;
-            this.btnSelecionarFoto.AnimationSpeed = 220;
-            this.btnSelecionarFoto.AutoGenerateColors = false;
-            this.btnSelecionarFoto.BackColor = System.Drawing.Color.Transparent;
-            this.btnSelecionarFoto.BackColor1 = System.Drawing.Color.Gainsboro;
-            this.btnSelecionarFoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSelecionarFoto.BackgroundImage")));
-            this.btnSelecionarFoto.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSelecionarFoto.ButtonText = "Inserir Foto";
-            this.btnSelecionarFoto.ButtonTextMarginLeft = 0;
-            this.btnSelecionarFoto.ColorContrastOnClick = 45;
-            this.btnSelecionarFoto.ColorContrastOnHover = 45;
-            this.btnSelecionarFoto.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.btnSelecionarFoto.CustomizableEdges = borderEdges5;
-            this.btnSelecionarFoto.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSelecionarFoto.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.btnSelecionarFoto.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSelecionarFoto.DisabledForecolor = System.Drawing.Color.White;
-            this.btnSelecionarFoto.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnSelecionarFoto.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelecionarFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSelecionarFoto.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelecionarFoto.IconMarginLeft = 11;
-            this.btnSelecionarFoto.IconPadding = 10;
-            this.btnSelecionarFoto.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelecionarFoto.IdleBorderColor = System.Drawing.Color.Gainsboro;
-            this.btnSelecionarFoto.IdleBorderRadius = 30;
-            this.btnSelecionarFoto.IdleBorderThickness = 1;
-            this.btnSelecionarFoto.IdleFillColor = System.Drawing.Color.Gainsboro;
-            this.btnSelecionarFoto.IdleIconLeftImage = null;
-            this.btnSelecionarFoto.IdleIconRightImage = null;
-            this.btnSelecionarFoto.IndicateFocus = true;
-            this.btnSelecionarFoto.Location = new System.Drawing.Point(31, 237);
-            this.btnSelecionarFoto.Name = "btnSelecionarFoto";
-            this.btnSelecionarFoto.onHoverState.BorderColor = System.Drawing.Color.Silver;
-            this.btnSelecionarFoto.onHoverState.BorderRadius = 30;
-            this.btnSelecionarFoto.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSelecionarFoto.onHoverState.BorderThickness = 1;
-            this.btnSelecionarFoto.onHoverState.FillColor = System.Drawing.Color.Silver;
-            this.btnSelecionarFoto.onHoverState.ForeColor = System.Drawing.Color.Empty;
-            this.btnSelecionarFoto.onHoverState.IconLeftImage = null;
-            this.btnSelecionarFoto.onHoverState.IconRightImage = null;
-            this.btnSelecionarFoto.OnIdleState.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnSelecionarFoto.OnIdleState.BorderRadius = 30;
-            this.btnSelecionarFoto.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSelecionarFoto.OnIdleState.BorderThickness = 1;
-            this.btnSelecionarFoto.OnIdleState.FillColor = System.Drawing.Color.Gainsboro;
-            this.btnSelecionarFoto.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSelecionarFoto.OnIdleState.IconLeftImage = null;
-            this.btnSelecionarFoto.OnIdleState.IconRightImage = null;
-            this.btnSelecionarFoto.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnSelecionarFoto.OnPressedState.BorderRadius = 30;
-            this.btnSelecionarFoto.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSelecionarFoto.OnPressedState.BorderThickness = 1;
-            this.btnSelecionarFoto.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnSelecionarFoto.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnSelecionarFoto.OnPressedState.IconLeftImage = null;
-            this.btnSelecionarFoto.OnPressedState.IconRightImage = null;
-            this.btnSelecionarFoto.Size = new System.Drawing.Size(118, 35);
-            this.btnSelecionarFoto.TabIndex = 110;
-            this.btnSelecionarFoto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSelecionarFoto.TextMarginLeft = 0;
-            this.btnSelecionarFoto.UseDefaultRadiusAndThickness = true;
-            this.btnSelecionarFoto.Click += new System.EventHandler(this.BtnSelecionarFoto_Click);
-            // 
             // picPhoto
             // 
             this.picPhoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPhoto.BackgroundImage")));
@@ -1503,7 +1430,6 @@
         private System.Windows.Forms.PictureBox photoCanvas;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox initPhoto;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSelecionarFoto;
         private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.Label lblPessoaIdTexto;
         private System.Windows.Forms.Label label3;

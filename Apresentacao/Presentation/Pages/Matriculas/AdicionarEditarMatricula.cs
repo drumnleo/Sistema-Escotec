@@ -225,6 +225,8 @@ namespace Apresentacao.Presentation.Pages
             }
 
             string retorno = matriculaNegocios.Inserir(matricula);
+            OrcamentoNegocios orcamentoNegocios = new OrcamentoNegocios();
+            string retornoOrcamento = orcamentoNegocios.Excluir(TurmaOrcamentoGetSet.Orcamento);
 
             try
             {
