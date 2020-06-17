@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarEditarMatricula));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.container = new System.Windows.Forms.Panel();
+            this.BtnNovo = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.dataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_Mat = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,7 +121,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TimerDatagrid = new System.Windows.Forms.Timer(this.components);
-            this.BtnNovo = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSearchOrc)).BeginInit();
@@ -208,25 +208,100 @@
             this.container.Size = new System.Drawing.Size(754, 656);
             this.container.TabIndex = 0;
             // 
+            // BtnNovo
+            // 
+            this.BtnNovo.AllowToggling = false;
+            this.BtnNovo.AnimationSpeed = 220;
+            this.BtnNovo.AutoGenerateColors = false;
+            this.BtnNovo.BackColor = System.Drawing.Color.Transparent;
+            this.BtnNovo.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnNovo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnNovo.BackgroundImage")));
+            this.BtnNovo.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnNovo.ButtonText = "Novo";
+            this.BtnNovo.ButtonTextMarginLeft = 0;
+            this.BtnNovo.ColorContrastOnClick = 45;
+            this.BtnNovo.ColorContrastOnHover = 45;
+            this.BtnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.BtnNovo.CustomizableEdges = borderEdges1;
+            this.BtnNovo.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnNovo.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.BtnNovo.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BtnNovo.DisabledForecolor = System.Drawing.Color.White;
+            this.BtnNovo.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.BtnNovo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNovo.ForeColor = System.Drawing.Color.White;
+            this.BtnNovo.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnNovo.IconMarginLeft = 11;
+            this.BtnNovo.IconPadding = 10;
+            this.BtnNovo.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnNovo.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnNovo.IdleBorderRadius = 30;
+            this.BtnNovo.IdleBorderThickness = 1;
+            this.BtnNovo.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnNovo.IdleIconLeftImage = null;
+            this.BtnNovo.IdleIconRightImage = null;
+            this.BtnNovo.IndicateFocus = true;
+            this.BtnNovo.Location = new System.Drawing.Point(356, 605);
+            this.BtnNovo.Name = "BtnNovo";
+            this.BtnNovo.onHoverState.BorderColor = System.Drawing.Color.Blue;
+            this.BtnNovo.onHoverState.BorderRadius = 30;
+            this.BtnNovo.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnNovo.onHoverState.BorderThickness = 1;
+            this.BtnNovo.onHoverState.FillColor = System.Drawing.Color.Blue;
+            this.BtnNovo.onHoverState.ForeColor = System.Drawing.Color.Empty;
+            this.BtnNovo.onHoverState.IconLeftImage = null;
+            this.BtnNovo.onHoverState.IconRightImage = null;
+            this.BtnNovo.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnNovo.OnIdleState.BorderRadius = 30;
+            this.BtnNovo.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnNovo.OnIdleState.BorderThickness = 1;
+            this.BtnNovo.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.BtnNovo.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.BtnNovo.OnIdleState.IconLeftImage = null;
+            this.BtnNovo.OnIdleState.IconRightImage = null;
+            this.BtnNovo.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.BtnNovo.OnPressedState.BorderRadius = 30;
+            this.BtnNovo.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnNovo.OnPressedState.BorderThickness = 1;
+            this.BtnNovo.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.BtnNovo.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.BtnNovo.OnPressedState.IconLeftImage = null;
+            this.BtnNovo.OnPressedState.IconRightImage = null;
+            this.BtnNovo.Size = new System.Drawing.Size(127, 35);
+            this.BtnNovo.TabIndex = 289;
+            this.BtnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnNovo.TextMarginLeft = 0;
+            this.BtnNovo.UseDefaultRadiusAndThickness = true;
+            this.BtnNovo.Click += new System.EventHandler(this.BtnNovo_Click);
+            // 
             // dataGrid
             // 
             this.dataGrid.AllowCustomTheming = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.dataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGrid.AllowUserToAddRows = false;
+            this.dataGrid.AllowUserToDeleteRows = false;
+            this.dataGrid.AllowUserToResizeColumns = false;
+            this.dataGrid.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid.ColumnHeadersHeight = 40;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -236,58 +311,62 @@
             this.Valor,
             this.Vencimento,
             this.Situacao_PG});
-            this.dataGrid.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.dataGrid.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.dataGrid.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.dataGrid.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dataGrid.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.dataGrid.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGrid.CurrentTheme.BackColor = System.Drawing.Color.DodgerBlue;
-            this.dataGrid.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
+            this.dataGrid.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dataGrid.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGrid.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.dataGrid.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.dataGrid.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.dataGrid.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.dataGrid.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             this.dataGrid.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dataGrid.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
             this.dataGrid.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dataGrid.CurrentTheme.Name = null;
-            this.dataGrid.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dataGrid.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGrid.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.dataGrid.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dataGrid.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.dataGrid.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGrid.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dataGrid.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGrid.EnableHeadersVisualStyles = false;
-            this.dataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
+            this.dataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.dataGrid.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.dataGrid.HeaderBgColor = System.Drawing.Color.Empty;
             this.dataGrid.HeaderForeColor = System.Drawing.Color.White;
             this.dataGrid.Location = new System.Drawing.Point(0, 442);
+            this.dataGrid.MultiSelect = false;
             this.dataGrid.Name = "dataGrid";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGrid.ReadOnly = true;
+            this.dataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGrid.RowHeadersVisible = false;
             this.dataGrid.RowHeadersWidth = 30;
             this.dataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.dataGrid.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.dataGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.dataGrid.RowTemplate.Height = 40;
+            this.dataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrid.Size = new System.Drawing.Size(754, 157);
             this.dataGrid.TabIndex = 288;
-            this.dataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
+            this.dataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGrid_CellFormatting);
             // 
             // ID
@@ -296,6 +375,7 @@
             this.ID.DataPropertyName = "Id_Conta_Receber";
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ID.Width = 80;
             // 
@@ -305,6 +385,7 @@
             this.ID_Mat.DataPropertyName = "Matricula.Id_Matricula";
             this.ID_Mat.HeaderText = "ID_Mat";
             this.ID_Mat.Name = "ID_Mat";
+            this.ID_Mat.ReadOnly = true;
             this.ID_Mat.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ID_Mat.Width = 80;
             // 
@@ -314,6 +395,7 @@
             this.Num_Parcela.DataPropertyName = "Numero_Parcela";
             this.Num_Parcela.HeaderText = "Nº Parcela";
             this.Num_Parcela.Name = "Num_Parcela";
+            this.Num_Parcela.ReadOnly = true;
             this.Num_Parcela.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Total_Parcelas
@@ -322,6 +404,7 @@
             this.Total_Parcelas.DataPropertyName = "Total_Parcelas";
             this.Total_Parcelas.HeaderText = "Total Parcelas";
             this.Total_Parcelas.Name = "Total_Parcelas";
+            this.Total_Parcelas.ReadOnly = true;
             this.Total_Parcelas.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Total_Parcelas.Width = 120;
             // 
@@ -331,6 +414,7 @@
             this.Valor.DataPropertyName = "Valor";
             this.Valor.HeaderText = "Valor";
             this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
             this.Valor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Vencimento
@@ -339,6 +423,7 @@
             this.Vencimento.DataPropertyName = "Vencimento";
             this.Vencimento.HeaderText = "Vencimento";
             this.Vencimento.Name = "Vencimento";
+            this.Vencimento.ReadOnly = true;
             this.Vencimento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Vencimento.Width = 140;
             // 
@@ -348,6 +433,7 @@
             this.Situacao_PG.DataPropertyName = "Situacao_PG";
             this.Situacao_PG.HeaderText = "Situação";
             this.Situacao_PG.Name = "Situacao_PG";
+            this.Situacao_PG.ReadOnly = true;
             this.Situacao_PG.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // BtnSearchOrc
@@ -409,11 +495,11 @@
             this.BtnEfetivar.ColorContrastOnClick = 45;
             this.BtnEfetivar.ColorContrastOnHover = 45;
             this.BtnEfetivar.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.BtnEfetivar.CustomizableEdges = borderEdges5;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.BtnEfetivar.CustomizableEdges = borderEdges2;
             this.BtnEfetivar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnEfetivar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
             this.BtnEfetivar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -479,11 +565,11 @@
             this.BtnImprimir.ColorContrastOnClick = 45;
             this.BtnImprimir.ColorContrastOnHover = 45;
             this.BtnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.BtnImprimir.CustomizableEdges = borderEdges6;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.BtnImprimir.CustomizableEdges = borderEdges3;
             this.BtnImprimir.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnImprimir.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
             this.BtnImprimir.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -1598,76 +1684,6 @@
             // 
             this.TimerDatagrid.Enabled = true;
             this.TimerDatagrid.Tick += new System.EventHandler(this.TimerDatagrid_Tick);
-            // 
-            // BtnNovo
-            // 
-            this.BtnNovo.AllowToggling = false;
-            this.BtnNovo.AnimationSpeed = 220;
-            this.BtnNovo.AutoGenerateColors = false;
-            this.BtnNovo.BackColor = System.Drawing.Color.Transparent;
-            this.BtnNovo.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.BtnNovo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnNovo.BackgroundImage")));
-            this.BtnNovo.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.BtnNovo.ButtonText = "Novo";
-            this.BtnNovo.ButtonTextMarginLeft = 0;
-            this.BtnNovo.ColorContrastOnClick = 45;
-            this.BtnNovo.ColorContrastOnHover = 45;
-            this.BtnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.BtnNovo.CustomizableEdges = borderEdges4;
-            this.BtnNovo.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BtnNovo.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.BtnNovo.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.BtnNovo.DisabledForecolor = System.Drawing.Color.White;
-            this.BtnNovo.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.BtnNovo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNovo.ForeColor = System.Drawing.Color.White;
-            this.BtnNovo.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnNovo.IconMarginLeft = 11;
-            this.BtnNovo.IconPadding = 10;
-            this.BtnNovo.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnNovo.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.BtnNovo.IdleBorderRadius = 30;
-            this.BtnNovo.IdleBorderThickness = 1;
-            this.BtnNovo.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.BtnNovo.IdleIconLeftImage = null;
-            this.BtnNovo.IdleIconRightImage = null;
-            this.BtnNovo.IndicateFocus = true;
-            this.BtnNovo.Location = new System.Drawing.Point(356, 605);
-            this.BtnNovo.Name = "BtnNovo";
-            this.BtnNovo.onHoverState.BorderColor = System.Drawing.Color.Blue;
-            this.BtnNovo.onHoverState.BorderRadius = 30;
-            this.BtnNovo.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.BtnNovo.onHoverState.BorderThickness = 1;
-            this.BtnNovo.onHoverState.FillColor = System.Drawing.Color.Blue;
-            this.BtnNovo.onHoverState.ForeColor = System.Drawing.Color.Empty;
-            this.BtnNovo.onHoverState.IconLeftImage = null;
-            this.BtnNovo.onHoverState.IconRightImage = null;
-            this.BtnNovo.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.BtnNovo.OnIdleState.BorderRadius = 30;
-            this.BtnNovo.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.BtnNovo.OnIdleState.BorderThickness = 1;
-            this.BtnNovo.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
-            this.BtnNovo.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.BtnNovo.OnIdleState.IconLeftImage = null;
-            this.BtnNovo.OnIdleState.IconRightImage = null;
-            this.BtnNovo.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.BtnNovo.OnPressedState.BorderRadius = 30;
-            this.BtnNovo.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.BtnNovo.OnPressedState.BorderThickness = 1;
-            this.BtnNovo.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.BtnNovo.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.BtnNovo.OnPressedState.IconLeftImage = null;
-            this.BtnNovo.OnPressedState.IconRightImage = null;
-            this.BtnNovo.Size = new System.Drawing.Size(127, 35);
-            this.BtnNovo.TabIndex = 289;
-            this.BtnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnNovo.TextMarginLeft = 0;
-            this.BtnNovo.UseDefaultRadiusAndThickness = true;
-            this.BtnNovo.Click += new System.EventHandler(this.BtnNovo_Click);
             // 
             // AdicionarEditarMatricula
             // 

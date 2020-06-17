@@ -163,8 +163,8 @@
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator7 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.TimerAtend = new System.Windows.Forms.Timer(this.components);
             this.BtnExcluir = new Bunifu.Framework.UI.BunifuImageButton();
+            this.TimerAtend = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchPessoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInsert)).BeginInit();
@@ -525,6 +525,7 @@
             this.bunifuCustomTextbox1.BackColor = System.Drawing.Color.DodgerBlue;
             this.bunifuCustomTextbox1.BorderColor = System.Drawing.Color.White;
             this.bunifuCustomTextbox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bunifuCustomTextbox1.Enabled = false;
             this.bunifuCustomTextbox1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomTextbox1.ForeColor = System.Drawing.Color.White;
             this.bunifuCustomTextbox1.Location = new System.Drawing.Point(0, 58);
@@ -2081,12 +2082,6 @@
             this.bunifuSeparator7.Transparency = 255;
             this.bunifuSeparator7.Vertical = false;
             // 
-            // TimerAtend
-            // 
-            this.TimerAtend.Enabled = true;
-            this.TimerAtend.Interval = 500;
-            this.TimerAtend.Tick += new System.EventHandler(this.TimerAtend_Tick);
-            // 
             // BtnExcluir
             // 
             this.BtnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -2100,6 +2095,12 @@
             this.BtnExcluir.TabStop = false;
             this.BtnExcluir.Zoom = 10;
             this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
+            // 
+            // TimerAtend
+            // 
+            this.TimerAtend.Enabled = true;
+            this.TimerAtend.Interval = 500;
+            this.TimerAtend.Tick += new System.EventHandler(this.TimerAtend_Tick);
             // 
             // AdicionarEditarAtendimento
             // 
